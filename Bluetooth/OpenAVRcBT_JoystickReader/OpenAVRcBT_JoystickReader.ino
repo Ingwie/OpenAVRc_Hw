@@ -234,7 +234,7 @@ void loop()
   ppmOut[4] = ((rcs.channel5) ? rcs.MAX_VALUE : rcs.MIN_VALUE);
   ppmOut[5] = rcs.flight_mode;
   ppmOut[6] = rcs.camera_pitch;
-  ppmOut[6] = rcs.camera_yaw;
+  ppmOut[7] = rcs.camera_yaw;
     
 #if (MODE == PPM)
     for (uint8_t ch = 0; ch<8;ch++)
