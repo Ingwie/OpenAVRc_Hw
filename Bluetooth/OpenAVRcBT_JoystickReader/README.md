@@ -84,6 +84,8 @@ Dans tous les cas, démarrer le module réception en premier.
 
 La caméra en connectée sur les voies 7 et 8.
 
+![ainsi](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/PCB/Bluetooth/OpenAVRcBT_JoystickReader/LE3DP_ButtonsMapping.jpg)
+
 
 
 
