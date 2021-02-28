@@ -43,6 +43,9 @@
 #include <SPI.h>
 #include "LCDDisplay.h"
 
+#include "RcModeConfig.h"
+
+
 //#define AT_INIT
 #define DEBUG
 
@@ -96,6 +99,12 @@ uint16_t ppmOut[8];
 void setup()
 {
   lcd_display.setup();
+
+  AileronNbChannel = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Aileron) + 1;//AILERON + 1;
+  ElevatorNbChannel   = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Elevator) + 1;//THROTTLE + 1;
+  RudderNbChannel  = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Rudder) + 1;//RUDDER + 1;
+  ThrottleNbChannel  = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Throttle) + 1;//RUDDER + 1;
+  
   
   Serial.begin( 115200 );
   
@@ -226,11 +235,18 @@ void loop()
   rcs.button_changed(Button);
   rcs.OnButtonUp(Button);
   rcs.OnButtonDn(Button);
+
+/*
+ElevatorNbChannel;
+RudderNbChannel;
+AileronNbChannel;
+ThrottleNbChannel;
+*/
   
-  ppmOut[0] = rcs.roll;
-  ppmOut[1] = rcs.pitch;
-  ppmOut[2] = rcs.throttle;
-  ppmOut[3] = rcs.yaw;
+  ppmOut[AileronNbChannel] = rcs.roll;
+  ppmOut[ElevatorNbChannel] = rcs.pitch;
+  ppmOut[ThrottleNbChannel] = rcs.throttle;
+  ppmOut[RudderNbChannel] = rcs.yaw;
   ppmOut[4] = ((rcs.channel5) ? rcs.MAX_VALUE : rcs.MIN_VALUE);
   ppmOut[5] = rcs.flight_mode;
   ppmOut[6] = rcs.camera_pitch;
