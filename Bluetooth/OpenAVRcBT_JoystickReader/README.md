@@ -14,10 +14,10 @@ Deux options sont possibles:
  
 
 ## Utiliser le module réception en mode PPM
- Configurer dans le code OpenAVRcBT_JoystickReader, ligne 45,  **#define MODE PPM**
+ Configurer dans le code OpenAVRcBT_JoystickReader, ligne 51,  **#define MODE PPM**
 
 ## Utiliser le module réception en mode Bluetooth
- Configurer dans le code OpenAVRcBT_JoystickReader, ligne 45,  **#define MODE BLUETOOTH**
+ Configurer dans le code OpenAVRcBT_JoystickReader, ligne 51,  **#define MODE BLUETOOTH**
  
 # Réaliser le câblage
 ## A. Carte Uno ou Leonardo
@@ -44,13 +44,13 @@ Cette solution utilise un Pro Mini 3,3v/8Mhz car le mini shield usb ne supporte 
 
 ## Configurer le module réception
 1. Installer les bibliothèques [USB Host Shield Library 2.0](https://www.arduinolibraries.info/libraries/usb-host-shield-library-2-0) et [PPMEncoder](https://github.com/schinken/PPMEncoder) dans l'IDE Arduino.
-2. Décommenter à la ligne 42 **#define AT_INIT** .
+2. Décommenter à la ligne 46 **#define AT_INIT** .
 3. Compiler et Télécharger le code.
 4. Au premier lancement, le Uno ou Pro Mini devrait configurer en **'Slave'** et en **'57600'**, (ou en **115200** pour un board Leonardo)
-5. Commenter à nouveau à la ligne 42  **//#define AT_INIT** .
+5. Commenter à nouveau à la ligne 46  **//#define AT_INIT** .
 6. Compiler et Télécharger le code. Le module réception est prét.
 7. Par défaut, le code est configuré pour fonctionner avec un module BLUETOOTH HC-05 mais vous pouvez utiliser le mode PPM.  
- **#define MODE PPM** //Selectionnez PPM ou BLUETOOTH ligne 47
+ **#define MODE PPM** //Selectionnez PPM ou BLUETOOTH ligne 51
 
 ## Configurer la radio.
 1. Aller dans l'écran Bluetooth de la radio.
@@ -75,9 +75,9 @@ Dans tous les cas, démarrer le module réception en premier.
 ## Utilisation du Joystick Logitech 3D Pro
 - Le bouton **HAT** permet de gérer une caméra en direction (gauche/droite) et hauteur (hat/bas).  
 - 3 **MODES** sont possibles:  
-1.exponentiel, bouton 5(passage de haut en bas ou droite à gauche rapide)  
-2.lent, bouton 4 (passage de haut en bas ou droite à gauche lent)  
-3.min max, bouton 3  (passage de haut en bas ou droite à gauche d'un coup)  
+1.*exponentiel*, bouton 5(passage de haut en bas ou droite à gauche rapide)  
+2.*lent*, bouton 4 (passage de haut en bas ou droite à gauche lent)  
+3.*min max*, bouton 3  (passage de haut en bas ou droite à gauche d'un coup)  
 
 - Le bouton 1 recentre la caméra.  
 - Le bouton 6 met en route l'auto centrage de la caméra.  
