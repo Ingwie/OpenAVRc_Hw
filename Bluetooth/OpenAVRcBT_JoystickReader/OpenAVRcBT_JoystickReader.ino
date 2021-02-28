@@ -31,11 +31,6 @@
 ************************************************************************** 
 */
 
-/* 
- Simplified Logitech Extreme 3D Pro Joystick Report Parser 
- Original code by lexfp https://github.com/lexfp/le3dpToPPM
-*/
-
 #include <usbhid.h>
 #include <hiduniversal.h>
 #include <usbhub.h>
@@ -45,13 +40,12 @@
 
 #include "RcModeConfig.h"
 
-
 //#define AT_INIT
-#define DEBUG
+//#define DEBUG
 
 #define PPM         0
 #define BLUETOOTH   1
-#define MODE BLUETOOTH //Select PPM or BLUETOOTH
+#define MODE PPM //Select PPM or BLUETOOTH
 
 
 #define NUM_CHANNELS   8
@@ -99,13 +93,7 @@ uint16_t ppmOut[8];
 void setup()
 {
   lcd_display.setup();
-
-  AileronNbChannel = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Aileron) + 1;//AILERON + 1;
-  ElevatorNbChannel   = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Elevator) + 1;//THROTTLE + 1;
-  RudderNbChannel  = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Rudder) + 1;//RUDDER + 1;
-  ThrottleNbChannel  = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Throttle) + 1;//RUDDER + 1;
-  
-  
+ 
   Serial.begin( 115200 );
   
 #if !defined(__MIPSEL__)
@@ -122,8 +110,20 @@ void setup()
       ErrorMessage<uint8_t>(PSTR("SetReportParser"), 1  );
   
   lcd_display.display_herr();
+
+  AileronNbChannel = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Aileron);//AILERON + 1;
+  ElevatorNbChannel   = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Elevator);//THROTTLE + 1;
+  RudderNbChannel  = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Rudder);//RUDDER + 1;
+  ThrottleNbChannel  = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Throttle);//RUDDER + 1;
+
+  // Serial.print("Ail:");Serial.print(AileronNbChannel);
+  // Serial.print("\tEle:");Serial.print(ElevatorNbChannel);
+  // Serial.print("\tRud:");Serial.print(RudderNbChannel);
+  // Serial.print("\tThr:");Serial.println(ThrottleNbChannel);
   
   rcs.init();
+
+  
 
 #if (MODE == PPM)
   //ppmEncoder.begin(PPM_OUTPUT_PIN);
@@ -285,7 +285,12 @@ ThrottleNbChannel;
   Serial.print(" Cam Yaw:");
   Serial.println(rcs.camera_yaw);
 #endif
-#endif  
+#endif
+
+//  Serial.print(" Cam Pitch:");
+//  Serial.print(ppmOut[6]);
+//  Serial.print(" Cam Yaw:");
+//  Serial.println(ppmOut[7]);  
 }
 
 #if (MODE == BLUETOOTH)
