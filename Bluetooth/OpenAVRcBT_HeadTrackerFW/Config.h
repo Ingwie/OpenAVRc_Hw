@@ -115,8 +115,14 @@
   #define BUTTON_INPUT 10
 #endif
 
-// Arduino LED
-#define  ARDUINO_LED 13
+
+#if defined(__AVR_ATmega328P__)
+#define  ARDUINO_LED 13// Arduino LED
+#endif
+#if defined(__AVR_ATmega32U4__) 
+#define  ARDUINO_LED 17//RXLED
+#endif
+
 
 // Pin definition for LED and buzzer (Fatshark goggles)
 #if FATSHARK_HT_MODULE
