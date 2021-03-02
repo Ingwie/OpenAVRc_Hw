@@ -31,6 +31,13 @@
 ************************************************************************** 
 */
 
+/*
+ Libraries used for this project:
+ USB_Host_Shield_2.0: https://github.com/felis/USB_Host_Shield_2.0
+ Rc-Navy libraries  : (Rcul, TinyPinChange, TinyCppmGen) https://github.com/RC-Navy/DigisparkArduinoIntegration/tree/master/libraries
+ SoftwareSerial     : https://github.com/PaulStoffregen/SoftwareSerial
+ */
+
 #include <usbhid.h>
 #include <hiduniversal.h>
 #include <usbhub.h>
