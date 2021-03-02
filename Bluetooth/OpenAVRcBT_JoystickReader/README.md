@@ -75,12 +75,12 @@ Dans tous les cas, démarrer le module réception en premier.
 ## Utilisation du Joystick Logitech 3D Pro
 - Le bouton **HAT** permet de gérer une caméra en direction (gauche/droite) et hauteur (hat/bas).  
 - 3 **MODES** sont possibles:  
-1.*exponentiel*, bouton 5(passage de haut en bas ou droite à gauche rapide)  
-2.*lent*, bouton 4 (passage de haut en bas ou droite à gauche lent)  
-3.*min max*, bouton 3  (passage de haut en bas ou droite à gauche d'un coup)  
+* `exponentiel`, bouton 5(passage de haut en bas ou droite à gauche rapide)  
+* `lent`, bouton 4 (passage de haut en bas ou droite à gauche lent)  
+* `min max`, bouton 3  (passage de haut en bas ou droite à gauche d'un coup)  
 
-- Le bouton 1 recentre la caméra.  
-- Le bouton 6 met en route l'auto centrage de la caméra.  
+  * Le bouton 1 recentre la caméra.  
+  * Le bouton 6 met en route l'auto centrage de la caméra.  
 
 La caméra en connectée sur les voies 7 et 8.
 
