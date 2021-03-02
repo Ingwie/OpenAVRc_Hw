@@ -69,12 +69,16 @@ void RCState::button_changed(uint8_t but_id) {
 	if ((button_state_change_time[but_id] > 100) && (button_state[but_id] == false)) {
 		switch (but_id) {
   		case 2: channel5 = !channel5;break;
-  		case 7: flight_mode_code = 1;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 8: flight_mode_code = 2;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 9:	flight_mode_code = 3;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 10:flight_mode_code = 4;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 11:flight_mode_code = 5;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 12:flight_mode_code = 6;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
+     
+  		//channel 6
+    	case 8: flight_mode_code = 1;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
+  		case 10: flight_mode_code = 2;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
+  		case 12: flight_mode_code = 3;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
+  		case 7: flight_mode_code = 4;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
+  		case 9: flight_mode_code = 5;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
+  		case 11: flight_mode_code = 6;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
+
+      //channel 7&8
   		case 1: camera_yaw = CENTER_VALUE;camera_pitch = CENTER_VALUE;break;
   		case 6: auto_center = !auto_center;break;
   		case 5: camera_mode = CAMERA_MODES::exponent; break;//0
