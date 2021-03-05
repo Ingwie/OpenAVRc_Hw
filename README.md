@@ -1,5 +1,5 @@
 # OpenAVRc_Hw
-OpenAVRc Hardware and addons
+
 ----------
 **Welcome to**
 =========
@@ -11,9 +11,14 @@ OpenAVRc Hardware and addons
               
               =========================================
 ----------
-## Outline of the documentation
+## OpenAVRc Hardware and addons
 1. Introduction (this page)
+
+	You will find here all hardwares developped by the OpenAVRc Team.
+	
 1. OpenAVRc Shield
+
+   This is the main board used by our [OpenAVRc project](https://github.com/Ingwie/OpenAVRc_Dev).
    * [V2.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.0_PM)
    * [V2.1](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.1_PM)
    * [V2.2](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM)
