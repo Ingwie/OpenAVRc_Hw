@@ -58,7 +58,7 @@
    
    It's also possible to use a Bluetooth mode.
    
-   This Bluetooth mode can be used for use an external Joystick for command the transmitter or use a Head Tracker for PFV or replace PPM cable for use with a simulator.
+   This Bluetooth mode can be used for use an external Joystick for command the transmitter or use a Head Tracker for FPV or replace PPM cable for use with a simulator.
    
    * OpenAVRcBT_JoystickReader [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader)
    * OpenAVRcBT_ToSimulator    [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_ToSimulator)
