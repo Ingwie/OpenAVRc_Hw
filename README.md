@@ -49,6 +49,21 @@
    * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20LM386%20amplifier)
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20LM386%20amplifier/LM386Amplifier_Top.jpg)
+   
+1. Bluetooth feature
+
+   Our OpenAVRc transmitter can connect two transmitters for schooling mode.
+   
+   One use the master role and the other the slave role.
+   
+   It's also possible to use a Bluetooth mode.
+   
+   This Bluetooth mode can be used for use an external Joystick for command the transmitter or use a Head Tracker for PFV or replace PPM cable for use with a simulator.
+   
+   * OpenAVRcBT_JoystickReader [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader)
+   * OpenAVRcBT_ToSimulator    [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_ToSimulator)
+   * OpenAVRcBT_HeadTrackerFW [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_HeadTrackerFW)
+
 ----------
 
    OpenAVRc is free software: you can redistribute it and/or modify    
