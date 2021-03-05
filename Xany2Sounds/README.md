@@ -9,7 +9,7 @@ For use it, you need:
 - Height switch.
 
 See our documentation here for all connections:
-https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documentation/Compilez%20votre%20FW%20OpenAVRc_V3.pdf
+https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/documentation/Compilez%20votre%20FW%20OpenAVRc_V3.pdf
 
 Each X-Any switch command one sound.
 With 8 switchs you can command 8 sounds.
@@ -68,7 +68,7 @@ Follow the JQ6500 documentation [here](https://sparks.gogo.co.nz/jq6500/index.ht
 **Wires**
 See picture file.
 
-![here](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/PCB/Xany2Sounds/Xany2Sounds.jpg)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB/Xany2Sounds/Xany2Sounds.jpg)
 
 Good use.
 

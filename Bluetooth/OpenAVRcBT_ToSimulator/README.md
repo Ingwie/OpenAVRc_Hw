@@ -9,7 +9,7 @@ Deux options sont possibles:
 1. Le module Bluetooth côté réception, associé à un Arduino Pro Micro, simule un signal **CPPM**.
 2. Le module Bluetooth côté réception, associé à un Arduino Pro Micro, simule un **Joystick**.
  
- Le code Arduino est téléchargeable [ici](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/PCB/Bluetooth/OpenAVRcBT_ToSimulator/OpenAVRcBT_ToSimulator.ino).
+ Le code Arduino est téléchargeable [ici](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_ToSimulator/OpenAVRcBT_ToSimulator.ino).
 
 ## Utiliser le module réception en mode PPM
  Configurer dans le code OpenAVRcBT_ToSimulator.ino, ligne 79,  **#define MODE PPM**
@@ -18,7 +18,7 @@ Deux options sont possibles:
  Configurer dans le code OpenAVRcBT_ToSimulator.ino, ligne 79,  **#define MODE JOYSTICK**
  
 ## Réaliser le câblage 
-Utiliser le croqui ![suivant](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/PCB/Bluetooth/OpenAVRcBT_ToSimulator/BTSIM.jpg) .
+Utiliser le croqui ![suivant](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_ToSimulator/BTSIM.jpg) .
 
 ## Configurer le module réception
 1. Décommenter à la ligne 35 **#define AT_INIT** .
@@ -32,12 +32,12 @@ Utiliser le croqui ![suivant](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/PCB
 2. Configurer en mode 'Master'.
 3. Lancer un **'Scan'**, vous devriez voir un **BT/SIM**.  Sélectionnez le.
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/PCB/Bluetooth/OpenAVRcBT_ToSimulator/BTScanResult.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_ToSimulator/BTScanResult.jpg)
 
 4. Validez **'Auto Connect'**.
 5. Créer un modèle est choisir SIM/BT.
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/PCB/Bluetooth/OpenAVRcBT_ToSimulator/BTSIM_model.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_ToSimulator/BTSIM_model.jpg)
 
 6. Eteindre puis redémarrer la radio, celle-ci devrait alors ce connecter au module réception, les leds des deux modules se mettront alors à clignoter toutes les 2 secondes.
 
