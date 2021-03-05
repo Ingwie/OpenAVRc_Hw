@@ -19,9 +19,9 @@
 1. OpenAVRc Shield
 
    This is the main board used by our [OpenAVRc project](https://github.com/Ingwie/OpenAVRc_Dev).
-   * [V2.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.0_PM)
+   * [V2.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.0_PM) (deprecated)
    * [V2.1](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.1_PM)
-   * [V2.2](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM)
+   * [V2.2](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM) (actually under development)
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM/Mega_2560%20core%20mini_full_2.2_3D.jpg)
 1. MultiSwitch_Sw16-ProMicro
