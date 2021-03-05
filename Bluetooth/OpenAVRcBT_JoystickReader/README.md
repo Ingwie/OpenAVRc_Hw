@@ -24,23 +24,23 @@ Deux options sont possibles:
 
 Cette solution utilise un shield Arduino de type *USB Host Shield v2.0*.
 
-![ici](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/UsbHostShieldv2.0.jpg)     ![ici](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/UsbHostShield&Uno.jpg)
+![ici](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/UsbHostShieldv2.0.jpg)     ![ici](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/UsbHostShield&Uno.jpg)
 
 La plupart des shields Usb sont des copies. Sur presque toutes, il faut réaliser trois ponts de soudures ainsi:
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/UsbHostShield_link.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/UsbHostShield_link.jpg)
 
 Utiliser l'un des croquis suivants:
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/BTSIMUno.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/BTSIMUno.jpg)
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/BTSIMLeonardo.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/BTSIMLeonardo.jpg)
 
 ## B. Carte Pro Mini 3,3v/8Mhz
 
 Cette solution utilise un Pro Mini 3,3v/8Mhz car le mini shield usb ne supporte que 3,3v.
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/BTSIMProMini.jpg) .
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/BTSIMProMini.jpg) .
 
 ## Configurer le module réception
 1. Installer les bibliothèques [USB Host Shield Library 2.0](https://www.arduinolibraries.info/libraries/usb-host-shield-library-2-0) et [PPMEncoder](https://github.com/schinken/PPMEncoder) dans l'IDE Arduino.
@@ -57,16 +57,16 @@ Cette solution utilise un Pro Mini 3,3v/8Mhz car le mini shield usb ne supporte 
 2. Configurer en mode 'Master'.
 3. Lancer un **'Scan'**, vous devriez voir un **BT/SIM**.  Sélectionnez le.
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/BTScanResult.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/BTScanResult.jpg)
 
 4. Validez **'Auto Connect'**.
 5. Créer un modèle et choisir autre chose que SIM/BT (par exemple **PPM** ou **Frsky-X**).
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/model.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/model.jpg)
 
 6. Configurer le mixer du modèle, par exemple, ainsi.
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/mixer.jpg)   ![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/mixer2.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/mixer.jpg)   ![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/mixer2.jpg)
 
 7. Eteindre puis redémarrer la radio, celle-ci devrait alors ce connecter au module réception, les leds des deux modules se mettront alors à clignoter toutes les 2 secondes.
 
@@ -84,7 +84,7 @@ Dans tous les cas, démarrer le module réception en premier.
 
 La caméra en connectée sur les voies 7 et 8.
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/LE3DP_ButtonsMapping.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/LE3DP_ButtonsMapping.jpg)
 
 
 
