@@ -29,7 +29,7 @@ You can select also these modes in confuration menu.
 **Upload the HEX file:**
 
 I don't give sources, because X-Any libraries are not Open Source for the receive side.
-You can found binary file [here](https://github.com/Ingwie/OpenAVRc_Dev/tree/V3/PCB/Xany2Sounds).
+You can found binary file [here](https://github.com/Ingwie/OpenAVRc_Dev/tree/V3/Xany2Sounds).
 Rename Xany2Sounds.ino.with_bootloader.promicro._hex file to Xany2Sounds.ino.with_bootloader.promicro.hex
 Pro Micro use a particular method for upload a code.
 You can use the program https://github.com/uriba107/32u4_hexuploader .
@@ -68,7 +68,7 @@ Follow the JQ6500 documentation [here](https://sparks.gogo.co.nz/jq6500/index.ht
 **Wires**
 See picture file.
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB/Xany2Sounds/Xany2Sounds.jpg)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Sounds/Xany2Sounds.jpg)
 
 Good use.
 
