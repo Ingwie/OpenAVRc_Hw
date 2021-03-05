@@ -68,7 +68,7 @@ Follow the JQ6500 documentation [here](https://sparks.gogo.co.nz/jq6500/index.ht
 **Wires**
 See picture file.
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Sounds/Xany2Sounds.jpg)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Sounds/Xany2Sounds.jpg)
 
 Good use.
 
