@@ -80,7 +80,10 @@ Dans tous les cas, démarrer le module réception en premier.
   * `min max`, bouton 3  (passage de haut en bas ou droite à gauche d'un coup)  
 
 * Le bouton 1 recentre la caméra.  
-* Le bouton 6 met en route l'auto centrage de la caméra.  
+* Le bouton 6 met en route l'auto centrage de la caméra. 
+
+* Les boutons 8,10 et 12 commandent la voie 5.
+* Les boutons 7,9 et 11 commandent la voie 6. 
 
 La caméra en connectée sur les voies 7 et 8.
 

@@ -8,24 +8,37 @@ void RCState::init()
 	roll = CENTER_VALUE;
 
 	throttle = FAIL_SAFE_VALUE;
-
-	channel5 = false;
-
+ 
+  channel5_mode = FAIL_SAFE_VALUE;
 	flight_mode = FAIL_SAFE_VALUE;
-	auto_center = false;
+  
+	//auto_center = false;
 
 	camera_pitch = CENTER_VALUE;
 	camera_yaw = CENTER_VALUE;
+
+  RCState::readEEPROM();
+
 }
 
 void RCState::readEEPROM()
 {
-//  auto_center = EEPROM.read(0);((auto_center==0)?false:true)
-//  channel5    = EEPROM.read(0);((channel5==0)?false:true)
+  //camera mode
+  cam_mode = EEPROM.read(0);
+  switch (cam_mode) {
+    case 0: camera_mode = CAMERA_MODES::exponent;break;
+    case 1: camera_mode = CAMERA_MODES::slow;break;
+    case 2: camera_mode = CAMERA_MODES::max_min;break;
+  }
+  auto_center = (EEPROM.read(1)==0?false:true);
+//  channel5    = (EEPROM.read(2)==0?false:true);
 }
 
-void RCState::writeEEPROM()
+void RCState::writeEEPROMdefault()
 {
+  EEPROM.put(0,0);//camera mode (default exponent)
+  EEPROM.put(1,0);//auto center camera on/off (default off)
+  //EEPROM.put(2,0);//channel5 minimum val
 }
 
 void RCState::data_updated() {
@@ -68,15 +81,16 @@ void RCState::data_updated() {
 void RCState::button_changed(uint8_t but_id) {
 	if ((button_state_change_time[but_id] > 100) && (button_state[but_id] == false)) {
 		switch (but_id) {
-  		case 2: channel5 = !channel5;break;
+  		case 2: break;//FAILSAFE On/Off
      
-  		//channel 6
-    	case 8: flight_mode_code = 1;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 10: flight_mode_code = 2;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 12: flight_mode_code = 3;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 7: flight_mode_code = 4;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 9: flight_mode_code = 5;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
-  		case 11: flight_mode_code = 6;flight_mode = map(flight_mode_code, 0, 7, MIN_VALUE, MAX_VALUE); break;
+  		//channel 5
+    	case 8: channel5_mode = 1000; break;
+  		case 10: channel5_mode = 1500; break;
+  		case 12: channel5_mode = 2000; break;
+     //channel 6
+  		case 7: flight_mode = 1000; break;
+  		case 9: flight_mode = 1500; break;
+  		case 11: flight_mode = 2000; break;
 
       //channel 7&8
   		case 1: camera_yaw = CENTER_VALUE;camera_pitch = CENTER_VALUE;break;
@@ -232,9 +246,12 @@ void RCState::OnButtonUp(uint8_t but_id) {
   button_state_change_time[but_id] = abs(abs(millis()) - abs(button_state_changed[but_id]));
   button_state_changed[but_id] = millis();
   button_changed(but_id);
+  if (but_id != 0)
+  {
+//    Serial.print("Up: ");
+//    Serial.println(but_id, DEC);    
+  }
 
-//  Serial.print("Up: ");
-//  Serial.println(but_id, DEC);
 }
 
 void RCState::OnButtonDn(uint8_t but_id) {
@@ -243,6 +260,9 @@ void RCState::OnButtonDn(uint8_t but_id) {
   button_state_changed[but_id] = millis();
   button_changed(but_id);
 
-//  Serial.print("Dn: ");
-//  Serial.println(but_id, DEC);
+  if (but_id != 0)
+  {
+//    Serial.print("Dn: ");
+//    Serial.println(but_id, DEC);    
+  }
 }

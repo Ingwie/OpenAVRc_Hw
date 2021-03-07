@@ -48,7 +48,7 @@
 #include "RcModeConfig.h"
 
 //#define AT_INIT
-//#define DEBUG
+#define DEBUG
 
 #define PPM         0
 #define BLUETOOTH   1
@@ -129,9 +129,7 @@ void setup()
   // Serial.print("\tThr:");Serial.println(ThrottleNbChannel);
   
   rcs.init();
-
   
-
 #if (MODE == PPM)
   //ppmEncoder.begin(PPM_OUTPUT_PIN);
   TinyCppmGen.begin(TINY_CPPM_GEN_NEG_MOD, NUM_CHANNELS, CPPM_PERIOD_US);//Futaba use negative pulse
@@ -220,7 +218,7 @@ void loop()
   {
     if (is_connected)
     {
-      lcd_display.display(rcs.flight_mode_code, rcs.channel5, (byte)rcs.camera_mode, rcs.auto_center);
+      lcd_display.display(rcs.flight_mode, rcs.channel5_mode, (byte)rcs.camera_mode, rcs.auto_center);
       lcd_display.print_all(&rcs);
       //lcd_display.display_rx_rssi(frsky_accessor.link_down);
       //lcd_display.display_tx_rssi(frsky_accessor.link_up);
@@ -254,7 +252,7 @@ ThrottleNbChannel;
   ppmOut[ElevatorNbChannel] = rcs.pitch;
   ppmOut[ThrottleNbChannel] = rcs.throttle;
   ppmOut[RudderNbChannel] = rcs.yaw;
-  ppmOut[4] = ((rcs.channel5) ? rcs.MAX_VALUE : rcs.MIN_VALUE);
+  ppmOut[4] = rcs.channel5_mode;
   ppmOut[5] = rcs.flight_mode;
   ppmOut[6] = rcs.camera_pitch;
   ppmOut[7] = rcs.camera_yaw;
@@ -281,10 +279,10 @@ ThrottleNbChannel;
   Serial.print(rcs.yaw);
 
   Serial.print(" CH5:");
-  Serial.print((rcs.channel5) ? rcs.MAX_VALUE : rcs.MIN_VALUE);
-  
+  Serial.print(rcs.channel5_mode);
   Serial.print(" Fly Mode:");
   Serial.print(rcs.flight_mode);
+  
   Serial.print(" Camera Mode:");
   Serial.print((uint8_t)rcs.camera_mode);
   Serial.print(" Cam Pitch:");

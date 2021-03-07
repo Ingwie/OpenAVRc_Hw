@@ -58,25 +58,25 @@ public:
 		biglcd.print("Disconnected");
 	}
 
-	void display(byte flight_mode, bool channel5, byte camera_mode, bool camera_auto_center) {
+	void display(int flight_mode, int channel5_mode, byte camera_mode, bool camera_auto_center) {
 		/*biglcd.clear();
 		biglcd.setCursor(0, 0);*/
 		
-		//biglcd.print("M");
-		//biglcd.print(flight_mode);
+		biglcd.print("M");
+		biglcd.print(flight_mode);
 
-		//biglcd.setCursor(3, 0);
-		//biglcd.print("CH5");
-		//biglcd.print(channel5);
+		biglcd.setCursor(3, 0);
+		biglcd.print("CH5");
+		biglcd.print(channel5_mode);
 
-		//biglcd.setCursor(8, 0);
-		//biglcd.print("CM");
-		//biglcd.print(camera_mode);
+		biglcd.setCursor(8, 0);
+		biglcd.print("CM");
+		biglcd.print(camera_mode);
 
-		//biglcd.setCursor(12, 0);
-		//if (camera_auto_center) {
-		//	biglcd.print("CEN");
-		//}
+		biglcd.setCursor(12, 0);
+		if (camera_auto_center) {
+			biglcd.print("CEN");
+		}
 
 		//display_rc(flight_mode, channel5, camera_mode, camera_auto_center);
 
@@ -86,12 +86,12 @@ public:
 	void write_mode(RCState *rcs) {
 		biglcd.setCursor(0, 0);
 		biglcd.print("M");
-		biglcd.print(rcs->flight_mode_code);
+		biglcd.print(rcs->flight_mode);
 	}
 
 	void write_ch5_simple_mode(RCState *rcs) {
 		biglcd.setCursor(3, 0);
-		if (rcs->channel5 == 0) {
+		if (rcs->channel5_mode == 1000) {
 			biglcd.print("+");
 		}
 		else {

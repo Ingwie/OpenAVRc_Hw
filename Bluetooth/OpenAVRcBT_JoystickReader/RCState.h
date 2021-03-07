@@ -46,7 +46,7 @@ class RCState
 	void init();
 
   void readEEPROM();
-  void writeEEPROM();  
+  void writeEEPROMdefault();  
 
 	void data_updated();
 	void button_changed(uint8_t but_id);
@@ -62,10 +62,11 @@ class RCState
 	int throttle; //throttle (should be reversed)
 	int yaw;	  //RC yaw
 
-	bool channel5; //toggle on button 2
-
-	byte flight_mode_code;
-	int flight_mode; //divide (MAX_VALUE - MIN_VALUE) / 6 - for 6 buttons
+	//byte channel5; 
+  int channel5_mode; //divide (MAX_VALUE - MIN_VALUE) / 3 - for 3 buttons
+  
+	//byte flight_mode_code;
+	int flight_mode; //divide (MAX_VALUE - MIN_VALUE) / 3 - for 3 buttons
 
 	HAT_POSITION hat_position; //hat button position
 	unsigned long up_down_changed;
@@ -76,6 +77,7 @@ class RCState
 	bool button_state[MAX_BUTTONS];
 	unsigned long button_state_changed[MAX_BUTTONS];
 	unsigned long button_state_change_time[MAX_BUTTONS];
+
 
 	CAMERA_MODES camera_mode; //which camera mode to apply on camera yaw and pitch for each hat joystick action
   uint8_t cam_mode;
