@@ -3,9 +3,9 @@
 
 void RCState::init()
 {
-	pitch = CENTER_VALUE;
-	yaw = CENTER_VALUE;
-	roll = CENTER_VALUE;
+	elevator = CENTER_VALUE;
+	rudder = CENTER_VALUE;
+	aileron = CENTER_VALUE;
 
 	throttle = FAIL_SAFE_VALUE;
  
@@ -50,12 +50,12 @@ void RCState::data_updated() {
 	if (update_iteration > 0) {
 		update_iteration = 0;
 		hat_tick();
-		Serial.print("pitch ");
-		Serial.print(pitch);
-		Serial.print(" roll ");
-		Serial.print(roll);
-		Serial.print(" yaw ");
-		Serial.print(yaw);
+		Serial.print("elevator ");
+		Serial.print(elevator);
+		Serial.print(" aileron ");
+		Serial.print(aileron);
+		Serial.print(" rudder ");
+		Serial.print(rudder);
 		Serial.print(" throttle ");
 		Serial.print(throttle);
 		Serial.print(" flight mode ");
@@ -81,7 +81,10 @@ void RCState::data_updated() {
 void RCState::button_changed(uint8_t but_id) {
 	if ((button_state_change_time[but_id] > 100) && (button_state[but_id] == false)) {
 		switch (but_id) {
-  		case 2: break;//FAILSAFE On/Off
+  		case 2: 
+  		  channel5_mode = FAIL_SAFE_VALUE;
+        flight_mode   = FAIL_SAFE_VALUE;
+  		  break;
      
   		//channel 5
     	case 8: channel5_mode = 1000; break;
@@ -155,7 +158,7 @@ void RCState::hat_tick() {
 	/*Serial.print("Mode: ");
 	Serial.print((int)camera_mode);
 
-	Serial.print(" Current camera pitch: ");
+	Serial.print(" Current camera Pitch: ");
 	Serial.print(camera_pitch);
 	Serial.print(" Yaw: ");
 	Serial.print(camera_yaw);

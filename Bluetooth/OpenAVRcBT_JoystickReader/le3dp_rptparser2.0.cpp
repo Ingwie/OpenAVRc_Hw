@@ -41,10 +41,10 @@ void JoystickEvents::OnGamePadChanged(const GamePadEventData *evt)
   if (evt->buttons_b) m_Joy_Button = 9 + log(evt->buttons_b)/log(2);
 
 
-  rcState->roll = map(evt->x, 0, 1023, rcState->MIN_VALUE, rcState->MAX_VALUE);
-  rcState->pitch = map(evt->y, 0, 1023, rcState->MIN_VALUE, rcState->MAX_VALUE);
+  rcState->aileron = map(evt->x, 0, 1023, rcState->MIN_VALUE, rcState->MAX_VALUE);
+  rcState->elevator = map(evt->y, 0, 1023, rcState->MIN_VALUE, rcState->MAX_VALUE);
   rcState->throttle = map(evt->slider, 0, 255, rcState->MAX_VALUE,rcState->MIN_VALUE);
-  rcState->yaw = map(evt->twist, 0, 255, rcState->MIN_VALUE, rcState->MAX_VALUE);
+  rcState->rudder = map(evt->twist, 0, 255, rcState->MIN_VALUE, rcState->MAX_VALUE);
 //  
   rcState->button_changed(m_Joy_Button);
   rcState->hat_tick();

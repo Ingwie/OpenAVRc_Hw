@@ -57,10 +57,10 @@ class RCState
   
 	bool is_connected;
 
-	int pitch;	//RC pitch
-	int roll;	 //RC roll
+	int elevator;	//RC elevator
+	int aileron;	//RC aileron
 	int throttle; //throttle (should be reversed)
-	int yaw;	  //RC yaw
+	int rudder;	  //RC rudder
 
 	//byte channel5; 
   int channel5_mode; //divide (MAX_VALUE - MIN_VALUE) / 3 - for 3 buttons

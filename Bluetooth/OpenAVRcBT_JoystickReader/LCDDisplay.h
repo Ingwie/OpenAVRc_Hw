@@ -165,16 +165,16 @@ public:
 		write_camera_values(rcs);
 
 		biglcd.setCursor(0, 1);
-		write_number_value(rcs->pitch, rcs);
+		write_number_value(rcs->elevator, rcs);
 
 		biglcd.setCursor(3, 1);
-		write_number_value(rcs->roll,rcs);
+		write_number_value(rcs->aileron,rcs);
 
 		biglcd.setCursor(7, 1);
 		write_unsigned_number_value(rcs->throttle,rcs);
 
 		biglcd.setCursor(11, 1);
-		write_number_value(rcs->yaw,rcs);
+		write_number_value(rcs->rudder,rcs);
 
 		
 	}

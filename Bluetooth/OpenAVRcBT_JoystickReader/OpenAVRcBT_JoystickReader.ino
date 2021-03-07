@@ -226,7 +226,7 @@ void loop()
     update_now = 0;
   }  
 
-  //Use to read joystick input to controller
+  //Use to read joystick input to contaileroner
   //JoyEvents.PrintValues();                                       //Returns joystick values to user
   //JoyEvents.GetValues(Xval, Yval, Hat, Twist, Slider, Button);   //Copies joystick values to user
   JoyEvents.GetValues(Hat, Button);
@@ -248,10 +248,10 @@ AileronNbChannel;
 ThrottleNbChannel;
 */
   
-  ppmOut[AileronNbChannel] = rcs.roll;
-  ppmOut[ElevatorNbChannel] = rcs.pitch;
+  ppmOut[AileronNbChannel] = rcs.aileron;
+  ppmOut[ElevatorNbChannel] = rcs.elevator;
   ppmOut[ThrottleNbChannel] = rcs.throttle;
-  ppmOut[RudderNbChannel] = rcs.yaw;
+  ppmOut[RudderNbChannel] = rcs.rudder;
   ppmOut[4] = rcs.channel5_mode;
   ppmOut[5] = rcs.flight_mode;
   ppmOut[6] = rcs.camera_pitch;
@@ -272,11 +272,11 @@ ThrottleNbChannel;
   Serial.print("Trottle:");
   Serial.print(rcs.throttle);
   Serial.print(" Aileron:");
-  Serial.print(rcs.roll);
+  Serial.print(rcs.aileron);
   Serial.print(" Elevator:");
-  Serial.print(rcs.pitch);
+  Serial.print(rcs.elevator);
   Serial.print(" Rudder:");
-  Serial.print(rcs.yaw);
+  Serial.print(rcs.rudder);
 
   Serial.print(" CH5:");
   Serial.print(rcs.channel5_mode);
@@ -285,16 +285,16 @@ ThrottleNbChannel;
   
   Serial.print(" Camera Mode:");
   Serial.print((uint8_t)rcs.camera_mode);
-  Serial.print(" Cam Pitch:");
+  Serial.print(" Cam elevator:");
   Serial.print(rcs.camera_pitch);
-  Serial.print(" Cam Yaw:");
+  Serial.print(" Cam rudder:");
   Serial.println(rcs.camera_yaw);
 #endif
 #endif
 
-//  Serial.print(" Cam Pitch:");
+//  Serial.print(" Cam pitch:");
 //  Serial.print(ppmOut[6]);
-//  Serial.print(" Cam Yaw:");
+//  Serial.print(" Cam yaw:");
 //  Serial.println(ppmOut[7]);  
 }
 
