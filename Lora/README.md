@@ -1,6 +1,6 @@
-Protocol Lora (Long Range) with OpenAVRc.
+**Protocol Lora (Long Range) with OpenAVRc**
 
-If you follow the [MultiProtocol](https://www.rcgroups.com/forums/showthread.php?2165676-DIY-Multiprotocol-TX-Module) thread on Rcgroups, you know that it's possible to use a SX1276 RF module in 915Mhz or 868Mhz.
+If you follow the [MultiProtocol](https://www.rcgroups.com/forums/showthread.php?2165676-DIY-Multiprotocol-TX-Module) (MPM) thread on Rcgroups, you know that it's possible to use a SX1276 RF module in 915Mhz or 868Mhz.
 
 This system use the R9mm or R9 as receiver.
 
