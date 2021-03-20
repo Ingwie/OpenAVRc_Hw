@@ -15,6 +15,8 @@ If you use a DIY 4in1 with atmega328p 5v, you need to use a level convert.
 
 See the schematic file PCB v2.3&Lora.pdf for connections.
 
+![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/MPM_FrskyR9_stm32.jpg)
+
 The MPM code add the Lora feature only with a STM32 who has enough pins for command cc2500, a7105, cyrf6936, nrf24l01+ and rfm95w in same time.
 
 Whis the atmega328, we need to do a choice. Our choice is to use the CS (chip select) of the cyrf6936.
