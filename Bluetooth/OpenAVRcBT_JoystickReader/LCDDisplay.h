@@ -11,71 +11,78 @@
 #include <LiquidCrystal_I2C.h>
 
 //Pins A4-SDA, A5-SCL
-LiquidCrystal_I2C	biglcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
+LiquidCrystal_I2C	oled(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
 
 class LCDDisplay {
 public:
 	void setup() {
-		biglcd.setBacklightPin(3, POSITIVE);
-		biglcd.setBacklight(HIGH); // NOTE: You can turn the backlight off by setting it to LOW instead of HIGH
-		biglcd.begin(20, 4);
-		biglcd.clear();
-		biglcd.setCursor(0, 0);
-		biglcd.print("Joystick PPM");
-		biglcd.setCursor(0, 1);
-		biglcd.print("Dror Gluska");
+		oled.setBacklightPin(3, POSITIVE);
+		oled.setBacklight(HIGH); // NOTE: You can turn the backlight off by setting it to LOW instead of HIGH
+		oled.begin(20, 4);
+		oled.clear();
+		oled.setCursor(3, 0);
+		oled.print("Joystick  PPM");
+		oled.setCursor(1, 2);
+		oled.print("**OpenAVRc  Team**");
 	}
 
 	void display_oerr() {
-		biglcd.clear();
-		biglcd.setCursor(0, 0);
-		biglcd.print("OSC not started");
+		oled.clear();
+		oled.setCursor(0, 0);
+		oled.print("OSC not started");
 	}
 
 	void display_herr() {
-		biglcd.clear();
-		biglcd.setCursor(0, 0);
-		biglcd.print("HID set error");
+		oled.clear();
+		oled.setCursor(0, 0);
+		oled.print("HID set error");
 	}
 
 	void display_joystick_connected() {
-		biglcd.clear();
-		biglcd.setCursor(0, 0);
-		biglcd.print("Joystick");
-		biglcd.setCursor(0, 1);
-		biglcd.print("Connected");
+		oled.clear();
+		oled.setCursor(6, 1);
+		oled.print("Joystick");
+		oled.setCursor(6, 2);
+		oled.print("Connected");
 	}
 
 	void clear() {
-		biglcd.clear();
+		oled.clear();
 	}
 
 	void display_joystick_disconnected() {
-		biglcd.clear();
-		biglcd.setCursor(0, 0);
-		biglcd.print("Joystick");
-		biglcd.setCursor(0, 1);
-		biglcd.print("Disconnected");
+		oled.clear();
+		oled.setCursor(6, 1);
+		oled.print("Joystick");
+		oled.setCursor(4, 2);
+		oled.print("Disconnected");
 	}
 
 	void display(int flight_mode, int channel5_mode, byte camera_mode, bool camera_auto_center) {
-		/*biglcd.clear();
-		biglcd.setCursor(0, 0);*/
+		oled.clear();
+		oled.setCursor(0, 0);
 		
-		biglcd.print("M");
-		biglcd.print(flight_mode);
+		oled.print("Mode:");
+		oled.print(flight_mode);
 
-		biglcd.setCursor(3, 0);
-		biglcd.print("CH5");
-		biglcd.print(channel5_mode);
+    if (channel5_mode<1000)
+    {
+      oled.setCursor(13, 0);
+    }
+    else
+    {
+      oled.setCursor(12, 0);
+    }
+		oled.print("CH5:");
+		oled.print(channel5_mode);
 
-		biglcd.setCursor(8, 0);
-		biglcd.print("CM");
-		biglcd.print(camera_mode);
+		oled.setCursor(0, 1);
+		oled.print("CMode:");
+		oled.print(camera_mode);
 
-		biglcd.setCursor(12, 0);
+		oled.setCursor(17, 1);
 		if (camera_auto_center) {
-			biglcd.print("CEN");
+			oled.print("CEN");
 		}
 
 		//display_rc(flight_mode, channel5, camera_mode, camera_auto_center);
@@ -84,78 +91,78 @@ public:
 	}
 
 	void write_mode(RCState *rcs) {
-		biglcd.setCursor(0, 0);
-		biglcd.print("M");
-		biglcd.print(rcs->flight_mode);
+		oled.setCursor(0, 2);
+		oled.print("M");
+		oled.print(rcs->flight_mode);
 	}
 
 	void write_ch5_simple_mode(RCState *rcs) {
-		biglcd.setCursor(3, 0);
+		oled.setCursor(3, 2);
 		if (rcs->channel5_mode == 1000) {
-			biglcd.print("+");
+			oled.print("+");
 		}
 		else {
-			biglcd.print("o");
+			oled.print("o");
 		}
 	}
 
 	void write_camera_mode(RCState *rcs) {
-		biglcd.setCursor(5, 0);
+		oled.setCursor(5, 2);
 		switch (rcs->camera_mode) {
 		case CAMERA_MODES::exponent:
-			biglcd.print("*");
+			oled.print("*");
 			break;
 		case CAMERA_MODES::slow:
-			biglcd.print("#");
+			oled.print("#");
 			break;
 		case CAMERA_MODES::max_min:
-			biglcd.print((char)B11011011);
+			oled.print((char)B11011011);
 			break;
 		}
 
 		if (rcs->auto_center) {
-			biglcd.print("+");
+			oled.print("+");
 		}
 		else {
-			biglcd.print((char)B11110011);
+			oled.print((char)B11110011);
 		}
 	}
 
 	void write_number_value(int value,RCState *rcs) {
 		auto mapped_value = map(value, rcs->MIN_VALUE, rcs->MAX_VALUE, -99, +99);
 		if (mapped_value >= 0) {
-			biglcd.print(" ");
+			oled.print(" ");
 		}
 		if (mapped_value < 10 && mapped_value> -10) {
-			biglcd.print(" ");
+			oled.print(" ");
 		}
-		biglcd.print(mapped_value);
+		oled.print(mapped_value);
 	}
 
 	void write_unsigned_number_value(int value, RCState *rcs) {
 		auto mapped_value = map(value, rcs->MIN_VALUE, rcs->MAX_VALUE, 0, +99);
 		if (mapped_value >= 0) {
-			biglcd.print(" ");
+			oled.print(" ");
 		}
 		if (mapped_value < 10 && mapped_value> -10) {
-			biglcd.print(" ");
+			oled.print(" ");
 		}
-		biglcd.print(mapped_value);
+		oled.print(mapped_value);
 	}
 
 	void write_camera_values(RCState *rcs) {
-		biglcd.setCursor(8, 0);
+		oled.setCursor(8, 2);
 		write_number_value(rcs->camera_yaw, rcs);
 
-		biglcd.setCursor(12, 0);
+		oled.setCursor(12, 2);
 
 		write_number_value(rcs->camera_pitch, rcs);
 	}
 
 
 	void print_all(RCState *rcs) {
-		//biglcd.clear();
-		biglcd.setCursor(0, 0);
+		//oled.clear();
+		oled.setCursor(0, 2);
 
 		write_mode(rcs);
 
@@ -164,16 +171,16 @@ public:
 		write_camera_mode(rcs);
 		write_camera_values(rcs);
 
-		biglcd.setCursor(0, 1);
+		oled.setCursor(0, 3);
 		write_number_value(rcs->elevator, rcs);
 
-		biglcd.setCursor(3, 1);
+		oled.setCursor(3, 3);
 		write_number_value(rcs->aileron,rcs);
 
-		biglcd.setCursor(7, 1);
+		oled.setCursor(7, 3);
 		write_unsigned_number_value(rcs->throttle,rcs);
 
-		biglcd.setCursor(11, 1);
+		oled.setCursor(11, 3);
 		write_number_value(rcs->rudder,rcs);
 
 		
@@ -182,7 +189,7 @@ public:
 	void loop() {
 
 	}
-
+/*
 	void displayPercentage(uint8_t char_id, uint8_t value) {
 		byte char_remainder[3] = {
 			0b00100,
@@ -203,33 +210,33 @@ public:
 			char_value[i] = 0b11111;
 		}
 		char_value[row] = char_remainder[col];
-		biglcd.createChar(char_id, char_value);
+		oled.createChar(char_id, char_value);
 	}
 
 	void display_rx_rssi(uint8_t value) {
-		biglcd.setCursor(14, 1);
+		oled.setCursor(14, 1);
 
 		if (value == 255) {
-			biglcd.print("x");
+			oled.print("x");
 		}
 		else {
 			displayPercentage(0, value);
-			biglcd.print((char)0);
+			oled.print((char)0);
 		}
 	}
 
 	void display_tx_rssi(uint8_t value) {
-		biglcd.setCursor(15, 1);
+		oled.setCursor(15, 1);
 
 		if (value == 255) {
-			biglcd.print("x");
+			oled.print("x");
 		}
 		else {
 			displayPercentage(1, value);
-			biglcd.print((char)1);
+			oled.print((char)1);
 		}
 	}
-
+*/
 
 };
 

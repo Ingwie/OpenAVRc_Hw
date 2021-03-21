@@ -44,11 +44,12 @@
 #include "le3dp_rptparser2.0.h"
 #include <SPI.h>
 #include "LCDDisplay.h"
+//#include "SSD1309Display.h"
 
 #include "RcModeConfig.h"
 
 //#define AT_INIT
-#define DEBUG
+//#define DEBUG
 
 #define PPM         0
 #define BLUETOOTH   1
@@ -82,7 +83,8 @@ HIDUniversal                                    Hid(&Usb);
 JoystickEvents                                  JoyEvents;
 JoystickReportParser                            Joy(&JoyEvents, &rcs);
 
-LCDDisplay lcd_display;
+LCDDisplay disp;
+//SSD1309Display disp;
 
 int16_t channelOutputs[NUM_CHANNELS];
 #define FULL_CHANNEL_OUTPUTS(ch) channelOutputs[ch]
@@ -99,7 +101,8 @@ uint16_t ppmOut[8];
 
 void setup()
 {
-  lcd_display.setup();
+  disp.setup();
+  delay(5000);
  
   Serial.begin( 115200 );
   
@@ -109,14 +112,22 @@ void setup()
 
   Serial.println("Start");
   if (Usb.Init() == -1)
-      Serial.println("OSC did not start.");
-  lcd_display.display_oerr();
-  delay( 200 );
+  {
+    Serial.println("OSC did not start.");
+    disp.display_oerr();    
+  }
+  delay(200);
 
   if (!Hid.SetReportParser(0, &Joy))
-      ErrorMessage<uint8_t>(PSTR("SetReportParser"), 1  );
-  
-  lcd_display.display_herr();
+  {
+    ErrorMessage<uint8_t>(PSTR("SetReportParser"), 1  );
+    disp.display_herr();    
+  }
+  else
+  {
+    disp.display_joystick_connected();
+  }
+  delay(200);
 
   AileronNbChannel = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Aileron);//AILERON + 1;
   ElevatorNbChannel   = (uint8_t)pgm_read_byte(&ChannelOrder[channelsOrder].Elevator);//THROTTLE + 1;
@@ -192,9 +203,9 @@ void loop()
       is_connected = true;
       rcs.is_connected = true;
       Serial.println("joystick connected");
-      lcd_display.display_joystick_connected();
+      disp.display_joystick_connected();
       delay(200);
-      lcd_display.clear();
+      disp.clear();
     }
   }
   else
@@ -209,7 +220,7 @@ void loop()
       is_connected = false;
       rcs.is_connected = false;
       Serial.println("joystick disconnected");
-      lcd_display.display_joystick_disconnected();
+      disp.display_joystick_disconnected();
       delay(200);
     }
   }  
@@ -218,8 +229,8 @@ void loop()
   {
     if (is_connected)
     {
-      lcd_display.display(rcs.flight_mode, rcs.channel5_mode, (byte)rcs.camera_mode, rcs.auto_center);
-      lcd_display.print_all(&rcs);
+      disp.display(rcs.flight_mode, rcs.channel5_mode, (byte)rcs.camera_mode, rcs.auto_center);
+      //lcd_display.print_all(&rcs);
       //lcd_display.display_rx_rssi(frsky_accessor.link_down);
       //lcd_display.display_tx_rssi(frsky_accessor.link_up);
     }
