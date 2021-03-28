@@ -43,8 +43,6 @@
 #include <usbhub.h>
 #include "le3dp_rptparser2.0.h"
 #include <SPI.h>
-#include "LCDDisplay.h"
-//#include "SSD1309Display.h"
 
 #include "RcModeConfig.h"
 
@@ -55,6 +53,9 @@
 #define BLUETOOTH   1
 #define MODE PPM //Select PPM or BLUETOOTH
 
+#define SSD_TYPE 0
+#define LCD_TYPE 1
+#define DISPLAY_TYPE LCD_TYPE
 
 #define NUM_CHANNELS   8
 #if (MODE == PPM)
@@ -83,8 +84,13 @@ HIDUniversal                                    Hid(&Usb);
 JoystickEvents                                  JoyEvents;
 JoystickReportParser                            Joy(&JoyEvents, &rcs);
 
+#if (DISPLAY_TYPE == LCD_TYPE)
+#include "LCDDisplay.h"
 LCDDisplay disp;
-//SSD1309Display disp;
+#else if (DISPLAY_TYPE == SSD_TYPE)
+#include "SSD1306Display.h"
+SSD1306Display disp;
+#endif
 
 int16_t channelOutputs[NUM_CHANNELS];
 #define FULL_CHANNEL_OUTPUTS(ch) channelOutputs[ch]
@@ -98,11 +104,10 @@ uint16_t ppmOut[8];
 */
 #define BIN_NBL_TO_HEX_DIGIT(BinNbl)      ((BinNbl) < 10) ? ((BinNbl) + '0'): ((BinNbl) - 10 + 'A')
 
-
 void setup()
 {
   disp.setup();
-  delay(5000);
+  delay(1000);
  
   Serial.begin( 115200 );
   
@@ -230,7 +235,7 @@ void loop()
     if (is_connected)
     {
       disp.display(rcs.flight_mode, rcs.channel5_mode, (byte)rcs.camera_mode, rcs.auto_center);
-      //lcd_display.print_all(&rcs);
+      disp.print_all(&rcs);
       //lcd_display.display_rx_rssi(frsky_accessor.link_down);
       //lcd_display.display_tx_rssi(frsky_accessor.link_up);
     }
@@ -307,7 +312,7 @@ ThrottleNbChannel;
 //  Serial.print(ppmOut[6]);
 //  Serial.print(" Cam yaw:");
 //  Serial.println(ppmOut[7]);  
-}
+}// end loop
 
 #if (MODE == BLUETOOTH)
 void BT_Send_Channels()

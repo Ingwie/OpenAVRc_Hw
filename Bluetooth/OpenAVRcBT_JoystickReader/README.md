@@ -20,6 +20,7 @@ Deux options sont possibles:
  Configurer dans le code OpenAVRcBT_JoystickReader, ligne 51,  **#define MODE BLUETOOTH**
  
 # Réaliser le câblage
+
 ## A. Carte Uno ou Leonardo
 
 Cette solution utilise un shield Arduino de type *USB Host Shield v2.0*.
@@ -41,6 +42,12 @@ Utiliser l'un des croquis suivants:
 Cette solution utilise un Pro Mini 3,3v/8Mhz car le mini shield usb ne supporte que 3,3v.
 
 ![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/BTSIMProMini.jpg) .
+
+## Screen Option
+
+You use an LCD 20x4 or SSD1306/SSD1309 screen.
+
+In line 58, #define DISPLAY_TYPE **LCD_TYPE** // or **SSD_TYPE**
 
 ## Configurer le module réception
 1. Installer les bibliothèques [USB Host Shield Library 2.0](https://www.arduinolibraries.info/libraries/usb-host-shield-library-2-0) et [PPMEncoder](https://github.com/schinken/PPMEncoder) dans l'IDE Arduino.
