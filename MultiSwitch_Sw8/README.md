@@ -15,7 +15,7 @@ such as driving servos between 2 limit positions at a preprogrammed motion speed
 
 Nice for opening slowly a door or to rotate slowly cannon turrets, just by using a simple Off/On switch of the OpenAVRc transmitter (or by using a simple Logical Switch).
 
-![Configuration of the MS8-Xany decoder (Part 1](https://www.youtube.com/watch?v=y_skDGLVK1A)
+![Configuration of the MS8-Xany decoder (Part 1)](https://www.youtube.com/watch?v=y_skDGLVK1A)
 
 By default, all the outputs are configured in Digital mode (as with regular Multiswitch decoders).
 It is necessary to use a TTL USB/Serial converter (FTDI type) to access to the advanced mode for driving servos: it's described in the video.
