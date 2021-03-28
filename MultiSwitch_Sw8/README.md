@@ -4,11 +4,11 @@ Here after, please find a first video of the 8 output MS8-Xany Multiswitch decod
 
 Ms8 schematic:
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/MS8-Xany_Manuel_Utilisateur.pdf)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/D%C3%A9codeur%20MS8_X-Any.pdf)
 
 Ms8 PCB:
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/Décodeur MS8_X-Any_3D.jpg)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/D%C3%A9codeur%20MS8_X-Any_3D.jpg)
 
 It shows the MS8-Xany configuration in case the user wants to access to the advanced functionalities, 
 such as driving servos between 2 limit positions at a preprogrammed motion speed. 
