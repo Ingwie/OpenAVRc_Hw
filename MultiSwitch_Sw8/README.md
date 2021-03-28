@@ -30,6 +30,4 @@ Additionally, this decoder provides a supplement proportional channel: thus, eve
 
 The data transmission being digital, no tuning is needed.
 
-The next video will present the MS8-Xany decoder controlled by the OpenAVRc transmitter. Coming soon...
-
 RC Navy 
