@@ -17,6 +17,8 @@ Nice for opening slowly a door or to rotate slowly cannon turrets, just by using
 
 [Configuration of the MS8-Xany decoder (Part 1)](https://www.youtube.com/watch?v=y_skDGLVK1A)
 
+[![se of the MS8-Xany decoder (Part 2)](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/video2.jpg](https://www.youtube.com/watch?v=EJCJJWh63EM "Ms8-Xany Part 2")
+
 By default, all the outputs are configured in Digital mode (as with regular Multiswitch decoders).
 It is necessary to use a TTL USB/Serial converter (FTDI type) to access to the advanced mode for driving servos: it's described in the video.
 
