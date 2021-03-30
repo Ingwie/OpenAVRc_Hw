@@ -29,9 +29,13 @@ This second video describes:
 By default, all the outputs are configured in Digital mode (as with regular Multiswitch decoders).
 It is necessary to use a TTL USB/Serial converter (FTDI type) to access to the advanced mode for driving servos: it's described in the video.
 
-PCB + User Manual + HEX file to be loaded in the ATtiny84 microcontroller:
+Ms8 files:
+* [MS8-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8).
+* PCB: [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MultiSwitch_Sw8-KICAD.zip)
+* User Manual: [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MS8-Xany_Manuel_Utilisateur.pdf) [English](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MS8-Xany_User_manual.pdf)
+* HEX file to be loaded in the ATtiny84 microcontroller: [Linux](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Linux) [Windows](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Windows) 
 
-[MS8-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8).
+
 
 Additionally, this decoder provides a supplement proportional channel: thus, even if MS8-Xany uses one proportional channel, this one is not lost! The position of the contacts are sent using multiplexing technique.
 
