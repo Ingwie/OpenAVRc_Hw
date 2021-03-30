@@ -104,12 +104,23 @@ uint16_t ppmOut[8];
 */
 #define BIN_NBL_TO_HEX_DIGIT(BinNbl)      ((BinNbl) < 10) ? ((BinNbl) + '0'): ((BinNbl) - 10 + 'A')
 
+#define STRING_(string)                 #string
+#define PRJ_VER_REV(PrjName, Ver, Rev)  F(STRING_(PrjName) " V" STRING_(Ver) "." STRING_(Rev))
+
+/* PROJECT MANAGEMENT CENTRALIZATION */
+#define PROJECT_NAME    OpenAVRc JoysticReader
+#define FW_VERSION      1
+#define FW_REVISION     0
+
 void setup()
 {
   disp.setup();
   delay(1000);
+
+
  
   Serial.begin( 115200 );
+  Serial.println(PRJ_VER_REV(PROJECT_NAME, FW_VERSION, FW_REVISION));
   
 #if !defined(__MIPSEL__)
   while (!Serial); // Wait for serial port to connect - used on Leonardo, Teensy and other boards with built-in USB CDC serial connection
@@ -236,6 +247,8 @@ void loop()
     {
       disp.display(rcs.flight_mode, rcs.channel5_mode, (byte)rcs.camera_mode, rcs.auto_center);
       disp.print_all(&rcs);
+      delay(100);
+      disp.clear();
       //lcd_display.display_rx_rssi(frsky_accessor.link_down);
       //lcd_display.display_tx_rssi(frsky_accessor.link_up);
     }
