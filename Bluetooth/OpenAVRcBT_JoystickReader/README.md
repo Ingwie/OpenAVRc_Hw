@@ -45,9 +45,9 @@ Cette solution utilise un Pro Mini 3,3v/8Mhz car le mini shield usb ne supporte 
 
 ## Screen Option
 
-You use an LCD 20x4 or SSD1306/SSD1309 screen.
+Vous pouvez utiliser un écran LCD 20x4 ou SSD1306/SSD1309.
 
-In line 58, #define DISPLAY_TYPE **LCD_TYPE** // or **SSD_TYPE**
+A la ligne 58, décommentez #define DISPLAY_TYPE **LCD_TYPE** // ou **SSD_TYPE**
 
 ## Configurer le module réception
 1. Installer les bibliothèques [USB Host Shield Library 2.0](https://www.arduinolibraries.info/libraries/usb-host-shield-library-2-0) et [PPMEncoder](https://github.com/schinken/PPMEncoder) dans l'IDE Arduino.
