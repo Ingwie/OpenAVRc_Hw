@@ -37,7 +37,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/D%C3%A9codeur%20MS8_X-Any_3D.jpg)
 1. Xany2Msx
-   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8)
+   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Msx)
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Xany2Msx_3D.jpg)
 1. MultiSwitch_MosFet
