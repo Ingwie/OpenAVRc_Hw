@@ -1,7 +1,7 @@
 # Xany2Msx
 
 Le cordon adaptateur **Xany2Msx** permet de connecter, en simultané, sur une seule voie du
-récepteur, jusqu’à 3 décodeurs **Multi-Switch** du commerce sur une voie « X-Any » de l’ensemble
+récepteur, jusqu’à 2 décodeurs **Multi-Switch** du commerce sur une voie « X-Any » de l’ensemble
 RC OpenAVRc.
 Les décodeurs Multi-Switches/Prop du commerce actuellement supportés sont :
 * **Robbe Multi Switch Decoder** No 8369 ***(MS16)***
