@@ -22,9 +22,8 @@ jusqu’à **64 commandes Tout-Ou-Rien**.
    * ou **8 x décodeurs Multi-Switches 8 sorties**
    * ou un mélange des 2 combinaisons
 
-Se reporter à la documentation relative à OpenAVRc pour configurer X-Any côté émetteur.
 3. Pour les modules décodeurs de type Multi-Prop, les sorties proportionnelles sont gérées en
-Tout-Ou-Rien. Le cordon adaptateur Xany2Msx utilise l’état des contacts 13, 14, 15 et 16 :
+Tout-Ou-Rien. Le cordon adaptateur **Xany2Msx** utilise l’état des contacts 13, 14, 15 et 16 :
 * Contacts 13 et 14 pour les 2 voies proportionnelles du Multi Decoder Switch + Prop :  
 chaque sortie proportionnelle pouvant prendre 2 valeurs fixes (mais paramétrables)
 * Contacts 13, 14, 15 et 16 pour les 2 commandes de moteurs du MULTInaut top :  
