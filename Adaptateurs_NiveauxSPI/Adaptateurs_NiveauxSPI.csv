@@ -1,0 +1,18 @@
+"Id";"Référence";"Boîtier";"Quantité";"Désignation";"Fournisseur et réf";
+1;"U5";"Level_Convertissor_SMD";1;"CONV_5V/3.3V";;;
+2;"U6";"Level_Convertissor_8_W10.16mm";1;"CONV_5V_3-3V_8";;;
+3;"C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12";"C_1206_3216Metric_Pad1.42x1.75mm_HandSolder";12;"100nF";;;
+4;"P1,P3,P9";"PinHeader_1x07_P2.54mm_Vertical";3;"SpirfMod";;;
+5;"P2";"PinHeader_2x04_P2.54mm_Vertical";1;"NRF24L01";;;
+6;"P4";"PinHeader_2x06_P2.54mm_Vertical";1;"CC2500";;;
+7;"P5";"PinHeader_1x07_P2.54mm_Vertical";1;"SpirMod";;;
+8;"P6";"Pin_Header_Straight_1x09_Pitch2mm";1;"A7105";;;
+9;"P7";"PinHeader_1x07_P2.54mm_Vertical";1;"CONN_01X07";;;
+10;"P8";"PinHeader_2x05_P2.54mm_Vertical";1;"CONN_01X10";;;
+11;"R1";"R_1206_3216Metric_Pad1.42x1.75mm_HandSolder";1;"20K";;;
+12;"J2";"PinHeader_2x05_P2.00mm_Vertical";1;"MPM_ 4en1";;;
+13;"J3";"PinHeader_1x03_P2.54mm_Vertical";1;"MPM_4in1";;;
+14;"U1,U2,U3,U4";"Level_Convertissor_W10.16mm";4;"CONV_5V/3.3V";;;
+15;"P10";"PinHeader_2x05_P2.54mm_Vertical";1;"SpirfMod";;;
+16;"J1";"RFM95W";1;"RFM95W";;;
+17;"J4";"SMA_Amphenol_132289_EdgeMount";1;"SMA";;;

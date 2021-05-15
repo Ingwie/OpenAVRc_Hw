@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name Conv_SPI)(type KiCad)(uri C:/tmp/_OpenAVRc/Adaptateurs_NiveauxSPI)(options "")(descr ""))
+)

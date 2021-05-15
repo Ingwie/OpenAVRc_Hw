@@ -1,124 +1,123 @@
-EESchema-LIBRARY Version 2.3
+EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# +3.3V
+# Adaptateurs_NiveauxSPI-rescue_+3.3V-power1
 #
-DEF +3.3V #PWR 0 0 Y Y 1 F P
+DEF Adaptateurs_NiveauxSPI-rescue_+3.3V-power1 #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -40 30 H I C CNN
-F1 "+3.3V" 0 110 30 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_+3.3V-power1" 0 110 30 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
-ALIAS +3,3V
 DRAW
-X +3.3V 1 0 0 0 U 30 30 0 0 W N
 C 0 60 20 0 1 0 N
 P 3 0 1 0 0 0 0 40 0 40 N
+X +3.3V 1 0 0 0 U 30 30 0 0 W N
 ENDDRAW
 ENDDEF
 #
-# +3.3VADC
+# Adaptateurs_NiveauxSPI-rescue_+3.3VADC-power1
 #
-DEF +3.3VADC #PWR 0 0 Y Y 1 F P
+DEF Adaptateurs_NiveauxSPI-rescue_+3.3VADC-power1 #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 120 20 H I C CNN
-F1 "+3.3VADC" 0 90 30 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_+3.3VADC-power1" 0 90 30 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
+P 3 0 1 0 0 0 0 40 0 40 N
+P 6 0 1 0 0 40 20 20 0 70 -20 20 0 40 0 40 N
 X +3.3VADC 1 0 0 0 U 20 20 0 0 W N
-P 3 0 1 0 0 0 0 40 0 40 N
-P 6 0 1 0 0 40 20 20 0 70 -20 20 0 40 0 40 N
 ENDDRAW
 ENDDEF
 #
-# +3.3VDAC
+# Adaptateurs_NiveauxSPI-rescue_+3.3VDAC-power1
 #
-DEF +3.3VDAC #PWR 0 0 Y Y 1 F P
+DEF Adaptateurs_NiveauxSPI-rescue_+3.3VDAC-power1 #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 120 20 H I C CNN
-F1 "+3.3VDAC" 0 90 30 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_+3.3VDAC-power1" 0 90 30 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
-X +3.3VDAC 1 0 0 0 U 20 20 0 0 W N
 P 3 0 1 0 0 0 0 40 0 40 N
 P 6 0 1 0 0 40 20 20 0 70 -20 20 0 40 0 40 N
+X +3.3VDAC 1 0 0 0 U 20 20 0 0 W N
 ENDDRAW
 ENDDEF
 #
-# +3.3VP
+# Adaptateurs_NiveauxSPI-rescue_+3.3VP-power1
 #
-DEF +3.3VP #PWR 0 0 Y Y 1 F P
+DEF Adaptateurs_NiveauxSPI-rescue_+3.3VP-power1 #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 50 30 20 H I C CNN
-F1 "+3.3VP" 0 90 30 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_+3.3VP-power1" 0 90 30 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
-X +3.3VP 1 0 0 0 U 20 20 0 0 W N
 P 3 0 1 0 0 0 0 40 0 40 N
 P 7 0 1 0 20 30 0 40 -20 30 -10 70 10 70 20 30 20 30 N
+X +3.3VP 1 0 0 0 U 20 20 0 0 W N
 ENDDRAW
 ENDDEF
 #
-# +5C
+# Adaptateurs_NiveauxSPI-rescue_+5C-power1
 #
-DEF +5C #PWR 0 0 Y Y 1 F P
+DEF Adaptateurs_NiveauxSPI-rescue_+5C-power1 #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -50 20 H I C CNN
-F1 "+5C" 0 100 30 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_+5C-power1" 0 100 30 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
-X +5C 1 0 0 0 U 20 30 0 0 W N
 C 0 60 20 0 1 0 N
 P 3 0 1 0 0 0 0 40 0 40 N
+X +5C 1 0 0 0 U 20 30 0 0 W N
 ENDDRAW
 ENDDEF
 #
-# +5V
+# Adaptateurs_NiveauxSPI-rescue_+5V-power1
 #
-DEF +5V #PWR 0 40 Y Y 1 F P
+DEF Adaptateurs_NiveauxSPI-rescue_+5V-power1 #PWR 0 40 Y Y 1 F P
 F0 "#PWR" 0 90 20 H I C CNN
-F1 "+5V" 0 90 30 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_+5V-power1" 0 90 30 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
-X +5V 1 0 0 0 U 20 20 0 0 W N
 C 0 50 20 0 1 0 N
 P 4 0 1 0 0 0 0 30 0 30 0 30 N
+X +5V 1 0 0 0 U 20 20 0 0 W N
 ENDDRAW
 ENDDEF
 #
-# +5VD
+# Adaptateurs_NiveauxSPI-rescue_+5VD-power1
 #
-DEF +5VD #PWR 0 0 N Y 1 F P
+DEF Adaptateurs_NiveauxSPI-rescue_+5VD-power1 #PWR 0 0 N Y 1 F P
 F0 "#PWR" 0 -50 20 H I C CNN
-F1 "+5VD" 0 100 30 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_+5VD-power1" 0 100 30 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
-X +5VD 1 0 0 0 U 20 30 0 0 W N
 P 3 0 1 0 0 0 0 50 0 50 N
 P 7 0 1 0 0 80 30 50 -20 50 -30 50 0 80 0 80 0 80 F
+X +5VD 1 0 0 0 U 20 30 0 0 W N
 ENDDRAW
 ENDDEF
 #
-# +5VP
+# Adaptateurs_NiveauxSPI-rescue_+5VP-power1
 #
-DEF +5VP #PWR 0 40 Y Y 1 F P
+DEF Adaptateurs_NiveauxSPI-rescue_+5VP-power1 #PWR 0 40 Y Y 1 F P
 F0 "#PWR" 0 90 20 H I C CNN
-F1 "+5VP" 0 90 30 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_+5VP-power1" 0 90 30 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
-X +5VP 1 0 0 0 U 20 20 0 0 W N
 C 0 50 20 0 1 0 N
 P 4 0 1 0 0 0 0 30 0 30 0 30 N
+X +5VP 1 0 0 0 U 20 20 0 0 W N
 ENDDRAW
 ENDDEF
 #
-# AGND
+# Adaptateurs_NiveauxSPI-rescue_AGND-power1
 #
-DEF AGND #PWR 0 10 Y Y 1 F P
+DEF Adaptateurs_NiveauxSPI-rescue_AGND-power1 #PWR 0 10 Y Y 1 F P
 F0 "#PWR" 0 0 40 H I C CNN
-F1 "AGND" 0 -70 50 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_AGND-power1" 0 -70 50 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
@@ -127,11 +126,11 @@ X AGND 1 0 0 0 U 40 40 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# C
+# Adaptateurs_NiveauxSPI-rescue_C-device
 #
-DEF C C 0 10 N Y 1 F N
+DEF Adaptateurs_NiveauxSPI-rescue_C-device C 0 10 N Y 1 F N
 F0 "C" 0 100 40 H V L CNN
-F1 "C" 6 -85 40 H V L CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_C-device" 6 -85 40 H V L CNN
 F2 "" 38 -150 30 H V C CNN
 F3 "" 0 0 60 H V C CNN
 $FPLIST
@@ -147,11 +146,255 @@ X ~ 2 0 -200 170 U 40 40 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CONN_01X07
+# Adaptateurs_NiveauxSPI-rescue_CONV_5V_3-3V_8
 #
-DEF CONN_01X07 P 0 40 Y N 1 F N
+DEF Adaptateurs_NiveauxSPI-rescue_CONV_5V_3-3V_8 U 0 40 Y Y 1 F N
+F0 "U" -300 400 40 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_CONV_5V_3-3V_8" 0 400 40 H V C CNN
+F2 "SSOP16" 0 0 30 H V C CIN
+F3 "" 0 0 60 H I C CNN
+$FPLIST
+ *SSOP*
+$ENDFPLIST
+DRAW
+S -350 350 350 -750 0 1 10 f
+X LV1 1 -500 250 150 R 40 40 1 1 B
+X LV8 10 -500 -650 150 R 40 40 1 1 B
+X HV8 11 500 -650 150 L 40 40 1 1 B
+X HV7 12 500 -550 150 L 40 40 1 1 B
+X HV6 13 500 -450 150 L 40 40 1 1 B
+X HV5 14 500 -350 150 L 40 40 1 1 B
+X GND2 15 500 -250 150 L 40 40 1 1 W
+X HV 16 500 -150 150 L 40 40 1 1 W
+X HV4 17 500 -50 150 L 40 40 1 1 B
+X HV3 18 500 50 150 L 40 40 1 1 B
+X HV2 19 500 150 150 L 40 40 1 1 B
+X LV2 2 -500 150 150 R 40 40 1 1 B
+X HV1 20 500 250 150 L 40 40 1 1 B
+X LV3 3 -500 50 150 R 40 40 1 1 B
+X LV4 4 -500 -50 150 R 40 40 1 1 B
+X LV 5 -500 -150 150 R 40 40 1 1 W
+X GND1 6 -500 -250 150 R 40 40 1 1 W
+X LV5 7 -500 -350 150 R 40 40 1 1 B
+X LV6 8 -500 -450 150 R 40 40 1 1 B
+X LV7 9 -500 -550 150 R 40 40 1 1 B
+ENDDRAW
+ENDDEF
+#
+# Adaptateurs_NiveauxSPI-rescue_CON_5V_3-3V
+#
+DEF Adaptateurs_NiveauxSPI-rescue_CON_5V_3-3V U 0 40 Y Y 1 F N
+F0 "U" -300 400 40 H V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_CON_5V_3-3V" 100 400 40 H V C CNN
+F2 "SSOP16" 0 0 30 H V C CIN
+F3 "" 0 0 60 H I C CNN
+$FPLIST
+ *SSOP*
+$ENDFPLIST
+DRAW
+S -350 350 350 -350 0 1 10 f
+X LV1 1 -500 250 150 R 40 40 1 1 B
+X HV 10 500 50 150 L 40 40 1 1 W
+X HV2 11 500 150 150 L 40 40 1 1 B
+X HV1 12 500 250 150 L 40 40 1 1 B
+X LV2 2 -500 150 150 R 40 40 1 1 B
+X LV 3 -500 50 150 R 40 40 1 1 W
+X GND1 4 -500 -50 150 R 40 40 1 1 W
+X LV3 5 -500 -150 150 R 40 40 1 1 B
+X LV4 6 -500 -250 150 R 40 40 1 1 B
+X HV4 7 500 -250 150 L 40 40 1 1 B
+X HV3 8 500 -150 150 L 40 40 1 1 B
+X GND2 9 500 -50 150 L 40 40 1 1 W
+ENDDRAW
+ENDDEF
+#
+# Adaptateurs_NiveauxSPI-rescue_DGND-power1
+#
+DEF Adaptateurs_NiveauxSPI-rescue_DGND-power1 #PWR 0 40 Y Y 1 F P
+F0 "#PWR" 0 0 40 H I C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_DGND-power1" 0 -70 40 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+P 4 0 1 0 -50 0 0 -50 50 0 -50 0 N
+X DGND 1 0 0 0 U 40 40 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# Adaptateurs_NiveauxSPI-rescue_GND-power1
+#
+DEF Adaptateurs_NiveauxSPI-rescue_GND-power1 #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 0 30 H I C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_GND-power1" 0 -70 30 H I C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+P 4 0 1 0 -50 0 0 -50 50 0 -50 0 N
+X GND 1 0 0 0 U 30 30 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# Adaptateurs_NiveauxSPI-rescue_GNDA-power1
+#
+DEF Adaptateurs_NiveauxSPI-rescue_GNDA-power1 #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 0 40 H I C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_GNDA-power1" 0 -70 40 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+P 4 0 1 0 -50 0 0 -50 50 0 -50 0 N
+X GNDA 1 0 0 0 U 40 40 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# Adaptateurs_NiveauxSPI-rescue_R-device
+#
+DEF Adaptateurs_NiveauxSPI-rescue_R-device R 0 0 N Y 1 F N
+F0 "R" 80 0 40 V V C CNN
+F1 "Adaptateurs_NiveauxSPI-rescue_R-device" 7 1 40 V V C CNN
+F2 "" -70 0 30 V V C CNN
+F3 "" 0 0 30 H V C CNN
+$FPLIST
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$ENDFPLIST
+DRAW
+S -40 150 40 -150 0 1 12 N
+X ~ 1 0 250 100 D 60 60 1 1 P
+X ~ 2 0 -250 100 U 60 60 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_01x02
+#
+DEF Connector_Generic_Conn_01x02 J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Generic_Conn_01x02" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_01x03
+#
+DEF Connector_Generic_Conn_01x03 J 0 40 Y N 1 F N
+F0 "J" 0 200 50 H V C CNN
+F1 "Connector_Generic_Conn_01x03" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 150 50 -150 1 1 10 f
+X Pin_1 1 -200 100 150 R 50 50 1 1 P
+X Pin_2 2 -200 0 150 R 50 50 1 1 P
+X Pin_3 3 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_01x10
+#
+DEF Connector_Generic_Conn_01x10 J 0 40 Y N 1 F N
+F0 "J" 0 500 50 H V C CNN
+F1 "Connector_Generic_Conn_01x10" 0 -600 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -495 0 -505 1 1 6 N
+S -50 -395 0 -405 1 1 6 N
+S -50 -295 0 -305 1 1 6 N
+S -50 -195 0 -205 1 1 6 N
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 205 0 195 1 1 6 N
+S -50 305 0 295 1 1 6 N
+S -50 405 0 395 1 1 6 N
+S -50 450 50 -550 1 1 10 f
+X Pin_1 1 -200 400 150 R 50 50 1 1 P
+X Pin_10 10 -200 -500 150 R 50 50 1 1 P
+X Pin_2 2 -200 300 150 R 50 50 1 1 P
+X Pin_3 3 -200 200 150 R 50 50 1 1 P
+X Pin_4 4 -200 100 150 R 50 50 1 1 P
+X Pin_5 5 -200 0 150 R 50 50 1 1 P
+X Pin_6 6 -200 -100 150 R 50 50 1 1 P
+X Pin_7 7 -200 -200 150 R 50 50 1 1 P
+X Pin_8 8 -200 -300 150 R 50 50 1 1 P
+X Pin_9 9 -200 -400 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Generic_Conn_01x16
+#
+DEF Connector_Generic_Conn_01x16 J 0 40 Y N 1 F N
+F0 "J" 0 800 50 H V C CNN
+F1 "Connector_Generic_Conn_01x16" 0 -900 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -795 0 -805 1 1 6 N
+S -50 -695 0 -705 1 1 6 N
+S -50 -595 0 -605 1 1 6 N
+S -50 -495 0 -505 1 1 6 N
+S -50 -395 0 -405 1 1 6 N
+S -50 -295 0 -305 1 1 6 N
+S -50 -195 0 -205 1 1 6 N
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 205 0 195 1 1 6 N
+S -50 305 0 295 1 1 6 N
+S -50 405 0 395 1 1 6 N
+S -50 505 0 495 1 1 6 N
+S -50 605 0 595 1 1 6 N
+S -50 705 0 695 1 1 6 N
+S -50 750 50 -850 1 1 10 f
+X Pin_1 1 -200 700 150 R 50 50 1 1 P
+X Pin_10 10 -200 -200 150 R 50 50 1 1 P
+X Pin_11 11 -200 -300 150 R 50 50 1 1 P
+X Pin_12 12 -200 -400 150 R 50 50 1 1 P
+X Pin_13 13 -200 -500 150 R 50 50 1 1 P
+X Pin_14 14 -200 -600 150 R 50 50 1 1 P
+X Pin_15 15 -200 -700 150 R 50 50 1 1 P
+X Pin_16 16 -200 -800 150 R 50 50 1 1 P
+X Pin_2 2 -200 600 150 R 50 50 1 1 P
+X Pin_3 3 -200 500 150 R 50 50 1 1 P
+X Pin_4 4 -200 400 150 R 50 50 1 1 P
+X Pin_5 5 -200 300 150 R 50 50 1 1 P
+X Pin_6 6 -200 200 150 R 50 50 1 1 P
+X Pin_7 7 -200 100 150 R 50 50 1 1 P
+X Pin_8 8 -200 0 150 R 50 50 1 1 P
+X Pin_9 9 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Mega_2560-core-mini_full_2.1_CONN_01X07
+#
+DEF Mega_2560-core-mini_full_2.1_CONN_01X07 P 0 40 Y N 1 F N
 F0 "P" 0 400 50 H V C CNN
-F1 "CONN_01X07" 100 -50 50 V V C CNN
+F1 "Mega_2560-core-mini_full_2.1_CONN_01X07" 100 -50 50 V V C CNN
 F2 "" 0 -50 50 H V C CNN
 F3 "" 0 -50 50 H V C CNN
 $FPLIST
@@ -179,11 +422,11 @@ X P7 7 -200 -300 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CONN_01X08
+# Mega_2560-core-mini_full_2.1_CONN_01X08
 #
-DEF CONN_01X08 P 0 40 Y N 1 F N
+DEF Mega_2560-core-mini_full_2.1_CONN_01X08 P 0 40 Y N 1 F N
 F0 "P" 0 450 50 H V C CNN
-F1 "CONN_01X08" 100 0 50 V V C CNN
+F1 "Mega_2560-core-mini_full_2.1_CONN_01X08" 100 0 50 V V C CNN
 F2 "" 0 0 50 H V C CNN
 F3 "" 0 0 50 H V C CNN
 $FPLIST
@@ -213,11 +456,11 @@ X P8 8 -200 -350 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CONN_01X09
+# Mega_2560-core-mini_full_2.1_CONN_01X09
 #
-DEF CONN_01X09 P 0 40 Y N 1 F N
+DEF Mega_2560-core-mini_full_2.1_CONN_01X09 P 0 40 Y N 1 F N
 F0 "P" 0 500 50 H V C CNN
-F1 "CONN_01X09" 100 0 50 V V C CNN
+F1 "Mega_2560-core-mini_full_2.1_CONN_01X09" 100 0 50 V V C CNN
 F2 "" 0 0 50 H V C CNN
 F3 "" 0 0 50 H V C CNN
 $FPLIST
@@ -249,11 +492,11 @@ X P9 9 -200 -400 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CONN_01X10
+# Mega_2560-core-mini_full_2.1_CONN_01X10
 #
-DEF CONN_01X10 P 0 40 Y N 1 F N
+DEF Mega_2560-core-mini_full_2.1_CONN_01X10 P 0 40 Y N 1 F N
 F0 "P" 50 650 50 H V C CNN
-F1 "CONN_01X10" 150 0 50 V V C CNN
+F1 "Mega_2560-core-mini_full_2.1_CONN_01X10" 150 0 50 V V C CNN
 F2 "" 50 -200 50 H V C CNN
 F3 "" 50 -200 50 H V C CNN
 $FPLIST
@@ -275,6 +518,7 @@ S 0 455 60 445 0 1 0 N
 S 0 555 60 545 0 1 0 N
 S 0 600 100 -400 0 1 0 N
 X P1 1 -150 550 150 R 50 50 1 1 P
+X P10 10 -150 -350 150 R 50 50 1 1 P
 X P2 2 -150 450 150 R 50 50 1 1 P
 X P3 3 -150 350 150 R 50 50 1 1 P
 X P4 4 -150 250 150 R 50 50 1 1 P
@@ -283,15 +527,14 @@ X P6 6 -150 50 150 R 50 50 1 1 P
 X P7 7 -150 -50 150 R 50 50 1 1 P
 X P8 8 -150 -150 150 R 50 50 1 1 P
 X P9 9 -150 -250 150 R 50 50 1 1 P
-X P10 10 -150 -350 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CONN_01X12
+# Mega_2560-core-mini_full_2.1_CONN_01X12
 #
-DEF CONN_01X12 P 0 40 Y N 1 F N
+DEF Mega_2560-core-mini_full_2.1_CONN_01X12 P 0 40 Y N 1 F N
 F0 "P" 50 650 50 H V C CNN
-F1 "CONN_01X12" 150 0 50 V V C CNN
+F1 "Mega_2560-core-mini_full_2.1_CONN_01X12" 150 0 50 V V C CNN
 F2 "" 50 -200 50 H V C CNN
 F3 "" 50 -200 50 H V C CNN
 $FPLIST
@@ -315,6 +558,9 @@ S 0 455 60 445 0 1 0 N
 S 0 555 60 545 0 1 0 N
 S 0 600 100 -600 0 1 0 N
 X P1 1 -150 550 150 R 50 50 1 1 P
+X P10 10 -150 -350 150 R 50 50 1 1 P
+X P11 11 -150 -450 150 R 50 50 1 1 P
+X P12 12 -150 -550 150 R 50 50 1 1 P
 X P2 2 -150 450 150 R 50 50 1 1 P
 X P3 3 -150 350 150 R 50 50 1 1 P
 X P4 4 -150 250 150 R 50 50 1 1 P
@@ -323,96 +569,96 @@ X P6 6 -150 50 150 R 50 50 1 1 P
 X P7 7 -150 -50 150 R 50 50 1 1 P
 X P8 8 -150 -150 150 R 50 50 1 1 P
 X P9 9 -150 -250 150 R 50 50 1 1 P
-X P10 10 -150 -350 150 R 50 50 1 1 P
-X P11 11 -150 -450 150 R 50 50 1 1 P
-X P12 12 -150 -550 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# CON_5V_3-3V
+# power_+3.3V
 #
-DEF CON_5V_3-3V U 0 40 Y Y 1 F N
-F0 "U" -300 400 40 H V C CNN
-F1 "CON_5V_3-3V" 100 400 40 H V C CNN
-F2 "SSOP16" 0 0 30 H V C CIN
-F3 "" 0 0 60 H I C CNN
-$FPLIST
- *SSOP*
-$ENDFPLIST
+DEF power_+3.3V #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "power_+3.3V" 0 140 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+ALIAS +3.3V
 DRAW
-S -350 350 350 -350 0 1 10 f
-X LV1 1 -500 250 150 R 40 40 1 1 B
-X LV2 2 -500 150 150 R 40 40 1 1 B
-X LV 3 -500 50 150 R 40 40 1 1 W
-X GND1 4 -500 -50 150 R 40 40 1 1 W
-X LV3 5 -500 -150 150 R 40 40 1 1 B
-X LV4 6 -500 -250 150 R 40 40 1 1 B
-X HV4 7 500 -250 150 L 40 40 1 1 B
-X HV3 8 500 -150 150 L 40 40 1 1 B
-X GND2 9 500 -50 150 L 40 40 1 1 W
-X HV 10 500 50 150 L 40 40 1 1 W
-X HV2 11 500 150 150 L 40 40 1 1 B
-X HV1 12 500 250 150 L 40 40 1 1 B
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X +3V3 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# DGND
+# power_+3.3VA
 #
-DEF DGND #PWR 0 40 Y Y 1 F P
-F0 "#PWR" 0 0 40 H I C CNN
-F1 "DGND" 0 -70 40 H V C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
+DEF power_+3.3VA #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "power_+3.3VA" 0 140 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
 DRAW
-P 4 0 1 0 -50 0 0 -50 50 0 -50 0 N
-X DGND 1 0 0 0 U 40 40 1 1 W N
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X +3.3VA 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# GND
+# power_+5F
 #
-DEF ~GND #PWR 0 0 Y Y 1 F P
-F0 "#PWR" 0 0 30 H I C CNN
-F1 "GND" 0 -70 30 H I C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
+DEF power_+5F #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "power_+5F" 0 140 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
 DRAW
-P 4 0 1 0 -50 0 0 -50 50 0 -50 0 N
-X GND 1 0 0 0 U 30 30 1 1 W N
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X +5F 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# GNDA
+# power_+5VL
 #
-DEF GNDA #PWR 0 0 Y Y 1 F P
-F0 "#PWR" 0 0 40 H I C CNN
-F1 "GNDA" 0 -70 40 H V C CNN
-F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
+DEF power_+5VL #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "power_+5VL" 0 140 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
 DRAW
-P 4 0 1 0 -50 0 0 -50 50 0 -50 0 N
-X GNDA 1 0 0 0 U 40 40 1 1 W N
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X +5VL 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# R
+# power_GNDREF
 #
-DEF R R 0 0 N Y 1 F N
-F0 "R" 80 0 40 V V C CNN
-F1 "R" 7 1 40 V V C CNN
-F2 "" -70 0 30 V V C CNN
-F3 "" 0 0 30 H V C CNN
-$FPLIST
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$ENDFPLIST
+DEF power_GNDREF #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 50 H I C CNN
+F1 "power_GNDREF" 0 -150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
 DRAW
-S -40 150 40 -150 0 1 12 N
-X ~ 1 0 250 100 D 60 60 1 1 P
-X ~ 2 0 -250 100 U 60 60 1 1 P
+P 2 0 1 0 -25 -75 25 -75 N
+P 2 0 1 0 -5 -100 5 -100 N
+P 2 0 1 0 0 -50 0 0 N
+P 2 0 1 0 50 -50 -50 -50 N
+X GNDREF 1 0 0 0 D 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# power_GNDS
+#
+DEF power_GNDS #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 50 H I C CNN
+F1 "power_GNDS" 0 -150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
+X GNDS 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #

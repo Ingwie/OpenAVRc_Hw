@@ -1,0 +1,43 @@
+9726470039945
+Conv_SPI
+Level_Convertissor_8_W10.16mm
+22-lead dip package, row spacing 10.16 mm (400 mils), Socket, LongPads
+DIL DIP PDIP 2.54mm 10.16mm 400mil Socket LongPads
+0
+20
+20
+Conv_SPI
+Level_Convertissor_SMD
+22-lead dip package, row spacing 10.16 mm (400 mils), Socket, LongPads
+DIL DIP PDIP 2.54mm 10.16mm 400mil Socket LongPads
+0
+12
+12
+Conv_SPI
+Level_Convertissor_W10.16mm
+22-lead dip package, row spacing 10.16 mm (400 mils), Socket, LongPads
+DIL DIP PDIP 2.54mm 10.16mm 400mil Socket LongPads
+0
+12
+12
+Conv_SPI
+Pin_Header_Straight_1x09_Pitch2mm
+Through hole straight pin header, 1x09, 2.54mm pitch, single row
+Through hole pin header THT 1x09 2.54mm single row
+0
+9
+9
+Conv_SPI
+RFM95W
+SSOP16: plastic shrink small outline package; 16 leads; body width 4.4 mm; (see NXP SSOP-TSSOP-VSO-REFLOW.pdf and sot369-1_po.pdf)
+SSOP 0.65
+0
+16
+16
+Conv_SPI
+SMA_Amphenol_132289_EdgeMount
+http://www.amphenolrf.com/132289.html
+SMA
+0
+5
+2

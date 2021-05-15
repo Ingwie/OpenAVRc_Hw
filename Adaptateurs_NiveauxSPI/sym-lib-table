@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Mega_2560-core-mini_full_2.1)(type Legacy)(uri "${KIPRJMOD}/Mega_2560 core mini_full_2.1.lib")(options "")(descr ""))
+  (lib (name Adaptateurs_NiveauxSPI-rescue)(type Legacy)(uri ${KIPRJMOD}/Adaptateurs_NiveauxSPI-rescue.lib)(options "")(descr ""))
+)
