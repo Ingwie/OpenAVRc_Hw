@@ -42,7 +42,7 @@ The basic 7-bit I2C address of the 360​​° sensor is 0x0C. The push button a
 - As soon as the LED has flashed twice, release the push-button: a 10-second window opens to define the offset using the push-button  
 - Press the push-button N times and the I2C address becomes 0x0C + N (if the desired offset is 0, do not press)  
 - As soon as the desired offset is reached, wait for the end of the 10 second window  
-- That's it: the I2C address of the 360 ​° sensor is configured!  
+- That's it: the I2C address of the 360° sensor is configured!  
 
 At the end of the 10 second window, a flash is emitted, then the LED lights up with the offset value of the I²C address.  
 For example, if the desired offset was 2, so for a desired address of 0x0E (0x0C + 2 = 0x0E), the LED will light up twice after the flash.  
@@ -66,6 +66,9 @@ X-Any can use these sensors for command by exemple:
   - a servo modified for accept a 360° rotation.
   - one other hall sensor for read servo angle.
   - an Arduino Pro Micro.
+
+Philippe LOUSSOUARN, [Rc-Navy](http://p.loussouarn.free.fr/), as developped this project.  
+For more informations see [here](http://p.loussouarn.free.fr/projet/sensors/angle/i2c_angle_sensor.html).
 
 Good use.
 
