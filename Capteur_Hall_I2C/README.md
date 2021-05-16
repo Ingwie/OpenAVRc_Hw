@@ -7,16 +7,18 @@ When the rotation angle of the object passed to the axis of rotation sensors,
 P3022 (or P3015) angle sensor outputs an electrical signal (0 to 5V) that is proportional to the rotational angle (0 to 360°).  
 This voltage is converted and transmitted to the **OpenAVRc** transmitter via the ***I2C*** port.
 
-This sensor simulates a sensor of the type [Allegro MicroSystems A1335](https://www.allegromicro.com/en/products/sense/linear-and-angular-position/angular-position-sensor-ics/a1335).
+**P3022**  
+![P3022](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/P3022-V1-CW360.jpg)
 
-The assembly is built on an Attiny85 which reads the voltage and converts it into I2C data. 
+**P3015**  
+![P3015](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/P3015-V1-CW360.jpg)
+P3015 is really smaller than P3022 and, i think, easier to implant into a transmitter.
+
+These sensors simulate a sensor of the type [Allegro MicroSystems A1335](https://www.allegromicro.com/en/products/sense/linear-and-angular-position/angular-position-sensor-ics/a1335).
 
 See our documentation here for all connections [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Hall_360_Sensor.pdf).
 
-X-Any can use this sensor for command a servo modified for accept a 360° rotation.
-
-**Upload the HEX file:**
-
+**Upload the HEX file:**  
 You can found binary file [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/HallAna2A1335_Attiny85/HallAna2A1335_Attiny85.zip).
 
 **CALIBRATION AND CONFIGURATION OF THE I2C ADDRESS OF THE 360° SENSOR**  
@@ -51,10 +53,19 @@ Once calibrated, the more the angle increases, the more the brightness of the LE
 The LED is off for 0° and has the maximum brightness for 360°.  
 It is therefore very easy to determine the mechanical 0 °: it is at the transition from maximum brightness to the extinction of the LED! 
 
-**Wires**
-
+**Wires**  
 See documentation [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Hall_360_Sensor.pdf).
 
+**Use these sensors for what?**  
+X-Any can use these sensors for command by exemple: 
+  - an azimutal motor.
+  - a gun turret.
+  - a camera.
+
+**On the receiver side you need**  
+  - a servo modified for accept a 360° rotation.
+  - one other hall sensor for read servo angle.
+  - an Arduino Pro Micro.
 
 Good use.
 
