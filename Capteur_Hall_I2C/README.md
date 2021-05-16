@@ -56,6 +56,9 @@ See schematic [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_
 See documentation [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Hall_360_Sensor.pdf).  
 This documentation about wiring is only for the P3022 sensor.
 We have developped a [pcb](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Sensor_Board_3D.jpg) for him only.  
+  - [Gerber files](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Gerber.zip)
+  - [Kicad PCB files](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Kicad_Hall_I2C_sensor.zip).  
+  
 For the P3015 sensor, you can connect it to the Attiny85 with 3 littles wires.
 
 **Use these sensors for what?**  
