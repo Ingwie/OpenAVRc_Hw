@@ -7,16 +7,11 @@ When the rotation angle of the object passed to the axis of rotation sensors,
 P3022 (or P3015) angle sensor outputs an electrical signal (0 to 5V) that is proportional to the rotational angle (0 to 360°).  
 This voltage is converted and transmitted to the **OpenAVRc** transmitter via the ***I2C*** port.
 
-This sensor simulates a sensor of the type [Allegro MicroSystems A1335] (https://www.allegromicro.com/en/products/sense/linear-and-angular-position/angular-position-sensor-ics/a1335).
+This sensor simulates a sensor of the type [Allegro MicroSystems A1335](https://www.allegromicro.com/en/products/sense/linear-and-angular-position/angular-position-sensor-ics/a1335).
 
 The assembly is built on an Attiny85 which reads the voltage and converts it into I2C data. 
 
-
-
-
-
-See our documentation here for all connections:
-https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Hall_360_Sensor.pdf
+See our documentation here for all connections [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Hall_360_Sensor.pdf).
 
 X-Any can use this sensor for command a servo modified for accept a 360° rotation.
 
