@@ -53,7 +53,10 @@ It is therefore very easy to determine the mechanical 0°: it is at the transiti
 
 **Wires**  
 See schematic [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Capteur_Hall_I2C.pdf).  
-See documentation [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Hall_360_Sensor.pdf).
+See documentation [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Hall_360_Sensor.pdf).  
+This documentation about wiring is only for the P3022 sensor.
+We have developped a [pcb](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Sensor_Board_3D.jpg) for him only.  
+For the P3015 sensor, you can connect it to the Attiny85 with 3 littles wires.
 
 **Use these sensors for what?**  
 X-Any can use these sensors for command by exemple: 
