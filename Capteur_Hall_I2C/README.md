@@ -11,7 +11,7 @@ This voltage is converted and transmitted to the **OpenAVRc** transmitter via th
 ![P3022](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/P3022-V1-CW360.jpg)
 
 **P3015**  
-![P3015](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/P3015-V1-CW360.jpg)
+![P3015](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/P3015-V1-CW360.jpg)  
 P3015 is really smaller than P3022 and, i think, easier to implant into a transmitter.
 
 These sensors simulate a sensor of the type [Allegro MicroSystems A1335](https://www.allegromicro.com/en/products/sense/linear-and-angular-position/angular-position-sensor-ics/a1335).
