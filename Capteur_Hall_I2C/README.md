@@ -16,8 +16,6 @@ P3015 is really smaller than P3022 and, i think, easier to implant into a transm
 
 These sensors simulate a sensor of the type [Allegro MicroSystems A1335](https://www.allegromicro.com/en/products/sense/linear-and-angular-position/angular-position-sensor-ics/a1335).
 
-See our documentation here for all connections [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Hall_360_Sensor.pdf).
-
 **Upload the HEX file:**  
 You can found binary file [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/HallAna2A1335_Attiny85/HallAna2A1335_Attiny85.zip).
 
@@ -51,9 +49,10 @@ This will be true each time the sensor is powered up: it is thus very easy to ch
 **VISUALIZATION OF CURRENT ANGLE AND 0° OF THE 360° SENSOR**  
 Once calibrated, the more the angle increases, the more the brightness of the LED increases.  
 The LED is off for 0° and has the maximum brightness for 360°.  
-It is therefore very easy to determine the mechanical 0 °: it is at the transition from maximum brightness to the extinction of the LED! 
+It is therefore very easy to determine the mechanical 0°: it is at the transition from maximum brightness to the extinction of the LED! 
 
 **Wires**  
+See schematic [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Capteur_Hall_I2C.pdf).  
 See documentation [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Hall_360_Sensor.pdf).
 
 **Use these sensors for what?**  
