@@ -17,7 +17,3 @@ Les décodeurs commandés par impulsion du commerce actuellement supportés sont
 * **Conrad Module 7 fonctions**
 * **Beier Module son USM-RC-2**
 * **NVM Décodeur Multi-Switch**
-
-## Réalisations utilisateurs X-Any
-* [Xany par JPZ](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Msx/Xany_Builds_by_Users/JPZ)
-* [Xany par pierrotm777](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Msx/Xany_Builds_by_Users/JPZ)
