@@ -4,9 +4,9 @@ Xany2Servo360 is a can command a turret or a shuttle motor with a 360 degrees ro
 I use a Pro Micro board.
 
 For use it, you need:
-- An OpenAVRc Transmitter with the X-Any feature:
-- A 360 degrees sensor. 
-- A 360 degrees servo. 
+- An OpenAVRc Transmitter with the X-Any feature.  
+- Build a 360 degrees I2C sensor.  
+- Build (or buy) a 360 degrees servo. 
 
 
 See our documentation here for all connections:
@@ -17,7 +17,7 @@ The module accept several input mode.
 PWM, CPPM, SBUS, SRXL, SUMD, IBUS or JETI.
 You can select also these modes in confuration menu.
 
-**Upload the HEX file:**
+## Upload the HEX file
 
 I don't give sources, because X-Any libraries are not Open Source for the receive side.  
 You can found binary file [here]().  
@@ -25,7 +25,7 @@ Rename Xany2Servo360.ino.with_bootloader.promicro._hex file to Xany2Servo360.ino
 Pro Micro use a particular method for upload a code.  
 You can use the program https://github.com/uriba107/32u4_hexuploader .
 
-**Configuration mode**
+## Configuration mode
 
 Connect the USB connector of your Pro Micro board to your PC.  
 Select the console window, define 115200 bauds and NL and CR mode.  
@@ -52,7 +52,9 @@ The configuration is saved into the EEPROM.
 So, you need to do this configuration just one time when you want change your settings.
 
 
-**Mod Futaba S3003 servo for continous rotation**
+## How build
+
+### Mod Futaba S3003 servo for continous rotation
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sBtxttzMcoo/0.jpg)](https://www.youtube.com/watch?v=sBtxttzMcoo "Click") 
 
@@ -60,8 +62,11 @@ Or
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/SK8mhnEzcvY/0.jpg)](https://www.youtube.com/watch?v=SK8mhnEzcvY "Click")
 
+### Build a 360 degrees I2C sensor
+[I2C sensor](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Capteur_Hall_I2C).  
+[In french](http://p.loussouarn.free.fr/projet/sensors/angle/i2c_angle_sensor.html).
 
-**Wires**
+### Wires
 See picture file.
 
 ![here]()
