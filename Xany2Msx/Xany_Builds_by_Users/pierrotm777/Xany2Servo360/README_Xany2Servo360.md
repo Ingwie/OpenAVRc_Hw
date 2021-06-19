@@ -19,10 +19,10 @@ You can select also these modes in confuration menu.
 
 **Upload the HEX file:**
 
-I don't give sources, because X-Any libraries are not Open Source for the receive side.
-You can found binary file [here]().
+I don't give sources, because X-Any libraries are not Open Source for the receive side.  
+You can found binary file [here]().  
 Rename Xany2Servo360.ino.with_bootloader.promicro._hex file to Xany2Servo360.ino.with_bootloader.promicro.hex
-Pro Micro use a particular method for upload a code.
+Pro Micro use a particular method for upload a code.  
 You can use the program https://github.com/uriba107/32u4_hexuploader .
 
 **Configuration mode**
