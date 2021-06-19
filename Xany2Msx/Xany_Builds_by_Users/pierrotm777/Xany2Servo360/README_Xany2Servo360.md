@@ -52,6 +52,17 @@ The configuration is saved into the EEPROM.
 So, you need to do this configuration just one time when you want change your settings.
 
 
+**Mod Futaba S3003 servo for continous rotation**
+
+<table cellspacing=0>
+  <tr>
+    <td align=center width=200><img src="https://www.youtube.com/watch?v=sBtxttzMcoo" border="0" name="submit" title="Video 1" alt="Video 1"/><br><b>Video 1</b></td>
+	<td align=center width=200><img src="https://www.youtube.com/watch?v=SK8mhnEzcvY" border="0" name="submit" title="Video 2" alt="Video 2"/><br><b>Video 2</b></td>
+  </tr>
+</table>
+
+
+
 **Wires**
 See picture file.
 
