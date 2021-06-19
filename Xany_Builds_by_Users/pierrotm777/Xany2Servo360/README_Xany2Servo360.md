@@ -1,21 +1,17 @@
 # Xany2Servo360
 
-Xany2Servo360 is a can command a turret or a shuttle motor with a 360 degrees rotation.
-I use a Pro Micro board.
+Xany2Servo360 can command a cannon turret or a [schottle motor](https://www.sud-rc.fr/gouvernail-acces-de-barre/721-propulsion-schottel-ii-graupner-2335.html) with a 360 degrees rotation.
 
-For use it, you need:
-- An OpenAVRc Transmitter with the X-Any feature.  
+For build it, you need:  
 - Build a 360 degrees I2C sensor.  
-- Build (or buy) a 360 degrees servo. 
-
-
-See our documentation here for all connections:
-https://github.com/Ingwie/OpenAVRc_Dev/tree/V3/documentation/Compilez%20votre%20FW%20OpenAVRc_V3.pdf
-
-
-The module accept several input mode.
-PWM, CPPM, SBUS, SRXL, SUMD, IBUS or JETI.
-You can select also these modes in confuration menu.
+- A Pro Micro board 5v/16Mhz.
+- An **OpenAVRc** Transmitter with the X-Any feature.    
+- See our documentation [here](https://github.com/Ingwie/OpenAVRc_Dev/tree/V3/documentation/Compilez%20votre%20FW%20OpenAVRc_V3.pdf) for configure an **OpenAVRc** transmitter.
+  * See **8.3.2 Type d’information à transmettre via X-Any**  
+    * 0:360 : Angle absolu de 0 à 360°
+    * I2C   : utilisation d’un capteur I²C externe de type A1335
+- See **V2.1** or **V2.2** shield schematic on page 5/7, connector P2 [here](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documentation/Schema_MegaMini.pdf) for connect sensor on our shield.
+- Use (D20/D21) if you use an Arduino Atmega2560 board.
 
 ## Upload the HEX file
 
@@ -27,10 +23,14 @@ You can use the program https://github.com/uriba107/32u4_hexuploader .
 
 ## Configuration mode
 
+The module accept several inputs modes.
+PWM, CPPM, SBUS, SRXL, SUMD, IBUS or JETI.
+You can select also these modes in confuration menu.
+
 Connect the USB connector of your Pro Micro board to your PC.  
 Select the console window, define 115200 bauds and NL and CR mode.  
 You have 5 seconds for click on the ENTER key.  
-When you are in the configuration mode, type h key and ENTER for see all options:  
+When you are in the configuration mode, type H key or ENTER for see all options:  
 
   H Help  
   Q quit  
@@ -52,7 +52,7 @@ The configuration is saved into the EEPROM.
 So, you need to do this configuration just one time when you want change your settings.
 
 
-## How build
+## How to build
 
 ### Mod Futaba S3003 servo for continous rotation
 
