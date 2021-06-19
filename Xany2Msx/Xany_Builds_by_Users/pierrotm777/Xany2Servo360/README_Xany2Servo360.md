@@ -51,13 +51,11 @@ When you are in the configuration mode, type h key and ENTER for see all options
 The configuration is saved into the EEPROM.  
 So, you need to do this configuration just one time when you want change your settings.
 
-Add sounds files in your JQ6500 module:
-Follow the JQ6500 documentation [here](https://sparks.gogo.co.nz/jq6500/index.html) .
 
 **Wires**
 See picture file.
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Sounds/Xany2Sounds.jpg)
+![here]()
 
 Good use.
 
