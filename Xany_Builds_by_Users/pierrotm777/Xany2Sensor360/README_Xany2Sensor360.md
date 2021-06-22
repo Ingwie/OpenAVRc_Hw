@@ -70,14 +70,21 @@ For this project, you can use a bigger **P3022-V1-CW360**.
 [I2C sensor](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Capteur_Hall_I2C).  
 [In french](http://p.loussouarn.free.fr/projet/sensors/angle/i2c_angle_sensor.html).
 
-### Wires
-See picture file.
-
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany2Sensor360_schematic.jpg)
-
 ## How to use this project
 
+### Connect a P3015-V1-CW360 as I2C sensor into your OpenAVRc transmitter
+- If you use a shield V2.0 or V2.1 or V2.2, use the connector P2.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Shield_v2.1_Xany_Connector.jpg)  
+- On your OpenAVRc transmitter, select a model and go to the 5/13 screen and select **0:360 I2C 0000**.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany360mode.jpg)  
+
 ### Connect a P3022-V1-CW360 as I2C sensor into your OpenAVRc transmitter
+- Connect the sensor to the Pro Micro.  
+- Connect the servo modified to the Pro Micro.  
+- Connect the Pro Micro Input to your output receiver (channel 5 by default).  
+
+Follow this picture file.  
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany2Sensor360_schematic.jpg)
 
 Good use.
 
