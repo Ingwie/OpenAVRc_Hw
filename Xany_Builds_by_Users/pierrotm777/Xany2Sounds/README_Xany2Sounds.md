@@ -62,35 +62,27 @@ So, you need to do this configuration just one time when you want change your se
 Add sounds files in your JQ6500 module:
 Follow the JQ6500 [documentation](https://sparks.gogo.co.nz/jq6500/index.html).
 
-
 ## Build your 8 or 16 switch module
 - For 8 switchs, use a PCF8574.  
-![]()
+![PCF8574](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/pcf8575.jpg)  
 - For 16 switchs, use a PCF8575**A** or un PCA9671 or a MCP23017  
-![]() or ![]()   
+![PCF8575A](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/pcf8575.jpg) or ![MCP23017](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/mcp23017.jpg)   
 See our [documentation](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documentation/Compilez%20votre%20FW%20OpenAVRc_V3.pdf), paragraph **8.4**.
 
 ## How to use this project
 
-### Connect a P3015-V1-CW360 as I2C sensor into your OpenAVRc transmitter
+### Connect your 8 or 16 switch module into your OpenAVRc transmitter
 - If you use a shield V2.0 or V2.1 or V2.2, use the connector P2.  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Shield_v2.1_Xany_Connector.jpg)  
-- On your OpenAVRc transmitter, select a model and go to the 5/13 screen and select **0:360 I2C 0000**.  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany360mode.jpg)  
+- On your OpenAVRc transmitter, select a model and go to the 5/13 screen and select **SW: 00000000** or  **SW: 0000000000000000**.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/Xanyswitchmode.jpg)  
 
-### Connect a P3022-V1-CW360 as I2C sensor into your OpenAVRc transmitter
-- Connect the sensor and a servo modified to the Pro Micro.  
-![Follow this picture file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany2Sensor360_schematic.jpg)  
-- Connect the Pro Micro Input to your output receiver (channel 5 by default).  
-
- 
+### Connect sound module
+- Follow schemtic for build the sound module.  
+![See picture file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Sounds/Xany2Sounds.jpg)  
+- Connect the Pro Micro Input to your output receiver (channel 5 by default).
 
 
-
-
-
-## Wires
-![See picture file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Sounds/Xany2Sounds.jpg)
 
 
 

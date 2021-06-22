@@ -78,7 +78,7 @@ For this project, you can use a bigger **P3022-V1-CW360**.
 - On your OpenAVRc transmitter, select a model and go to the 5/13 screen and select **0:360 I2C 0000**.  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany360mode.jpg)  
 
-### Connect a P3022-V1-CW360 as I2C sensor into your OpenAVRc transmitter
+### Connect a P3022-V1-CW360 as I2C sensor for this project
 - Connect the sensor and a servo modified to the Pro Micro.  
 ![Follow this picture file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany2Sensor360_schematic.jpg)  
 - Connect the Pro Micro Input to your output receiver (channel 5 by default).  
