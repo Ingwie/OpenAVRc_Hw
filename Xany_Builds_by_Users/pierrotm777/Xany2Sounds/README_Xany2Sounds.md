@@ -26,16 +26,14 @@ The module accept several input mode.
 PWM, CPPM, SBUS, SRXL, SUMD, IBUS or JETI.
 You can select also these modes in confuration menu.
 
-**Upload the HEX file:**
-
+## Upload the HEX file
 I don't give sources, because X-Any libraries are not Open Source for the receive side.
 You can found binary file [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Sounds).
 Rename Xany2Sounds.ino.with_bootloader.promicro._hex file to Xany2Sounds.ino.with_bootloader.promicro.hex
 Pro Micro use a particular method for upload a code.
 You can use the program https://github.com/uriba107/32u4_hexuploader .
 
-**Configuration mode**
-
+## Configuration mode
 Connect the USB connector of your Pro Micro board to your PC.  
 Select the console window, define 115200 bauds and NL and CR mode.  
 You have 5 seconds for click on the ENTER key.  
@@ -62,12 +60,43 @@ The configuration is saved into the EEPROM.
 So, you need to do this configuration just one time when you want change your settings.
 
 Add sounds files in your JQ6500 module:
-Follow the JQ6500 documentation [here](https://sparks.gogo.co.nz/jq6500/index.html) .
+Follow the JQ6500 [documentation](https://sparks.gogo.co.nz/jq6500/index.html).
 
-**Wires**
-See picture file.
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Sounds/Xany2Sounds.jpg)
+## Build your 8 or 16 switch module
+- For 8 switchs, use a PCF8574.  
+![]()
+- For 16 switchs, use a PCF8575**A** or un PCA9671 or a MCP23017  
+![]() or ![]()   
+See our [documentation](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documentation/Compilez%20votre%20FW%20OpenAVRc_V3.pdf), paragraph **8.4**.
+
+## How to use this project
+
+### Connect a P3015-V1-CW360 as I2C sensor into your OpenAVRc transmitter
+- If you use a shield V2.0 or V2.1 or V2.2, use the connector P2.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Shield_v2.1_Xany_Connector.jpg)  
+- On your OpenAVRc transmitter, select a model and go to the 5/13 screen and select **0:360 I2C 0000**.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany360mode.jpg)  
+
+### Connect a P3022-V1-CW360 as I2C sensor into your OpenAVRc transmitter
+- Connect the sensor and a servo modified to the Pro Micro.  
+![Follow this picture file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany2Sensor360_schematic.jpg)  
+- Connect the Pro Micro Input to your output receiver (channel 5 by default).  
+
+ 
+
+
+
+
+
+## Wires
+![See picture file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Sounds/Xany2Sounds.jpg)
+
+
+
+
+
+
 
 Good use.
 
