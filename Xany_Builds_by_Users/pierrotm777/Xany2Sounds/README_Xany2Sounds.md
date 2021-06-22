@@ -65,7 +65,7 @@ Follow the JQ6500 [documentation](https://sparks.gogo.co.nz/jq6500/index.html).
 ## Build your 8 or 16 switch module
 - For 8 switchs, use a PCF8574.  
 ![PCF8574](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/pcf8574.jpg)  
-- For 16 switchs, use a PCF8575**A** or un PCA9671 or a MCP23017  
+- For 16 switchs, use a PCF8575**A** or a MCP23017 or a PCA9671.  
 ![PCF8575A](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/pcf8575.jpg) <span style="font-family: Open Sans; font-weight: 800; font-size: 30px;font-style: italic">Or</span> ![MCP23017](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/mcp23017.jpg)   
 See our [documentation](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documentation/Compilez%20votre%20FW%20OpenAVRc_V3.pdf), paragraph **8.4**.
 
@@ -81,12 +81,6 @@ See our [documentation](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documenta
 - Follow schemtic for build the sound module.  
 ![See picture file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Sounds/Xany2Sounds.jpg)  
 - Connect the Pro Micro Input to your output receiver (channel 5 by default).
-
-
-
-
-
-
 
 
 
