@@ -64,7 +64,7 @@ Or
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/SK8mhnEzcvY/0.jpg)](https://www.youtube.com/watch?v=SK8mhnEzcvY "Click")
 
 ### Build a 360 degrees I2C sensor
-Two I2C sensor are needed.  
+Two **I2C** sensors are needed.  
 For your transmitter, the better choice is to use a little **P3015-V1-CW360**.  
 For this project, you can use a bigger **P3022-V1-CW360**.  
 [I2C sensor](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Capteur_Hall_I2C).  
@@ -74,6 +74,10 @@ For this project, you can use a bigger **P3022-V1-CW360**.
 See picture file.
 
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sensor360/Xany2Sensor360_schematic.jpg)
+
+## How to use this project
+
+### Connect a P3022-V1-CW360 as I2C sensor into your OpenAVRc transmitter
 
 Good use.
 
