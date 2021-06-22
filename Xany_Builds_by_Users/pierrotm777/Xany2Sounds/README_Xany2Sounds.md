@@ -79,7 +79,7 @@ See our [documentation](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documenta
 
 ### Connect sound module
 - Follow schemtic for build the sound module.  
-![See picture file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Sounds/Xany2Sounds.jpg)  
+![See picture file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/Xany2Sounds_schematic.jpg)  
 - Connect the Pro Micro Input to your output receiver (channel 5 by default).
 
 
