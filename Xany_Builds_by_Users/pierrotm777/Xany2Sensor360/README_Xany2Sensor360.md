@@ -3,7 +3,7 @@
 Xany2Servo360 can command a cannon turret or a [schottle motor](https://www.sud-rc.fr/gouvernail-acces-de-barre/721-propulsion-schottel-ii-graupner-2335.html) with a 360 degrees rotation.
 
 For build it, you need:  
-- Build a 360 degrees I2C sensor [see how to](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Servo360/README_Xany2Servo360.md#build-a-360-degrees-i2c-sensor).  
+- Build two 360 degrees I2C sensors [see how to](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Servo360/README_Xany2Servo360.md#build-a-360-degrees-i2c-sensor) (one for your **OpenAVRc** transmitter and another for this project).  
 - Build a continous rotation servo [see videos](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Servo360/README_Xany2Servo360.md#how-to-build-servo-with-continous-rotation).
 - A Pro Micro board 5v/16Mhz.
 - An **OpenAVRc** Transmitter with the X-Any feature.    
