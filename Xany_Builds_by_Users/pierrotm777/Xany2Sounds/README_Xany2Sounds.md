@@ -66,7 +66,7 @@ Follow the JQ6500 [documentation](https://sparks.gogo.co.nz/jq6500/index.html).
 - For 8 switchs, use a PCF8574.  
 ![PCF8574](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/pcf8574.jpg)  
 - For 16 switchs, use a PCF8575**A** or un PCA9671 or a MCP23017  
-![PCF8575A](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/pcf8575.jpg) or ![MCP23017](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/mcp23017.jpg)   
+![PCF8575A](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/pcf8575.jpg) <span style="font-family:Papyrus; font-size:3em;">  Or  </span> ![MCP23017](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/mcp23017.jpg)   
 See our [documentation](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documentation/Compilez%20votre%20FW%20OpenAVRc_V3.pdf), paragraph **8.4**.
 
 ## How to use this project
