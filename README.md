@@ -54,26 +54,24 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20LM386%20amplifier/LM386Amplifier_Top.jpg)
    
-1. Bluetooth feature
-
-   Our OpenAVRc transmitter can connect two transmitters for schooling mode.
-   
-   One use the master role and the other the slave role.
-   
-   It's also possible to use a Bluetooth mode.
-   
-   This Bluetooth mode can be used for use an external Joystick for command the transmitter or use a Head Tracker for FPV or replace PPM cable for use with a simulator.
-   
-   * OpenAVRcBT_JoystickReader [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader)
-   * OpenAVRcBT_ToSimulator    [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_ToSimulator)
-   * OpenAVRcBT_HeadTrackerFW [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_HeadTrackerFW)
-   
-   
 
 ## Users Builds with X-Any
 * [Xany par JPZ](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/JPZ)
 * [Xany par pierrotm777](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/pierrotm777)
 
+## Users Builds with Bluetooth feature
+These modules use the **OpenAVRc Blutooth** feature
+   An **OpenAVRc** transmitter can be connected to another **OpenAVRc** transmitter for schooling mode.  
+   One use the master role and the other the slave role.  
+   But it's also possible to use this Bluetooth feature for these three projects:    
+   This Bluetooth mode can be used for use an external Joystick for command the transmitter or use a Head Tracker for FPV or replace PPM cable for use with a simulator.
+   Replace transmitter stick by a joystick **Logitech 3D Pro**:  
+     * [OpenAVRcBT_JoystickReader](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader)  
+   Use your transmitter with simulator (**CPPM** or **joystick** modes):   
+     * [OpenAVRcBT_ToSimulator](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_ToSimulator)  
+   Command camera:  
+     * [OpenAVRcBT_HeadTrackerFW](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_HeadTrackerFW)  
+  
 ----------
 
    OpenAVRc is free software: you can redistribute it and/or modify    
