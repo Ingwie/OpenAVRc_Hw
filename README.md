@@ -69,7 +69,7 @@ These modules use the **OpenAVRc Blutooth** feature
      * [OpenAVRcBT_JoystickReader](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader)  
    Use your transmitter with simulator (**CPPM** or **joystick** modes):   
      * [OpenAVRcBT_ToSimulator](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_ToSimulator)  
-   Command camera:  
+   Command camera and more:  
      * [OpenAVRcBT_HeadTrackerFW](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_HeadTrackerFW)  
   
 ----------
