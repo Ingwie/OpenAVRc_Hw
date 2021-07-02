@@ -21,15 +21,12 @@ Complet documentation can be found [here](https://www.beier-electronic.de/modell
 
 For use this module whith Xany, you need:
 - An OpenAVRc Transmitter with the X-Any feature.  
-- A Xany2Msx module with the [Xany2Misc]() firmware. 
+- A [Xany2Msx](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Msx) module with the [Xany2Misc]() firmware. 
 
 
 
 ## Configuration mode
-Connect the USB connector of your Pro Micro board to your PC.  
-Select the console window, define 115200 bauds and NL and CR mode.  
-You have 5 seconds for click on the ENTER key.  
-When you are in the configuration mode, type h key and ENTER for see all options:  
+TO DO
 
 
 ## How to use this project
@@ -41,7 +38,8 @@ When you are in the configuration mode, type h key and ENTER for see all options
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/Xanyswitchmode.jpg)  
 
 ### Connect sound module
-- Follow schematic for build the sound module.  
+You can found the USM_RC_2 manual [here](https://www.beier-electronic.de/modellbau/service/Soundmodul_USM-RC-2_GB.pdf).
+
 
 
 
