@@ -14,10 +14,9 @@ Les décodeurs commandés par impulsion du commerce actuellement supportés sont
 Note: 
 1. Côté émetteur, il n’y a pas besoin du codeur spécifique correspondant au modèle de
 décodeur.
-2. Le codeur unique et universel est intégré à l’émetteur OpenAVRc et utilise le protocole XAny. 
-Il est possible de déclarer jusqu’à 4 instances d’ X-Any côté émetteur afin d’autoriser 
-jusqu’à 64 commandes Tout-Ou-Rien. Se reporter à la documentation relative à 
-OpenAVRc pour configurer X-Any côté émetteur.
+2. Le codeur unique et universel est intégré à l’émetteur OpenAVRc et utilise le protocole XAny.  
+Il est possible de déclarer jusqu’à 4 instances d’ X-Any côté émetteur afin d’autoriser jusqu’à 64 commandes Tout-Ou-Rien.  
+Se reporter à la documentation relative à OpenAVRc pour configurer X-Any côté émetteur.
 
 Pour plus de détails, voir le [manuel](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Xany2Msx_Manuel_Utilisateur.pdf).
 
