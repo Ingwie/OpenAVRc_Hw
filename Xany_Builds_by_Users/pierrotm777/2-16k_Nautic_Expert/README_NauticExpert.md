@@ -1,6 +1,6 @@
 # Graupner 2-16K Nautic Expert & X-Any
 
-This old Graupner multi switchs module connect command 16 on/off fonctions.
+This old Graupner multi switchs module connect can 16 on/off fonctions.
 
 
 For use this module whith Xany, you need:
