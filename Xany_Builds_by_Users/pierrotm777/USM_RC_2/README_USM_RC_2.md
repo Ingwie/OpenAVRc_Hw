@@ -26,7 +26,17 @@ For use this module whith Xany, you need:
 
 
 ## Configuration mode
-TO DO
+### USM_RC_2 configuration
+The USM-RC-2 sound module recognize sevral protocols.  
+Nautic (Graupner) / Multiswitch (Futaba), EKMFA, S-Bus / SUMD / i-Bus are possible.  
+To control this module, Xany uses the **EKMFA** protocol.  
+- To configure the USM_RC_2 module in this protocol, you need to use the **USM-RC-2 Sound-Teacher** software.  
+This software is supplied on DVD with the module.  
+- Select **Configuration** tab, click on **EKMFA** tab and then click on *Activate EKMFA on channel #3(X2/3)*.  
+
+### Xany2Msx configuration
+- Configure the **Xany2Msx** interface for the **EKMFA** protocol.  
+
 
 
 ## How to use this project

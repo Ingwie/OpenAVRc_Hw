@@ -19,7 +19,7 @@ Il est possible de déclarer jusqu’à 4 instances d’ X-Any côté émetteur 
 jusqu’à 64 commandes Tout-Ou-Rien. Se reporter à la documentation relative à 
 OpenAVRc pour configurer X-Any côté émetteur.
 
-Pour plus de détails, voir le [manuel](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Xany2Misc_Manuel_Utilisateur.pdf).
+Pour plus de détails, voir le [manuel](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Xany2Msx_Manuel_Utilisateur.pdf).
 
 
 
