@@ -1,16 +1,16 @@
-# Graupner 2-16K Nautic Expert & X-Any
+# Conrad Multiswitch 7 outputs
 
-This old Graupner multi switchs module can command 16 on/off fonctions.
+This Conrad multi switchs module can command 7 on/off fonctions.
 
 
 For use this module whith Xany, you need:
 - An OpenAVRc Transmitter with the X-Any feature.  
-- A [Xany2Msx](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Msx) module with the [Xany2Msx]() firmware. 
+- A [Xany2Msx](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Msx) module with the [Xany2Misc]() firmware. 
 
 
 
 ## Configuration mode
-- Configure the **Xany2Msx** interface for the **Graupner** protocol.  
+- Configure the **Xany2Msx** interface for the **Conrad** protocol.  
 
 
 
@@ -22,7 +22,9 @@ For use this module whith Xany, you need:
 - On your OpenAVRc transmitter, select a model and go to the 5/13 screen and select **SW: 00000000** or  **SW: 0000000000000000**.  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/Xanyswitchmode.jpg)  
 
-### Connect Nautic Expert module
+### Connect Conrad module
+It's possible to use 2 modules with one Xany2Msx interface.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Conrad_7switchs/conrad7.png)
 
 
 
