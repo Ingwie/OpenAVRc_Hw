@@ -27,7 +27,7 @@ It's possible to use 2 modules with one Xany2Msx interface.
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/Rc-Navy/Conrad_7switchs/conrad.png)
 
 ## Video in use
-[![IMAGE ALT TEXT HERE](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/Rc-Navy/Conrad_7switchs/conrad.png)](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/Rc-Navy/Conrad_7switchs/XanyConrad7LR.mp4 "Click")
+[![IMAGE ALT TEXT HERE](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/Rc-Navy/Conrad_7switchs/conrad7.jpg)](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/Rc-Navy/Conrad_7switchs/XanyConrad7LR.mp4 "Click")
 
 
 
