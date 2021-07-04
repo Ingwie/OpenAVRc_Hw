@@ -23,7 +23,9 @@ For use this module whith Xany, you need:
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Xany2Sounds/Xanyswitchmode.jpg)  
 
 ### Connect Conrad module
-It's possible to use 2 modules with one Xany2Msx interface.  
+One receiver output channel can command **two** Xany2Msx modules.  
+Each Xany2Msx interface can command **one** Conrad module.  
+
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/Rc-Navy/Conrad_7switchs/conrad.png)
 
 ## Video in use
