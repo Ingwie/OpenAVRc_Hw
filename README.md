@@ -56,8 +56,9 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
 
 ## Users Builds with X-Any
-* [Xany par JPZ](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/JPZ)
-* [Xany par pierrotm777](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/pierrotm777)
+* [Xany by Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/Rc-Navy)
+* [Xany by JPZ](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/JPZ)
+* [Xany by pierrotm777](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/pierrotm777)
 
 ## Users Builds with Bluetooth feature
 These modules use the **OpenAVRc Blutooth** feature
