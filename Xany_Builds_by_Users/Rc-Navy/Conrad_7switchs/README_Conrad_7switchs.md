@@ -1,6 +1,6 @@
 # Conrad Multiswitch 7 outputs
 
-This Conrad multi switchs module can command 7 on/off fonctions.
+This [Conrad](https://www.conrad.fr/p/commutateur-multiple-7-canaux-231517-1-pcs-231517) multi switchs module can command 7 on/off fonctions.
 
 
 For use this module whith Xany, you need:
@@ -24,7 +24,12 @@ For use this module whith Xany, you need:
 
 ### Connect Conrad module
 It's possible to use 2 modules with one Xany2Msx interface.  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/pierrotm777/Conrad_7switchs/conrad7.png)
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/Rc-Navy/Conrad_7switchs/conrad.png)
+
+## Video in use
+[![IMAGE ALT TEXT HERE](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/Rc-Navy/Conrad_7switchs/conrad.png)](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany_Builds_by_Users/Rc-Navy/Conrad_7switchs/XanyConrad7LR.mp4 "Click")
+
+
 
 
 
