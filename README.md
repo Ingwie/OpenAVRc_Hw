@@ -55,10 +55,11 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20LM386%20amplifier/LM386Amplifier_Top.jpg)
    
 ## Users OpenAVRc Transmitter Builds
-* [Bracame Transmitter]()
+* [Bracame Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Bracame/README.md)
 * [JPZ Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JPZ/README.md)
+* [Pyrall Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Pyrall/README.md)
 * [Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Rc-Navy/README.md)
-* [pierrotm777 Transmitter]()
+* [pierrotm777 Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/pierrotm777/README.md)
 
 
 ## Users Builds with X-Any
