@@ -20,5 +20,11 @@ Se reporter à la documentation relative à OpenAVRc pour configurer X-Any côt�
 
 Pour plus de détails, voir le [manuel](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Xany2Msx_Manuel_Utilisateur.pdf).
 
+## Videos
+
+[![Xany2Msx & Conrad 7 Multiswitch module](https://img.youtube.com/vi/QR7gnT5Co_/0.jpg)](https://www.youtube.com/watch?v=QR7gnT5Co_U "Xany2Msx & Conrad 7") 
+
+
+
 
 
