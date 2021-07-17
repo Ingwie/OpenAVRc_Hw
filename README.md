@@ -57,7 +57,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 ## Users OpenAVRc Transmitter Builds
 * [Bracame Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Bracame/Bracame_TX_Arduino2560/README.md)
 * [JPZ Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JPZ/README.md)
-* [Pyrall Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Pyrall/README.md)
+* [Pyrall Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Pyrall/T2/README.md)
 * [Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Rc-Navy/README.md)
 * [pierrotm777 Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/pierrotm777/README.md)
 
