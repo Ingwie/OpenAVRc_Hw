@@ -61,9 +61,10 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 * [Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Rc-Navy/README.md)
 * [pierrotm777 Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/pierrotm777/README.md)
 * [Jirí Stanek Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JiríStanek/README.md)
-* [Jeffri Ranger Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JeffriRanger/README.md)
-* [Dhe Tattoo bandung Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/DheTattoobandung/README.md)
-* [Feng Wenké](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/FengWenké/README.md)
+* [Jeffri Ranger Transmitters](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JeffriRanger/README.md)
+* [Dhe Tattoo bandung Transmitter (with FVP feature)](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/DheTattoobandung/README.md)
+* [Feng Wenké Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/FengWenké/README.md)
+* [Aat Tsani Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/AatTsani/README.md)
 
 
 ## Users Builds with X-Any
