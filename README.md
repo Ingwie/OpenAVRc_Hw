@@ -60,6 +60,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 * [Pyrall Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Pyrall/T2/README.md)
 * [Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Rc-Navy/README.md)
 * [pierrotm777 Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/pierrotm777/README.md)
+* [Jirí Stanek Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JiríStanek/README.md)
 
 
 ## Users Builds with X-Any
