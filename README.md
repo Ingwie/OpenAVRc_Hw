@@ -66,6 +66,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 * [Dhe Tattoo bandung Transmitter (with FVP feature)](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/DheTattoobandung/README.md)
 * [Feng Wenké Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/FengWenké/README.md)
 * [Aat Tsani Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/AatTsani/README.md)
+* [F1FNW Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/F1FNW/README.md)
 
 
 ## Users Builds with X-Any
