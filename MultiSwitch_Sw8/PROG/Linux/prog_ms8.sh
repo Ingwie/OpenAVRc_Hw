@@ -4,7 +4,7 @@
 SERIAL_PORT=/dev/ttyACM0
 
 # Define here the HEX file you want to load (this HEX file shall be in the current directory)
-HEX_FILE=MS8_Xany_PWM_V0_4._HEX
+HEX_FILE=MS8_Xany_PWM_V0_5._HEX
 
 # Target MCU
 TARGET_MCU=attiny84
