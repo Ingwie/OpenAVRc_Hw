@@ -1,15 +1,18 @@
-**MS8-Xany decoder**
+# MS8-Xany decoder
 
-Hereafter, please find a first video of the 8 output **MS8-Xany** Multiswitch decoder  for the **OpenAVRc** transmitter using the "official" PCB of the OpenAVRc Team.
+MS8-Xany is much more than a simple Multiswitch decoder.  
+It not only allows you to drive 8 digital outputs, but also allows you to drive up to 8 digital servos including the 2 extreme positions and the speed between these 2 positions are programmable!  
+It also provides a booster proportional channel to drive a servo or an ESC. 
 
-Ms8 schematic:
+## Ms8 schematic
 
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/D%C3%A9codeur%20MS8_X-Any.jpg)
 
-Ms8 PCB:
+## Ms8 PCB:
 
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/D%C3%A9codeur%20MS8_X-Any_3D.jpg)
 
+## Videos
 This first video show:
 
 The **MS8-Xany** configuration in case the user wants to access to the **advanced functionalities**, 

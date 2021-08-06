@@ -1,13 +1,15 @@
-**MS16 Pro Micro Xany decoder**
+# MS16 Pro Micro Xany decoder
 
-Here after, please find a first video of the 16 output MS16_ProMicro-Xany Multiswitch decoder using the "official" PCB of the OpenAVRc Team.
-
-Ms16 schematic:
-
+MS16-Xany is much more than a simple Multiswitch decoder.  
+It not only allows to control 16 digital outputs in All-Or-Nothing, but also allows to control up to 16 servos in All-Or-Nothing including the 2 extreme positions and the speed between these 2 positions are programmable! It also provides a booster proportional channel to drive a servo or an ESC.
+It is in fact a derivative version of MS8-Xany, but more "muscular" and having more functionalities.  
+For example, MS16-Xany can interface with the RC receiver in PWM, CPPM, SBUS, SRXL, SUMD, IBUS, JETI!
+For the SBUS, no need for an external signal inverter: it is already integrated into the MS16-Xany card!  
+Two optional small daughter boards can even supply 2 different external voltages from the same battery to power the 2 groups of 8 outputs (group S01 to S08 and group S09 to S16)! 
+## Ms16 schematic:
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw16-ProMicro/Ms16_ProMicro-Xany_Schematic.jpg)
 
-Ms16 PCB:
-
+## Ms16 PCB:
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw16-ProMicro/Ms16_ProMicro_V1.0.png)
 
 It shows the MS16-Xany configuration in case the user wants to access to the advanced functionalities, 
@@ -15,19 +17,24 @@ such as driving servos between 2 limit positions at a preprogrammed motion speed
 
 Nice for opening slowly a door or to rotate slowly cannon turrets, just by using a simple Off/On switch of the OpenAVRc transmitter (or by using a simple Logical Switch).
 
-[Configuration of the MS16_ProMicro-Xany decoder (coming soon...)]
-
 By default, all the outputs are configured in Digital mode (as with regular Multiswitch decoders).
 It is necessary to use USB ProMicro port to access to the advanced mode for driving servos: it's described in the video.
-
-PCB + User Manual + HEX file to be loaded in the ATtiny84 microcontroller:
-
-[MS16_ProMicro-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw16-ProMicro).
 
 Additionally, this decoder provides a supplement proportional channel: thus, even if MS16_ProMicro-Xany uses one proportional channel, this one is not lost! 
 
 The position of the contacts are sent using multiplexing technique.
 
-The data transmission being digital, no tuning is needed.
+The data transmission being digital, no tuning is needed.  
+
+## User manual
+[Configuration of the MS16_ProMicro-Xany decoder](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MS8-Xany_Manuel_Utilisateur.pdf)
+
+## Firmware
+[MS16_ProMicro-Xany with Linux](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Linux)  
+[MS16_ProMicro-Xany with Windows](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Windows)  
+
+
+## Video
+ 
 
 RC Navy 
