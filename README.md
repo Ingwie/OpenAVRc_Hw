@@ -64,6 +64,11 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20JQ6500-28P_PAM8302A/JQ6500-28P_PAM8302A_3DTop.jpg)
    
+1. PAM8302 Amplifier
+   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20PAM8302A)
+   
+   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20PAM8302A/PAM8302_3D.jpg)
+   
 ## Users OpenAVRc Transmitter Builds
 * [Bracame Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Bracame/Bracame_TX_Arduino2560/README.md)
 * [JPZ Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JPZ/README.md)
