@@ -49,6 +49,11 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/Sensor_Board_3D.jpg)
    
+1. Alimentation for Mpx 3010
+   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Mpx%20Alimentation)
+   
+   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Mpx%20Alimentation/MPX_Alimentation_Top.jpg)
+   
 1. LM386 amplifier
    * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20LM386%20amplifier)
    
