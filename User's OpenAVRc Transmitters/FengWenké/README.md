@@ -1,4 +1,4 @@
-# Feng Wenké's OpenAVRc Transmitter with FPV feature
+# Feng Wenké's OpenAVRc Transmitter
 
 ## Video
 
