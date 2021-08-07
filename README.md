@@ -60,7 +60,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20LM386%20amplifier/LM386Amplifier_Top.jpg)
    
 1. Shield for JQ6500-28P/PAM8302
-   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20LJQ6500-28P_PAM8302A)
+   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20JQ6500-28P_PAM8302A)
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20JQ6500-28P_PAM8302A/JQ6500-28P_PAM8302A_3DTop.jpg)
    
