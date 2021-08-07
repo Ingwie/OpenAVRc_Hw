@@ -15,3 +15,7 @@ This shield only supports the [Inhaos mega mini 2560](http://www.inhaos.com/prod
 
 ## Schematic
 [Schematic shield v2.2](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM/Schema_Mega_2560%20core%20mini_full_v2.2.pdf)
+
+## Wiring
+[Shield documentation (French)](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documentation/ShieldV2.1.pdf)
+[Shield documentation (English)](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documentation/Doc_Shield_EN.pdf)
