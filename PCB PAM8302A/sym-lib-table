@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name pam8302)(type Legacy)(uri C:/tmp/_OpenAVRc/PAM8302A/pam8302.lib)(options "")(descr ""))
-)
