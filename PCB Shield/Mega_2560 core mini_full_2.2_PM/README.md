@@ -1,1 +1,14 @@
-TODO
+# Shield for Mega Mini 2560 Inhaos Board
+
+## PCB board
+<table border="2">
+<tr>
+<td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM/Mega_2560%20core%20mini_full_2.2_3D.jpg" border="0"/></td>
+<td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM/Shield_v2.2_3D_Bottom.jpg" border="0"/></td>
+</tr>
+<tr>
+<td>     Top side</td><td>     Bottom side</td>
+</table> 
+
+## Schematic
+[Schematic shield v2.2](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM/Schema_Mega_2560%20core%20mini_full_v2.2.pdf)
