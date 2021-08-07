@@ -1,6 +1,6 @@
 # Shield for Mega Mini 2560 Inhaos Board
 
-This shield only supports the [Inhaos mega mini 2560](http://www.inhaos.com/product_info.php?products_id=118).  
+This shield only supports the [Inhaos mega mini 2560](http://www.inhaos.com/product_info.php?products_id=118) board.  
 ![Schematic shield v2.2](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM/megamini2560core.jpg)
 
 ## PCB board
