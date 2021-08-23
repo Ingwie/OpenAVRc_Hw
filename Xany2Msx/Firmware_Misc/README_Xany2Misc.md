@@ -7,9 +7,12 @@ The Xany2Msx / Xany2Misc adapter cord allows the use of Multi-Switch modules at
 **pulse control** on one or two **X-Any** channels of the OpenAVRc RC set. 
 
 Currently supported commercial pulse decoders are:  
-* **Conrad Module 7 fonctions**
-* **Beier Module son USM-RC-2**
-* **NVM Décodeur Multi-Switch**
+* [**Conrad Module 7 fonctions**](https://www.conrad.fr/p/commutateur-multiple-7-canaux-231517-1-pcs-231517)  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Misc/Conrad7outputs.jpg)
+* [**Beier Module son USM-RC-2**](https://www.beier-electronic.de/modellbau/produkte/usm-rc-2/usm-rc-2.php)  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Misc/USM-RC-2.jpg)
+* [**NVMMulti-Switch Decoder**](https://www.rc-point.nl/rc-electronica/multiswitch-decoders/arduino-nvm-multiswitch/arduino-12-2-multiswitch-decoder-voor-ontvanger-pakket/a-71933-20000461)  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Misc/NVM_MS_2.jpg)
 
 Note: 
 1. On the transmitter side, there is no need for the specific encoder corresponding to the model of
