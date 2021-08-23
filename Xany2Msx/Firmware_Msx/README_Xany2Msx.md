@@ -4,11 +4,16 @@ Le cordon adaptateur **Xany2Msx** permet de connecter, en simultané, sur une se
 récepteur, jusqu’à 2 décodeurs **Multi-Switch** du commerce sur une voie « X-Any » de l’ensemble
 RC OpenAVRc.
 Les décodeurs Multi-Switches/Prop du commerce actuellement supportés sont :
-* **Robbe Multi Switch Decoder** No 8369 ***(MS16)***
-* **Robbe Multi Decoder Switch + Prop** No 8370 ***(MS12 + 2 PROP)***
-* **Robbe-Futaba Multi Switch Decoder** No F1513 ***(MS8)***
-* **MULTIPLEX MULTInaut top** ***(MS12 + 2 MoTeurs)***
-* **GRAUPNER NAUTIC Expert** ***(MS16)***
+* **Robbe Multi Switch Decoder** No 8369 ***(MS16)***  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Msx/Robbe_MultiSwitch16-Decoder.jpg)
+* **Robbe Multi Decoder Switch + Prop** No 8370 ***(MS12 + 2 PROP)***  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Msx/Robbe_MultiDecoder_Switch-Prop12+2.jpg)
+* **Robbe-Futaba Multi Switch Decoder** No F1513 ***(MS8)***  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Msx/Robbe_MultiSwitch-Decoder.jpg)
+* **MULTIPLEX MULTInaut top** ***(MS12 + 2 MoTeurs)***  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Msx/Multiplex_Multinaut-Top.jpg)
+* **GRAUPNER NAUTIC Expert** ***(MS16)***  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Msx/Graupner_2-16K-Nautic-Expert.jpg)
 
 
 Note :
