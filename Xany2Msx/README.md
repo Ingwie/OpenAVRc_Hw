@@ -2,7 +2,7 @@
 
 ## Il existe deux versions de firmware pour l'interface *Xany2Msx*: 
 
-- [Xany2Msx](README_Xany2Msx.md)
+- [Xany2Msx](./Firmware_Msx/README_Xany2Msx.md)
 
 Les décodeurs Multi-Switches/Prop du commerce actuellement supportés sont :
 * **Robbe Multi Switch Decoder** No 8369 ***(MS16)***
@@ -11,7 +11,7 @@ Les décodeurs Multi-Switches/Prop du commerce actuellement supportés sont :
 * **MULTIPLEX MULTInaut top** ***(MS12 + 2 MoTeurs)***
 * **GRAUPNER NAUTIC Expert** ***(MS16)***
 
-- [Xany2Misc](README_Xany2Misc.md)
+- [Xany2Misc](./Firmware_Misc/README_Xany2Misc.md)
 
 Les décodeurs commandés par impulsion du commerce actuellement supportés sont :
 * **Conrad Module 7 fonctions**
