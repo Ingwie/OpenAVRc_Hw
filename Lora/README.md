@@ -3,7 +3,7 @@
 If you follow the [MultiProtocol](https://www.rcgroups.com/forums/showthread.php?2165676-DIY-Multiprotocol-TX-Module) (MPM) thread on Rcgroups, you know that it's possible to use a SX1276 RF module in 915Mhz or 868Mhz.
 
 This system use the R9mm or R9 as receiver:  
-![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/R9.jpg)    **OR**    ![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/R9MM.jpg)
+![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/receivers.jpg)  
 
 The RFM95W accept only 3,3v levels:   
  - If you have already a 4in1 module with STM32, you don't need to use a level convert.
