@@ -14,35 +14,57 @@ The RFM95W accept only 3,3v levels:
 The MPM code add the Lora feature only with a STM32 who has enough pins for command cc2500, a7105, cyrf6936, nrf24l01+ and rfm95w in same time.  
 Whis the atmega328, we need to do a choice. Our choice is to use the CS (chip select) of the cyrf6936.
 
-## Lora with atmega328
-See the schematic file PCB v2.3&Lora.pdf for connections:  
+
+## Transmitter side
+
+### Wiring
+1. Lora with atmega328:  
 ![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/MPM_FrskyR9_328p.jpg)
-
-## Lora with STM32 (128KB)
-See the schematic file PCB v2.3&Lora.pdf for connections:  
+1. Lora with STM32 (128KB):  
 ![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/MPM_FrskyR9_stm32.jpg)
+1. Build MPM (Multiprotocol) Firmware for Frsky R9:  
 
-## Firmware Frsky R9
-You need to flash your R9 receiver with one of the two firmwares FCC or FLEX.  
-Our choice is to use **FLEX**.  
-You will find needed files in the R9_FCC and R9_FLEX folder with a special F-PORT
-version for each. 
-
-### For Atmega328
-I have modified the MPM code for use an atmega328p [see Multiprotocol_Lora328P.zip](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/Multiprotocol_Lora328P.zip)  MPM modified sources files).
-On OpenAVRc side, two solutions:  
-1- Use your actual firmware an MultiMod protocol with custom 63.  
- - sub-protocol **1** for 16ch **without** telemetry.  
- - sub-protocol **3** for 8ch **with** telemetry.  
- 
-2- Compile a new firmware with OpenAVRc_Builder, add **MultiSX1276=YES** in your build options.  
-
-In the MultiProcol code FRSKY-R9 use the value 65, but for now, **OpenAVRc** accept only 63 maxi values.  
-So, **MultiProtocol's** source need to be updated for accept up to 63 values.  
-1- Open the **Multiprotocol.h** file.  
-2- Replace by PROTO_FRSKY_R9 = **65** with **63**.    
-3- Replace PROTO_XN297DUMP = **63** with **65**.  
+### Firmware for Atmega328
+In the MultiProcol code FRSKY-R9 use the value 65, but for now, **OpenAVRc** accept only (for now) **63** maxi values.  
+So, **MultiProtocol's** source need to be updated for accept up to 63 values.
+1. Open the **Multiprotocol.h** file.  
+1. Replace by PROTO_FRSKY_R9 = **65** with **63**.    
+1. Replace PROTO_XN297DUMP = **63** with **65**.  
 ![Multiprotocol.h](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/Multiprotocol.h.jpg)
+1. Use your actual firmware in **MultiMod** protocol with **custom 63**.  
+    * sub-protocol **1** for 16ch **without** telemetry.  
+    * sub-protocol **3** for 8ch **with** telemetry.  
+
+MPM code for use an atmega328p [see Multiprotocol_Lora328P.zip](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/Multiprotocol_Lora328P.zip)  MPM modified sources files). 
+
+### Firmware for STM32F103CBT6
+As for the Atmega328, we need to modified to MPM code.
+1. Open the **Multiprotocol.h** file.  
+1. Replace by PROTO_FRSKY_R9 = **65** with **63**.    
+1. Replace PROTO_XN297DUMP = **63** with **65**.  
+![Multiprotocol.h](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/Multiprotocol.h.jpg)
+1. Use your actual firmware in **MultiMod** protocol with **custom 63**.  
+    * sub-protocol **1** for 16ch **without** telemetry.  
+    * sub-protocol **3** for 8ch **with** telemetry.  
+	
+## Receiver side
+
+### The firmwares
+You need to flash your R9 receiver with one of the two firmwares **FCC** or **FLEX**.  
+Our choice is to use the **FLEX** version.  
+[R9_FLEXX](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Lora/HowToUploadFirmware/R9_FLEX) with a special **F-PORT** version or not.  
+[R9_FCC](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Lora/HowToUploadFirmware/R9_FCC) with a special **F-PORT** version or not.  
+
+### How to upgrade your receiver
+1. Wiring with a FTDI interface:  
+![How to do](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/HowToUploadFirmware/Wiring_for_load_firmware-STM32.png)
+1. You need a USB to S.Port or STK module:  
+![How to do](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/HowToUploadFirmware/STK.jpg)  Or  ![How to do](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/HowToUploadFirmware/S_Port.png)
+1. Upload a firmware:
+    * Download [frsky_update_sport_rev20.zip](https://www.frsky-rc.com/wp-content/uploads/2017/07/Tool/frsky_update_sport_rev20.zip). 
+	* Connect USB_To_S-Port module to your PC.
+	* Connect USB_To_S-Port module to the S-Port of your receiver **without the power**, (the receiver should not be powered at the start).
+    * Start **frsky_update_sport** software, select com port and once the software says **"finding device"** connect the power supply to the receiver.   	
 
 ## Which receiver
 You can choose to buy a R9 EU receiver in 868Mhz or a R9 in 915Mhz for US. 
