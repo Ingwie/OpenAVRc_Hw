@@ -7,7 +7,7 @@ Whith an atmega328, we need to do a choice. Our choice is to use the CS (chip se
 
 ## Transmitter side
 For the Tx side, the project use a RFM95W who has a RFM95W in 868Mhz or 915Mhz.  
-![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/rfm95w.jpg)  
+![RFM95W 868/915](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/rfm95w.jpg)  
 
 The RFM95W(868Mhz/915Mhz) accept only 3,3v levels:   
  - If you have already a 4in1 module with STM32, you don't need to use a level convert.
