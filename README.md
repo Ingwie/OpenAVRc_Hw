@@ -74,6 +74,11 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20PAM8302A/PAM8302_3D.jpg)
    
+1. Frsky R9 build
+   * [V1.0](hhttps://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Lora)
+   
+   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/RFM95W_TxModule.jpg)
+   
 ## Users OpenAVRc Transmitter Builds
 * [Bracame Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Bracame/Bracame_TX_Arduino2560/README.md)
 * [JPZ Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JPZ/README.md)
