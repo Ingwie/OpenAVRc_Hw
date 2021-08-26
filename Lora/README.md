@@ -5,7 +5,7 @@ If you follow the [MultiProtocol](https://www.rcgroups.com/forums/showthread.php
 This system use the R9mm or R9 as receiver:  
 ![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/receivers.jpg)  
 
-The RFM95W accept only 3,3v levels:   
+The RFM95W(868Mhz only) accept only 3,3v levels:   
  - If you have already a 4in1 module with STM32, you don't need to use a level convert.
  - If you use a DIY 4in1 with atmega328p 3,3v, you don't need to use a level convert.
  - If you use a DIY 4in1 with atmega328p 5v, you need to use a level convert.
@@ -22,7 +22,6 @@ Whis the atmega328, we need to do a choice. Our choice is to use the CS (chip se
 ![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/MPM_FrskyR9_328p.jpg)
 1. Lora with STM32 (128KB):  
 ![PCB v2.3&Lora.pdf](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/MPM_FrskyR9_stm32.jpg)
-1. Build MPM (Multiprotocol) Firmware for Frsky R9:  
 
 ### Firmware for Atmega328
 In the MultiProcol code FRSKY-R9 use the value 65, but for now, **OpenAVRc** accept only (for now) **63** maxi values.  
