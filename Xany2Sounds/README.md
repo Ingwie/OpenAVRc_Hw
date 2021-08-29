@@ -1,7 +1,6 @@
 # Xany2Sounds
 
-Xany2Sounds is a sound module that use the X-Any feature for command un JQ6500-16p or JQ6500-28p.
-I use a Pro Micro board.
+Xany2Sounds is a sound module that use the X-Any feature for command a JQ6500-16p.
 
 For use it, you need:
 - An OpenAVRc Transmitter with the X-Any feature:
@@ -27,10 +26,9 @@ PWM, CPPM, SBUS, SRXL, SUMD, IBUS or JETI.
 You can select also these modes in confuration menu.
 
 ## Upload the HEX file
-I don't give sources, because X-Any libraries are not Open Source for the receive side.
+We don't give sources, because X-Any libraries are not Open Source for the receive side.
 You can found binary file [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Sounds/Firmware).
-Rename Xany2Sounds.ino.with_bootloader.promicro._hex file to Xany2Sounds.ino.with_bootloader.promicro.hex
-Pro Micro use a particular method for upload a code.
+The **Arduino Pro Micro** board use a particular method for upload a code.
 You can use the program https://github.com/uriba107/32u4_hexuploader .
 
 ## Configuration mode
