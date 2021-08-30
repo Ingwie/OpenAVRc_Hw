@@ -44,7 +44,7 @@ When you are in the configuration mode, type h key and ENTER for see all options
 	N=4 or 8 or 16 Sounds mode  
 	C=5,6,7,9,10,11,12,13,14,15 Xany Channel  
 	T=1,2,3,4 Throttle Channel  
-	M=S set shift mode On/Off  
+	S=0,1 set shift mode On/Off  
 	M=P set PWM mode  
 	M=C set CPPM mode  
 	M=B set SBUS mode  
