@@ -38,23 +38,23 @@ Select the console window, define 115200 bauds and NL and CR mode.
 You have 5 seconds for click on the ENTER key.  
 When you are in the configuration mode, type h key and ENTER for see all options:  
 
-	 h Help
-	 q quit
-	 5,6,7,9,10,11,12,13,14,15 Xany channel
-	 4 or 8 or 16 Sounds mode
-	 s set shift mode On/Off
-	 t set shift mode On/Off
-	 1,2,3,4 Throttle Channel
-	 c set PWM mode
-	 p set PPM mode
-	 s set SBUS mode
-	 i set IBUS mode
-	 m set SRLX mode
-	 u set SUMD mode
-	 j set JETIEx mode
-	 f set Failsafe values
-
-	 e reset EEPROM (command hidden)
+	 
+	H Help  
+	Q quit  
+	N=4 or 8 or 16 Sounds mode  
+	C=5,6,7,9,10,11,12,13,14,15 Xany Channel  
+	T=1,2,3,4 Throttle Channel  
+	M=S set shift mode On/Off  
+	M=P set PWM mode  
+	M=C set CPPM mode  
+	M=B set SBUS mode  
+	M=I set IBUS mode  
+	M=X set SRLX mode  
+	M=D set SUMD mode  
+	M=J set JETIx mode  
+	M? Read Sensor & servo values  
+	R set RESET mode   	 
+	 
 
 The configuration is saved into the EEPROM.  
 So, you need to do this configuration just one time when you want change your settings.
