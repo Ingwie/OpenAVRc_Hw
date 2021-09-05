@@ -99,6 +99,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 * [F1FNW Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/F1FNW/README.md)
 * [guilm Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/guilm/README.md)
 * [ElectoPete Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/ElectoPete/README.md)
+* [seb276  Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/seb276/README.md)
 
 ## Users Builds with X-Any
 * [Xany by Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/Rc-Navy)
