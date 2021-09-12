@@ -17,3 +17,10 @@ Currently supported commercial pulse decoders are:
 * **Conrad Module 7 fonctions**
 * **Beier Module son USM-RC-2**
 * **NVM Multi-Switch Decoder**
+
+## Upload Firmware with UsbAsp dongle
+  - Wiring:  
+  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/Attiny85.jpg)
+  - Upload firmware:  
+  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/Avrdudess_Attiny85.jpg)
+  - [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/):
