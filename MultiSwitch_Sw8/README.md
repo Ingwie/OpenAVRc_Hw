@@ -14,7 +14,7 @@ It also provides a booster proportional channel to drive a servo or an ESC.
   - Wiring:  
   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/Attiny84.jpg)
   - Upload firmware:  
-  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/Avrdudess_Attiny84.jpg)
+  ![https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/Avrdudess_Attiny84.jpg)
   
 ## Videos
 This first video show:
