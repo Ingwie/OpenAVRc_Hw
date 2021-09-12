@@ -5,13 +5,17 @@ It not only allows you to drive 8 digital outputs, but also allows you to drive 
 It also provides a booster proportional channel to drive a servo or an ESC. 
 
 ## Ms8 schematic
-
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/D%C3%A9codeur%20MS8_X-Any.jpg)
 
 ## Ms8 PCB:
-
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/D%C3%A9codeur%20MS8_X-Any_3D.jpg)
 
+## Upload Firmware with UsbAsp dongle
+  - Wiring:  
+  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/Attiny84.jpg)
+  - Upload firmware:  
+  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/Avrdudess_Attiny84.jpg)
+  
 ## Videos
 This first video show:
 
