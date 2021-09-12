@@ -41,8 +41,12 @@ It is necessary to use a TTL USB/Serial converter (FTDI type) to access to the a
 Ms8 files:
 * [MS8-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8).
 * PCB: [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MultiSwitch_Sw8-KICAD.zip)
-* User Manual: [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MS8-Xany_Manuel_Utilisateur.pdf) [English](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MS8-Xany_User_manual.pdf)
-* HEX file to be loaded in the ATtiny84 microcontroller: [Linux](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Linux) [Windows](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Windows) 
+* User Manual:  
+  - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MS8-Xany_Manuel_Utilisateur.pdf)
+  - [English](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MS8-Xany_User_manual.pdf)
+* HEX file to be loaded in the ATtiny84 microcontroller:  
+  - [Linux](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Linux)  
+  - [Windows](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Windows) 
 
 
 
