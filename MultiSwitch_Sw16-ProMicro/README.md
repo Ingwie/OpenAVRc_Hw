@@ -27,11 +27,10 @@ The position of the contacts are sent using multiplexing technique.
 The data transmission being digital, no tuning is needed.  
 
 ## User manual
-[Configuration of the MS16_ProMicro-Xany decoder](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/MS8-Xany_Manuel_Utilisateur.pdf)
+[Configuration of the MS16_ProMicro-Xany decoder](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw16-ProMicro/MS16-Xany_Manuel_Utilisateur.pdf)
 
 ## Firmware
-[MS16_ProMicro-Xany with Linux](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Linux)  
-[MS16_ProMicro-Xany with Windows](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8/PROG/Windows)  
+[MS16_ProMicro-Xany](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw16-ProMicro/Firmware_Ms16_ProMicro)  
 
 
 ## Video
