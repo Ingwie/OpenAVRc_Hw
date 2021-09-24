@@ -29,8 +29,14 @@ The data transmission being digital, no tuning is needed.
 ## User manual
 [Configuration of the MS16_ProMicro-Xany decoder](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw16-ProMicro/MS16-Xany_Manuel_Utilisateur.pdf)
 
-## Firmware
-[MS16_ProMicro-Xany](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw16-ProMicro/Firmware_Ms16_ProMicro)  
+## Upload the HEX file
+We don't give sources, because X-Any libraries are not Open Source for the receive side.   
+You can found binary file [MS16_ProMicro-Xany](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw16-ProMicro/Firmware_Ms16_ProMicro)   
+
+The **Arduino Pro Micro** board use a particular method for upload a code.  
+You can use the program [32u4_hexuploader](https://github.com/uriba107/32u4_hexuploader).
+
+ 
 
 
 ## Video
