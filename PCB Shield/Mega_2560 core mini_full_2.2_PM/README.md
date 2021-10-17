@@ -19,7 +19,7 @@ This shield only supports the [Inhaos mega mini 2560](http://www.inhaos.com/prod
 
 ## Wiring
 [Shield documentation (French)](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM/ShieldV2.2_bleu.pdf)  
-[Shield documentation (English)](https://github.com/Ingwie/OpenAVRc_Dev/blob/V3/documentation/Doc_Shield_EN.pdf)
+[Shield documentation (English)](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM/ShieldV2.2_EN.pdf)
 
 ## Bill of Material
   * <a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Mega_2560%20core%20mini_full_2.2_PM/Liste_composants_shield_V2.2.ods" target="_top">BOM</a>
