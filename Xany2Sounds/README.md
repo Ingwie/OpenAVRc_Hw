@@ -63,7 +63,7 @@ So, you need to do this configuration just one time when you want change your se
 Follow the [JQ6500](https://sparks.gogo.co.nz/jq6500/index.html) documentation.
 
 ## Schematic
-![here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Sounds/XANY2SOUNDS.pdf)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Sounds/Xany2Sounds.jpg)
 
 Good use.
 
