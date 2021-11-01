@@ -101,6 +101,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 * [ElectoPete Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/ElectoPete/README.md)
 * [seb276 Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/seb276/README.md)
 * [sloped-soarer Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/sloped-soarer/README.md)
+* [FernPilot Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/FernPilot/README.md)
 
 ## Users Builds with X-Any
 * [Xany by Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/Rc-Navy)
