@@ -90,6 +90,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 * [Pyrall Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Pyrall/README.md)
 * [Antho Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Antho/README.md)
 * [Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Rc-Navy/README.md)
+* [Pascalou95](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Pascalou95/README.md)
 * [pierrotm777 Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/pierrotm777/README.md)
 * [Jirí Stanek Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JiríStanek/README.md)
 * [Jeffri Ranger Transmitters](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JeffriRanger/README.md)
