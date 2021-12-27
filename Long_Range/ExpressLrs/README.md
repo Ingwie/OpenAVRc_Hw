@@ -1,5 +1,9 @@
 # Protocol ExpressLRS (Long Range) with OpenAVRc
 
+ExpressLRS uses the Crossfire serial protocol (AKA CRSF protocol) to communicate  
+between the receiver and a flight controller board.  
+So make sure your flight controller board supports the CRSF serial protocol.   
+
 ## Quick Start Guide
 If you have hardware that you want to flash, please refer to our guides on the [website](https://www.expresslrs.org/2.0/), and our [FAQ](https://www.expresslrs.org/2.0/faq/).
 
@@ -38,15 +42,18 @@ More information can be found on the [website](https://www.expresslrs.org/2.0/).
 1. [900 MHz Hardware:](https://github.com/ExpressLRS/ExpressLRS#900-mhz-hardware)  
 1. [2.4 GHz Hardware:](https://github.com/ExpressLRS/ExpressLRS#24-ghz-hardware)  
 
-## My choose for test ExpressLRS
+## Our choose for test ExpressLRS
 [ES900TX and ES900Rx combo Kit](http://www.happymodel.cn/index.php/2021/02/19/expresslrs-module-es915tx-long-range-915mhz-transmitter-and-es915rx-receiver/2-94/)  
 [ES900TX/ES900Rx document](http://www.happymodel.cn/index.php/2021/02/19/expresslrs-module-es915tx-long-range-915mhz-transmitter-and-es915rx-receiver/)   
 * [HappyModel ES900TX](http://www.happymodel.cn/index.php/2021/02/19/expresslrs-module-es915tx-long-range-915mhz-transmitter-and-es915rx-receiver/3-89/)   
 * [HappyModel ES900RX](http://www.happymodel.cn/index.php/2021/02/19/expresslrs-module-es915tx-long-range-915mhz-transmitter-and-es915rx-receiver/4-64/)  
+[BETAFPV Nano RX868](https://betafpv.com/products/elrs-nano-receiver?variant=39416123981958)
 
 ## Flashing
 1. Flashing ES900TX via [FTDI interface](https://www.expresslrs.org/1.0/quick-start/rx-betafpv900/#flashing-via-ftdi). 
 1. ES900RX
+
+1. BetaFpv Nano Rx868 
 
 ## Wiring
 1. ES900TX  
