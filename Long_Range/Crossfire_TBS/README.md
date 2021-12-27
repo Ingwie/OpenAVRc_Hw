@@ -21,6 +21,38 @@ With such tight integration, the TBS Crossfire is the logical choice for anyone 
 [TBS Crossfire Micro TX V2 Starter Set](https://www.team-blacksheep.com/products/prod:mtxv2_startset)  
 ![TBS Crossfire Micro TX V2 combo kit](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/Crossfire_TBS/TBS_TX_V2_combo_kit.jpg)  
 
+## Upgrade TBS devices
+Three possibilities for update TBS devices existe.  
+
+**TBS AGENT**  
+  * Agent M  
+        Web based software using Chrome browser
+  * Agent X  
+        Desktop software for Windows and Mac operating systems
+  * Agent Lite  
+        LUA based software for radios running FreedomTX, OpenTX or EdgeTX operating system
+
+**Chrome Browser** installed (version: 89 or higher)
+  
+
+### TBS Agent M
+  * Update and configure your favourite TBS products with the all-new web based interface, simple, fast and reliable.
+  * Works on Mac and PC and Android mobile devices with Chrome browser installed.
+  * Requires USB connection between the computer and TBS device.  
+  * TBS Agent M: [Open AgentM](https://www.team-blacksheep.com/agentm/)  
+  * Chrome Browser: [Click to Download](https://www.google.com/chrome/)  
+
+### TBS Agent X
+  * [Windows Version](https://agent.team-blacksheep.com/agentx/agentx_v2_win.zip) (Current Version: 3.0.51)
+  * [Mac OSX Version](https://agent.team-blacksheep.com/agentx/agentx_v2_macosx.zip) (Current Version: 3.0.51)
+  * Unpack the zip file and run the instalation wizard. 
+
+#### Updating
+1. Open up **AgentM** or **AgentX**
+1. Click three-dots icon in top right corner
+1. Click ‘UPDATE TBS AGENT X” icon
+1. Follow the steps to complete. 
+
 ## Videos
 [![Crossfire basics for Beginners](https://img.youtube.com/vi/aq4hRkDCuCs/0.jpg)](https://www.youtube.com/watch?v=aq4hRkDCuCs "TBS Crossfire")
 
