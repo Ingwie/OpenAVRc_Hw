@@ -75,9 +75,9 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20PAM8302A/PAM8302_3D.jpg)
    
 1. Frsky R9 Lora build
-   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Lora)
+   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/MultiProtocol&Lora)
    
-   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/RFM95W_TxModule.jpg)
+   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol&Lora/RFM95W_TxModule.jpg)
    
 1. Xany2Sounds
    * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Sounds)
