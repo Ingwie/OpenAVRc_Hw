@@ -35,7 +35,7 @@ So, **MultiProtocol's** source need to be updated for accept up to 63 values.
 
 MPM code for use an atmega328p [see Multiprotocol_Lora328P.zip](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/Multiprotocol_Lora328P.zip)  MPM modified sources files. 
 
-### Firmware for 
+### Firmware for STM32F103CBT6
 As for the Atmega328, we need to modified to MPM code.
 1. Open the **Multiprotocol.h** file.  
 1. Replace by PROTO_FRSKY_R9 = **65** with **63**.    
