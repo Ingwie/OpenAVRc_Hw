@@ -57,7 +57,7 @@ More information can be found on the [website](https://www.expresslrs.org/2.0/).
 
 ## Wiring
 1. ES900TX  
-![Tx connection with Transmitter]()  
+![Tx connection with Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/ExpressLrs/ES900TX_Wiring.jpg)  
 1. ES900RX  
 ![Rx connections with flight controller](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/ExpressLrs/ES900RX_Wiring.jpg) 
 1. BETAFPV Nano RX   
