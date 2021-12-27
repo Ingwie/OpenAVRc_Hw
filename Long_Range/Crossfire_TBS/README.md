@@ -64,7 +64,7 @@ Ch. Out 1 (TX) -------> RX pin
 Ch. Out 2 (RX) -------> TX pin  
 
 ## Videos
-[![Crossfire basics for Beginners](https://img.youtube.com/vi/aq4hRkDCuCs/0.jpg)](https://www.youtube.com/watch?v=aq4hRkDCuCs "TBS Crossfire")  
+[![Crossfire basics for Beginners](https://img.youtube.com/vi/aq4hRkDCuCs/0.jpg)](https://www.youtube.com/watch?v=aq4hRkDCuCs "Crossfire basics for Beginners")  
 
 [![TBS Nano Rx RESET](https://img.youtube.com/vi/trO3WAFBIH4/0.jpg)](https://www.youtube.com/watch?v=trO3WAFBIH4 "TBS Nano Rx RESET")  
 
