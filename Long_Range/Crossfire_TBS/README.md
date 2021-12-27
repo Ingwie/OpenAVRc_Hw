@@ -17,7 +17,7 @@ It provides ultra-low latency with incredible bandwidth (3x faster, 6x more data
 With such tight integration, the TBS Crossfire is the logical choice for anyone flying Betaflight, KiSS or ArduPilot/Pixhawk platforms. 
 
 
-## Our chosse for test TBS CROSSFIRE
+## Our choice for test TBS CROSSFIRE
 [TBS Crossfire Micro TX V2 Starter Set](https://www.team-blacksheep.com/products/prod:mtxv2_startset)  
 ![TBS Crossfire Micro TX V2 combo kit](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/Crossfire_TBS/TBS_TX_V2_combo_kit.jpg)  
 

@@ -42,7 +42,7 @@ More information can be found on the [website](https://www.expresslrs.org/2.0/).
 1. [900 MHz Hardware:](https://github.com/ExpressLRS/ExpressLRS#900-mhz-hardware)  
 1. [2.4 GHz Hardware:](https://github.com/ExpressLRS/ExpressLRS#24-ghz-hardware)  
 
-## Our choose for test ExpressLRS
+## Our choice for test ExpressLRS
 [ES900TX and ES900Rx combo Kit](http://www.happymodel.cn/index.php/2021/02/19/expresslrs-module-es915tx-long-range-915mhz-transmitter-and-es915rx-receiver/2-94/)  
 [ES900TX/ES900Rx document](http://www.happymodel.cn/index.php/2021/02/19/expresslrs-module-es915tx-long-range-915mhz-transmitter-and-es915rx-receiver/)   
 * [HappyModel ES900TX](http://www.happymodel.cn/index.php/2021/02/19/expresslrs-module-es915tx-long-range-915mhz-transmitter-and-es915rx-receiver/3-89/)   
