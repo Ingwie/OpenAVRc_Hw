@@ -35,7 +35,7 @@ So, **MultiProtocol's** source need to be updated for accept up to 63 values.
 
 MPM code for use an atmega328p [see Multiprotocol_Lora328P.zip](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/Multiprotocol_Lora328P.zip)  MPM modified sources files. 
 
-### Firmware for STM32F103CBT6
+### Firmware for 
 As for the Atmega328, we need to modified to MPM code.
 1. Open the **Multiprotocol.h** file.  
 1. Replace by PROTO_FRSKY_R9 = **65** with **63**.    
@@ -44,6 +44,9 @@ As for the Atmega328, we need to modified to MPM code.
 1. Use your actual firmware in **MultiMod** protocol with **custom 63**.  
     * sub-protocol **1** for 16ch **without** telemetry.  
     * sub-protocol **3** for 8ch **with** telemetry.  
+	
+1. Wiring with a FTDI interface:  
+![How to do](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/HowToUploadFirmware/Wiring_for_load_firmware-STM32.png)
 	
 ## Receiver side
 
@@ -54,8 +57,7 @@ Our choice is to use the **FLEX** version.
 [R9_FCC](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Lora/HowToUploadFirmware/R9_FCC) with a special **F-PORT** version or not.  
 
 ### How to upgrade your receiver
-1. Wiring with a FTDI interface:  
-![How to do](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/HowToUploadFirmware/Wiring_for_load_firmware-STM32.png)
+
 1. You need a USB to S.Port or STK module:  
 ![STK](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/HowToUploadFirmware/STK.jpg)  Or  ![USB To S-Port](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/HowToUploadFirmware/S_Port.png)
 1. Upload a firmware:
