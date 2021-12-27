@@ -51,9 +51,25 @@ Three possibilities for update TBS devices existe.
 1. Open up **AgentM** or **AgentX**
 1. Click three-dots icon in top right corner
 1. Click ‘UPDATE TBS AGENT X” icon
-1. Follow the steps to complete. 
+1. Follow the steps to complete.
+
+## TX wiring
+
+## Rx wiring
+![TBS Nano RX](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/Crossfire_TBS/nano-rx-pinout.jpg)  
+TBS Crossfire Nano --> Flight controller   
+GND -----------------> GND pin  
+5V In -----------------> 5V pin  
+Ch. Out 1 (TX) -------> RX pin  
+Ch. Out 2 (RX) -------> TX pin  
 
 ## Videos
-[![Crossfire basics for Beginners](https://img.youtube.com/vi/aq4hRkDCuCs/0.jpg)](https://www.youtube.com/watch?v=aq4hRkDCuCs "TBS Crossfire")
+[![Crossfire basics for Beginners](https://img.youtube.com/vi/aq4hRkDCuCs/0.jpg)](https://www.youtube.com/watch?v=aq4hRkDCuCs "TBS Crossfire")  
+
+[![TBS Nano Rx RESET](https://img.youtube.com/vi/trO3WAFBIH4/0.jpg)](https://www.youtube.com/watch?v=trO3WAFBIH4 "TBS Nano Rx RESET")  
+
+[![TBS Nano Bind with Agent M/X](https://img.youtube.com/vi/j7zbBpXWZUo/0.jpg)](https://www.youtube.com/watch?v=j7zbBpXWZUo "TBS Nano Bind with Agent M/X")  
+
+
 
 @OpenAVRc Team
