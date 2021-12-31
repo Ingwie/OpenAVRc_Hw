@@ -74,13 +74,15 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20PAM8302A/PAM8302_3D.jpg)
    
-1. Long Range hardwares solutions
-   * [Frsky Lora](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/MultiProtocol&Lora)
-   * [ExpressLRS](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/ExpressLrs)
-   * [Crossfire TBS](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/Crossfire_TBS)
-   
-   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol&Lora/RFM95W_TxModule.jpg)
-   
+1. Long Range hardwares solutions  
+	<table cellspacing=0>
+	  <tr>
+		<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/MultiProtocol&Lora"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/RFM95W_TxModule.jpg" border="0" name="submit" title="MultiProtocol&Lora" alt="MultiProtocol&Lora"/></a><br><b>MultiProtocol&Lora</b></td>
+		<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/ExpressLrs"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/ExpressLrs/HappyModel_combo_kit.jpg" border="0" name="submit" title="ExpressLrs" alt="ExpressLrs"/></a><br><b>ExpressLrs</b></td>
+		<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/Crossfire_TBS"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/Crossfire_TBS/TBS_TX_V2_combo_kit.jpg" border="0" name="submit" title="Crossfire_TBS" alt="Crossfire_TBS"/></a><br><b>Crossfire_TBS</b></td>
+	  </tr>
+	</table>
+ 
 1. Xany2Sounds
    * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany2Sounds)
    
