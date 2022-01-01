@@ -61,7 +61,7 @@ A GUI application is available for Windows and a shell script for Linux and macO
   - Upload your firmware:  
 	* With this method, you can upload your custom firmware.  
 	![flash_multi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi_dfumode.jpg)  
-	* You can also download already compiled firmware [](https://downloads.multi-module.org/).  
+	* You can also download already [compiled firmware](https://downloads.multi-module.org/).  
 	![compiled firmwares](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi_compiled_firmwares.jpg)  
   
 	
