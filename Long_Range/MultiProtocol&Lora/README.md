@@ -45,14 +45,24 @@ As for the Atmega328, we need to modified to MPM code.
     * sub-protocol **1** for 16ch **without** telemetry.  
     * sub-protocol **3** for 8ch **with** telemetry.  
 	
-1. Wiring with a FTDI interface:  
+1. Upload your firmware with a FTDI interface:  
 With this method, you can upload your custom firmware under the Arduino IDE.  
 ![How to do](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/Wiring_for_load_firmware-STM32.png)  
-1. Use USB port:  
-  * With this method, you can upload your custom firmware with the software [flash_multi](https://github.com/benlye/flash-multi) by Ben Lye.  
-  ![flash_multi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi.jpg) 
-  * You also download already compiled firmware [](https://downloads.multi-module.org/).  
-  ![compiled firmwares](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi_compiled_firmwares.jpg)  
+1. Upload your firmware with USB port and use [flash_multi](https://github.com/benlye/flash-multi) by Ben Lye:  
+![flash_multi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi.jpg)  
+Flash Multi is an application for managing the firmware on a Jumper,  
+iRangeX, Vantac, 'Banggood', or DIY MULTI-Module. 
+A GUI application is available for Windows and a shell script for Linux and macOS.
+  -  Before upload you must:
+	* Install DFU drivers:  
+	![flash_multi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi_drivers.jpg)  
+	* Install bootloader:  
+	![flash_multi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi_bootloader.jpg)  
+  - Upload your firmware:  
+	* With this method, you can upload your custom firmware.  
+	![flash_multi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi_dfumode.jpg)  
+	* You can also download already compiled firmware [](https://downloads.multi-module.org/).  
+	![compiled firmwares](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi_compiled_firmwares.jpg)  
   
 	
 ## Receiver side
