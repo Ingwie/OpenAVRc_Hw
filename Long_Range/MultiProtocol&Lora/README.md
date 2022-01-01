@@ -64,6 +64,13 @@ A GUI application is available for Windows and a shell script for Linux and macO
 	* You can also download already [compiled firmware](https://downloads.multi-module.org/).  
 	![compiled firmwares](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi_compiled_firmwares.jpg)  
   
+1. My DIY prototypes:  
+	<table cellspacing=0>
+	  <tr>
+		<td align=center width=200><a href="C:\Users\pierrot\Documents\GitHub\OpenAVRc_Dev-Christophe\OpenAVRc_Hw\Long_Range\MultiProtocol&Lora"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/MPM_Atmega328P.jpg" border="0" name="submit" title="MPM Atmega328P" alt="MPM Atmega328P"/></a><br><b>MPM Atmega328P</b></td>
+		<td align=center width=200><a href="https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/blob/master/STM32%20PCB/Schematic_Multiprotocol_STM32_MB_v1.0_t.jpg"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/MPM_Stm32_128K.jpg" border="0" name="submit" title="MPM STM32F103CB(128K)" alt="MPM STM32F103CB(128K)"/></a><br><b>MPM STM32F103CB(128K)</b></td>
+	  </tr>
+	</table>	
 	
 ## Receiver side
 
