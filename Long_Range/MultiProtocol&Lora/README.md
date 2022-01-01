@@ -53,7 +53,7 @@ With this method, you can upload your custom firmware under the Arduino IDE.
 Flash Multi is an application for managing the firmware on a Jumper,  
 iRangeX, Vantac, 'Banggood', or DIY MULTI-Module. 
 A GUI application is available for Windows and a shell script for Linux and macOS.
-  -  Before upload you must:
+  - Before upload you must:  
 	* Install DFU drivers:  
 	![flash_multi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/HowToUploadFirmware/flash_multi_drivers.jpg)  
 	* Install bootloader:  
