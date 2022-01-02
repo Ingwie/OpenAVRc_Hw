@@ -18,9 +18,9 @@ The RFM95W(868Mhz/915Mhz) accept only 3,3v levels:
 
 ### Wiring
 1. Lora with atmega328:  
-![MPM with Pro Mini(https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/MPM_FrskyR9_328p.jpg)
+![MPM with Pro Mini](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/MPM_FrskyR9_328p.jpg)
 1. Lora with STM32 (64KB/128KB):  
-![MPM with Pro Micro(https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/MPM_FrskyR9_stm32.jpg)
+![MPM with Pro Micro](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/MPM_FrskyR9_stm32.jpg)
 
 ### Firmware for Atmega328
 In the MultiProcol code FRSKY-R9 use the value 65, but for now, **OpenAVRc** accept only **63** maxi values.  
