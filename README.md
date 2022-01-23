@@ -110,6 +110,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 * [ThierryRC Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/ThierryRC/README.md)
 * [Ivaylo Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Ivaylo/README.md)
 * [AlessandroAU Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/AlessandroAU/README.md)
+* [Abrito Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Abrito/README.md)
 
 ## Users Builds with X-Any
 * [Xany by Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/Rc-Navy)
