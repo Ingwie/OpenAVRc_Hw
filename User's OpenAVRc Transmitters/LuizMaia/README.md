@@ -6,6 +6,6 @@
 <td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/User's%20OpenAVRc%20TransmittersLuizMaia/verso.jpg" border="0"/></td>
 </tr>
 <tr>
-<td>     #1</td>
+<td>     front</td><td>     back</td>
 </table>
 
