@@ -18,9 +18,9 @@ Whether the PulseSeq sequencer is controlled by a transmitter stick or by a push
 		<td style="vertical-align: top; height: 175px;"><img src="http://p.loussouarn.free.fr/projet/radio/photos/PulseSeqRegular.png" style="width: 547px; height: 198px;" alt="PulseSeq pulse sequencer controlled by any RC transmitter" title="PulseSeq pulse sequencer controlled by any RC transmitter"></td>
 	  </tr>
 	  <tr>
-		<td style="vertical-align: top; height: 12px; text-align: center;">Le
-		  séquenceur impulsionnel<b> PulseSeq</b> commandé par le manche
-		  d'un émetteur RC<br>
+		<td style="vertical-align: top; height: 12px; text-align: center;"><b>PulseSeq </b>
+		  pulse sequencer controlled by the stick
+		  from a RC transmitter<br>
 		  <span style="font-weight: bold; font-style: italic;"></span></td>
 	  </tr>
 	</tbody>
@@ -39,9 +39,9 @@ Example of PulseSeq configuration to sequence the switching on of a trawler's li
 		<td style="vertical-align: top; height: 175px;"><img src="http://p.loussouarn.free.fr/projet/radio/photos/PulseSeqMultiswitch.png" style="width: 550px; height: 253px;" alt="Impulse Sequencer with Multiswitch" title="Impulse Sequencer with Multiswitch"></td>
 	  </tr>
 	  <tr>
-		<td style="vertical-align: top; height: 12px; text-align: center;">Le
-		  séquenceur impulsionnel<b> PulseSeq </b>commandé par une sortie
-		  Multiswitch <i><b>MS8-Xany</b></i>.<span style="font-weight: bold; font-style: italic;"></span></td>
+		<td style="vertical-align: top; height: 12px; text-align: center;"><b>PulseSeq </b>
+		  pulse sequencer controlled by an Multiswitch
+		  output <i><b>MS8-Xany</b></i>.<span style="font-weight: bold; font-style: italic;"></span></td>
 	  </tr>
 	</tbody>
   </table>
