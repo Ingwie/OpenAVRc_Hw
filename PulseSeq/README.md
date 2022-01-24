@@ -1,5 +1,6 @@
 # The MS8-Xany card used as an Impulse Sequencer
 By loading the PulseSeq firmware into the MS8-Xany card, it behaves as a Pulse Sequencer.  
+[Full info here](http://p.loussouarn.free.fr/projet/radio/radio.html#PulseSeq).  
 
 The PulseSeq pulse sequencer can be configured to operate in 2 modes:  
   * Controlled by a channel of an RC receiver. The command is then made by pressing the sleeves on the transmitter side.  
