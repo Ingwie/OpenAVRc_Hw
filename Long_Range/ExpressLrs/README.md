@@ -63,6 +63,20 @@ More information can be found on the [website](https://www.expresslrs.org/2.0/).
 1. BETAFPV Nano RX   
 ![BETAFPV Nano RX connections with flight controller](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/ExpressLrs/BetaFpv_NanoRx868_wiring.jpg)
 
+## SBUS Output
+The ESP32 accept to invert the CRSF signal on it's TX pin.  
+It's the case with the BETAFPV Nano RX868.  
+[Michel Strens](https://github.com/mstrens/ExpressLRS/tree/Sbus-and-12-channels) worked on ELRS code to get SBUS instead of CRSF.  
+[See user_defines.txt file](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/ExpressLrs/user_defines.txt) file.  
+  * uncomment line:  
+    - **-DUSE_SBUS_ON_RX**
+  * uncomment lines: (to send 8 channels in high resolution + 2 channels in low resolution)  
+    - **-DUSE_HYBRID_MODE_FOR_10_CHANNELS**  
+    - **-DUSE_HYBRIDWIDE_MODE_FOR_10_CHANNELS**  
+  * uncomment line: (Invert the TX pin in the receiver code)
+    - **-DRCVR_INVERT_TX**  
+  
+
 ## Videos
 [![BETAFPV TX](https://img.youtube.com/vi/kb0uABglSYQ/0.jpg)](https://www.youtube.com/watch?v=kb0uABglSYQ "BETAFPV TX")
 
