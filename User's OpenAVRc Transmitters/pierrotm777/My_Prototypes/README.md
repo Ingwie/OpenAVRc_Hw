@@ -8,7 +8,7 @@
 <td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/User's%20OpenAVRc%20Transmitters/pierrotm777/My_Prototypes/Rx_Cabell.jpg" border="0"/></td>
 </tr>
 <tr>
-<td>     #1</td><td>     #2</td><td>     #3</td><td>     #4</td>
+<td>     MPM_328P</td><td>     MPM_Stm32</td><td>     Ms8</td><td>     Cabell Rx</td>
 </tr>
 <tr>
 <td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/User's%20OpenAVRc%20Transmitters/pierrotm777/My_Prototypes/CRSF-PWM.jpg" border="0"/></td>
@@ -17,6 +17,12 @@
 <td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/User's%20OpenAVRc%20Transmitters/pierrotm777/My_Prototypes/Xany2Sensor360.jpg" border="0"/></td>
 </tr>
 <tr>
-<td>     #5</td><td>     #6</td><td>     #7</td><td>     #8</td>
+<td>     CRSF-PWM</td><td>     Xany2Sounds</td><td>     Xany2Msx</td><td>     Xany2Sensor360</td>
+</tr>
+<tr>
+<td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/User's%20OpenAVRc%20Transmitters/pierrotm777/My_Prototypes/FrskySportTeensyjpg" border="0"/></td>
+</tr>
+<tr>
+<td>     FrskySportTeensy</td>
 </tr>
 </table>
