@@ -92,6 +92,11 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Sounds/Xany2Sounds_3D.jpg)
    
+   
+1. Sound&SmokeModule
+   * [V0.1](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound&SmokeModule)
+   
+      ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound&SmokeModule/Sound&SmokeModule.jpg)
 ## Users OpenAVRc Transmitter Builds
 * [Bracame Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Bracame/README.md)
 * [JPZ Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JPZ/README.md)
