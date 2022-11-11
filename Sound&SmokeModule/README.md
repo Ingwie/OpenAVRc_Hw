@@ -43,10 +43,10 @@ A sound has priority when it can interrupt a sound already in progress.
             The 6 sounds "launchable" in hardware from 6 pins of the Sound and Smoke Module configurable in priority:
                 Medium priority: can be interrupted by a sound configured as high priority
                 High priority: a sound configured in high priority can interrupt any sound in progress, except if this one is already in high priority
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound&Smoke_Module/Sound&Smoke_Module.jpg)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/Sound%26Smoke_Module.jpg)
 
 ## Sound&Smoke_Module PCB:
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound&Smoke_Module/S&SM1.png)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/S%26SM1.png)
 
 ## User manual
 [Configuration of the Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound&Smoke_Module/Sound&Smoke_Module_Manuel_Utilisateur.pdf)
