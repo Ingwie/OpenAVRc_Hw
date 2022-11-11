@@ -53,7 +53,7 @@ A sound has priority when it can interrupt a sound already in progress.
 
 ## Upload the HEX file
 We don't give sources, because X-Any libraries are not Open Source for the receive side.   
-You can found binary file [MS16_ProMicro-Xany](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound&Smoke_Module/Firmware_Sound&Smoke_Module)   
+You can found binary file [Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound&Smoke_Module/Firmware_Sound&Smoke_Module)   
 
 The **Arduino Pro Micro** board use a particular method for upload a code.  
 You can use the program [32u4_hexuploader](https://github.com/uriba107/32u4_hexuploader).
