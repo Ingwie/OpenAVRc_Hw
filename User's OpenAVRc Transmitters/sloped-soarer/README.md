@@ -1,6 +1,6 @@
 # Sloped Soarers Transmitter
 
-sloped-soarer has developed a specific [PCB](https://github.com/sloped-soarer/openevo) for the Multiplex Royal Evo case around a Microchip ATxmega256 CPU.
+sloped-soarer has developed a specific [PCB](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/User's%20OpenAVRc%20Transmitters/sloped-soarer/open_xmega.zip) for the Multiplex Royal Evo case around a Microchip ATxmega256 CPU.
 
 <table cellspacing=0>
   <tr>
