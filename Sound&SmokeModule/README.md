@@ -70,7 +70,7 @@ We don't give sources, because X-Any libraries are not Open Source for the recei
 You can found binary file [Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Firmware_Sound%26Smoke_Module)  
 
 ## Sounds files 
-You will find under the toto folder the sound files to copy on the SD cards.  
+You will find under these folders the sounds files to copy on the SD cards.  
 [Motor's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Firmware_Sound%26Smoke_Module/SD_Arduino_Pro_Micro)  
 [Auxiliary's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Firmware_Sound%26Smoke_Module/SD_DF_Player_mini)  
 
