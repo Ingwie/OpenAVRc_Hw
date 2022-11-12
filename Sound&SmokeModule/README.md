@@ -67,7 +67,7 @@ The use of the X-Any/RCUL system of the OpenAVRc transmitter makes everything ve
 
 ## Upload the HEX file
 We don't give sources, because X-Any libraries are not Open Source for the receive side.   
-You can found binary file [Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound&Smoke_Module/Firmware_Sound&Smoke_Module)  
+You can found binary file [Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Firmware_Sound%26Smoke_Module)  
 
 ## Sounds files 
 You will find under the toto folder the sound files to copy on the SD cards.  
