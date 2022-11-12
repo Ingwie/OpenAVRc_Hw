@@ -48,13 +48,16 @@ A sound has priority when it can interrupt a sound already in progress.
 ## Sound&Smoke_Module PCB:
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/S%26SM1.png)  
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/S%26SM2.png)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/S%26SM2.png)  
 
 ## Videos
-[![Video of engine start, acceleration/deceleration, smoke generation in proportion to throttle and automatic shutdown after 15 seconds at idle.](https://img.youtube.com/vi/RUjrtYIM5t8/0.jpg)](https://www.youtube.com/watch?v=RUjrtYIM5t8 "Video 1")   
+[![Video 1](https://img.youtube.com/vi/RUjrtYIM5t8/0.jpg)](https://www.youtube.com/watch?v=RUjrtYIM5t8 "Video 1")  
+Video of engine start, acceleration/deceleration, smoke generation in proportion to throttle and automatic shutdown after 15 seconds at idle.
 
-[![Vidéo du démarrage du moteur, de l'accélération, génération de la fumée proportionnellement aux gaz, lancement de sons auxiliaires depuis l'émetteur, réglage du volume du son auxiliaire et du son moteur depuis l'émetteur et arrêt automatique après 15 au ralenti. L'utilisation du système X-Any/RCUL de l'émetteur OpenAVRc rend le tout très ergonomique.](https://img.youtube.com/vi/https://youtu.be/LdH3JfI2tWg/0.jpg)](https://www.youtube.com/watch?v=https://youtu.be/LdH3JfI2tWg "Video 2") 
-
+[![Video 2](https://img.youtube.com/vi/LdH3JfI2tWg/0.jpg)](https://www.youtube.com/watch?v=LdH3JfI2tWg "Video 2")  
+Video of engine start, acceleration, generation of smoke in proportion to throttle, launch of auxiliary sounds from transmitter,  
+volume adjustment of auxiliary sound and engine sound from transmitter and automatic shutdown after 15 idle.  
+The use of the X-Any/RCUL system of the OpenAVRc transmitter makes everything very ergonomic.
 
 ## User manual
 [Configuration of the Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound&Smoke_Module/Sound&Smoke_Module_Manuel_Utilisateur.pdf)
