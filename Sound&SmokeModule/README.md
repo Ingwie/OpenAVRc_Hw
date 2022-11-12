@@ -59,6 +59,9 @@ Video of engine start, acceleration, generation of smoke in proportion to thrott
 volume adjustment of auxiliary sound and engine sound from transmitter and automatic shutdown after 15 idle.  
 The use of the X-Any/RCUL system of the OpenAVRc transmitter makes everything very ergonomic.
 
+## More details on the realization and configuration of the module
+[Rc-Navy Sound&Smoke](http://p.loussouarn.free.fr/projet/Sound&SmokeModule/Sound&SmokeModule.html)
+
 ## User manual
 [Configuration of the Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound&Smoke_Module/Sound&Smoke_Module_Manuel_Utilisateur.pdf)
 
