@@ -20,6 +20,7 @@
 [![Surface OpenAVRc TX Frsky and Buggy 1:32](https://img.youtube.com/vi/3dgtdrAwCEM/0.jpg)](https://www.youtube.com/watch?v=3dgtdrAwCEM "Surface OpenAVRc TX Frsky and Buggy 1:32")
 
 
-
+## Receivers with NRF24L01 HF module
+You will find several nice receivers that run with the Stanek protocol [here](https://github.com/stanekTM/RX_nRF24L01_Telemetry_Motor_Servo)
 
 
