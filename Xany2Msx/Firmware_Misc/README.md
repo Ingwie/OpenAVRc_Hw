@@ -11,7 +11,7 @@ Currently supported commercial pulse decoders are:
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Misc/Conrad7outputs.jpg)
 * [**Beier Module son USM-RC-2**](https://www.beier-electronic.de/modellbau/produkte/usm-rc-2/usm-rc-2.php)  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Misc/USM-RC-2.jpg)
-* [**NVMMulti-Switch Decoder**](https://www.rc-point.nl/rc-electronica/multiswitch-decoders/arduino-nvm-multiswitch/arduino-12-2-multiswitch-decoder-voor-ontvanger-pakket/a-71933-20000461)  
+* [**NVMMulti-Switch Decoder**](https://www.modelbouwforum.nl/threads/nvm-multiswitch-met-arduino.247761)  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Firmware_Misc/NVM_MS_2.jpg)
 
 Note: 
