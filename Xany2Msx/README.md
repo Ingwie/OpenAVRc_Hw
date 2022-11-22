@@ -11,7 +11,7 @@ Currently supported commercial Multi-Switch / Prop decoders are:
 * **MULTIPLEX MULTInaut top** ***(MS12 + 2 MoTors)***
 * **GRAUPNER NAUTIC Expert** ***(MS16)***
 
-- [Xany2Misc](./Firmware_Misc/README_Xany2Misc.md)
+- [Xany2Misc](./Firmware_Misc/README.md)
 
 Currently supported commercial pulse decoders are:  
 * **Conrad Module 7 fonctions**
