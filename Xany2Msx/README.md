@@ -2,7 +2,7 @@
 
 ## There are two firmware versions for the *Xany2Msx* interface
 
-- [Xany2Msx](./Firmware_Msx/README_Xany2Msx.md)
+- [Xany2Msx](./Firmware_Msx/README.md)
 
 Currently supported commercial Multi-Switch / Prop decoders are:  
 * **Robbe Multi Switch Decoder** No 8369 ***(MS16)***
