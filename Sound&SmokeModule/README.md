@@ -35,9 +35,7 @@ This Sound and Smoke Module has the following features:
         Auxiliary input connected to an auxiliary RC output of the receiver using the EKMFA protocol (supported by all RC transmitters → joystick control)
         The sound volume can be adjusted from the transmitter regardless of the protocol used (RCUL/Xany or EKMFA).
     Auxiliary sound priority management
-	
-A sound has priority when it can interrupt a sound already in progress.
-
+        A sound has priority when it can interrupt a sound already in progress.
         3 priority levels:
             The 8 "launchable" sounds from the transmitter → no priority: any sound can interrupt the current sound
             The 6 sounds "launchable" in hardware from 6 pins of the Sound and Smoke Module configurable in priority:
