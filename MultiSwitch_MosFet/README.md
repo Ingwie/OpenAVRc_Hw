@@ -3,7 +3,7 @@
 
 Mosfet schematic:
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_MosFet/MultiSwitch_MosFet.pdf).
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_MosFet/Mosfet.jpg).
 
 La carte Mosfet permet de commander 8 fonctions tout ou rien avec 8 tensions externes différentes.
 * Elle est plus compacte qu'une carte 8 relais.
