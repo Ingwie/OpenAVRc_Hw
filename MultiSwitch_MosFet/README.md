@@ -1,12 +1,14 @@
-** Carte Mosfet 8 voies **
+# Carte Mosfet 8 voies
 
+## Mosfet schematic:
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_MosFet/Mosfet.jpg).  
 
-Mosfet schematic:
+## Mosfet Wiring:
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_MosFet/Mosfet_Wiring.jpg).  
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_MosFet/Mosfet.jpg).
+The Mosfet card can be used to control 8 on/off functions with 8 different external voltages.
+* It is more compact than an 8 relay card.
+* It is compatible with **Ms8** and **Ms16** boards.
+* Each Mosfet of each channel supports 30v and 116A.
+* Each channel has a led.
 
-La carte Mosfet permet de commander 8 fonctions tout ou rien avec 8 tensions externes différentes.
-* Elle est plus compacte qu'une carte 8 relais.
-* Elle est compatible avec les cartes **Ms8** et **Ms16**.
-* Chaque Mosfet de chaque voie supporte 30v et 116A.
-* Chaque voie comporte une led.
