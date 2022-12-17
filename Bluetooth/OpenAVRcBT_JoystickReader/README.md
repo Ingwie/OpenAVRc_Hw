@@ -60,11 +60,11 @@ A la ligne 58, décommentez #define DISPLAY_TYPE **LCD_TYPE** // ou **SSD_TYPE**
  **#define MODE PPM** //Selectionnez PPM ou BLUETOOTH ligne 51
 8. Configurer le fichier TinyCppmGen.h lignes 49 et 50.  
 * Atmega328p:  
-#define OC_TIMER      TIMER(2)    /* <-- Choose here the timer   between TIMER(0), TIMER(1) or TIMER(2) */
+#define OC_TIMER      TIMER(2)    /* <-- Choose here the timer   between TIMER(0), TIMER(1) or TIMER(2) */  
 #define OC_CHANNEL    CHANNEL(B)  /* <-- Choose here the channel between CHANNEL(A) and CHANNEL(B) */
 
 * Atmega32U4:  
-#define OC_TIMER      TIMER(0)    /* <-- Choose here the timer   between TIMER(0), TIMER(1) or TIMER(2) */
+#define OC_TIMER      TIMER(0)    /* <-- Choose here the timer   between TIMER(0), TIMER(1) or TIMER(2) */  
 #define OC_CHANNEL    CHANNEL(B)  /* <-- Choose here the channel between CHANNEL(A) and CHANNEL(B) */
 
 
