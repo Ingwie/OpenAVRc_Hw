@@ -50,7 +50,7 @@ Vous pouvez utiliser un écran LCD 20x4 ou SSD1306/SSD1309.
 A la ligne 58, décommentez #define DISPLAY_TYPE **LCD_TYPE** // ou **SSD_TYPE**
 
 ## Configurer le module réception
-1. Installer les bibliothèques [USB Host Shield Library 2.0](https://www.arduinolibraries.info/libraries/usb-host-shield-library-2-0) et [PPMEncoder](https://github.com/schinken/PPMEncoder) dans l'IDE Arduino.
+1. Installer les bibliothèques [USB Host Shield Library 2.0](https://www.arduinolibraries.info/libraries/usb-host-shield-library-2-0) et [DigisparkTinyCppmGen](https://github.com/RC-Navy/DigisparkArduinoIntegration/tree/master/libraries/DigisparkTinyCppmGen) dans l'IDE Arduino.
 2. Décommenter à la ligne 46 **#define AT_INIT** .
 3. Compiler et Télécharger le code.
 4. Au premier lancement, le Uno ou Pro Mini devrait configurer en **'Slave'** et en **'57600'**, (ou en **115200** pour un board Leonardo)
@@ -58,6 +58,15 @@ A la ligne 58, décommentez #define DISPLAY_TYPE **LCD_TYPE** // ou **SSD_TYPE**
 6. Compiler et Télécharger le code. Le module réception est prét.
 7. Par défaut, le code est configuré pour fonctionner avec un module BLUETOOTH HC-05 mais vous pouvez utiliser le mode PPM.  
  **#define MODE PPM** //Selectionnez PPM ou BLUETOOTH ligne 51
+8. Configurer le fichier TinyCppmGen.h lignes 49 et 50.  
+* Atmega328p:  
+#define OC_TIMER      TIMER(2)    /* <-- Choose here the timer   between TIMER(0), TIMER(1) or TIMER(2) */
+#define OC_CHANNEL    CHANNEL(B)  /* <-- Choose here the channel between CHANNEL(A) and CHANNEL(B) */
+
+* Atmega32U4:  
+#define OC_TIMER      TIMER(0)    /* <-- Choose here the timer   between TIMER(0), TIMER(1) or TIMER(2) */
+#define OC_CHANNEL    CHANNEL(B)  /* <-- Choose here the channel between CHANNEL(A) and CHANNEL(B) */
+
 
 ## Configurer la radio.
 1. Aller dans l'écran Bluetooth de la radio.
