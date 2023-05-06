@@ -129,6 +129,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 * [LuizMaia Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/LuizMaia/README.md)
 * [Dogtag Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Dogtag/README.md)
 * [Olc Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Olc/README.md)
+* [Croky_b Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Croky_b/README.md)
 
 ## Users Builds with X-Any
 * [Xany by Rc-Navy](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Xany_Builds_by_Users/Rc-Navy)
