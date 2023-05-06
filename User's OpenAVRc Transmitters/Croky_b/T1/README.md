@@ -1,4 +1,4 @@
-# Shield OpenAVRc Transmitter
+# Transmitter #1
 
 <table border="2">
 <tr>
