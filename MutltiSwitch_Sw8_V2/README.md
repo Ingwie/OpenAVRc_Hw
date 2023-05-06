@@ -5,7 +5,7 @@ It not only allows you to drive 8 digital outputs, but also allows you to drive 
 It also provides a booster proportional channel to drive a servo or an ESC. 
 
 ## Ms8 V2 schematic
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/MutltiSwitch_Sw8_V2.pdf)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/MutltiSwitch_Sw8_V2_sch.jpg)
 
 ## Ms8 V2 PCB:
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/MutltiSwitch_Sw8_V2.jpg)
