@@ -39,11 +39,11 @@ Ms8 files:
 * [MS8-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MutltiSwitch_Sw8_V2).
 * PCB: [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/MutltiSwitch_Sw8_V2.zip)
 * User Manual:  
-  - [French]()
-  - [English]()
+  - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/MS8-Xany-V2_Manuel_Utilisateur.pdf)
+
 * HEX file to be loaded in the ATtiny84 microcontroller:  
   - [Linux]()  
-  - [Windows]() 
+  - [Windows](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V2/PROG/Windows) 
 
 
 
