@@ -12,8 +12,14 @@ It also provides a booster proportional channel to drive a servo or an ESC.
 
 ## Upload Firmware with UsbAsp dongle
   - Upload firmware:  
+For now, we use a command line method, see exemple:  
+https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/PROG/Windows/Upload_By_Cmd.cmd  
 
-  
+**C:\Users\XXX\AppData\Local\Arduino15\packages\ATTinyCore\tools\micronucleus\2.5-azd1b/micronucleus --no-ansi --run --timeout 60 C:\Users\XXX\Documents\MS8/MS8_Xany_V2_0.hex**
+In your Documents directory, create a folder MS8 and put your hex and Upload_By_Cmd.cmd file. 
+Edit your cmd file and chage XXX by your name.  
+Connect your MS8 V2 to your PC with a USB cable  and lauch the cmd file for upload the firmware.  
+
 ## Videos
 This first video show:
 
