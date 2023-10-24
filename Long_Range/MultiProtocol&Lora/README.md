@@ -35,12 +35,7 @@ In the MultiProcol code FRSKY-R9 use the value 65.
 MPM code for use an atmega328p [see Multiprotocol_Lora328P.zip](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/Multiprotocol_Lora328P.zip)  MPM modified sources files. 
 
 ### Firmware for STM32F103CBT6
-As for the Atmega328, we need to modified to MPM code.
-1. Open the **Multiprotocol.h** file.  
-1. Replace by PROTO_FRSKY_R9 = **65** with **63**.    
-1. Replace PROTO_XN297DUMP = **63** with **65**.  
-![Multiprotocol.h](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/Multiprotocol.h.jpg)
-1. Use your actual firmware in **MultiMod** protocol with **custom 63**.  
+1. Select **MultiMod** protocol with **custom 65**.  
     * sub-protocol **1** for 16ch **without** telemetry.  
     * sub-protocol **3** for 8ch **with** telemetry.  
 	
