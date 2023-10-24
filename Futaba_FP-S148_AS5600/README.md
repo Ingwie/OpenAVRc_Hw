@@ -18,5 +18,8 @@ The board include an ICSP port for upload the bootloader and a FTDI serial port 
 </table>
 
 ## Schematic
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Futaba_FP-S148_AS5600/AS5600_FPS148.jpg)
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Futaba_FP-S148_AS5600/AS5600_FPS148.jpg)  
+
+## Example of use
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Futaba_FP-S148_AS5600/Graupner1769.11_Schottle_Motor.jpg)  
 
