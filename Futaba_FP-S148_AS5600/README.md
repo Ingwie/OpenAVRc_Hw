@@ -1,5 +1,13 @@
 # Futaba FP-S148 board replacement
 
+## Why a new board
+This new board replace the original board of a Futaba servo FP-S148 or S3003.  
+This printed circuit allows you to control the servo over an I2C bus or with your receiver on an output PWM, PPM, SBUS and more.  
+This board is managed by an ATMEGA328PB and an AS5600 hall sensor. The hall sensor replaces the original potentiometer.  
+With this board, it's possible to command a cannon turret or a [schottle motor](https://www.sud-rc.fr/gouvernail-acces-de-barre/721-propulsion-schottel-ii-graupner-2335.html) with a 360 degrees rotation.
+The board include an ICSP port for upload the bootloader and a FTDI serial port to configure the servo.  
+ 
+## The board
 <table border="2">
 <tr>
 <td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Futaba_FP-S148_AS5600/AS5600_FPS148_Top.jpg" border="0"/></td>
