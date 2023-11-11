@@ -10,8 +10,8 @@ The board include an ICSP port for upload the bootloader and a FTDI serial port 
 ## The FP-S148 board
 <table border="2">
 <tr>
-<td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Futaba_FP-S148_AS5600/AS5600_FPS148_Top.jpg" border="0"/></td>
-<td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Futaba_FP-S148_AS5600/AS5600_FPS148_Bottom.jpg" border="0"/></td>
+<td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/LUCAS_FPS148_FS3003_Top.jpg" border="0"/></td>
+<td><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/LUCAS_FPS148_FS3003_Bottom.jpg" border="0"/></td>
 <tr>
 <td>     Top View</td><td>     Bottom view</td><td>
 </tr>
@@ -24,8 +24,8 @@ It's features are:
 
 
 ## Schematic
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Futaba_FP-S148_AS5600/AS5600_FPS148.jpg)  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/LUCAS_FPS148_FS3003.jpg)  
 
 ## Example of use
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Futaba_FP-S148_AS5600/Graupner1769.11_Schottle_Motor.jpg)  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/Graupner1769.11_Schottle_Motor.jpg)  
 
