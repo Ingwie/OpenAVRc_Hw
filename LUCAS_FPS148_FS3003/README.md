@@ -18,7 +18,7 @@ The board include an ICSP port for upload the bootloader and a FTDI serial port 
 </table>
 
 ## The MG946R board
-Once all the tests have been carried out with the FP-S148, we will manufacture a board for an MG496R type servo.  
+Once all the tests have been carried out with the FP-S148, we will manufacture a board for an MG946R type servo.  
 It's features are:  
 10.5 Kg/cm (4.8 V) - 13 kg/cm (6 V)
 
