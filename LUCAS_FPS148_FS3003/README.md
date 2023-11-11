@@ -1,4 +1,4 @@
-# Futaba FP-S148/S3003 board replacement
+# LUCAS: Looped Universal Controlled Angle Servo
 
 ## Why a new board
 This new board replace the original board of a Futaba servo FP-S148 or S3003.  
@@ -17,7 +17,7 @@ The board include an ICSP port for upload the bootloader and a FTDI serial port 
 </tr>
 </table>
 
-## The MG496R board
+## The MG946R board
 Once all the tests have been carried out with the FP-S148, we will manufacture a board for an MG496R type servo.  
 It's features are:  
 10.5 Kg/cm (4.8 V) - 13 kg/cm (6 V)
