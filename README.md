@@ -103,9 +103,9 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
       ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/S%26SM1.png)  
 	  
 1. Futaba FP-S148/S3003 replacement
-   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Futaba_FP-S148_AS5600)
+   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/LUCAS_FPS148_FS3003)
    
-      ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Futaba_FP-S148_AS5600/AS5600_FPS148_Top.jpg)  
+      ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/LUCAS_FPS148_FS3003_Top.jpg)  
 	  
 ## Users OpenAVRc Transmitter Builds
 * [Bracame Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Bracame/README.md)
