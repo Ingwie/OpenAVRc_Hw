@@ -17,7 +17,7 @@ The board include an ICSP port for upload the bootloader and a FTDI serial port 
 </tr>
 </table>
 
-### Schematic
+### FP-S148 Schematic
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/LUCAS_FPS148_FS3003.jpg)  
 
 ## The MG946R board
