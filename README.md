@@ -65,7 +65,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 1. Encoder A1335 I2C
    * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20A1335_Encoder)
    
-   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C_Mini/A1335_Encoder_Top.jpg)
+   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20A1335_Encoder/A1335_Encoder_Top.jpg)
    
 1. Alimentation for Mpx 3010
    * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Mpx%20Alimentation)
