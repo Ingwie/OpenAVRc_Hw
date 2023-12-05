@@ -23,7 +23,7 @@ The RFM95W(868Mhz/915Mhz) accept only 3,3v levels:
 ![MPM with Pro Micro](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/MultiProtocol%26Lora/MPM_FrskyR9_stm32.jpg)
 
 ### Firmware for Atmega328
-In the MultiProcol code FRSKY-R9 use the value 65.  
+In the MultiProcol code FRSKY-R9 use the sub-protocol 65.  
 
 ![Multiprotocol.h](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Lora/Multiprotocol.h.jpg)
 1. Use your actual firmware in **MultiMod** protocol with **custom 65**.  
