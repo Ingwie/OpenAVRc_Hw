@@ -21,7 +21,7 @@ decoder.
 It is possible to declare up to 4 instances of X-Any on the transmitter side in order to authorize up to 64 all-or-nothing commands.
 Refer to the documentation for OpenAVRc to configure X-Any on the transmitter side.
 
-For more details, see the [manual](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Xany2Msx_Manuel_Utilisateur.pdf).
+For more details, see the [manual](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Xany2Misc_Manuel_Utilisateur.pdf).
 
 ## Videos
 
