@@ -71,6 +71,6 @@ Example of PulseSeq configuration to sequence the switching on of a trawler's li
 * User Manual:  
   - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_PulseSeq/PulseSeq_Manuel_Utilisateur.pdf)
 * HEX file to be loaded in the ATtiny84 microcontroller:  
-  - [Hex File](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_PulseSeq/PulseSeq_V0_1._HEX)  
+  - [Hex File](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_PulseSeq/Firmware/PulseSeq_V0_1._HEX)  
 
 RC Navy 
