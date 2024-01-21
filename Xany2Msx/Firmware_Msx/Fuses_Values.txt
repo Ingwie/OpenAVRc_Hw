@@ -1,0 +1,4 @@
+# Fuse values
+LOW_FUSE=0xFF
+HIGH_FUSE=0x55
+EXT_FUSE=0xFF
