@@ -1,0 +1,6 @@
+Pour piloter les 16 premières commandes d’un Module son Beier USM-RC-2 sur la sortie M1, il suffit
+de paramétrer Xany2Misc avec la commande :
+M1=B1 ou M2=B1
+Cette configuration permet d’envoyer 16 commandes en mode EKMFA depuis l’émetteur jusqu’au
+Module son Beier USM-RC-2.
+Fx=1 pour activer la fonction x (x de 1 à 16)
