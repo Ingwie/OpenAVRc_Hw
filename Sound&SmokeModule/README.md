@@ -105,7 +105,7 @@ SMOKE.TEST=OFF		stop le test de la fumée
 ENG.LIST?			retourne les fichiers moteur sur la carte SD moteur  
 ENG.SEL?			retourne le fichier moteur utilisé  
 ENG.ATTEN=0			attenuation son moteur (0 à 3, si différent de 0,  l'inter 8 est utiliser pour rendre actif ou pas l'atténuation)  
-THR.ZERO=1484		définie la valeur en µS du point milieu moteur  
+THR.ZERO=CAL		définie la valeur en µS du point milieu moteur(placer le manche moteur au centre)  
 THR.ZERO?			retourne la valeur en µS du point milieu moteur  
 RC.FILTER=ON		définie si le filtre est actif ou pas (PCM uniquement)  
 RC.FILTER?			retourne si le filtre est actif ou pas  
