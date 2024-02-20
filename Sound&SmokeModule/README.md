@@ -119,5 +119,8 @@ AUX.NB=16        -> Nombre de fichiers MP3 présents sur la carte SD du DF Playe
 AUX.EQ=0         -> Valeur de l'EQualizer: ça va de 0 à 5.  
                     permet de régler le type de sonorité:  
                     0 – Normal, 1 – Pop, 2 – Rock, 3 – Jazz, 4 – Classic, 5 – Bass  
- 
+					
+>Les sons 1 à 8 sont pilotés par les contacts Sw (sauf le 8e si une atténuation du son moteur est définie).  
+>Les sons de 9 à 14 sont pilotés en HW sur front descendant par les entrées A1 à A6.  
+>Les sons au-dessus de 14 ne sont pas utilisés.  
 ```
