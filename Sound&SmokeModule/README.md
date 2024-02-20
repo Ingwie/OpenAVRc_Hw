@@ -81,24 +81,24 @@ You can use the program [32u4_hexuploader](https://github.com/uriba107/32u4_hexu
 ```bash
 RC_SOUND_SMOKE V0.2 [RCUL/Xany] (C) RC Navy 2022  
 
-CONF				retourne la configuration actuelle  
+CONF                retourne la configuration actuelle  
 
-RC.FILTER=ON		définie si le filtre est actif ou pas (PCM uniquement)  
-RC.FILTER?			retourne si le filtre est actif ou pas  
+RC.FILTER=ON        définie si le filtre est actif ou pas (PCM uniquement)  
+RC.FILTER?          retourne si le filtre est actif ou pas  
  
-ENG.SEL?			retourne le fichier moteur utilisé  
-ENG.ATTEN=0			attenuation son moteur (0 à 3, si différent de 0,  l'inter 8 est utiliser pour rendre actif ou pas l'atténuation) 
-ENG.LIST?			retourne les fichiers moteur sur la carte SD moteur 
-					ENG.LIST=DSL-LTL, DSL-V12, VAPEUR, DSL-OLD, DSL-120, DSL-TURB, DSL-TUG, SCAN-V12, DSL-BIG, DSL-180, DIESEL7, SCAN-250, CAT-C32  
-ENG.SEL=CAT-C32  	sélectionne le moteur CAT-C32
+ENG.SEL?            retourne le fichier moteur utilisé  
+ENG.ATTEN=0         attenuation son moteur (0 à 3, si différent de 0,  l'inter 8 est utiliser pour rendre actif ou pas l'atténuation) 
+ENG.LIST?           retourne les fichiers moteur sur la carte SD moteur 
+                    ENG.LIST=DSL-LTL, DSL-V12, VAPEUR, DSL-OLD, DSL-120, DSL-TURB, DSL-TUG, SCAN-V12, DSL-BIG, DSL-180, DIESEL7, SCAN-250, CAT-C32  
+ENG.SEL=CAT-C32     sélectionne le moteur CAT-C32
 
-THR.ZERO=CAL		définie la valeur en µS du point milieu moteur(placer le manche moteur au centre)  
-THR.ZERO?			retourne la valeur en µS du point milieu moteur (par exemple THR.ZERO=1500)
+THR.ZERO=CAL        définie la valeur en µS du point milieu moteur(placer le manche moteur au centre)  
+THR.ZERO?           retourne la valeur en µS du point milieu moteur (par exemple THR.ZERO=1500)
  
 SMOKE.MIN=00  
 SMOKE.MAX=12  
-SMOKE.TEST=x		x = 0 à 12  
-SMOKE.TEST=OFF		stop le test de la fumée  
+SMOKE.TEST=x        x = 0 à 12  
+SMOKE.TEST=OFF      stop le test de la fumée  
 SMOKE.MODE=OFF   -> Générateur de fumée non utilisé  
 SMOKE.MODE=PROP  -> Générateur de fumée utilisé et fumée proportionnelle aux Gaz (moins réaliste)  
 SMOKE.MODE=ACCEL -> Générateur de fumée utilisé et fumée proportionnelle aux Accélérations (plus réaliste) 
@@ -108,17 +108,17 @@ AUX.TRACK=1
 AUX.EQ=0  
 AUX.VOL=30  
 AUX.HWPRIO=NNNNNN  
-AUX.TRACKx			lance le son x  
-AUX.NEXT			lance le son x+1  
-AUX.PREV			lance le son n-1  
-AUX.PAUSE			stop la lecture d'un son auxiliaire  
-AUX.VOL=x			définie le volume des sons auxiliaire de 0 à 30 (réglage son moteur par le pot RV1)  
-AUX.VOL?			retourne le volume des sons auxiliaires  
-AUX.HWPRIO=NNNNNN	définie la priorité des 6 sons externes (N ou Y)  
+AUX.TRACKx          lance le son x  
+AUX.NEXT            lance le son x+1  
+AUX.PREV            lance le son n-1  
+AUX.PAUSE           stop la lecture d'un son auxiliaire  
+AUX.VOL=x           définie le volume des sons auxiliaire de 0 à 30 (réglage son moteur par le pot RV1)  
+AUX.VOL?            retourne le volume des sons auxiliaires  
+AUX.HWPRIO=NNNNNN   définie la priorité des 6 sons externes (N ou Y)  
 
-AUX.NB=16 -> Nombre de fichiers MP3 présents sur la carte SD du DF Player  
-AUX.EQ=0  -> Valeur de l'EQualizer: ça va de 0 à 5.  
-			 permet de régler le type de sonorité:  
-			 0 – Normal, 1 – Pop, 2 – Rock, 3 – Jazz, 4 – Classic, 5 – Bass  
+AUX.NB=16        -> Nombre de fichiers MP3 présents sur la carte SD du DF Player  
+AUX.EQ=0         -> Valeur de l'EQualizer: ça va de 0 à 5.  
+                    permet de régler le type de sonorité:  
+                    0 – Normal, 1 – Pop, 2 – Rock, 3 – Jazz, 4 – Classic, 5 – Bass  
  
 ```
