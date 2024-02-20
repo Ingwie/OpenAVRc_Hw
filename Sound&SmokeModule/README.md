@@ -78,6 +78,7 @@ You can use the program [32u4_hexuploader](https://github.com/uriba107/32u4_hexu
  
 
 ## Commandes
+```  
 RC_SOUND_SMOKE V0.2 [RCUL/Xany] (C) RC Navy 2022  
 RC.FILTER=OFF  
 THR.ZERO=1484  
@@ -119,5 +120,5 @@ AUX.NB=16 -> Nombre de fichiers MP3 présents sur la carte SD du DF Player
 AUX.EQ=0  -> Valeur de l'EQualizer: ça va de 0 à 5.  
 			 permet de régler le type de sonorité:  
 			 0 – Normal, 1 – Pop, 2 – Rock, 3 – Jazz, 4 – Classic, 5 – Bass  
- 
+```  
 
