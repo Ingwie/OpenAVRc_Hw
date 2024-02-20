@@ -103,9 +103,8 @@ SMOKE.MODE=OFF   -> Générateur de fumée non utilisé
 SMOKE.MODE=PROP  -> Générateur de fumée utilisé et fumée proportionnelle aux Gaz (moins réaliste)  
 SMOKE.MODE=ACCEL -> Générateur de fumée utilisé et fumée proportionnelle aux Accélérations (plus réaliste) 
 
-AUX.NB=16  
+
 AUX.TRACK=1  
-AUX.EQ=0  
 AUX.VOL=30  
 AUX.HWPRIO=NNNNNN  
 AUX.TRACKx          lance le son x  
