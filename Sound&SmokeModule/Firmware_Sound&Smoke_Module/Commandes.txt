@@ -1,42 +1,49 @@
-RC_SOUND_SMOKE V0.2 [RCUL/Xany] (C) RC Navy 2022
-RC.FILTER=OFF
-THR.ZERO=1484
+RC_SOUND_SMOKE V0.3 [RCUL/Xany] (C) RC Navy 2022
+
+CONF?               Retourne la configuration courante complète
+
+RC.FILTER?          Retourne si le filtre RC est actif ou pas
+RC.FILTER=ON        Définit si le filtre RC est actif ou pas (Pour récepteur filtrant les grandes variation : Récepteurs PCM, DSP, Hold)
+
+THR.ZERO?           Retourne la valeur en μS du point milieu des Gaz moteur (par exemple THR.ZERO=1500)
+THR.ZERO=CAL        Définit la valeur en μS du point milieu des Gaz moteur (placer le manche moteur au centre avant de valider la commande)
+
+ENG.LIST?           Retourne la liste des fichiers moteur stockés sur la carte SD Arduino, par exemple :
 ENG.LIST=DSL-LTL, DSL-V12, VAPEUR, DSL-OLD, DSL-120, DSL-TURB, DSL-TUG, SCAN-V12, DSL-BIG, DSL-180, DIESEL7, SCAN-250, CAT-C32
-ENG.SEL=CAT-C32
-ENG.ATTEN=0
-SMOKE.MIN=00
-SMOKE.MAX=12
-AUX.NB=16
-AUX.TRACK=1
-AUX.EQ=0
-AUX.VOL=30
-AUX.HWPRIO=NNNNNN
+ENG.SEL?            Retourne le fichier moteur sélectionné, par exemple : ENG.SEL=CAT-C32
+ENG.SEL=CAT-C32     Définit le moteur sélectionné (CAT-C32 : Caterpillar C32 Marine)
+ENG.ATTEN?          Retourne l’attenuation du son moteur (0 à 3, si différent de 0, l'inter 8 est utiliser pour rendre actif ou pas l'atténuation)
+ENG.ATTEN=0         Définit l’attenuation du son moteur (0 à 3, si différent de 0, l'inter 8 est utiliser pour rendre actif ou pas l'atténuation)
 
-CONF				retourne la configuration actuelle
-AUX.TRACKx			lance le son x
-AUX.NEXT			lance le son x+1
-AUX.PREV			lance le son n-1
-AUX.PAUSE			stop la lecture d'un son auxiliaire
-AUX.VOL=x			définie le volume des sons auxiliaire de 0 à 30 (réglage son moteur par le pot RV1)
-AUX.VOL?			retourne le volume des sons auxiliaires
-AUX.HWPRIO=NNNNNN	définie la priorité des 6 sons externes (N ou Y)
-SMOKE.TEST=x		x = 0 à 12
-SMOKE.TEST=OFF		stop le test de la fumée
-ENG.LIST?			retourne les fichiers moteur sur la carte SD moteur
-ENG.SEL?			retourne le fichier moteur utilisé
-ENG.ATTEN=0			attenuation son moteur (0 à 3, si différent de 0,  l'inter 8 est utiliser pour rendre actif ou pas l'atténuation)
-THR.ZERO=1484		définie la valeur en µS du point milieu moteur
-THR.ZERO?			retourne la valeur en µS du point milieu moteur
-RC.FILTER=ON		définie si le filtre est actif ou pas (PCM uniquement)
-RC.FILTER?			retourne si le filtre est actif ou pas
+SMOKE.MIN?          Retourne l’index min de la fréquence de fumée (de 0 à 11 : valeur par défaut=0)
+SMOKE.MIN=00        Définit l’index min de la fréquence de fumée (de 0 à 11 : valeur par défaut=0)
+SMOKE.MAX?          Retourne l’index max de la fréquence de fumée (de 1 à 12 : valeur par défaut=12)
+SMOKE.MAX=12        Définit l’index max de la fréquence de fumée (de 1 à 12 : valeur par défaut=12)
+SMOKE.TEST?         Retourne l’index courant de la fréquence de fumée (de SMOKE.MIN à SMOKE.MAX : par défaut de 0 à 12)
+SMOKE.TEST=x        Définit l’index courant de la fréquence de fumée (de SMOKE.MIN à SMOKE.MAX : par défaut de 0 à 12)
+SMOKE.TEST=OFF      Stoppe le test du générateur de fumée
+SMOKE.MODE?         Retourne le mode de fonctionnement du générateur de fumée
+SMOKE.MODE=OFF      Définit le mode de fonctionnement du générateur de fumée : utilisé (pas de fumée générée)
+SMOKE.MODE=PROP     Définit le mode de fonctionnement du générateur de fumée : proportionnelle aux Gaz (plus réaliste pour moteur à vapeur)
+SMOKE.MODE=ACCEL    Définit le mode de fonctionnement du générateur de fumée : proportionnelle aux Accélérations (plus réaliste pour moteur Diesel)
 
-SMOKE.MODE=OFF   -> Générateur de fumée non utilisé
-SMOKE.MODE=PROP  -> Générateur de fumée utilisé et fumée proportionnelle aux Gaz (moins réaliste)
-SMOKE.MODE=ACCEL -> Générateur de fumée utilisé et fumée proportionnelle aux Accélérations (plus réaliste)
+AUX.NB?             Retourne le nombre de pistes (fichier son MP3) présents sur la carte SD du DF Player
+AUX.TRACK?          Retourne le numéro de la piste en cours (piste en cours de lecture ou dernière piste lue)
+AUX.TRACK=x         Définit le numéro de la piste et la lance (x de 1 à AUX.NB)
+AUX.EQ?             Retourne la valeur de l'EQualizer
+AUX.EQ=x            Définit la valeur de l'EQualizer: de 0 à 5. Permet de régler le type de sonorité:
+                    0 – Normal, 1 – Pop, 2 – Rock, 3 – Jazz, 4 – Classic, 5 – Bass
+AUX.VOL?            Retourne le volume du DF Player
+AUX.VOL=x           Définit le volume des sons auxiliaires du DF Player de 0 à 30 (Le réglage du volume du son moteur se fait par le pot RV1)
+AUX.HWPRIO?         Retourne la priorité des 6 sons externes
+AUX.HWPRIO=PNNNNN   Définit la priorité des 6 sons externes (N pour Nomale ou P pour Prioritaire)
+AUX.NEXT            Définit et joue la piste suivante
+AUX.PREV            Définit et joue la piste précédente
+AUX.PAUSE           Stoppe la lecture de la piste courante
+AUX.PLAY            Relance la lecture de la piste courante
+AUX.RAND            Joue les pistes de manière aléatoire
 
-
-AUX.NB=16 -> Il s'agit du nombre de fichiers MP3 présents sur la carte SD du DF Player
-AUX.EQ=0  -> Il s'agit de la valeur de l'EQualizer: ça va de 0 à 5.
-			 ça te permet de régler le type de sonorité: 
-			 0 – Normal, 1 – Pop, 2 – Rock, 3 – Jazz, 4 – Classic, 5 – Bass
-
+>Les sons 1 à 8 sont pilotés par les contacts Sw (sauf le 8e si une atténuation du son moteur est définie. Dans ce cas, le Sw N°8 permet d’atténuer le
+son du moteur).
+>Les sons de 9 à 14 sont pilotés en HW sur front descendant par les entrées A1 à A6 du connecteur P4.
+>Les sons au-dessus de 14 ne sont pas utilisés par radio-commande, mais peuvent être lancés par l’interface USB à l’aide de la commande AUX.TRACK=x. 
