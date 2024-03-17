@@ -103,7 +103,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
    
 1. Sound&SmokeModule
-   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound&SmokeModule)
+   * [V1.1](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound&SmokeModule)
    
       ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/S%26SM1.png)  
 	  
