@@ -35,7 +35,7 @@ simply configure Xany2Misc with the command:
 This configuration allows 16 commands to be sent in EKMFA mode from the transmitter to the Beier USM-RC-2 sound module.
 **Fx=1** to activate the x function (x from 1 to 16).  
 
-### Configure your Hanset
+### Configure your Handset
 We must define a channel for the BURC/X-Any signal, by example on the channel 8.  
 1 OpenAVRc handset  
   * Into the Xany menu, define channel 8 and SW=16  
