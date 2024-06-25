@@ -45,6 +45,6 @@ We must define a channel for the BURC/X-Any signal, by example on the channel 8.
 2 Other handset with a [BURC Encoder](https://github.com/pierrotm777/BURC_Encoder)  
   * Configuration example  
 ```
-	RCUL3.VOIE=8  
-	RCUL3.MESSAGE=C1-C16@0x24  
+RCUL3.VOIE=8  
+RCUL3.MESSAGE=C1-C16@0x24  
 ```
