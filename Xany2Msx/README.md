@@ -43,7 +43,7 @@ RCUL3.MESSAGE=C1-C16@0x24
 Todo
 
 ### Configuration for BURC/Beier
-See the documentation on paragraph **5.2.1**.  
+See the documentation on paragraph **5.2.1 and 5.2.2**.  
 - For control 16 commands of a Beier USM-RC-2 sound module (30 maxi) over a **FTDI interface** on the M1 output,  
 simply configure Xany2Misc with the command:  
 **M1=B1** or **M2=B1**  
@@ -52,3 +52,6 @@ This configuration allows 16 commands to be sent in EKMFA mode from the transmit
 
 ### Configuration for NVM
 Todo
+
+
+
