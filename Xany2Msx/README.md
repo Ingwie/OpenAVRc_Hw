@@ -24,3 +24,13 @@ Currently supported commercial pulse decoders are:
   - Upload firmware:  
   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Avrdudess_Attiny85.jpg)
   - [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/):
+  
+## Configuration for BURC/Beier
+See the documentation on paragraph **5.2.1**.  
+- For control 16 commands of a Beier USM-RC-2 sound module (30 maxi) over a **FTDI interface** on the M1 output,  
+simply configure Xany2Misc with the command:  
+**M1=B1** or **M2=B1**  
+This configuration allows 16 commands to be sent in EKMFA mode from the transmitter to the Beier USM-RC-2 sound module.
+**Fx=1** to activate the x function (x from 1 to 16).  
+
+
