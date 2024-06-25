@@ -39,7 +39,7 @@ This configuration allows 16 commands to be sent in EKMFA mode from the transmit
 We must define a channel for the BURC/X-Any signal, by example on the channel 8.  
 1 OpenAVRc handset  
   * Into the Xany menu, define channel 8 and SW=16  
-  * If needed use Repetition option (1 to3)  
+  * If needed use Repetition option (1 to 3)  
   ![OpenAVRc-Xany](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/OpenAVRc_Xany.png)  
   
 2 Other handset with a [BURC Encoder](https://github.com/pierrotm777/BURC_Encoder)  
