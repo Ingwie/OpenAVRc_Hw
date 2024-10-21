@@ -18,7 +18,7 @@ The board include an ICSP port for upload the bootloader and a FTDI serial port 
 </table>
 
 ### FP-S148 Schematic
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/LUCAS_FPS148_FS3003.jpg)  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/LUCAS_FPS148_FS3003-v1.1.jpg)  
 
 ## The MG946R board
 Once all the tests have been carried out with the FP-S148, we will manufacture a board for an MG946R type servo.  

@@ -1,0 +1,54 @@
+J'obtiens 44 variantes de commande:
+
+CMD.MODE=CONSOLE                 // LUCAS commandé depuis la serial console
+
+CMD.MODE=I2C                     // LUCAS commandé depuis l'I2C
+
+CMD.MODE=PWM;WIDTH:ANGLE         // LUCAS commandé depuis une voie PWM (largeur de 960µs à 2040µs pour 0° à 360°: 3µs par degré)
+CMD.MODE=PWM_WIDTH;SERVO         // LUCAS commandé depuis une voie PWM (largeur de 1000µs à 2000µs pour -45° à +45°: LUCAS se comporte comme un servo standard)
+CMD.MODE=PWM;XY;ANGLE            // LUCAS commandé depuis  2  voies PWM (ex: manche en croix): seule, l'info d'angle est exploité par LUCAS
+CMD.MODE=PWM;XY;ANGLE+ANA        // LUCAS commandé depuis  2  voies PWM (ex: manche en croix): l'info d'angle ET l'info d'éloignement/centre (Gaz) sont exploités par LUCAS
+CMD.MODE=PWM;RCUL;ANGLE          // LUCAS commandé depuis une voie PWM en mode RCUL (Seule, l'info d'angle est transmise)
+CMD.MODE=PWM;RCUL;ANGLE+ANA      // LUCAS commandé depuis une voie PWM en mode RCUL (L'info d'angle et une info ANA sont transmises)
+
+CMD.MODE=CPPM5_WIDTH_ANGLE       // Idem qu'en PWM, mais à partir de la voie N°5 du train CPPM
+CMD.MODE=CPPM5_WIDTH_SERVO
+CMD.MODE=CPPM;X=5;Y=6;ANGLE      // Idem qu'en PWM, mais à partir des voies N°5 (X) et n°6 (Y) du train CPPM
+CMD.MODE=CPPM;X=5;Y=6;ANGLE+ANA
+CMD.MODE=CPPM5;RCUL;ANGLE
+CMD.MODE=CPPM5;RCUL;ANGLE+ANA
+
+CMD.MODE=SBUS6;WIDTH;ANGLE
+CMD.MODE=SBUS6;WIDTH;SERVO
+CMD.MODE=SBUS;X=6;Y=7;ANGLE
+CMD.MODE=SBUS;X=6;Y=7;ANGLE+ANA
+CMD.MODE=SBUS6;RCUL;ANGLE
+CMD.MODE=SBUS6;RCUL;ANGLE+ANA
+
+CMD.MODE=SRXL7;WIDTH;ANGLE
+CMD.MODE=SRXL7;WIDTH;SERVO
+CMD.MODE=SRXL;X=7;Y=8;ANGLE
+CMD.MODE=SRXL;X=7;Y=8;ANGLE+ANA
+CMD.MODE=SRXL7;RCUL;ANGLE
+CMD.MODE=SRXL7;RCUL;ANGLE+ANA
+
+CMD.MODE=IBUS8;WIDTH;ANGLE
+CMD.MODE=IBUS8;WIDTH;SERVO
+CMD.MODE=IBUS;X=8;Y=9;ANGLE
+CMD.MODE=IBUS;X=8;Y=9;ANGLE+ANA
+CMD.MODE=IBUS8;RCUL;ANGLE
+CMD.MODE=IBUS8;RCUL;ANGLE+ANA
+
+CMD.MODE=SUMD10;WIDTH;ANGLE
+CMD.MODE=SUMD10;WIDTH_SERVO
+CMD.MODE=SUMD;X10;Y=11;ANGLE
+CMD.MODE=SUMD;X10;Y=11;ANGLE+ANA
+CMD.MODE=SUMD10;RCUL;ANGLE
+CMD.MODE=SUMD10;RCUL;ANGLE+ANA
+
+CMD.MODE=JETI11;WIDTH;ANGLE
+CMD.MODE=JETI11;WIDTH;SERVO
+CMD.MODE=JETI;X=11;Y=12;ANGLE
+CMD.MODE=JETI;X=11;Y=12;ANGLE+ANA
+CMD.MODE=JETI11;RCUL;ANGLE
+CMD.MODE=JETI11;RCUL;ANGLE+ANA
