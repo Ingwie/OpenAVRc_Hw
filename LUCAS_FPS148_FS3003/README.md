@@ -28,3 +28,5 @@ It's features are:
 ## Example of use
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/Graupner1769.11_Schottle_Motor.jpg)  
 
+## Documentation
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/LUCAS_FPS148_FS3003/LUCAS_V1_Manuel_Utilisateur.pdf)
