@@ -37,7 +37,7 @@ Add a 10 buttons Keyboard into the handset.
 5. Repeat the operation for the next 7 push buttons. Once the mode of the 8th push button is set, a series of FOUR flashes is emitted to signal the end of the calibration.  
 Pushbuttons 9 and 10 (VOL- and VOL+) are always in Normal mode, they cannot be switched to impulse mode.  
 
-**Procedure for setting the initial volume value: (volume value at startup of the Buttons2Xany board)**
+**Procedure for setting the initial volume value: (volume value at startup of the Buttons2Xany board)**  
 ATTENTION, you must first have calibrated the push buttons (see above).
 1) Hold down the push button connected to J2
 2) Power on **Buttons2Xany**
