@@ -47,6 +47,9 @@ Then, obviously, push buttons 9 and 10 (VOL- and VOL+) will allow you to adjust 
 
 All you have to do is connect [Sound&Smoke](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule) to output J3.
 
+## Documentation
+You can find a manual [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Buttons2Xany/Buttons2Xany_Manuel_Utilisateur.pdf)
+
 
 
 
