@@ -1,22 +1,11 @@
-# Xany2Msx
+# Buttons2Xany
 
 ## There are two firmware versions for the *Xany2Msx* interface
 
-- [Xany2Msx](./Firmware_Msx/README.md)
-
-Currently supported commercial Multi-Switch / Prop decoders are:  
-* **Robbe Multi Switch Decoder** No 8369 ***(MS16)***
-* **Robbe Multi Decoder Switch + Prop** No 8370 ***(MS12 + 2 PROP)***
-* **Robbe-Futaba Multi Switch Decoder** No F1513 ***(MS8)***
-* **MULTIPLEX MULTInaut top** ***(MS12 + 2 MoTors)***
-* **GRAUPNER NAUTIC Expert** ***(MS16)***
-
-- [Xany2Misc](./Firmware_Misc/README.md)
-
-Currently supported commercial pulse decoders are:  
-* **Conrad Module 7 fonctions**
-* **Beier Module son USM-RC-2**
-* **NVM Multi-Switch Decoder**
+  This module converts push-button commands to Xany message for controling [Sound&Smoke](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule) module from a "keyboard" of 10 push-buttons.
+  - The first 8 buttons command 8 sound tracks
+  - The 9th and 10th buttons control the volume (V-/V+)
+  - The generated Xany message is: [Prop][Sw][Chks]
 
 ## Upload Firmware with UsbAsp dongle
   - Wiring:  
@@ -26,32 +15,29 @@ Currently supported commercial pulse decoders are:
   - [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/):
 
 ### Configure your Handset
-We must define a channel for the BURC/X-Any signal, by example on the channel 8.  
-1 OpenAVRc handset  
-  * Into the Xany menu, define channel 8 and SW=16  
-  * If needed use Repetition option (1 to 3)  
-  ![OpenAVRc-Xany](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/OpenAVRc_Xany.png)  
-  
-2 Other handset with a [BURC Encoder](https://github.com/pierrotm777/BURC_Encoder)  
-  * Configuration example  
-```
-RCUL3.VOIE=8  
-RCUL3.MESSAGE=C1-C16@0x24  
-```
+Add a 10 buttons Keyboard into the handset.
 
-### Configuration for Conrad
-Todo
+Don't forget to wire a mini programming push button between the "Signal" and "-" pins of J2.
 
-### Configuration for BURC/Beier
-See the documentation on paragraph **5.2.1 and 5.2.2**.  
-- For control 16 commands of a Beier USM-RC-2 sound module (30 maxi) over a **FTDI interface** on the M1 output,  
-simply configure Xany2Misc with the command:  
-**M1=B1** or **M2=B1**  
-This configuration allows 16 commands to be sent in EKMFA mode from the transmitter to the Beier USM-RC-2 sound module.
-**Fx=1** to activate the x function (x from 1 to 16).  
+The pulse width association calibration procedure is as follows: (Xany2Misc must obviously be connected to the receiver channel)
+1. Hold down the push button connected to J2
+2. Power on Xany2Misc
+3. As soon as the LED flashes ONE, release the push button connected to J2: we have just entered the push button calibration mode and the 1st push button is internally selected.  
+4. On the transmitter keypad, keep the 1st pushbutton pressed, then press the Prog pushbutton connected to J2: the LED reflashes ONE time and the next pushbutton is automatically selected internally.  
+5. Repeat the operation for the next 9 push buttons. Once the 10th push button is calibrated, a series of FOUR flashes is emitted to signal the end of the calibration.  
 
-### Configuration for NVM
-Todo
+To be able to configure the control mode of each push button: Normal mode or impulse mode.
+The calibration procedure is as follows:
+1. Hold down the push button connected to J2
+2. Power on Xany2Misc
+3. As soon as the LED flashes TWO times, release the push button connected to J2: you have just entered the mode setting mode for each push button  
+4. At this time, the 1st push button is selected internally, to choose the mode of this push button, press VOL- to switch the button to Normal mode or press VOL+ to switch to pulse mode: TWO flashes are issued. The next push button is automatically selected internally.  
+5. Repeat the operation for the next 7 push buttons. Once the mode of the 8th push button is set, a series of FOUR flashes is emitted to signal the end of the calibration.  
+Pushbuttons 9 and 10 (VOL- and VOL+) are always in Normal mode, they cannot be switched to impulse mode.  
+
+
+
+
 
 
 
