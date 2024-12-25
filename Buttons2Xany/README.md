@@ -1,6 +1,6 @@
 # Buttons2Xany
 
-## There are two firmware versions for the *Xany2Msx* interface
+## When use the *Buttons2Xany* module
 
   This module converts push-button commands to Xany message for controling [Sound&Smoke](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule) module from a "keyboard" of 10 push-buttons.
   - The first 8 buttons command 8 sound tracks
