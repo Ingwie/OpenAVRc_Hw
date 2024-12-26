@@ -12,6 +12,7 @@
   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Attiny85.jpg)
   - Upload firmware:  
   ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Avrdudess_Attiny85.jpg)
+  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Buttons2Xany/attiny85_fuses.png)
   - [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/):
 
 ### Configure your Handset
