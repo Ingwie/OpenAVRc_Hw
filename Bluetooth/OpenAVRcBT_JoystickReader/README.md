@@ -10,14 +10,14 @@ Le code Arduino est téléchargeable [ici](https://github.com/Ingwie/OpenAVRc_Hw
 
 Deux options sont possibles:
 1. L'interface simule un signal **CPPM**.
-2. L'interface simule un signal **CPPM**.
+2. L'interface simule un signal **SBUS**.
 3. L'interface via le **Bluetooth OpenAVRc** génère une trame compatible avec la radio.
 4. L'interface via le **Bluetooth OpenTx/EdgeTx** génère une trame compatible avec les radios OpenTx/EdgeTx.
 
 ## Utiliser le module réception en mode PPM
  Configurer dans le code OpenAVRcBT_JoystickReader, ligne 67,  **#define INPUT_MODE PPM**
  
-## Utiliser le module réception en mode PPM
+## Utiliser le module réception en mode SBUS
  Configurer dans le code OpenAVRcBT_JoystickReader, ligne 67,  **#define INPUT_MODE SBUS**
 
 ## Utiliser le module réception en mode Bluetooth OpenAVRc
@@ -25,7 +25,11 @@ Deux options sont possibles:
  
 ## Utiliser le module réception en mode Bluetooth OpenAVRc
  Configurer dans le code OpenAVRcBT_JoystickReader, ligne 67,  **#define INPUT_MODE BLUETOOTH_EDGETX**
- 
+
+## Le mode BT_INIT
+ Ce mode permet de configurer les modules BT.  
+ La vitesse (bauds), le nom et l'appairage sont réalisés.  
+
 # Réaliser le câblage
 
 ## A. Carte Uno ou Leonardo
@@ -58,13 +62,21 @@ A la ligne 58, décommentez #define DISPLAY_TYPE **LCD_TYPE** // ou **SSD_TYPE**
 
 ## Configurer le module réception
 1. Installer les bibliothèques [USB Host Shield Library 2.0](https://www.arduinolibraries.info/libraries/usb-host-shield-library-2-0) et [DigisparkTinyCppmGen](https://github.com/RC-Navy/DigisparkArduinoIntegration/tree/master/libraries/DigisparkTinyCppmGen) dans l'IDE Arduino.
-2. Décommenter à la ligne 60 **#define AT_INIT_HC05** .
+2. Décommenter à la ligne 60 **#define AT_INIT_HC05** ou 61 **#define AT_INIT_HM10** .  
 3. Compiler et Télécharger le code.
 4. Au premier lancement, le Uno ou Pro Mini devrait configurer en **'Slave'** et en **'57600'**, (ou en **115200** pour un board Leonardo)
-5. Commenter à nouveau à la ligne 60  **//#define AT_INIT_HC05** .
+5. Commenter à nouveau à la ligne 60  **//#define AT_INIT_HC05** ou 61 **#define AT_INIT_HM10**.
 6. Compiler et Télécharger le code. Le module réception est prét.
 7. Par défaut, le code est configuré pour fonctionner avec un module BLUETOOTH HC-05 mais vous pouvez utiliser le mode PPM.  
- **#define INPUT_MODE PPM** //Selectionnez PPM ou BLUETOOTH ligne 67
+ **#define INPUT_MODE PPM** //Selectionnez PPM ou BLUETOOTH ligne 68.  
+
+## Configurer le module réception
+Plusieurs firmwares sont disponibles [ici](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Bluetooth/OpenAVRcBT_JoystickReader/Firmwares)  
+- Mode PPM
+- Mode SBUS
+- Mode OpenAVRc
+- Mode OpenTx/EdgeTx
+- Mode Initialisation de modules Bluetooth HC05 ou HM10
 
 ## Configurer la radio OpenAVRc.
 1. Aller dans l'écran Bluetooth de la radio.
