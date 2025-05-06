@@ -17,7 +17,7 @@ P3015 is really smaller than P3022 and, i think, easier to implant into a transm
 These sensors simulate a sensor of the type [Allegro MicroSystems A1335](https://www.allegromicro.com/en/products/sense/linear-and-angular-position/angular-position-sensor-ics/a1335).
 
 **Upload the HEX file:**  
-You can found binary file [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/HallAna2A1335_Attiny85/HallAna2A1335_Attiny85.zip).
+You can found binary file [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Capteur_Hall_I2C/HallAna2A1335_Attiny85/HallAna2A1335_Attiny85.hex).
 
 **CALIBRATION AND CONFIGURATION OF THE I2C ADDRESS OF THE 360° SENSOR**  
 
