@@ -1,0 +1,2 @@
+configurer en 16Mhz interne.
+- low=F1, high=DF, extended=FF
