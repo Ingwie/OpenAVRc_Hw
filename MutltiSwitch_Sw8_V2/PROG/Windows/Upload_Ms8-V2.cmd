@@ -1,1 +1,0 @@
-C:\Users\pierrot\AppData\Local\Arduino15\packages\digistump\tools\micronucleus\2.0a4/launcher -cdigispark --timeout 60 -Uflash:w:C:\tmp\_OpenAVRc\Xany_Projects\MutltiSwitch_Sw8_V2\Hex/MS8_Xany_V2_0.hex:i 
