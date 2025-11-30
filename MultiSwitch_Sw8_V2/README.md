@@ -5,15 +5,15 @@ It not only allows you to drive 8 digital outputs, but also allows you to drive 
 It also provides a booster proportional channel to drive a servo or an ESC. 
 
 ## Ms8 V2 schematic
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/MutltiSwitch_Sw8_V2_sch.jpg)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V2/MutltiSwitch_Sw8_V2_sch.jpg)
 
 ## Ms8 V2 PCB:
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/MutltiSwitch_Sw8_V2.jpg)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V2/MutltiSwitch_Sw8_V2.jpg)
 
 ## Upload Firmware with UsbAsp dongle
   - Upload firmware:  
 For now, we use a command line method, see exemple:  
-https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/PROG/Windows/Upload_By_Cmd.cmd  
+https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V2/PROG/Windows/Upload_By_Cmd.cmd  
 
 **C:\Users\XXX\AppData\Local\Arduino15\packages\ATTinyCore\tools\micronucleus\2.5-azd1b/micronucleus --no-ansi --run --timeout 60 C:\Users\XXX\Documents\MS8/MS8_Xany_V2_0.hex**
 In your Documents directory, create a folder MS8 and put your hex and Upload_By_Cmd.cmd file. 
@@ -42,10 +42,10 @@ By default, all the outputs are configured in Digital mode (as with regular Mult
 It is necessary to use a TTL USB/Serial converter (FTDI type) to access to the advanced mode for driving servos: it's described in the video.
 
 Ms8 files:
-* [MS8-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MutltiSwitch_Sw8_V2).
-* PCB: [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/MutltiSwitch_Sw8_V2.zip)
+* [MS8-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V2).
+* PCB: [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V2/MultiSwitch_Sw8_V2.zip)
 * User Manual:  
-  - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MutltiSwitch_Sw8_V2/MS8-Xany-V2_Manuel_Utilisateur.pdf)
+  - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V2/MS8-Xany-V2_Manuel_Utilisateur.pdf)
 
 * HEX file to be loaded in the ATtiny84 microcontroller:  
   - [Linux]()  
