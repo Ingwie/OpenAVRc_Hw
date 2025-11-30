@@ -1,13 +1,14 @@
-# MS8-Xany V2 decoder
+# MS8-Xany V3 decoder
 
 MS8-Xany V2 is a new Ms8 version with more features.  
 It not only allows you to drive 8 digital outputs, but also allows you to drive up to 8 digital servos including the 2 extreme positions and the speed between these 2 positions are programmable!  
 It also provides a booster proportional channel to drive a servo or an ESC. 
 
-## Ms8 V2 schematic
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3_sch.jpg)
+## Ms8 V3 schematic
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3.pdf)
 
-## Ms8 V2 PCB:
+
+## Ms8 V3 PCB:
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3.jpg)
 
 ## Upload Firmware with UsbAsp dongle
