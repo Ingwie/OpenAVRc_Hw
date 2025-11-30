@@ -1,6 +1,6 @@
 # MS8-Xany V3 decoder
 
-MS8-Xany V2 is a new Ms8 version with more features.  
+MS8-Xany V3 is a new Ms8 version with more features.  
 It not only allows you to drive 8 digital outputs, but also allows you to drive up to 8 digital servos including the 2 extreme positions and the speed between these 2 positions are programmable!  
 It also provides a booster proportional channel to drive a servo or an ESC. 
 
@@ -13,13 +13,8 @@ It also provides a booster proportional channel to drive a servo or an ESC.
 
 ## Upload Firmware with UsbAsp dongle
   - Upload firmware:  
-For now, we use a command line method, see exemple:  
-https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/PROG/Windows/Upload_By_Cmd.cmd  
 
-**C:\Users\XXX\AppData\Local\Arduino15\packages\ATTinyCore\tools\micronucleus\2.5-azd1b/micronucleus --no-ansi --run --timeout 60 C:\Users\XXX\Documents\MS8/MS8_Xany_V2_0.hex**
-In your Documents directory, create a folder MS8 and put your hex and Upload_By_Cmd.cmd file. 
-Edit your cmd file and chage XXX by your name.  
-Connect your MS8 V2 to your PC with a USB cable  and lauch the cmd file for upload the firmware.  
+Connect your MS8 V3 to your PC with a USB cable  and lauch the cmd file for upload the firmware.  
 
 ## Videos
 This first video show:
@@ -46,7 +41,7 @@ Ms8 files:
 * [MS8-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V3).
 * PCB: [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3.zip)
 * User Manual:  
-  - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MS8-Xany-V2_Manuel_Utilisateur.pdf)
+  - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MS8-Xany-V3_Manuel_Utilisateur.pdf)
 
 * HEX file to be loaded in the ATtiny84 microcontroller:  
   - [Linux]()  
