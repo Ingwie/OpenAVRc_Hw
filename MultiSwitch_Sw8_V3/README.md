@@ -16,7 +16,8 @@ It also provides a booster proportional channel to drive a servo or an ESC.
 - Connect your MS8 V3 to your PC with a USB cable  and lauch the cmd file for upload the firmware.  
 - Load [Xloader](https://github.com/binaryupdates/xLoader) uploader hex file.  
 - Upload the firmware file found [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V3/PROG/Windows).  
-- Define Xloader as ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/PROG/Windows/xloader.jpg).  
+- Define Xloader as below:  
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/PROG/Windows/xloader.jpg).  
 
 ## Videos
 This first video show:
