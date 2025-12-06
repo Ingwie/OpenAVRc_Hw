@@ -15,7 +15,9 @@ It also provides a booster proportional channel to drive a servo or an ESC.
 ## Upload Firmware
 - Connect your MS8 V3 to your PC with a USB cable  and lauch the cmd file for upload the firmware.  
 - Load [Xloader](https://github.com/binaryupdates/xLoader) uploader hex file.  
-- Upload the firmware file found [here](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V3/PROG/Windows).  
+- Upload the firmware file found below:  
+  - [Windows](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V3/PROG/Windows).  
+  - [Linux]().  
 - Define Xloader as below:  
 ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/PROG/Windows/xloader.jpg).  
 
@@ -40,20 +42,10 @@ This second video describes:
 By default, all the outputs are configured in Digital mode (as with regular Multiswitch decoders).
 It is necessary to use a TTL USB/Serial converter (FTDI type) to access to the advanced mode for driving servos: it's described in the video.
 
-Ms8 files:
+Ms8 documentation files:
 * [MS8-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V3).
 * PCB: [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3.zip)
 * User Manual:  
   - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MS8-Xany-V3_Manuel_Utilisateur.pdf)
-
-* HEX file to be loaded in the ATtiny84 microcontroller:  
-  - [Linux]()  
-  - [Windows](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V3/PROG/Windows) 
-
-
-
-Additionally, this decoder provides a supplement proportional channel: thus, even if MS8-Xany uses one proportional channel, this one is not lost! The position of the contacts are sent using multiplexing technique.
-
-The data transmission being digital, no tuning is needed.
 
 RC Navy 
