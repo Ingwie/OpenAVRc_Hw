@@ -109,8 +109,8 @@ Reminder: for volume, use a half-press down press to recall the last command (e.
 
 ## Sounds files 
 You will find under these folders the sounds files to copy on the SD cards.  
-[Motor's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/v1.0/Firmware_Sound%26Smoke_Module/SD_Arduino_Pro_Micro)  
-[Auxiliary's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/v1.0/Firmware_Sound%26Smoke_Module/SD_DF_Player_mini)  
+[Motor's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Sounds/SD_Arduino_Pro_Micro)  
+[Auxiliary's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Sounds/SD_DF_Player_mini)  
 
 The **Arduino Pro Micro** board use a particular method for upload a code.  
 You can use the program [32u4_hexuploader](https://github.com/uriba107/32u4_hexuploader).
