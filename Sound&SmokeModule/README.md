@@ -124,7 +124,7 @@ SMOKE.TEST?         Retourne l’index courant de la fréquence de fumée (de SM
 SMOKE.TEST=x        Définit l’index courant de la fréquence de fumée (de SMOKE.MIN à SMOKE.MAX : par défaut de 0 à 12)
 SMOKE.TEST=OFF      Stoppe le test du générateur de fumée
 SMOKE.MODE?         Retourne le mode de fonctionnement du générateur de fumée
-SMOKE.MODE=OFF      Définit le mode de fonctionnement du générateur de fumée : utilisé (pas de fumée générée)
+SMOKE.MODE=OFF      Définit le mode de fonctionnement du générateur de fumée : inutilisé (pas de fumée générée)
 SMOKE.MODE=PROP     Définit le mode de fonctionnement du générateur de fumée : proportionnelle aux Gaz (plus réaliste pour moteur à vapeur)
 SMOKE.MODE=ACCEL    Définit le mode de fonctionnement du générateur de fumée : proportionnelle aux Accélérations (plus réaliste pour moteur Diesel)
 
