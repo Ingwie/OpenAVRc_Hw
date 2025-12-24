@@ -85,7 +85,7 @@ The versions v1.0 and v1.1 use the same firmwares.
 We don't give sources, because X-Any libraries are not Open Source for the receive side.  
 Two firmware versions are usable:
   - [XANY version](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/Firmware/RC_SOUND_SMOKE_XANY_V0_3.hex)  
-  - [EKMFA version](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/v1.0/Firmware/RC_SOUND_SMOKE_EKMFA_V0_5.hex)  
+  - [EKMFA version](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/Firmware/RC_SOUND_SMOKE_EKMFA_V0_5.hex)  
 You can found binary file [Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Firmware)  
 
 ## Sounds files 
