@@ -81,31 +81,12 @@ The use of the X-Any/RCUL system of the OpenAVRc transmitter makes everything ve
 [Configuration of the Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/RC_Sound%26Smoke_Manuel_Utilisateur.pdf)
 
 ## Upload the HEX file
-We don't give sources, because X-Any libraries are not Open Source for the receive side.   
-You can found binary file [Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Firmware_Sound%26Smoke_Module)  
-
-Therefore, the following commands are not available in EKMFA mode: (these "convenience" commands are only used for testing the DF Player)  
-- AUX.PAUSE  
-- AUX.PLAY (not available)  
-- AUX.STOP  
-- AUX.NEXT  
-- AUX.PREV  
-- AUX.RANDOM  
-
-In EKMFA:  
-1 up press -> Track 1  
-2 up presses -> Track 3  
-3 up presses -> Track 5  
-4 up presses -> Track 7  
-5 up presses -> Vol+  
-
-1 down press -> Track 2  
-2 down presses -> Track 4  
-3 down presses -> Track 6  
-4 down presses -> Track 8  
-5 down presses -> Vol-  
-
-Reminder: for volume, use a half-press down press to recall the last command (e.g., after 5 up presses, a half-press down press will repeat Vol+).  
+The versions v1.0 and v1.1 use the same firmwares.  
+We don't give sources, because X-Any libraries are not Open Source for the receive side.  
+Two firmware versions are usable:
+  - [XANY version](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/Firmware/RC_SOUND_SMOKE_XANY_V0_3.hex)  
+  - [EKMFA version](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/v1.0/Firmware/RC_SOUND_SMOKE_EKMFA_V0_5.hex)  
+You can found binary file [Sound&Smoke Module](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Firmware)  
 
 ## Sounds files 
 You will find under these folders the sounds files to copy on the SD cards.  
@@ -168,3 +149,26 @@ son du moteur).
 >Les sons de 9 à 14 sont pilotés en HW sur front descendant par les entrées A1 à A6 du connecteur P4.
 >Les sons au-dessus de 14 ne sont pas utilisés par radio-commande, mais peuvent être lancés par l’interface USB à l’aide de la commande AUX.TRACK=x. 
 ```
+
+In EKMFA:  
+Therefore, the following commands are not available in EKMFA mode: (these "convenience" commands are only used for testing the DF Player)  
+- AUX.PAUSE  
+- AUX.PLAY (not available)  
+- AUX.STOP  
+- AUX.NEXT  
+- AUX.PREV  
+- AUX.RANDOM  
+
+1 up press -> Track 1  
+2 up presses -> Track 3  
+3 up presses -> Track 5  
+4 up presses -> Track 7  
+5 up presses -> Vol+  
+
+1 down press -> Track 2  
+2 down presses -> Track 4  
+3 down presses -> Track 6  
+4 down presses -> Track 8  
+5 down presses -> Vol-  
+
+Reminder: for volume, use a half-press down press to recall the last command (e.g., after 5 up presses, a half-press down press will repeat Vol+).  
