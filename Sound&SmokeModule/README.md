@@ -1,3 +1,14 @@
+# Sound&Smoke sound module
+
+## Presentation
+There are various diesel sound effects and smoke generators available for RC models.  
+For diesel sound effects, only those using audio recordings of real engines produce a sound very close to that of real engines.  
+For smoke generators, only those based on a piezo atomizer produce (white) smoke free of oily residue: it's simply vaporized water.  
+Based on this observation, we conceived the idea of ​​designing a Sound and Smoke Module that combines both functions.  
+The smoke produced will obviously be proportional to the engine's throttle or acceleration.  
+In addition to the engine noise, other sounds can be played (e.g., seagull cries, foghorn, water ingress alarm, work sounds, or others).  
+
+## Features
 AUX.VOL# Sound and Smoke module
 
 This Sound and Smoke Module has the following features:
@@ -41,12 +52,26 @@ This Sound and Smoke Module has the following features:
             The 6 sounds "launchable" in hardware from 6 pins of the Sound and Smoke Module configurable in priority:
                 Medium priority: can be interrupted by a sound configured as high priority
                 High priority: a sound configured in high priority can interrupt any sound in progress, except if this one is already in high priority
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/Sound%26Smoke_Module.jpg)
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/v1.0/Sound%26Smoke_Module.jpg)
 
-## Sound&Smoke_Module PCB:
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/S%26SM1.png)  
+## Sound&Smoke_Module PCB versions
 
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/S%26SM2.png)  
+## PCB versions
+<table cellspacing=0>
+  <tr>
+    <td align=center width=400><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/v1.0/README.md"><img src="https://github.com/pierrotm777/SoundModule_Teensy4.0-version/blob/main/Hardware/V1.0/Sound&Smoke_Top-v1.0.jpg" border="0" name="submit" title="Sound Module" alt="Sound Module v1.0"/></a><br><b>V1.0 (deprecated)</td>
+    <td align=center width=400><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/v1.1/README.md"><img src="https://github.com/pierrotm777/SoundModule_Teensy4.0-version/blob/main/Hardware/V1.1/Sound&Smoke_Top-v1.1.jpg" border="0" name="submit" title="Sound Module" alt="Sound Module v1.1"/></a><br><b>V1.1 (deprecated)</td>
+
+  </tr>
+</table>
+
+
+
+
+
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/v1.0/S%26SM1.png)  
+
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/v1.0/S%26SM2.png)  
 
 ## Videos
 [![Video 1](https://img.youtube.com/vi/RUjrtYIM5t8/0.jpg)](https://www.youtube.com/watch?v=RUjrtYIM5t8 "Video 1")  
@@ -92,8 +117,8 @@ Reminder: for volume, use a half-press down press to recall the last command (e.
 
 ## Sounds files 
 You will find under these folders the sounds files to copy on the SD cards.  
-[Motor's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Firmware_Sound%26Smoke_Module/SD_Arduino_Pro_Micro)  
-[Auxiliary's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/Firmware_Sound%26Smoke_Module/SD_DF_Player_mini)  
+[Motor's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/v1.0/Firmware_Sound%26Smoke_Module/SD_Arduino_Pro_Micro)  
+[Auxiliary's Sounds](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound%26SmokeModule/v1.0/Firmware_Sound%26Smoke_Module/SD_DF_Player_mini)  
 
 The **Arduino Pro Micro** board use a particular method for upload a code.  
 You can use the program [32u4_hexuploader](https://github.com/uriba107/32u4_hexuploader).
