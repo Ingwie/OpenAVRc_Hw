@@ -52,6 +52,50 @@ Ms8 documentation files:
 * [MS8-Xany folder in Git repository](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V3).
 * PCB: [here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3_PCB.zip)
 * User Manual:  
-  - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MS8-Xany-V3_Manuel_Utilisateur.pdf)
+  - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MS8-Xany-V3_Manuel_Utilisateur.pdf)  
+  
+## Commands
+```
+H
+H?              -> Returns this help
+<--'            -> If Enter is sent, MS8 Vx.y stays in Terminal Mode and
+                   failsafe is disabled (nice, for config and test)
+                   Additionally, this command triggers the display of the
+                   Welcome Message "MS8 Vx.y" in the Terminal
+C?              -> This command displays the full Configuration with status
+                   (all the commands listed below)
+T=CRLF/CR       -> Set the Line Terminator to CRLF or to CR
+T?              -> Return the configured Line Terminator
+I=Interface[Ch] -> Set the RC Interface (P for PWM, C for CPPM, S for SBUS,
+                   X for SRXL, D for SUMD, I for IBUS), Ch is channel
+I?              -> Return the configured Interface
+P=MsProto[;N/F] -> Set the Multi-Switch Protocol (MsProto: R for RCUL with N for
+                   Non filtered, F for filtered, F for MS8 Futaba, B binary
+                   (for OTX and ETX), P for Push-Button and E for EKMFA)
+P?              -> Return the configured Multi-Switch Protocol
+S0=XXXX         -> Set Prop Servo to the XXXX position in us
+SR=N/Y          -> Apply reverse (Y) or no reverse (N) for Prop Servo (S0)
+Sx=D;M          -> Sx is a Digital output in mode M (M=Normal or Pulsed)
+                   (x is the id of the ouput from 1 to 8, x = 0 is reserved for
+                   the prop Servo)
+Sx=S;M;PosA;PosB;A2BDur[;B2ADur] -> Sx is a Servo output in mode M (M=Normal or
+                   Pulsed). PosA us when Cmd=0, PosB us when Cmd=1, Duration
+                   between Pos A & B are A2BDur & B2ADur (64000 ms Max)
+Sx=0/1          -> Simulate a Cmd=0/1 command for Sx (Nice for test without RC)
+Sx?             -> Return Sx=D;M:C if output x is Digital, or
+                   Sx=S;M;PosA;PosB;A2BDur;B2ADur:C if output x is a Servo, or
+                   S0=XXX:CCC for Prop Servo (C is the current Command status)
+S8=A;N/I        -> Additionaly to Digital and Servo Type, S8 can be configured
+                   as pwm Analog output with Normal(N) or Inverted (I) polarity
+S8=xxx[%]       -> When S8 configured as Analog, S8=xxx sets the Cmd Prop Value
+                   (0-255) or S8=xxx% sets the percentage of pwm (0%-100%)
+S8?             -> When S8 configured as Analog, the answer to the S8? command
+                   is S8=A;N/I:PwmPerCent%:PropValue (eg: S8=A;I:100%:000)
+B=C             -> Start the Button Calibration process
+B?              -> Return the pulse width (in us) associated to each of the
+                   8 Buttons: B=xxxx,xxxx,xxxx,xxxx,xxxx,xxxx,xxxx,xxxx
+Q               -> Quit the Terminal Mode and switch to RC Mode.
+                   To switch back to Terminal Mode, simply hit Enter
+```
 
 RC Navy 
