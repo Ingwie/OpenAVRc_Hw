@@ -6,14 +6,14 @@
 4. Solder an enameled wire (0.3 mm) between the center point of the 3-pin header and LED D3 (the wire passes through the notch). Apply a drop of glue to the notch.  
 5. Solder a 0.3 mm enameled wire between the point on the 3-pin header opposite D12 and pin D12.  
 6. Solder the 220 Ohm protection resistor between the point on the 3-pin header opposite RX and pin RX.  
-![](github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/doc/Bottom.jpg) 
+![](github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/doc/Bottom.jpg)
 ![](github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/doc/Top.jpg)  
 
 ## Sketch upload procedure
 1. Place a jumper between the midpoint and the 220 Ohm resistor that connects to RX  
 2. Upload the sketch  
 3. Once the sketch is uploaded, place the jumper between the midpoint and pin D12  
-4. Use a *real* terminal configured at 19200 baud (19200,N,8,1)  
-to communicate with the sketch  
+4. Use a *real* terminal configured at 19200 baud (19200,N,8,1) to communicate with the sketch  
 
-The sketch uses the RX pin to reliably receive serial RC protocols. This same RX pin is also used for PWM and CPPM.
+The sketch uses the RX pin to reliably receive serial RC protocols.  
+This same RX pin is also used for PWM and CPPM.  
