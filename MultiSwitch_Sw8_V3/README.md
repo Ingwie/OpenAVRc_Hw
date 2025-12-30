@@ -55,6 +55,7 @@ Ms8 documentation files:
   - [French](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MS8-Xany-V3_Manuel_Utilisateur.pdf)  
   
 ## Commands
+Type H for see all available commands:  
 ```
 H
 H?              -> Returns this help
