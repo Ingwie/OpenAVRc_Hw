@@ -9,7 +9,7 @@
 5. Solder a 0.3 mm enameled wire between the point on the 3-pin header opposite D12 and pin D12.  
 6. Solder the 220 Ohm protection resistor between the point on the 3-pin header opposite RX and pin RX.  
 
-Cut the trace according to the red marker above:  
+Cut the trace according to the red marker below:  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/doc/cut_wire.jpg)  
 
 Wiring:  
