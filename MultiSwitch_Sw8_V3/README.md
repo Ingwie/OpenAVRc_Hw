@@ -51,24 +51,24 @@ Ms8 documentation files:
 ## Commands
 Type H for see all available commands:  
 ```
-H
 H?              -> Returns this help
 <--'            -> If Enter is sent, MS8 Vx.y stays in Terminal Mode and
                    failsafe is disabled (nice, for config and test)
                    Additionally, this command triggers the display of the
                    Welcome Message "MS8 Vx.y" in the Terminal
-C?              -> This command displays the full Configuration with status
+C?              -> Display the full Configuration with status
                    (all the commands listed below)
 T=CRLF/CR       -> Set the Line Terminator to CRLF or to CR
 T?              -> Return the configured Line Terminator
 I=Interface[Ch] -> Set the RC Interface (P for PWM, C for CPPM, S for SBUS,
-                   X for SRXL, D for SUMD, I for IBUS), Ch is channel
+                   Ch is channel (not needed for PWM))
 I?              -> Return the configured Interface
 P=MsProto[;N/F] -> Set the Multi-Switch Protocol (MsProto: R for RCUL with N for
-                   Non filtered, F for filtered, F for MS8 Futaba, B binary
-                   (for OTX and ETX), P for Push-Button and E for EKMFA)
+                   Non filtered, F for filtered, F for MS8 Futaba, B for Binary
+                   (for OTX and ETX), P for Push-Button, and E for EKMFA)
 P?              -> Return the configured Multi-Switch Protocol
-S0=XXXX         -> Set Prop Servo to the XXXX position in us
+S0=XXXX         -> If 988 <= XXXX <= 2008, set Prop Servo to the XXXX position in us
+                   If 0 <= XXX <=255, set Prop Value Command
 SR=N/Y          -> Apply reverse (Y) or no reverse (N) for Prop Servo (S0)
 Sx=D;M          -> Sx is a Digital output in mode M (M=Normal or Pulsed)
                    (x is the id of the ouput from 1 to 8, x = 0 is reserved for
@@ -89,6 +89,8 @@ S8?             -> When S8 configured as Analog, the answer to the S8? command
 B=C             -> Start the Button Calibration process
 B?              -> Return the pulse width (in us) associated to each of the
                    8 Buttons: B=xxxx,xxxx,xxxx,xxxx,xxxx,xxxx,xxxx,xxxx
+D=DebugLevel    -> Set the Debug Level
+D?              -> Return the Debug Level
 Q               -> Quit the Terminal Mode and switch to RC Mode.
                    To switch back to Terminal Mode, simply hit Enter
 ```
