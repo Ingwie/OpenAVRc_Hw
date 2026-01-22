@@ -1,7 +1,7 @@
 
 ---
 
-### ?? Câblage (carte de test)
+### Câblage (carte de test)
 
 Carte **sans KEY ni STATUS** (mode AUTO).
 
@@ -16,7 +16,7 @@ Carte **sans KEY ni STATUS** (mode AUTO).
 
 ---
 
-### ?? Mode AT / DATA (IMPORTANT)
+### Mode AT / DATA (IMPORTANT)
 
 Sur la carte de test, **pas de pin KEY**.
 
@@ -29,7 +29,7 @@ Ce comportement est **100 % compatible OpenAVRc**.
 
 ---
 
-### ??? Console USB (115200 bauds)
+### Console USB (115200 bauds)
 
 Commande | Description
 --------|------------
@@ -48,7 +48,7 @@ Commande | Description
 
 ---
 
-### ?? OLED – Informations affichées
+### OLED – Informations affichées
 
 - Nom du firmware
 - Rôle (MASTER / SLAVE)
@@ -59,7 +59,7 @@ Commande | Description
 
 ---
 
-### ?? Limitations connues (v1.0)
+### Limitations connues (v1.0)
 
 - Pas de chiffrement ESP-NOW
 - Un seul lien actif à la fois
@@ -68,7 +68,7 @@ Commande | Description
 
 ---
 
-### ? Compatibilité validée
+### Compatibilité validée
 
 - OpenAVRc (liaison radio ? radio)
 - Format trames `tf` (8 canaux)
@@ -79,9 +79,9 @@ Commande | Description
 
 ---
 
-## ???? English
+## English
 
-### ?? Overview
+### Overview
 
 This project implements a **partial HC-05 Bluetooth module emulator** based on **ESP32-C3**, designed for **OpenAVRc radios**.
 
@@ -91,7 +91,7 @@ Radio-to-radio communication is handled via **ESP-NOW**, while OpenAVRc sees a *
 
 ---
 
-### ?? Main Features
+### Main Features
 
 - **HC-05 UART emulation**
   - AT command subset used by OpenAVRc
@@ -111,7 +111,7 @@ Radio-to-radio communication is handled via **ESP-NOW**, while OpenAVRc sees a *
 
 ---
 
-### ?? Wiring (test board)
+### Wiring (test board)
 
 AUTO mode (no KEY / STATUS pins).
 
@@ -126,7 +126,7 @@ AUTO mode (no KEY / STATUS pins).
 
 ---
 
-### ?? AT / DATA Mode
+### AT / DATA Mode
 
 AUTO detection:
 
@@ -137,7 +137,7 @@ Fully OpenAVRc compatible.
 
 ---
 
-### ??? USB Console (115200 baud)
+### USB Console (115200 baud)
 
 Command | Function
 --------|---------
@@ -149,7 +149,7 @@ Command | Function
 
 ---
 
-### ?? OLED Display
+### OLED Display
 
 - Firmware name
 - Role
@@ -160,7 +160,7 @@ Command | Function
 
 ---
 
-### ?? Known Limitations (v1.0)
+### Known Limitations (v1.5)
 
 - No ESP-NOW encryption
 - Single active link
@@ -169,7 +169,7 @@ Command | Function
 
 ---
 
-### ?? Author / Context
+### Author / Context
 
 Developed for **OpenAVRc** ecosystem  
 ESP32-C3 firmware replacing HC-05 Bluetooth modules
