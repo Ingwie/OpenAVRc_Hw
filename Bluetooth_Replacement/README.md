@@ -24,7 +24,7 @@ Carte **sans KEY ni STATUS** (mode AUTO).
 
 Sur la carte de test, **pas de pin KEY**.
 
-?? Le firmware fonctionne en **AUTO mode** :
+Le firmware fonctionne en **AUTO mode** :
 
 - Toute ligne commençant par `AT` ? traitée comme **commande AT**
 - Toute autre donnée ? transmise comme **DATA**
