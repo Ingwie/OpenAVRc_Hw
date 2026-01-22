@@ -4,7 +4,7 @@
 
 ---
 
-## ???? Français
+## Français
 
 ### 1) Principe
 Le transfert de fichiers SD ? PC se fait avec :
@@ -50,7 +50,7 @@ L’ESP32 affiche son IP (`w sta ip` si disponible).
 ### 4) Déclencher le transfert côté radio (uCLI)
 OpenAVRc ne crée pas un fichier automatiquement : il faut lui dire quel fichier ouvrir via `cp`.
 
-#### PC ? SD (upload)
+#### PC -> SD (upload)
 Dans la console uCLI (via TeraTerm connecté) :
 cp xmdm SD/LOGS/TEST.TXT
 
@@ -58,7 +58,7 @@ Puis dans TeraTerm :
 - `File ? Transfer ? XMODEM ? Send`
 - choisir le fichier PC
 
-#### SD ? PC (download)
+#### SD -> PC (download)
 Dans la console uCLI :
 cp SD/LOGS/TEST.TXT xmdm
 
@@ -105,7 +105,7 @@ Solutions :
 
 ---
 
-## ???? English
+## English
 
 ### 1) Concept
 File transfer SD ? PC uses:
