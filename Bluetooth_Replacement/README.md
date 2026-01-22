@@ -1,3 +1,7 @@
+---
+
+# Pourquoi
+Si vous avez des problèmes pour trouver des modules HC-05 (non clone) qui fonctionnent avec le projet OpenAVRc, ce projet est pour vous.  
 
 ---
 
