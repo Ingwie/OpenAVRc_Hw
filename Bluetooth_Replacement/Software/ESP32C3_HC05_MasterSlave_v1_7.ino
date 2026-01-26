@@ -27,8 +27,9 @@
 // ================== USER CONFIG ==================
 #define USE_KEY_PIN 0
 
-float VERSION = 1.5f;
+float VERSION = 1.7f; // v1.7
 
+static const char* BUILD_TAG = "1.7";
 static constexpr int PIN_KEY    = 2;   // not used when USE_KEY_PIN=0
 static constexpr int PIN_STATUS = 3;   // not used on your test board, kept for compatibility
 
@@ -117,6 +118,11 @@ static volatile bool scanning = false;
 static ScanDev scanDev[MAX_SCAN_DEV];
 static volatile uint8_t scanCount = 0;
 
+// --- v1.6l: persistent peer name cache for AT+RNAME? ---
+static bool saved_peer_set = false;
+static uint8_t saved_peer_mac[6] = {0};
+static char saved_peer_name[16] = {0};
+
 static void scanClear() {
   for (uint8_t i=0;i<MAX_SCAN_DEV;i++) {
     scanDev[i].used = false;
@@ -166,6 +172,15 @@ static void loadConfig() {
   if (n == 6) { prefs.getBytes("bind", bound_peer_mac, 6); bound_peer_set = true; }
   else bound_peer_set = false;
 
+  // v1.6l: load cached peer name/mac
+  size_t n2 = prefs.getBytesLength("pmac");
+  if (n2 == 6) { prefs.getBytes("pmac", saved_peer_mac, 6); saved_peer_set = true; }
+  else saved_peer_set = false;
+  String pn = prefs.getString("pnam", "");
+  if (pn.length()) {
+    strncpy(saved_peer_name, pn.c_str(), sizeof(saved_peer_name)-1);
+    saved_peer_name[sizeof(saved_peer_name)-1] = 0;
+  }
   prefs.end();
 }
 
@@ -176,6 +191,9 @@ static void saveConfig() {
   prefs.putString("name", cfg_name);
   prefs.putString("pswd", cfg_pswd);
   if (bound_peer_set) prefs.putBytes("bind", bound_peer_mac, 6);
+  // v1.6l: save cached peer name/mac
+  if (saved_peer_set) prefs.putBytes("pmac", saved_peer_mac, 6);
+  if (saved_peer_name[0]) prefs.putString("pnam", String(saved_peer_name));
   prefs.end();
 }
 
@@ -228,7 +246,14 @@ static bool oled_ok = false;
 
 // ---------------- BT debug (USB console) ----------------
 static bool dbg_bt = false;
+static bool dbg_tf = false;
 
+// --- TF monitor (MASTER): count dropped tf and compute tf/s ---
+static uint32_t tfDroppedCount = 0;
+static uint32_t tfDroppedPrev = 0;
+static uint32_t tfRate = 0;            // tf per second (approx)
+static uint32_t tfRateLastMs = 0;
+static uint32_t tfPrintLastMs = 0;  // rate print pacing when dbg is ON
 static char btRxLine[160];
 static uint16_t btRxLen = 0;
 
@@ -395,7 +420,22 @@ enum FtMode : uint8_t { FT_OFF=0, FT_AP=1, FT_STA=2 };
 static FtMode ft_mode = FT_OFF;
 static bool wifi_ft = false;
 
+
+// ===== v1.6j: XMODEM detection + TF mute during FT =====
+static bool xferActive = false;
+static uint32_t xferLastMs = 0;
+static uint32_t xferForceUntilMs = 0; // force XMODEM active window after "cp xmdm"
+static uint32_t ftTcp2Uart = 0;
+static uint32_t ftUart2Tcp = 0;
+static uint32_t ftLastPrintMs = 0;
+
+static bool tfDropLine = false;
+static bool tfAtLineStart = true;
+static uint8_t tfState = 0; // 0 none, 1 't', 2 'tf'
 static WiFiServer ftServer(3333);
+static WiFiServer ctrlServer(3334); // v1.6j CTRL channel
+static WiFiClient ctrlClient;
+
 static WiFiClient ftClient;
 
 static String ft_sta_ssid;
@@ -482,39 +522,242 @@ static void wifiFtStop() {
   if (ftClient) ftClient.stop();
   ftServer.end();
 
-  if (ft_mode == FT_AP) WiFi.softAPdisconnect(true);
-  WiFi.disconnect(true);
+  // Keep CTRL server always on
+  // (It will keep running as long as WiFi interface stays up)
 
+  if (ft_mode == FT_AP) {
+    // Stop AP completely
+    WiFi.softAPdisconnect(true);
+    WiFi.mode(WIFI_OFF);
+    wifi_ft = false;
+    ft_mode = FT_OFF;
+    espnowStart();
+    Serial.println("[FT] stopped");
+    return;
+  }
+
+  if (ft_mode == FT_STA) {
+    // Stop DATA but keep STA connected so CTRL remains reachable
+    wifi_ft = false;
+    ft_mode = FT_OFF;
+    // Do NOT WiFi.mode(WIFI_OFF) here
+    espnowStart(); // re-enable ESPNOW on current STA channel
+    Serial.println("[FT] stopped (STA kept for CTRL)");
+    return;
+  }
+
+  // default
   WiFi.mode(WIFI_OFF);
-
   wifi_ft = false;
   ft_mode = FT_OFF;
-
   espnowStart();
   Serial.println("[FT] stopped");
+}
+
+static inline bool isXmodemByte(uint8_t b) {
+  return (b==0x01 || b==0x02 || b==0x04 || b==0x06 || b==0x15 || b==(uint8_t)'C');
+}
+
+static inline void xferTouch(uint8_t b) {
+  if (isXmodemByte(b)) { xferActive = true; xferLastMs = millis(); }
 }
 
 static void wifiFtTask(HardwareSerial& uart) {
   if (!wifi_ft) return;
 
   if (!ftClient || !ftClient.connected()) {
-    ftClient = ftServer.available();
+    ftClient = ftServer.available(); // deprecated warning ok
     if (ftClient) {
       ftClient.setNoDelay(true);
       Serial.println("[FT] client connected");
+      // reset states per new connection
+      ftTcp2Uart = 0; ftUart2Tcp = 0; ftLastPrintMs = millis();
+      xferActive = false;
+      tfDropLine = false;
+      tfAtLineStart = true;
+      tfState = 0;
     }
   }
   if (!ftClient || !ftClient.connected()) return;
 
-  while (ftClient.available()) {
-    uint8_t b = (uint8_t)ftClient.read();
-    uart.write(b);
+  
+// TCP -> UART
+// Also sniff ASCII command lines to arm XMODEM right after "cp xmdm ..." (Desktop copy PC->SD).
+static char ftCmdBuf[96];
+static uint8_t ftCmdLen = 0;
+
+while (ftClient.available()) {
+  uint8_t b = (uint8_t)ftClient.read();
+
+  // Arm XMODEM window on command line (does NOT change forwarded bytes)
+  if (!xferActive) {
+    if (b == '\r' || b == '\n') {
+      if (ftCmdLen > 0) {
+        ftCmdBuf[ftCmdLen] = 0;
+        // case-insensitive search for "cp xmdm"
+        for (uint8_t i = 0; i + 7 < ftCmdLen; i++) {
+          char c0 = ftCmdBuf[i+0] | 0x20;
+          char c1 = ftCmdBuf[i+1] | 0x20;
+          char c2 = ftCmdBuf[i+2] | 0x20;
+          char c3 = ftCmdBuf[i+3] | 0x20;
+          char c4 = ftCmdBuf[i+4] | 0x20;
+          char c5 = ftCmdBuf[i+5] | 0x20;
+          char c6 = ftCmdBuf[i+6] | 0x20;
+          if (c0=='c' && c1=='p' && c2==' ' && c3=='x' && c4=='m' && c5=='d' && c6=='m') {
+            xferActive = true;
+            xferLastMs = millis();
+            xferForceUntilMs = xferLastMs + 15000; // keep filter disabled while XMODEM handshake starts
+            Serial.println("[FT] XMODEM armed (cp xmdm)");
+            break;
+          }
+        }
+        ftCmdLen = 0;
+      }
+    } else if (ftCmdLen < sizeof(ftCmdBuf)-1) {
+      // record only printable-ish bytes to avoid binary pollution
+      if (b >= 0x20 && b <= 0x7E) ftCmdBuf[ftCmdLen++] = (char)b;
+      else ftCmdLen = 0; // reset on other controls
+    }
   }
+
+  xferTouch(b);
+  uart.write(b);
+  ftTcp2Uart++;
+}
+
+  // UART -> TCP (mute 'tf ' lines when SLAVE and not in XMODEM transfer)
   while (uart.available()) {
     uint8_t b = (uint8_t)uart.read();
+    xferTouch(b);
+
+    if (cfg_role == 0) {
+      if (tfDropLine) {
+        if (b == '\n' || b == '\r') {
+          tfDropLine = false;
+          tfAtLineStart = true;
+          tfState = 0;
+        }
+        continue;
+      }
+
+      if (tfAtLineStart) {
+        if (tfState == 0) {
+          if (b == 't') { tfState = 1; continue; }
+        } else if (tfState == 1) {
+          if (b == 'f') { tfState = 2; continue; }
+          // not tf line: flush buffered 't'
+          ftClient.write((const uint8_t*)"t", 1);
+          tfState = 0;
+          // fall through
+        } else if (tfState == 2) {
+          if (b == ' ') { tfDropLine = true; tfState = 0; continue; }
+          // not "tf ": flush "tf"
+          ftClient.write((const uint8_t*)"t", 1);
+          ftClient.write((const uint8_t*)"f", 1);
+          tfState = 0;
+          // fall through
+        }
+      }
+    }
+
     ftClient.write(&b, 1);
+    ftUart2Tcp++;
+
+    if (b == '\n' || b == '\r') {
+      tfAtLineStart = true;
+      tfState = 0;
+    } else {
+      tfAtLineStart = false;
+    }
+  }
+
+  // periodic stats on Serial only (never to TCP/UART), helps diagnose file copy issues
+  if (xferActive) {
+    uint32_t now = millis();
+    if (now - ftLastPrintMs >= 1000) {
+      ftLastPrintMs = now;
+      Serial.printf("[FT] bytes tcp->uart=%u uart->tcp=%u\n", (unsigned)ftTcp2Uart, (unsigned)ftUart2Tcp);
+}
   }
 }
+
+
+// ================= FT CTRL (TCP 3334) v1.6j =================
+// Control channel is always listening. It can start/stop FT without USB typing.
+// Commands (one per line, LF or CRLF):
+//   FT:STA
+//   FT:AP
+//   FT:OFF
+//   FT:STATUS
+static void ctrlTask()
+{
+  // accept client
+  if (!ctrlClient || !ctrlClient.connected()) {
+    ctrlClient = ctrlServer.available();
+    if (ctrlClient) {
+      ctrlClient.setNoDelay(true);
+      Serial.println("[CTRL] client connected");
+    }
+  }
+  if (!ctrlClient || !ctrlClient.connected()) return;
+
+  // read line
+  if (!ctrlClient.available()) return;
+  String cmd = ctrlClient.readStringUntil('\n');
+  cmd.trim();
+  if (cmd.length() == 0) return;
+
+  if (cmd == "FT:STATUS") {
+    String mode = (ft_mode==FT_AP) ? "AP" : (ft_mode==FT_STA) ? "STA" : "OFF";
+    IPAddress ip = (ft_mode==FT_AP) ? WiFi.softAPIP() : WiFi.localIP();
+    ctrlClient.printf("OK FT=%s MODE=%s IP=%s PORT=3333\r\n", wifi_ft ? "ON":"OFF", mode.c_str(), ip.toString().c_str());
+    return;
+  }
+
+  // Reboot command (useful when Desktop closes): ESP32 restarts and goes back to wait/advertise.
+  // Accepted commands: REBOOT, RST, SYS:REBOOT
+  if (cmd == "REBOOT" || cmd == "RST" || cmd == "SYS:REBOOT") {
+    ctrlClient.println("OK REBOOT");
+    ctrlClient.flush();
+    delay(80);
+    ESP.restart();
+    return;
+  }
+
+
+  if (cmd == "FT:OFF") {
+    Serial.println("w off");
+    if (wifi_ft) {
+      wifiFtStop();          // modified below to keep STA if needed
+    }
+    ctrlClient.println("OK OFF");
+    return;
+  }
+
+  if (cmd == "FT:STA") {
+    Serial.println("w sta");
+    // Use saved STA creds
+    if (ft_sta_ssid.length()==0 || ft_sta_pass.length()==0) {
+      ctrlClient.println("ERR NO_CREDS");
+      return;
+    }
+    if (wifi_ft) wifiFtStop();
+    bool ok = wifiFtStartSTA(ft_sta_ssid, ft_sta_pass);
+    ctrlClient.println(ok ? "OK STA" : "ERR STA");
+    return;
+  }
+
+  if (cmd == "FT:AP") {
+    Serial.println("w ap");
+    if (wifi_ft) wifiFtStop();
+    bool ok = wifiFtStartAP();
+    ctrlClient.println(ok ? "OK AP" : "ERR AP");
+    return;
+  }
+
+  ctrlClient.println("ERR UNKNOWN");
+}
+
 
 // ---------------- LED ----------------
 static void ledInit() {
@@ -601,6 +844,8 @@ static void oledDrawStatus() {
     }
     display.print("P   : ");
     display.println("3333");
+    display.print("XMDM: ");
+    display.println(xferActive ? "RUN" : "WAIT");
   }
 
   display.display();
@@ -618,9 +863,15 @@ struct __attribute__((packed)) Packet {
 
 static bool ensurePeer(const uint8_t mac[6]) {
   if (esp_now_is_peer_exist(mac)) return true;
+
+  // Use current WiFi home channel (important when STA is connected to an AP)
+  uint8_t ch = ESPNOW_CHANNEL;
+  wifi_second_chan_t sch = WIFI_SECOND_CHAN_NONE;
+  esp_wifi_get_channel(&ch, &sch);
+
   esp_now_peer_info_t pi{};
   memcpy(pi.peer_addr, mac, 6);
-  pi.channel = ESPNOW_CHANNEL;
+  pi.channel = ch;
   pi.encrypt = false;
   return esp_now_add_peer(&pi) == ESP_OK;
 }
@@ -667,6 +918,13 @@ static void onRecv(const esp_now_recv_info* info, const uint8_t* data, int len) 
     return;
   }
   if (p->type == PKT_DATA) {
+    // v1.6k (simple): on MASTER, drop trainer frames "tf " to avoid SD page pollution
+    if (cfg_role == 1 && p->len >= 3) {
+      if (p->payload[0] == 't' && p->payload[1] == 'f' && p->payload[2] == ' ') {
+        tfDroppedCount++;
+        return;
+      }
+    }
     if (p->len) BT.write(p->payload, p->len);
 
     if (dbg_bt && p->len) {
@@ -689,6 +947,15 @@ static void onRecv(const esp_now_recv_info* info, const uint8_t* data, int len) 
       if (n) memcpy(rname, p->payload, n);
       rname[n] = 0;
       scanAddOrUpdate(mac, rname);
+      // v1.6l: cache peer name for AT+RNAME? after reboot
+      bool changed = (!saved_peer_set) || memcmp(saved_peer_mac, mac, 6) != 0 || strncmp(saved_peer_name, rname, sizeof(saved_peer_name)) != 0;
+      if (changed) {
+        memcpy(saved_peer_mac, mac, 6);
+        saved_peer_set = true;
+        strncpy(saved_peer_name, rname, sizeof(saved_peer_name)-1);
+        saved_peer_name[sizeof(saved_peer_name)-1] = 0;
+        saveConfig();
+      }
     }
     return;
   }
@@ -696,7 +963,17 @@ static void onRecv(const esp_now_recv_info* info, const uint8_t* data, int len) 
 
 static void espnowStart() {
   WiFi.mode(WIFI_STA);
-  esp_wifi_set_channel(ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE);
+
+  // If STA is connected, keep the AP's channel (do NOT force ESPNOW_CHANNEL)
+  // Otherwise, set a default channel for standalone ESPNOW use.
+  if (WiFi.status() != WL_CONNECTED) {
+    esp_wifi_set_channel(ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE);
+  }
+
+  uint8_t ch = ESPNOW_CHANNEL;
+  wifi_second_chan_t sch = WIFI_SECOND_CHAN_NONE;
+  esp_wifi_get_channel(&ch, &sch);
+  Serial.printf("[ESPNOW] home channel=%u\n", ch);
 
   esp_now_deinit();
   if (esp_now_init() != ESP_OK) {
@@ -748,8 +1025,8 @@ static void handleATLine(const String& line) {
   if (line.startsWith("AT+IAC="))    { btOK(); return; }
   if (line.startsWith("AT+IPSCAN=")) { btOK(); return; }
   if (line == "AT+INIT")             { btOK(); return; }
-  if (line == "AT+DISC" || line=="AT+INQC") { btOK(); return; }
-  if (line == "AT+RMAAD")            { btOK(); return; }
+  if (line == "AT+DISC" || line=="AT+INQC") { scanning = false; btOK(); return; }
+  if (line == "AT+RMAAD")            { scanClear(); scanning = false; btOK(); return; }
   if (line.startsWith("AT+CMODE="))  { btOK(); return; }
 
   if (line.startsWith("AT+ROLE=")) {
@@ -802,12 +1079,64 @@ static void handleATLine(const String& line) {
   if (line == "AT+NAME?")  { btReplyGet("+NAME:", cfg_name); return; }
   if (line == "AT+PSWD?")  { btReplyPswd(); return; }
 
+
+  // --- v1.7: extra info commands (safe, do not change OpenAVRc expectations) ---
+  if (line == "AT+ADDR?") {
+    uint8_t mymac[6]; WiFi.macAddress(mymac);
+    btReplyGet("+ADDR:", macToNapUapLap(mymac));
+    return;
+  }
+
+  // Extended diagnostic info (multi-line), for manual use (TeraTerm / Desktop debug)
+  if (line == "AT+OAVINFO?") {
+    uint8_t mymac[6]; WiFi.macAddress(mymac);
+
+    String mya = macToNapUapLap(mymac);
+    String peera = "NONE";
+    if (linked_peer_set) peera = macToNapUapLap(linked_peer_mac);
+    else if (bound_peer_set) peera = macToNapUapLap(bound_peer_mac);
+
+    btWriteStr("+OAVINFO:ROLE=");
+    btWriteStr(cfg_role ? "MASTER" : "SLAVE");
+    btWriteStr("\r\n");
+
+    btWriteStr("+OAVINFO:STATE=");
+    btWriteStr(link_connected ? "CONNECTED" : "READY");
+    btWriteStr("\r\n");
+
+    btWriteStr("+OAVINFO:ADDR=");
+    BT.print(mya);
+    if (dbg_bt) for (size_t k=0;k<mya.length();k++) dbgFeedChar(mya[k], btTxLine, btTxLen, "[TX]");
+    btWriteStr("\r\n");
+
+    btWriteStr("+OAVINFO:PEER=");
+    BT.print(peera);
+    if (dbg_bt) for (size_t k=0;k<peera.length();k++) dbgFeedChar(peera[k], btTxLine, btTxLen, "[TX]");
+    btWriteStr("\r\n");
+
+    if (saved_peer_set && saved_peer_name[0]) {
+      btWriteStr("+OAVINFO:PNAME=");
+      btWriteStr(saved_peer_name);
+      btWriteStr("\r\n");
+    }
+
+    btOK();
+    return;
+  }
   if (line.startsWith("AT+RNAME?")) {
+    delay(10);
     uint8_t mac[6];
     if (!parseNapUapLap(line.substring(9).c_str(), mac)) { btERR(); return; }
     int idx = scanFindByMac(mac);
-    if (idx >= 0 && scanDev[idx].name[0]) btReplyGet("+RNAME:", scanDev[idx].name);
-    else btReplyGet("+RNAME:", "UNKNOWN");
+    if (idx >= 0 && scanDev[idx].name[0]) {
+      btReplyGet("+RNAME:", scanDev[idx].name);
+    }
+    else if (saved_peer_set && memcmp(saved_peer_mac, mac, 6) == 0 && saved_peer_name[0]) {
+      btReplyGet("+RNAME:", saved_peer_name);
+    }
+    else {
+      btReplyGet("+RNAME:", "UNKNOWN");
+    }
     return;
   }
 
@@ -912,6 +1241,7 @@ static void usbHelp() {
   Serial.println(F("  s              -> force ROLE=SLAVE  (0)"));
   Serial.println(F("  i              -> info"));
   Serial.println(F("  d              -> toggle BT debug (sniff UART BT, decode tf frames, show DATA-RX)"));
+  Serial.println(F("  dtf            -> toggle BT count tf stream from SLAVE"));																																													
   Serial.println(F("  g              -> toggle TF generator (simulate student data)"));
   Serial.println(F("  w              -> show FT state"));
   Serial.println(F("  w ap           -> start FT in AP mode (OpenAVRc-FT / openavrc123)"));
@@ -964,6 +1294,7 @@ static void usbInfo() {
   Serial.printf("Gen TF  : %s\r\n", gen_tf ? "ON" : "OFF");
   Serial.printf("FT      : %s\r\n", ftStr);
   Serial.printf("FT Mode : %s\r\n", ftModeStr);
+  Serial.printf("tf Slave: %lu tf/s=%lu\r\n", (unsigned long)tfDroppedCount, (unsigned long)tfRate);																																																								 
 
   if (wifi_ft) {
     IPAddress ip = (ft_mode == FT_AP) ? WiFi.softAPIP() : WiFi.localIP();
@@ -1011,6 +1342,15 @@ static void usbHandleCmd(String cmd) {
     return;
   }
 
+  if (op == "dtf") {
+    dbg_tf = !dbg_tf;
+    tfPrintLastMs = 0;   // force immediate print when enabling debug
+    tfDroppedCount = 0;  // remise à zéro du décompte des lignes tf en provenance de l'élève
+    Serial.print("[USB] BT tf debug ");
+    Serial.println(dbg_tf ? "ON" : "OFF");
+    return;
+  }
+  
   if (op == "g") {
     gen_tf = !gen_tf;
     Serial.print("[USB] TF generator ");
@@ -1146,14 +1486,63 @@ void setup() {
   loadConfig();
   ftLoadCreds();
 
+  // v1.6j: bring up STA (if creds exist) so CTRL port is reachable without manual 'w sta'
+  if (ft_sta_ssid.length() && ft_sta_pass.length()) {
+    Serial.print("[CTRL] pre-connect STA SSID: ");
+    Serial.println(ft_sta_ssid);
+    WiFi.mode(WIFI_STA);
+    WiFi.begin(ft_sta_ssid.c_str(), ft_sta_pass.c_str());
+    uint32_t t1 = millis();
+    while (WiFi.status() != WL_CONNECTED && millis() - t1 < 8000) {
+      delay(250);
+      Serial.print('.');
+    }
+    Serial.println();
+    if (WiFi.status() == WL_CONNECTED) {
+      Serial.print("[CTRL] STA IP: ");
+      Serial.println(WiFi.localIP());
+    } else {
+      Serial.println("[CTRL] STA not connected (CTRL may be unreachable until FT started)");
+    }
+  } else {
+    Serial.println("[CTRL] No STA creds saved");
+  }
+
+  ctrlServer.begin();
+  ctrlServer.setNoDelay(true);
+  Serial.println("[CTRL] listening on port 3334");
+
   oledInit();
 
   BT.begin(cfg_baud, SERIAL_8N1, UART_RX, UART_TX);
 
   espnowStart();
+  // --- v1.6j: force clean link state at boot (MASTER and SLAVE) ---
+  link_connected = false;
+  link_phase = PH_IDLE;
+  setStatusPin(false);
+
+  if (bound_peer_set) {
+    memcpy(linked_peer_mac, bound_peer_mac, 6);
+    linked_peer_set = true;
+    link_phase = PH_CONNECTING;
+    Serial.println("[LINK] v1.6j boot: peer armed, waiting HELLO/ACK");
+  }
+
+  // --- v1.6j auto-reconnect (no scan needed after reboot) ---
+  // If we already have a bound peer (saved from previous LINK), arm reconnection at boot.
+  if (bound_peer_set) {
+    memcpy(linked_peer_mac, bound_peer_mac, 6);
+    linked_peer_set = true;
+    link_connected = false;
+    link_phase = PH_CONNECTING;
+    setStatusPin(false);
+    Serial.println("[LINK] auto-reconnect armed");
+  }
+
 
   Serial.print("OpenAVRc HC05-EMU ESPNOW (single firmware)");
-  Serial.printf(" Version v%.1f\r\n", VERSION);
+  Serial.printf(" Version v%.1f (%s)\r\n", VERSION, BUILD_TAG);
   Serial.println("USB console ready. Type 'h' + Enter for help.");
 
   link_phase = link_connected ? PH_CONNECTED : PH_IDLE;
@@ -1162,11 +1551,54 @@ void setup() {
 }
 
 void loop() {
+  // --- v1.6j: HELLO retry from SLAVE too (fix reconnect after reboot) ---
+  static uint32_t tHello_j = 0;
+  if (linked_peer_set && !link_connected) {
+    if (millis() - tHello_j > HELLO_INTERVAL_MS) {
+      tHello_j = millis();
+      sendPkt(linked_peer_mac, PKT_HELLO, nullptr, 0);
+    }
+  }
+
+  // --- v1.6j: auto HELLO keepalive (MASTER and SLAVE) ---
+  static uint32_t tHello_i = 0;
+  if (linked_peer_set && !link_connected) {
+    if (millis() - tHello_i > HELLO_INTERVAL_MS) {
+      tHello_i = millis();
+      sendPkt(linked_peer_mac, PKT_HELLO, nullptr, 0);
+    }
+  }
+
   processUsbConsole();
+  // --- TF monitor: compute tf/s once per second ---
+  if (millis() - tfRateLastMs >= 1000) {
+    tfRateLastMs += 1000;
+    tfRate = tfDroppedCount - tfDroppedPrev;
+    tfDroppedPrev = tfDroppedCount;
+  }
+
+  //Print tf/s periodically when debug is ON (does not affect radio/UART)
+  if (dbg_tf && (millis() - tfPrintLastMs >= 500)) {
+    tfPrintLastMs = millis();
+    Serial.printf("[TF] tf/s=%lu dropped=%lu\r\n",
+      (unsigned long)tfRate,
+      (unsigned long)tfDroppedCount
+    );
+  }
+  ctrlTask(); // v1.6j control channel
+
 
   // When FileTransfer is ON: exclusive TCP<->UART bridge
   if (wifi_ft) {
     wifiFtTask(BT);
+    if (xferActive) {
+  uint32_t now = millis();
+  if (xferForceUntilMs && (int32_t)(now - xferForceUntilMs) < 0) {
+    // still within forced XMODEM window
+  } else if (now - xferLastMs > 2000) {
+    xferActive = false;
+  }
+}
     ledUpdate();
 
     static uint32_t tDispFt = 0;

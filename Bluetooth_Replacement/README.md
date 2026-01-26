@@ -1,183 +1,94 @@
----
+# ESP32-C3 HC05 Emulator for OpenAVRc
 
-# Pourquoi
-Si vous avez des problèmes pour trouver des modules HC-05 (non clone) qui fonctionnent avec le projet OpenAVRc, ce projet est pour vous.  
+This project implements a full HC-05 Bluetooth module emulator using an ESP32-C3.
+It is designed to be used with OpenAVRc radios (Mega2560 based) without modifying
+the OpenAVRc firmware.
 
----
-
-### Câblage (carte de test)
-
-Carte **sans KEY ni STATUS** (mode AUTO).
-
-| Fonction | ESP32-C3 GPIO | Remarque |
-|--------|---------------|---------|
-| UART RX | GPIO4 | RX ESP ? TX1 Mega (pont résistif déjà présent) |
-| UART TX | GPIO7 | TX ESP ? RX1 Mega |
-| OLED SDA | GPIO5 | I2C |
-| OLED SCL | GPIO6 | I2C |
-| LED | GPIO8 | LED état |
-| Alimentation | 5 V / GND | Via `BT_OnOff` |
+The ESP32 communicates with the radio using the original HC-05 AT command set
+and replaces the Bluetooth link with an ESP-NOW and/or WiFi transport layer.
 
 ---
 
-### Mode AT / DATA (IMPORTANT)
+## Features
 
-Sur la carte de test, **pas de pin KEY**.
-
-Le firmware fonctionne en **AUTO mode** :
-
-- Toute ligne commençant par `AT` ? traitée comme **commande AT**
-- Toute autre donnée ? transmise comme **DATA**
-
-Ce comportement est **100 % compatible OpenAVRc**.
-
----
-
-### Console USB (115200 bauds)
-
-Commande | Description
---------|------------
-`m` | Forcer rôle MASTER
-`s` | Forcer rôle SLAVE
-`i` | Informations système
-`d` | Activer / désactiver debug UART BT
-`h` | Aide
-
-#### Debug BT (`d`)
-- `[RX]` : données reçues du port BT (radio ? ESP)
-- `[TX]` : données envoyées vers la radio
-- Décodage automatique des trames OpenAVRc `tf ...`
-  - Valeurs des 8 canaux
-  - Vérification checksum
+- HC-05 AT command compatible interface
+- Master and Slave modes
+- Peer discovery (AT+INQ)
+- Name resolution (AT+RNAME?)
+- Persistent peer name cache (after first scan)
+- Automatic reconnection after reboot
+- ESP-NOW data transport between radios
+- Optional WiFi TCP bridge for Desktop (SD / XMODEM)
+- OLED status display (optional)
+- Status LED (connected / transfer)
 
 ---
 
-### OLED – Informations affichées
+## Versioning
 
-- Nom du firmware
-- Rôle (MASTER / SLAVE)
-- MAC locale
-- État de la liaison
-- MAC peer
-- Mode AT (`AUTO` sur carte test)
+- Firmware version number is numeric only (example: 1.7)
+- Build tags may be used internally but VERSION remains numeric
+- Each version is backward compatible with OpenAVRc
 
 ---
 
-### Limitations connues (v1.0)
+## HC-05 AT Commands Supported
 
-- Pas de chiffrement ESP-NOW
-- Un seul lien actif à la fois
-- Scan limité à 3 périphériques (comme OpenAVRc)
-- Pas de simulation du Bluetooth classique (SPP réel)
+Standard commands used by OpenAVRc:
 
----
+- AT
+- AT+ROLE
+- AT+INIT
+- AT+INQ
+- AT+RMAAD
+- AT+RNAME?
+- AT+LINK
+- AT+NAME?
+- AT+PSWD?
 
-### Compatibilité validée
+Additional diagnostic commands (ESP32 only):
 
-- OpenAVRc (liaison radio ? radio)
-- Format trames `tf` (8 canaux)
-- Mode maître / esclave OpenAVRc
-- Cartes de test et cartes complètes
+- AT+ADDR?
+- AT+OAVINFO?
 
----
-
----
-
-## English
-
-### Overview
-
-This project implements a **partial HC-05 Bluetooth module emulator** based on **ESP32-C3**, designed for **OpenAVRc radios**.
-
-Its goal is to **replace unreliable HC-05 clone modules** with a **fully controlled, deterministic and reproducible solution**, while remaining **fully compatible with existing OpenAVRc firmware**, with **no modification on the radio side**.
-
-Radio-to-radio communication is handled via **ESP-NOW**, while OpenAVRc sees a **standard UART HC-05-like interface**.
+These additional commands do not interfere with OpenAVRc
+and are intended for manual diagnostics via serial or TCP console.
 
 ---
 
-### Main Features
+## Peer Name Persistence
 
-- **HC-05 UART emulation**
-  - AT command subset used by OpenAVRc
-  - MASTER / SLAVE modes
-  - Supported commands:
-    `AT`, `AT+ROLE`, `AT+INQ`, `AT+RNAME?`, `AT+LINK`, `AT+STATE?`,
-    `AT+NAME`, `AT+PSWD`, `AT+UART`, …
-- **ESP-NOW** radio transport
-- Slave discovery (INQ)
-- MAC ? NAME resolution (RNAME)
-- Point-to-point master/slave link
-- Transparent UART data bridge
-- **OpenAVRc frame decoding** (8 channels)
-- **SSD1306 OLED**
-- **Status LED**
-- **USB debug console**
+The peer name is learned during a scan (AT+INQ + AT+RNAME?)
+and stored in non-volatile memory.
+
+After reboot:
+- The radio may query AT+RNAME?
+- The ESP32 responds using the cached name
+- A scan is required at least once after flashing
+
+This behavior matches real HC-05 usage.
 
 ---
 
-### Wiring (test board)
+## Hardware Notes
 
-AUTO mode (no KEY / STATUS pins).
-
-| Signal | ESP32-C3 GPIO |
-|------|---------------|
-| UART RX | GPIO4 |
-| UART TX | GPIO7 |
-| OLED SDA | GPIO5 |
-| OLED SCL | GPIO6 |
-| LED | GPIO8 |
-| Power | 5 V / GND |
+- ESP32-C3 runs at 3.3V logic
+- Mega2560 TX to ESP32 RX must use a resistor divider
+  (recommended 4.7k / 10k)
+- Status LED on GPIO8
+- Optional OLED on I2C (GPIO5 SDA / GPIO6 SCL)
 
 ---
 
-### AT / DATA Mode
+## Debug
 
-AUTO detection:
-
-- Lines starting with `AT` ? AT command
-- Everything else ? DATA bridge
-
-Fully OpenAVRc compatible.
+- BT debug can be enabled via serial console
+- Dedicated debug commands are kept separate from normal AT traffic
+- Data frames (tf) are filtered to avoid polluting the radio UI
 
 ---
 
-### USB Console (115200 baud)
+## License
 
-Command | Function
---------|---------
-`m` | Force MASTER role
-`s` | Force SLAVE role
-`i` | System info
-`d` | Toggle BT UART debug
-`h` | Help
-
----
-
-### OLED Display
-
-- Firmware name
-- Role
-- Local MAC
-- Link state
-- Peer MAC
-- AT mode (AUTO)
-
----
-
-### Known Limitations (v1.5)
-
-- No ESP-NOW encryption
-- Single active link
-- Scan limited to 3 devices
-- Not a real Bluetooth SPP stack
-
----
-
-### Author / Context
-
-Developed for **OpenAVRc** ecosystem  
-ESP32-C3 firmware replacing HC-05 Bluetooth modules
-
----
-
-**End of document**
+Open source project.
+Use at your own risk.

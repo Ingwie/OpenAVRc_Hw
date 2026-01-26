@@ -1,188 +1,75 @@
-# OpenAVRc SD File Transfer over Wi-Fi (ESP32-C3 FT bridge)
-**Works with OpenAVRc uCLI + XMODEM + SD (SPI)**  
-**Tested with ESP32-C3 “HC05-EMU ESPNOW” firmware (v1.4/v1.5) FT mode**
+# WiFi XMODEM Bridge for OpenAVRc
+
+This document describes the optional WiFi TCP bridge used to transfer
+files between OpenAVRc radios and a PC using XMODEM.
+
+The ESP32 replaces the original HC-05 Bluetooth link for file transfer
+without modifying OpenAVRc firmware.
 
 ---
 
-## Français
+## Overview
 
-### 1) Principe
-Le transfert de fichiers SD ? PC se fait avec :
-- **OpenAVRc uCLI** côté radio (Mega2560)
-- **XMODEM** côté PC (Tera Term / Desktop)
-- **ESP32-C3** en mode **FT (File Transfer)** : pont **TCP brut ? UART** vers la radio
-
-Le firmware ESP32 ne “comprend” pas XMODEM : il est **transparent**.
+- Control channel (TCP port 3334)
+- File transfer channel (TCP port 3333)
+- Compatible with OpenAVRc XMODEM implementation
+- Tested with Desktop and TeraTerm
 
 ---
 
-### 2) Important : Service TCP “brut”
-Pour XMODEM, il faut impérativement un flux TCP **brut**, sans négociation.
+## Operating Modes
 
-? Dans Tera Term :
-- `TCP/IP`
-- **Service : Autre** (RAW TCP)
-- Host : `IP_de_l_ESP32`
-- Port : `3333`
+- STA mode (connects to existing WiFi network)
+- AP mode (standalone access point)
 
-? Éviter :
-- `Telnet` (négociation Telnet = octets en plus)
-- `SSH` (protocole non supporté)
+Mode selection is done via ESP32 console commands.
 
 ---
 
-### 3) Démarrer le mode FT sur l’ESP32
-Suivant le firmware :
-- `w ap` : AP Wi-Fi de l’ESP32 (si le PC a le Wi-Fi)
-- `w sta` : l’ESP32 rejoint le Wi-Fi de la box (PC en Ethernet OK)
+## Typical Workflow
 
-Dans les versions avec STA :
-- configurer d’abord :
-  - `ssid <NomWiFi>`
-  - `pass <MotDePasse>`
-- puis :
-  - `w sta`
-
-L’ESP32 affiche son IP (`w sta ip` si disponible).
+1. Power radio and ESP32
+2. Desktop connects to ESP32 TCP port
+3. Desktop sends XMODEM commands
+4. OpenAVRc handles SD access normally
+5. ESP32 forwards raw data
 
 ---
 
-### 4) Déclencher le transfert côté radio (uCLI)
-OpenAVRc ne crée pas un fichier automatiquement : il faut lui dire quel fichier ouvrir via `cp`.
+## Notes About Timing
 
-#### PC -> SD (upload)
-Dans la console uCLI (via TeraTerm connecté) :
-cp xmdm SD/LOGS/TEST.TXT
-
-Puis dans TeraTerm :
-- `File ? Transfer ? XMODEM ? Send`
-- choisir le fichier PC
-
-#### SD -> PC (download)
-Dans la console uCLI :
-cp SD/LOGS/TEST.TXT xmdm
-
-Puis dans TeraTerm :
-- `File ? Transfer ? XMODEM ? Receive`
+- Desktop must be connected during transfer
+- Control port remains active during file transfer
+- XMODEM requires clean, unfiltered data
+- tf frames are automatically muted during transfers
 
 ---
 
-### 5) IMPORTANT : Casse des noms de fichiers (TEST.TXT vs TEST.txt)
-Selon la pile FAT / uCLI, la commande `cp` peut être **sensible à la casse**.
+## Debugging
 
-Symptôme typique :
-- `cp xmdm SD/LOGS/TEST.TXT` fonctionne
-- `cp xmdm SD/LOGS/TEST.txt` échoue ou ne crée rien
-
-? Recommandation :
-- Utiliser des chemins et extensions en **MAJUSCULES** :
-  - `TEST.TXT`, `MODEL01.BIN`, etc.
-
-?? Amélioration possible (ESP32/Desktop) :
-- forcer automatiquement la casse en MAJUSCULE dans la commande envoyée.
+- Console access via TCP or USB
+- Transfer activity indicated by LED blinking
+- OLED shows transfer state when available
 
 ---
 
-### 6) Répertoires SD conseillés
-Exemples :
-- `SD/LOGS/`
-- `SD/MODELS/`
-- `SD/EEPROM/`
-- `SD/FIRMWARE/`
+## Limitations
+
+- First peer scan required after flashing firmware
+- Only one active file transfer at a time
+- TCP requires stable WiFi connection
 
 ---
 
-### 7) Trames “tf” (trainer) qui polluent la console
-Si la radio est en mode “élève” / trainer actif, elle peut envoyer des trames `tf ...` en continu,
-ce qui rend la saisie des commandes uCLI difficile.
+## Compatibility
 
-Solutions :
-- mettre la radio en **mode maître**
-- ou désactiver le trainer / BT avant transfert
-- ou utiliser un mode FT exclusif côté ESP32 (recommandé)
+- OpenAVRc V3.x
+- ESP32-C3 Arduino core 3.x
+- Windows Desktop
+- Linux supported (socket API)
 
 ---
 
----
+## License
 
-## English
-
-### 1) Concept
-File transfer SD ? PC uses:
-- **OpenAVRc uCLI** on the radio (Mega2560)
-- **XMODEM** on the PC (Tera Term / Desktop)
-- **ESP32-C3** in **FT mode**: transparent **RAW TCP ? UART** bridge to the radio
-
-ESP32 does not implement XMODEM. It just forwards bytes.
-
----
-
-### 2) IMPORTANT: Use RAW TCP
-XMODEM requires a pure byte stream.
-
-? In Tera Term:
-- `TCP/IP`
-- **Service: Other** (RAW TCP)
-- Host: `ESP32 IP`
-- Port: `3333`
-
-? Avoid:
-- `Telnet` (telnet negotiation injects bytes)
-- `SSH` (not supported)
-
----
-
-### 3) Start FT on ESP32
-Depending on firmware:
-- `w ap` : ESP32 creates a Wi-Fi AP (PC needs Wi-Fi)
-- `w sta` : ESP32 joins router Wi-Fi (PC can be Ethernet)
-
-STA mode:
-- `ssid <Name>`
-- `pass <Password>`
-- `w sta`
-
-ESP32 prints its IP (or `w sta ip`).
-
----
-
-### 4) Trigger transfer on the radio (uCLI)
-OpenAVRc must open the destination/source file via `cp`.
-
-PC ? SD (upload):
-cp xmdm SD/LOGS/TEST.TXT
-
-Then in Tera Term: `XMODEM Send`
-
-SD ? PC (download):
-cp SD/LOGS/TEST.TXT xmdm
-
-Then in Tera Term: `XMODEM Receive`
-
----
-
-### 5) IMPORTANT: filename case (TEST.TXT vs TEST.txt)
-Depending on the FAT/uCLI stack, `cp` may be **case sensitive**.
-
-? Recommendation:
-- Use **UPPERCASE** paths/extensions:
-  - `TEST.TXT`, `MODEL01.BIN`, etc.
-
-Enhancement idea:
-- auto-uppercase filenames in ESP32/Desktop.
-
----
-
-### 6) Suggested SD folders
-- `SD/LOGS/`, `SD/MODELS/`, `SD/EEPROM/`, `SD/FIRMWARE/`
-
----
-
-### 7) Trainer “tf” frames
-If the radio is in student/trainer mode, `tf ...` frames may flood the link.
-
-Fix:
-- use Master mode / disable trainer before transfer
-- or use an ESP32 FT exclusive mode
-
----
+Open source project.
