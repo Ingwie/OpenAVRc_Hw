@@ -9,6 +9,10 @@ and replaces the Bluetooth link with an ESP-NOW and/or WiFi transport layer.
 
 ---
 
+## Outline of the documentation
+[Emulation mode hc-05](Emulation_Hc05.md)  
+[Wifi Protol Details](Protocols_Details.md)  
+
 ## Features
 
 - HC-05 AT command compatible interface

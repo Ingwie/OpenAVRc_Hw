@@ -21,19 +21,15 @@
 #include <esp_wifi.h>
 
 #include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include <U8g2lib.h>
 
 // ================== USER CONFIG ==================
-#define USE_KEY_PIN 0
 
-float VERSION = 1.7f; // v1.7
+float VERSION = 1.7f; // v1.7j
 
-static const char* BUILD_TAG = "1.7";
-static constexpr int PIN_KEY    = 2;   // not used when USE_KEY_PIN=0
-static constexpr int PIN_STATUS = 3;   // not used on your test board, kept for compatibility
+static const char* BUILD_TAG = "1.7j";
 
-static constexpr int UART_RX    = 4;   // Mega TX1 -> ESP RX (via divider on your board)
+static constexpr int UART_RX    = 4;   // Mega TX1 -> ESP RX (via divider 4.7k/10k on your board)
 static constexpr int UART_TX    = 7;   // ESP TX  -> Mega RX1
 
 static constexpr int SDA_PIN    = 5;
@@ -43,17 +39,15 @@ static constexpr int PIN_LED    = 8;
 
 static constexpr uint8_t ESPNOW_CHANNEL = 1;
 
-#if USE_KEY_PIN
-static constexpr uint32_t DEFAULT_BAUD = 38400;
-#else
 static constexpr uint32_t DEFAULT_BAUD = 115200;   // OpenAVRc init at 115200 on test board
-#endif
+
 
 static constexpr uint8_t  DEFAULT_ROLE = 0;      // 0=Slave by default
 static constexpr const char* DEFAULT_NAME = "OAVRC";
 static constexpr const char* DEFAULT_PSWD = "1234";
 
 static constexpr uint16_t HELLO_INTERVAL_MS = 800;
+static constexpr uint32_t LINK_TIMEOUT_MS = 3000; // v1.7a: consider link lost after no RX
 static constexpr uint16_t MAX_PAYLOAD = 220;
 
 // OLED
@@ -65,8 +59,9 @@ static constexpr int OLED_H = 64;
 HardwareSerial BT(1);
 Preferences prefs;
 
-// OLED instance
-Adafruit_SSD1306 display(OLED_W, OLED_H, &Wire, -1);
+// OLED 0.42" (often 72x40) with U8g2
+U8G2_SSD1306_72X40_ER_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
+static bool oled_ok = false;
 
 // Persistent config
 static uint32_t cfg_baud = DEFAULT_BAUD;
@@ -86,19 +81,7 @@ static uint32_t last_rx_ms = 0;
 
 // ---------------- Helpers ----------------
 static bool isATMode() {
-#if USE_KEY_PIN
-  return digitalRead(PIN_KEY) == HIGH;
-#else
   return false;
-#endif
-}
-
-static void setStatusPin(bool connected) {
-#if USE_KEY_PIN
-  digitalWrite(PIN_STATUS, connected ? HIGH : LOW);
-#else
-  (void)connected;
-#endif
 }
 
 // Link phase (for OLED/LED)
@@ -241,9 +224,6 @@ static bool parseNapUapLap(const char* s, uint8_t out[6]) {
   return true;
 }
 
-// ---------------- OLED ----------------
-static bool oled_ok = false;
-
 // ---------------- BT debug (USB console) ----------------
 static bool dbg_bt = false;
 static bool dbg_tf = false;
@@ -251,9 +231,11 @@ static bool dbg_tf = false;
 // --- TF monitor (MASTER): count dropped tf and compute tf/s ---
 static uint32_t tfDroppedCount = 0;
 static uint32_t tfDroppedPrev = 0;
-static uint32_t tfRate = 0;            // tf per second (approx)
+static uint32_t tfRate = 0;          // tf per second (approx)
 static uint32_t tfRateLastMs = 0;
-static uint32_t tfPrintLastMs = 0;  // rate print pacing when dbg is ON
+static uint32_t tfPrintLastMs = 0;   // rate print pacing when dbg is ON
+static uint32_t tfMuteUntilMs = 0;   // mute tf until this time (millis)
+
 static char btRxLine[160];
 static uint16_t btRxLen = 0;
 
@@ -371,6 +353,7 @@ static void dataFeedChar(char c) {
 
 // ================= TF generator (simulate student) =================
 static bool gen_tf = false;
+static bool Master_gen_tf = false;
 static uint32_t gen_last_ms = 0;
 static uint32_t gen_phase = 0;
 
@@ -392,28 +375,33 @@ static void buildTfFrame(const uint16_t ch[8], char* out, size_t outSz) {
     chk ^= (uint8_t)c;
   };
 
+  // "tf " prefix (NOT included in checksum in OpenAVRc)
   putc('t'); putc('f'); putc(' ');
 
   for (int i = 0; i < 8; i++) {
     putc('s');
     chk ^= (uint8_t)'s';
 
+    // OpenAVRc encodes 1500 as "5DC" (not "5DC0")
+    // i.e. take (ch << 4) and emit nibbles 12, 8, 4 only => 3 hex digits.
     uint16_t v = (uint16_t)(ch[i] << 4);
     putHexNib((v >> 12) & 0xF);
-    putHexNib((v >> 8)  & 0xF);
-    putHexNib((v >> 4)  & 0xF);
-    putHexNib((v >> 0)  & 0xF);
+    putHexNib((v >>  8) & 0xF);
+    putHexNib((v >>  4) & 0xF);
   }
 
+  // ':' and checksum digits are NOT included in the XOR (OpenAVRc does XOR on first 32 chars)
   putc(':');
   putc(hexDigit((chk >> 4) & 0xF));
   putc(hexDigit((chk >> 0) & 0xF));
+
+  // End of line: for uCLI, use CR only (avoid empty command on LF)
   putc('\r');
-  putc('\n');
 
   if (pos < outSz) out[pos] = 0;
   else out[outSz - 1] = 0;
 }
+
 
 // ================= WiFi File Transfer (TCP <-> UART) =================
 enum FtMode : uint8_t { FT_OFF=0, FT_AP=1, FT_STA=2 };
@@ -428,6 +416,7 @@ static uint32_t xferForceUntilMs = 0; // force XMODEM active window after "cp xm
 static uint32_t ftTcp2Uart = 0;
 static uint32_t ftUart2Tcp = 0;
 static uint32_t ftLastPrintMs = 0;
+static uint32_t ftLastMasterPrintMs = 0;
 
 static bool tfDropLine = false;
 static bool tfAtLineStart = true;
@@ -677,7 +666,7 @@ while (ftClient.available()) {
     if (now - ftLastPrintMs >= 1000) {
       ftLastPrintMs = now;
       Serial.printf("[FT] bytes tcp->uart=%u uart->tcp=%u\n", (unsigned)ftTcp2Uart, (unsigned)ftUart2Tcp);
-}
+    }
   }
 }
 
@@ -787,68 +776,62 @@ static void ledUpdate() {
 // ---------------- OLED draw (needs wifi_ft/ft_mode) ----------------
 static void oledInit() {
   Wire.begin(SDA_PIN, SCL_PIN);
-  oled_ok = display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
-  if (oled_ok) {
-    display.clearDisplay();
-    display.setTextSize(1);
-    display.setTextColor(SSD1306_WHITE);
-    display.setCursor(0, 0);
-    display.println("OpenAVRc HC05-EMU");
-    display.display();
+  oled_ok = u8g2.begin();
+  if (!oled_ok) {
+    Serial.println("[OLED] init FAILED");
+  } else {
+    Serial.println("[OLED] init OK (U8g2)");
   }
 }
+
 
 static void oledDrawStatus() {
   if (!oled_ok) return;
 
-  uint8_t mymac[6]; WiFi.macAddress(mymac);
-  char myMacStr[18]; macToStr(mymac, myMacStr, sizeof(myMacStr));
+  u8g2.clearBuffer();
+  u8g2.setFont(u8g2_font_6x10_tf);   // lisible, compact
 
-  char peerStr[18] = "NONE";
-  if (linked_peer_set) macToStr(linked_peer_mac, peerStr, sizeof(peerStr));
-  else if (bound_peer_set) macToStr(bound_peer_mac, peerStr, sizeof(peerStr));
+  // 72px width => ~12 chars max
+  // Line 1 (y=10): name + role letter
+  u8g2.setCursor(0, 10);
+  // cfg_name doit être une String
+  for (int i = 0; i < 11 && i < (int)cfg_name.length(); i++) {
+    u8g2.print(cfg_name[i]);
+  }
+  u8g2.print(cfg_role ? "_M" : "_S");
 
-  const char* roleStr = cfg_role ? "MASTER" : "SLAVE";
-  const char* phaseStr =
-    (link_phase == PH_CONNECTED)  ? "CONNECTED" :
-    (link_phase == PH_CONNECTING) ? "CONNECTING" :
-                                   "READY";
-
-  display.clearDisplay();
-  display.setCursor(0, 0);
-  display.println("OpenAVRc HC05-EMU");
-
-  display.print("ROLE: "); display.println(roleStr);
-  display.print("MAC : ");  display.println(myMacStr);
-  display.print("LINK: ");  display.println(phaseStr);
-  display.print("PEER: ");  display.println(peerStr);
-
-#if USE_KEY_PIN
-  display.print("AT  : "); display.println(isATMode() ? "YES" : "NO");
-#else
-  display.print("AT  : "); display.println("AUTO");
-#endif
-
-  display.print("FT  : ");
-  if (!wifi_ft) {
-    display.println("OFF");
-  } else {
-    if (ft_mode == FT_AP) {
-      display.println("AP  192.168.4.1");
-    } else if (ft_mode == FT_STA) {
-      IPAddress ip = WiFi.localIP();
-      display.print("STA ");
-      display.println(ip.toString());
-    } else {
-      display.println("ON");
-    }
-    display.print("P   : ");
-    display.println("3333");
-    display.print("XMDM: ");
-    display.println(xferActive ? "RUN" : "WAIT");
+  if((int)cfg_name.length() <= 5)//si la taille du nom est > à 5, pas de version à
+  {
+    if (sizeof(BUILD_TAG) > 3)
+      u8g2.setCursor(49, 10);//version avec lettre
+    else
+      u8g2.setCursor(55, 10);//version sans lettre
+    u8g2.print(BUILD_TAG);
+  }
+  else//placé à la 4ème ligne si name > 5 caractères
+  {
+    if (sizeof(BUILD_TAG) > 3)
+      u8g2.setCursor(49, 40);//version avec lettre
+    else
+      u8g2.setCursor(55, 40);//version sans lettre
+    u8g2.print(BUILD_TAG);
   }
 
-  display.display();
+  // Line 2 (y=20): CONNECTED/CONNECTING/READY
+  u8g2.setCursor(0, 20);
+  if (link_phase == PH_CONNECTED) u8g2.print("CONNECTED");
+  else if (link_phase == PH_CONNECTING) u8g2.print("CONNECTING");
+  else u8g2.print("READY");
+
+  // Line 3 (y=30): AUTO
+  // u8g2.setCursor(0, 30);
+  // u8g2.print("AUTO");
+
+  // Line 4 (y=40): FT state
+  u8g2.setCursor(0, 40);
+  u8g2.print(wifi_ft ? "FT ON" : "FT OFF");
+
+  u8g2.sendBuffer();
 }
 
 // ---------------- ESPNOW ----------------
@@ -905,7 +888,7 @@ static void onRecv(const esp_now_recv_info* info, const uint8_t* data, int len) 
     linked_peer_set = true;
     link_connected = true;
     link_phase = PH_CONNECTED;
-    setStatusPin(true);
+    //setStatusPin(true);
     sendPkt(mac, PKT_HELLO_ACK, nullptr, 0);
     return;
   }
@@ -914,17 +897,18 @@ static void onRecv(const esp_now_recv_info* info, const uint8_t* data, int len) 
     linked_peer_set = true;
     link_connected = true;
     link_phase = PH_CONNECTED;
-    setStatusPin(true);
+    //setStatusPin(true);
     return;
   }
   if (p->type == PKT_DATA) {
-    // v1.6k (simple): on MASTER, drop trainer frames "tf " to avoid SD page pollution
-    if (cfg_role == 1 && p->len >= 3) {
+    // Mute tf only during SD/uCLI operations (to avoid SD page pollution)
+    if (cfg_role == 1 && (millis() < tfMuteUntilMs) && p->len >= 3) {
       if (p->payload[0] == 't' && p->payload[1] == 'f' && p->payload[2] == ' ') {
         tfDroppedCount++;
         return;
       }
     }
+
     if (p->len) BT.write(p->payload, p->len);
 
     if (dbg_bt && p->len) {
@@ -1064,7 +1048,7 @@ static void handleATLine(const String& line) {
     linked_peer_set = true;
     link_connected = false;
     link_phase = PH_CONNECTING;
-    setStatusPin(false);
+    //setStatusPin(false);
 
     memcpy(bound_peer_mac, mac, 6);
     bound_peer_set = true;
@@ -1122,6 +1106,37 @@ static void handleATLine(const String& line) {
 
     btOK();
     return;
+
+  if (line == "AT+OAVSTAT?") {
+    // Compact single-line status for scripts
+    const char* roleStr = cfg_role ? "MASTER" : "SLAVE";
+    const char* stateStr = link_connected ? "CONNECTED" : "READY";
+    btWriteStr("+OAVSTAT:ROLE=");
+    btWriteStr(roleStr);
+    btWriteStr(",STATE=");
+    btWriteStr(stateStr);
+    btWriteStr(",UP=");
+    BT.print((unsigned long)millis());
+    btWriteStr(",TFPS=");
+    BT.print((unsigned long)tfRate);
+    btWriteStr(",DROP=");
+    BT.print((unsigned long)tfDroppedCount);
+    btWriteStr(",FT=");
+    btWriteStr(wifi_ft ? "ON" : "OFF");
+    btWriteStr("\r\nOK\r\n");
+    return;
+  }
+
+  if (line == "AT+OAVCLR") {
+    // Reset diagnostic counters only (does not touch bind/cache)
+    tfDroppedCount = 0;
+    tfDroppedPrev = 0;
+    tfRate = 0;
+    tfRateLastMs = millis();
+    last_rx_ms = millis();
+    btOK();
+    return;
+  }
   }
   if (line.startsWith("AT+RNAME?")) {
     delay(10);
@@ -1174,7 +1189,6 @@ static void handleATLine(const String& line) {
 // ---------------- UART processing ----------------
 static String atLine;
 
-#if !USE_KEY_PIN
 static char autoLineBuf[200];
 static uint16_t autoLineLen = 0;
 static void autoFlushAsData() {
@@ -1183,7 +1197,7 @@ static void autoFlushAsData() {
   else if (bound_peer_set) sendPkt(bound_peer_mac, PKT_DATA, autoLineBuf, autoLineLen);
   autoLineLen = 0;
 }
-#endif
+
 
 static void processUART() {
   while (BT.available()) {
@@ -1191,22 +1205,16 @@ static void processUART() {
 
     if (dbg_bt) dbgFeedChar(c, btRxLine, btRxLen, "[RX]");
 
-#if USE_KEY_PIN
-    if (isATMode()) {
-      if (c == '\r') continue;
-      if (c == '\n') {
-        if (atLine.length()) handleATLine(atLine);
-        atLine = "";
-      } else {
-        if (atLine.length() < 96) atLine += c;
-      }
-    } else {
-      if (linked_peer_set) sendPkt(linked_peer_mac, PKT_DATA, &c, 1);
-      else if (bound_peer_set) sendPkt(bound_peer_mac, PKT_DATA, &c, 1);
-    }
-#else
     if (c == '\r' || c == '\n') {
       autoLineBuf[autoLineLen] = 0;
+
+      // If radio is doing SD/uCLI operations, mute tf for a short time to avoid UI pollution
+      if (!strncmp((char*)autoLineBuf, "cp ", 3) ||
+          !strncmp((char*)autoLineBuf, "ls", 2)  ||
+          !strncmp((char*)autoLineBuf, "dir", 3) ||
+          !strncmp((char*)autoLineBuf, "xmdm", 4)) {
+        tfMuteUntilMs = millis() + 4000; // 4s window (adjust if needed)
+      }
 
       if (autoLineLen >= 2 && autoLineBuf[0] == 'A' && autoLineBuf[1] == 'T') {
         handleATLine(String((char*)autoLineBuf));
@@ -1220,7 +1228,7 @@ static void processUART() {
 
     if (autoLineLen < sizeof(autoLineBuf)-1) autoLineBuf[autoLineLen++] = c;
     else autoFlushAsData();
-#endif
+
   }
 }
 
@@ -1241,8 +1249,11 @@ static void usbHelp() {
   Serial.println(F("  s              -> force ROLE=SLAVE  (0)"));
   Serial.println(F("  i              -> info"));
   Serial.println(F("  d              -> toggle BT debug (sniff UART BT, decode tf frames, show DATA-RX)"));
-  Serial.println(F("  dtf            -> toggle BT count tf stream from SLAVE"));																																													
-  Serial.println(F("  g              -> toggle TF generator (simulate student data)"));
+  Serial.println(F("  dtf            -> toggle BT count tf stream from SLAVE"));
+  if (!cfg_role)
+    Serial.println(F("  sg             -> toggle Slave  TF generator (simulate student data)"));
+  else
+    Serial.println(F("  mg             -> toggle Master TF generator (simulate student data)"));
   Serial.println(F("  w              -> show FT state"));
   Serial.println(F("  w ap           -> start FT in AP mode (OpenAVRc-FT / openavrc123)"));
   Serial.println(F("  w sta          -> start FT in STA mode using saved creds"));
@@ -1252,6 +1263,12 @@ static void usbHelp() {
   Serial.println(F("  pass <pass>    -> set/save STA password"));
   Serial.println(F("  creds          -> show saved STA creds (ssid + pass length)"));
   Serial.println(F("  h              -> help"));
+  Serial.println(F("  diag           -> version and more"));
+  Serial.println(F("  diag tf        -> diagnostic tf stream"));
+  Serial.println(F("  diag link      -> diagnostic link"));
+  Serial.println(F("  AT+OAVSTAT?    -> compact status line (manual)"));
+  Serial.println(F("  AT+OAVCLR      -> reset diagnostic counters (manual)"));
+
   Serial.println();
 }
 
@@ -1263,12 +1280,7 @@ static void usbInfo() {
   if (linked_peer_set) macToStr(linked_peer_mac, peerStr, sizeof(peerStr));
   else if (bound_peer_set) macToStr(bound_peer_mac, peerStr, sizeof(peerStr));
 
-  const char* atStr =
-#if USE_KEY_PIN
-    (isATMode() ? "YES" : "NO");
-#else
-    "AUTO";
-#endif
+  const char* atStr = "AUTO";
 
   const char* linkStr =
     (link_phase==PH_CONNECTED) ? "CONNECTED" :
@@ -1291,7 +1303,8 @@ static void usbInfo() {
   Serial.printf("My MAC  : %s\r\n", myMacStr);
   Serial.printf("Peer MAC: %s\r\n", peerStr);
   Serial.printf("Debug   : %s\r\n", dbg_bt ? "ON" : "OFF");
-  Serial.printf("Gen TF  : %s\r\n", gen_tf ? "ON" : "OFF");
+  Serial.printf("Gen_S TF: %s\r\n", gen_tf ? "ON" : "OFF");
+  Serial.printf("Gen_M TF: %s\r\n", Master_gen_tf ? "ON" : "OFF");
   Serial.printf("FT      : %s\r\n", ftStr);
   Serial.printf("FT Mode : %s\r\n", ftModeStr);
   Serial.printf("tf Slave: %lu tf/s=%lu\r\n", (unsigned long)tfDroppedCount, (unsigned long)tfRate);																																																								 
@@ -1306,6 +1319,110 @@ static void usbInfo() {
 }
 
 
+
+static void cmdDiag() {
+  Serial.println(F("[DIAG]"));
+
+  Serial.print(F("VERSION: "));
+  Serial.print(VERSION, 1);
+  Serial.print(F(" ("));
+  Serial.print(BUILD_TAG);
+  Serial.println(F(")"));
+
+  Serial.print(F("ROLE: "));
+  Serial.println(cfg_role ? F("MASTER") : F("SLAVE"));
+
+  Serial.print(F("LINK: "));
+  Serial.println(link_connected ? F("CONNECTED") : F("NOT_CONNECTED"));
+
+  Serial.print(F("PEER: "));
+  if (linked_peer_set) {
+    char buf[18];
+    snprintf(buf, sizeof(buf), "%02X:%02X:%02X:%02X:%02X:%02X",
+             linked_peer_mac[0], linked_peer_mac[1], linked_peer_mac[2],
+             linked_peer_mac[3], linked_peer_mac[4], linked_peer_mac[5]);
+    Serial.println(buf);
+  } else {
+    Serial.println(F("NONE"));
+  }
+
+  Serial.print(F("BOUND: "));
+  Serial.println(bound_peer_set ? F("YES") : F("NO"));
+
+  Serial.print(F("WIFI_MODE: "));
+  wifi_mode_t m = WiFi.getMode();
+  Serial.println(m == WIFI_STA ? F("STA") : (m == WIFI_AP ? F("AP") : F("OFF")));
+
+  Serial.print(F("WIFI_CH: "));
+  Serial.println(WiFi.channel());
+
+  Serial.print(F("UP_MS: "));
+  Serial.println((unsigned long)millis());
+
+  // Optional counters if present
+#ifdef TF_MONITOR
+  Serial.print(F("TF_DROPPED: "));
+  Serial.println((unsigned long)tfDroppedCount);
+#endif
+}
+
+static void cmdDiagTf() {
+  Serial.println(F("[DTF]"));
+  Serial.print(F("tf/s     : "));
+  Serial.println((unsigned long)tfRate);
+  Serial.print(F("dropped  : "));
+  Serial.println((unsigned long)tfDroppedCount);
+  Serial.print(F("up_ms    : "));
+  Serial.println((unsigned long)millis());
+}
+
+static void cmdDiagLink() {
+  Serial.println(F("[DLINK]"));
+
+  Serial.print(F("role     : "));
+  Serial.println(cfg_role ? F("MASTER") : F("SLAVE"));
+
+  Serial.print(F("phase    : "));
+  switch (link_phase) {
+    case PH_IDLE:       Serial.println(F("IDLE")); break;
+    case PH_CONNECTING: Serial.println(F("CONNECTING")); break;
+    case PH_CONNECTED:  Serial.println(F("CONNECTED")); break;
+    default:            Serial.println(F("UNKNOWN")); break;
+  }
+
+  Serial.print(F("connected: "));
+  Serial.println(link_connected ? F("YES") : F("NO"));
+
+  Serial.print(F("linked   : "));
+  Serial.println(linked_peer_set ? F("YES") : F("NO"));
+
+  Serial.print(F("bound    : "));
+  Serial.println(bound_peer_set ? F("YES") : F("NO"));
+
+  Serial.print(F("peer_mac : "));
+  if (linked_peer_set) {
+    char buf[18];
+    snprintf(buf, sizeof(buf), "%02X:%02X:%02X:%02X:%02X:%02X",
+             linked_peer_mac[0], linked_peer_mac[1], linked_peer_mac[2],
+             linked_peer_mac[3], linked_peer_mac[4], linked_peer_mac[5]);
+    Serial.println(buf);
+  } else if (bound_peer_set) {
+    char buf[18];
+    snprintf(buf, sizeof(buf), "%02X:%02X:%02X:%02X:%02X:%02X",
+             bound_peer_mac[0], bound_peer_mac[1], bound_peer_mac[2],
+             bound_peer_mac[3], bound_peer_mac[4], bound_peer_mac[5]);
+    Serial.println(buf);
+  } else {
+    Serial.println(F("NONE"));
+  }
+
+  Serial.print(F("last_rx_ms: "));
+  Serial.println((unsigned long)last_rx_ms);
+  Serial.print(F("now_ms    : "));
+  Serial.println((unsigned long)millis());
+}
+
+
 static void usbHandleCmd(String cmd) {
   cmd.trim();
   if (!cmd.length()) return;
@@ -1317,7 +1434,14 @@ static void usbHandleCmd(String cmd) {
   op.toLowerCase();
   rest.trim();
 
-  if (op == "m") {
+  if (op == "diag") {
+    if (rest == "tf") { cmdDiagTf(); return; }
+    if (rest == "link") { cmdDiagLink(); return; }
+    cmdDiag();
+    return;
+  }
+
+if (op == "m") {
     cfg_role = 1;
     saveConfig();
     Serial.println("[USB] ROLE forced to MASTER (1) and saved");
@@ -1351,10 +1475,25 @@ static void usbHandleCmd(String cmd) {
     return;
   }
   
-  if (op == "g") {
-    gen_tf = !gen_tf;
-    Serial.print("[USB] TF generator ");
-    Serial.println(gen_tf ? "ON" : "OFF");
+  if (op == "sg"){
+    if (!cfg_role){
+      gen_tf = !gen_tf;
+      Serial.print("[USB] SLAVE TF generator ");
+      Serial.println(gen_tf ? "ON" : "OFF");
+    }
+    else
+      Serial.print("Only usable by SLAVE !");
+    return;
+  }
+
+  if (op == "mg"){
+    if (cfg_role){
+      Master_gen_tf = !Master_gen_tf;
+      Serial.print("[USB] MASTER TF generator ");
+      Serial.println(Master_gen_tf ? "ON" : "OFF");
+    }
+    else
+      Serial.print("Only usable by MASTER !");
     return;
   }
 
@@ -1467,11 +1606,6 @@ static void processUsbConsole() {
 }
 
 void setup() {
-#if USE_KEY_PIN
-  pinMode(PIN_KEY, INPUT_PULLDOWN);
-  pinMode(PIN_STATUS, OUTPUT);
-  setStatusPin(false);
-#endif
 
   ledInit();
 
@@ -1520,7 +1654,7 @@ void setup() {
   // --- v1.6j: force clean link state at boot (MASTER and SLAVE) ---
   link_connected = false;
   link_phase = PH_IDLE;
-  setStatusPin(false);
+  //setStatusPin(false);
 
   if (bound_peer_set) {
     memcpy(linked_peer_mac, bound_peer_mac, 6);
@@ -1536,7 +1670,7 @@ void setup() {
     linked_peer_set = true;
     link_connected = false;
     link_phase = PH_CONNECTING;
-    setStatusPin(false);
+    //setStatusPin(false);
     Serial.println("[LINK] auto-reconnect armed");
   }
 
@@ -1570,6 +1704,13 @@ void loop() {
   }
 
   processUsbConsole();
+  // v1.7a: link watchdog
+  if (link_connected && (millis() - last_rx_ms > LINK_TIMEOUT_MS)) {
+    link_connected = false;
+    if (linked_peer_set) link_phase = PH_CONNECTING; else link_phase = PH_IDLE;
+    //setStatusPin(false);
+  }
+
   // --- TF monitor: compute tf/s once per second ---
   if (millis() - tfRateLastMs >= 1000) {
     tfRateLastMs += 1000;
@@ -1612,33 +1753,15 @@ void loop() {
 
   // generate simulated student frames (tf ...) over ESPNOW
   if (gen_tf) {
-    if (linked_peer_set || bound_peer_set) {
-      uint32_t now = millis();
-      if (now - gen_last_ms >= 20) {
-        gen_last_ms = now;
-        gen_phase++;
-
-        uint16_t ch[8];
-        uint16_t tri = (uint16_t)((gen_phase % 200) < 100 ? (gen_phase % 100) : (100 - (gen_phase % 100)));
-        ch[0] = 1000 + (tri * 10);
-        ch[1] = 1500; ch[2] = 1500; ch[3] = 1500;
-        ch[4] = 1500; ch[5] = 1500; ch[6] = 1500; ch[7] = 1500;
-
-        char frame[80];
-        buildTfFrame(ch, frame, sizeof(frame));
-
-        const uint8_t* dst = linked_peer_set ? linked_peer_mac : bound_peer_mac;
-        sendPkt(dst, PKT_DATA, frame, (uint16_t)strlen(frame));
-
-        if (dbg_bt) {
-          Serial.print("[DATA-TX] ");
-          Serial.print(frame);
-        }
-      }
-    }
+    cmdSg();
   }
 
-  setStatusPin(link_connected);
+  if (Master_gen_tf)
+  {
+    cmdMg();
+  }
+
+  //setStatusPin(link_connected);
   ledUpdate();
 
   static uint32_t tHello = 0;
@@ -1660,3 +1783,77 @@ void loop() {
 
   delay(1);
 }
+
+// sg: inject a simulated student tf frame by SLAVE directly to radio UART (BT Serial1)
+// ckeck if SLAVE send well the good frame over the ESPNOW link to the MASTER
+static void cmdSg()
+{
+  if (linked_peer_set || bound_peer_set) {
+    uint32_t now = millis();
+    if (now - gen_last_ms >= 20) {
+      gen_last_ms = now;
+      gen_phase++;
+
+      uint16_t ch[8] = {1500,1500,1500,1500,1500,1500,1500,1500};
+
+      // CH1..CH4 visible movement (trainer uses first 4 channels)
+      uint16_t tri1 = (uint16_t)((gen_phase % 200) < 100 ? (gen_phase % 100) : (100 - (gen_phase % 100)));
+      ch[0] = 1000 + (tri1 * 10); // CH1: triangle slow 1000..2000
+
+      uint16_t tri2 = (uint16_t)(((gen_phase * 2) % 200) < 100 ? ((gen_phase * 2) % 100) : (100 - ((gen_phase * 2) % 100)));
+      ch[1] = 1000 + (tri2 * 10); // CH2: faster triangle
+
+      ch[2] = 2000 - (tri1 * 10); // CH3: inverse triangle
+
+      ch[3] = ((gen_phase / 50) % 2) ? 1700 : 1300; // CH4: step pattern (~1Hz at 50Hz loop)
+
+      char frame[80];
+      buildTfFrame(ch, frame, sizeof(frame));
+
+      const uint8_t* dst = linked_peer_set ? linked_peer_mac : bound_peer_mac;
+      sendPkt(dst, PKT_DATA, frame, (uint16_t)strlen(frame));
+
+      if (dbg_bt) {
+        Serial.print("[DATA-TX] ");
+        Serial.print(frame);
+      }
+    }
+  }
+}
+
+// mg: inject a simulated student tf frame by MASTER directly to radio UART (BT Serial1)
+// This is for testing the BT trainer icon in OpenAVRc (uCli_Cmd_tf).
+// ckeck if MASTER send well the good frame without need to SLAVE connection
+static void cmdMg()
+{
+  uint16_t ch[8] = {1500,1500,1500,1500,1500,1500,1500,1500};
+
+  static uint32_t phase = 0;
+  phase++;
+
+  // CH1: triangle slow 1000..2000
+  uint16_t tri1 = (uint16_t)((phase % 200) < 100 ? (phase % 100) : (100 - (phase % 100)));
+  ch[0] = 1000 + (tri1 * 10);
+
+  // CH2: triangle faster
+  uint16_t tri2 = (uint16_t)(((phase * 2) % 200) < 100 ? ((phase * 2) % 100) : (100 - ((phase * 2) % 100)));
+  ch[1] = 1000 + (tri2 * 10);
+
+  // CH3: inverse triangle (so it moves opposite direction)
+  ch[2] = 2000 - (tri1 * 10);
+
+  // CH4: step pattern (toggles every ~1s if mg runs at 50Hz)
+  ch[3] = ((phase / 50) % 2) ? 1700 : 1300;
+
+  char frame[96];
+  buildTfFrame(ch, frame, sizeof(frame));
+
+  BT.write((const uint8_t*)frame, strlen(frame)); // already ends with '\r'
+
+  if (dbg_bt) {
+    Serial.print("[MG->UART] ");
+    Serial.print(frame);
+  }
+
+}
+
