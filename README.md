@@ -116,6 +116,9 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Buttons2Xany)
 
 	  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Xany2Msx/Xany2Msx_3D.jpg)  
+
+1. Adaptator for P16 on Shield board (LCD // connector)  
+   * [v1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Adaptateur_Connecteur_20pts_shield)  
 	  
 ## Users OpenAVRc Transmitter Builds
 * [Bracame Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Bracame/README.md)
