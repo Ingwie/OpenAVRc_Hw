@@ -53,7 +53,7 @@ and are intended for manual diagnostics via serial or TCP console.
 [Wiring Details](Wiring.md)  
 [Wifi Protol Details](WifiXmodem.md)  
 [Architecture Details](Architecture_Details.md)  
-[Software Details](Software_Details.md)  
+[Software Details](Software\Software_Details.md)  
 [Hardware Details](Harware_Details.md)  
 [Debug Details](Debug_Details.md)  
 [Developper Commands](Developper_Cmds.md)  
