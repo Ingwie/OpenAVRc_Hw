@@ -4,6 +4,8 @@ This project implements a full HC-05 Bluetooth module emulator using an ESP32-C3
 It is designed to be used with OpenAVRc radios (Mega2560 based) without modifying
 the OpenAVRc firmware.
 
+![Image](Hardware/EPS32_C3-Mini-Oled.png)
+
 The ESP32 communicates with the radio using the original HC-05 AT command set
 and replaces the Bluetooth link with an ESP-NOW and/or WiFi transport layer.
 
