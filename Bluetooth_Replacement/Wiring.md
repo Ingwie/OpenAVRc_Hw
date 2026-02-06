@@ -27,10 +27,14 @@ This limits 5V logic to safe 3.3V levels.
 
 ### Status Signals
 
-- GPIO8 : Status LED
+  - GPIO8 : Status LED
+  - GPIO9 : Status external LED
   - OFF : not connected
   - ON  : link connected
   - FAST BLINK : file transfer
+  
+### Scan button
+  - GPIO10 : Scan button
 
 ### Optional OLED Display
 

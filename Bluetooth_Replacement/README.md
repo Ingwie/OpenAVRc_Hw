@@ -9,10 +9,6 @@ and replaces the Bluetooth link with an ESP-NOW and/or WiFi transport layer.
 
 ---
 
-## Outline of the documentation
-[Emulation mode hc-05](Emulation_Hc05.md)  
-[Wifi Protol Details](Protocols_Details.md)  
-
 ## Features
 
 - HC-05 AT command compatible interface
@@ -28,16 +24,7 @@ and replaces the Bluetooth link with an ESP-NOW and/or WiFi transport layer.
 
 ---
 
-## Versioning
-
-- Firmware version number is numeric only (example: 1.7)
-- Build tags may be used internally but VERSION remains numeric
-- Each version is backward compatible with OpenAVRc
-
----
-
 ## HC-05 AT Commands Supported
-
 Standard commands used by OpenAVRc:
 
 - AT
@@ -54,23 +41,23 @@ Additional diagnostic commands (ESP32 only):
 
 - AT+ADDR?
 - AT+OAVINFO?
+- AT+OAVSTAT?
 
 These additional commands do not interfere with OpenAVRc
 and are intended for manual diagnostics via serial or TCP console.
 
 ---
 
-## Peer Name Persistence
-
-The peer name is learned during a scan (AT+INQ + AT+RNAME?)
-and stored in non-volatile memory.
-
-After reboot:
-- The radio may query AT+RNAME?
-- The ESP32 responds using the cached name
-- A scan is required at least once after flashing
-
-This behavior matches real HC-05 usage.
+## Outline of the documentation
+[Emulation mode hc-05](Emulation_Hc05.md)  
+[Wiring Details](Wiring.md)  
+[Wifi Protol Details](WifiXmodem.md)  
+[Architecture Details](Architecture_Details.md)  
+[Software Details](Software_Details.md)  
+[Hardware Details](Harware_Details.md)  
+[Debug Details](Debug_Details.md)  
+[Developper Commands](Developper_Cmds.md)  
+[How to Use](HowToUse.md)  
 
 ---
 

@@ -1,0 +1,15 @@
+Slave HC05 → HC05 Master
+(tf radio élève → ESPNOW → tf injecté sur BT vers radio maître) ✅
+
+Slave HC05 → SBUS Master
+(tf radio élève → ESPNOW → decode tf → SBUS out) ✅
+
+Slave HC05 → PPM Master
+(tf radio élève → ESPNOW → decode tf → PPM out) ✅
+
+Slave SBUS → HC05 Master
+(SBUS in → conversion → tf → ESPNOW → tf injecté sur BT) ✅ (si ton module SBUS_SLAVE est OK)
+
+Slave PPM → PPM Master
+À créer ✅
+Idéalement : PPM in → tf → ESPNOW → tf → PPM out (homogène)
