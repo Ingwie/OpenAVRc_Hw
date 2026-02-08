@@ -21,7 +21,7 @@ R44 and R46 must not be installed. Replace R44 with a wire or a 0 ohm resistor.
 ![](Shield_v2.2_sch_update.png)  
 
 ## Summary
-| ** Shiled v2.0 ** | ** Shield v2.1 ** | ** Shield v2.2 ** |
+| ** Shield v2.0 ** | ** Shield v2.1 ** | ** Shield v2.2 ** |
 | :---: | :---: | :---: |
 | <img src="BT_v2.0.png" width="150" /> | <img src="BT_v2.1.png" width="150" /> | <img src="BT_v2.2.png" width="150" /> |
 
