@@ -35,7 +35,7 @@ Add your mixing options.
 ![Mixer screen](Trainer_Mixer.png)  
 If the master receive data from the slave, a BT logo appears on the right side of the screen.  
 ![Ecolage/Calibarge screen](Ecolage_Calibrage.png)  
-By moving the student radio's control sticks, you should see four values ​​move on the right side of the screen.  
+By moving the student radio's control sticks, you should see four values ​​move on the bottom side of the screen.  
 If so, center the four main channels of the student radio.  
 Then click on **CAL** button.  
 
