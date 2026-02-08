@@ -20,6 +20,12 @@ R44 and R46 must not be installed. Replace R44 with a wire or a 0 ohm resistor.
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/Shield_v2.2_update.png)  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/Shield_v2.2_sch_update.png)  
 
+## Summary
+| ** Shiled v2.0 ** | ** Shield v2.1 ** | ** Shield v2.2 ** |
+| :---: | :---: | :---: |
+| <img src="Hardware/Shield_v2.0_update.png" width="150" /> | <img src="Hardware/Shield_v2.1_update.png" width="150" /> | <img src="Hardware/Shield_v2.2_update.png" width="150" /> |
+
+
 # Wireless HC05 PCB simulator for External JR Bay
 This board is usable with a RC transmitter as a Tx16s who has an external JR bay.  
 It accept CPPM and SBUS ouput or CPPM and SBUS input .  
