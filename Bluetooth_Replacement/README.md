@@ -52,11 +52,12 @@ and are intended for manual diagnostics via serial or TCP console.
 
 ## Outline of the documentation
 [Emulation mode hc-05](Emulation_Hc05.md)  
-[Wiring Details](Wiring.md)  
-[Wifi Protol Details](WifiXmodem.md)  
 [Architecture Details](Architecture_Details.md)  
 [Software Details](Software/Software_Details.md)  
 [Hardware Details](Hardware/Hardware_Details.md)  
+[Transmitters Settings](Transmitters_Settings.md)  
+[Wiring Details](Wiring.md)  
+[Wifi Protol Details](WifiXmodem.md)  
 [Debug Details](Debug_Details.md)  
 [Developper Commands](Developper_Cmds.md)  
 [How to Use](HowToUse.md)  
