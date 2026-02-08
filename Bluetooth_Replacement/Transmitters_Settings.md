@@ -21,20 +21,23 @@ No modification of OpenAVRc firmware is required, but the OpenAVRc firmware must
 ## Create a model on OpenAVRc mster ans slave transmitters
 In my tests, I set the **master** radio to receive the signal from the **student** radio.  
 
+### Define a model into OpenAVRc as Slave
+Select SIM/BT module type.  
+![Picture](Slave_Model.png)  
+Trainer screen with only BT logo in the middle's screen.  
+![Picture](Slave_Model.png)  
+
 ### Define a model into OpenAVRc as Master
-Select SpirfMod protocol or Multi or CRSF.
+Select SpirfMod protocol or Multi or CRSF.  
 The Master transmitter command the model with its HF module.  
 ![Model screen](Master_Model.png)  
 Add your mixing options.  
 ![Mixer screen](Trainer_Mixer.png)  
 If the master receive data from the slave, a BT logo appears on the right side of the screen.  
 ![Ecolage/Calibarge screen](Ecolage_Calibrage.png)  
-
-### Define a model into OpenAVRc as Slave
-Select SIM/BT module type.  
-![Picture](Slave_Model.png)  
-Trainer screen with only BT logo in the middle's screen.  
-![Picture](Slave_Model.png)  
+By moving the student radio's control sticks, you should see four values ​​move on the right side of the screen.  
+If so, center the four main channels of the student radio.  
+Then click on **CAL** button.  
 
 ## OpenAVRc Master to OpenAVRc Slave transmitter
 
