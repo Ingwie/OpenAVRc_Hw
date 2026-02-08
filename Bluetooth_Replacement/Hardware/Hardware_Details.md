@@ -12,18 +12,18 @@ The Q1 MOSFET (BSS84) also needs to be replaced with a much more efficient OA340
 ## Shield v2.1
 During the creation of PCB v2.1, the pin that controlled the HC05 was initially assigned to a pin that was subsequently reassigned to the Bluetooth KEY pin.  
 This connection must be broken to connect resistor R40 to pin G4.  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/Shield_v2.1_update.png)  
+![](Shield_v2.1_update.png)  
 Just like in version v2.0, you need to replace the Q1 mosfet with an oa3401.  
 
 ## Shield v2.2
 R44 and R46 must not be installed. Replace R44 with a wire or a 0 ohm resistor.  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/Shield_v2.2_update.png)  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/Shield_v2.2_sch_update.png)  
+![](Shield_v2.2_update.png)  
+![](Shield_v2.2_sch_update.png)  
 
 ## Summary
 | ** Shiled v2.0 ** | ** Shield v2.1 ** | ** Shield v2.2 ** |
 | :---: | :---: | :---: |
-| <img src="Hardware/Shield_v2.0_update.png" width="150" /> | <img src="Hardware/Shield_v2.1_update.png" width="150" /> | <img src="Hardware/Shield_v2.2_update.png" width="150" /> |
+| <img src="Shield_v2.0_update.png" width="150" /> | <img src="Shield_v2.1_update.png" width="150" /> | <img src="Shield_v2.2_update.png" width="150" /> |
 
 
 # Wireless HC05 PCB simulator for External JR Bay
@@ -31,11 +31,11 @@ This board is usable with a RC transmitter as a Tx16s who has an external JR bay
 It accept CPPM and SBUS ouput or CPPM and SBUS input .  
 
 ## Schematic
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/ESPNOW_Trainer.png)  
+![](ESPNOW_Trainer.png)  
 
 ## PCB
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/ESPNOW_Trainer_Top.jpg)
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/ESPNOW_Trainer_Bot.jpg)  
+![](ESPNOW_Trainer_Top.jpg)
+![](ESPNOW_Trainer_Bot.jpg)  
 
 ## How to use
 These commands are intended for diagnostics and configuration.
