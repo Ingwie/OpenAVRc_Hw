@@ -1,0 +1,26 @@
+LOUSSOUARN Philippe
+	
+Pièces jointes17:22 (il y a 9 minutes)
+	
+	
+À moi
+Le Debug que tu m'as envoyé pour CRSF à 115200 Bauds montre qu'il y a beaucoup de perte de trames.
+Pourtant, on avait réussi à  faire fonctionner SRXL, SUMD et IBUS qui sont aussi à 115200 bauds.
+
+Je pense que ça doit être dû à la tolérance sur le débit (qui dépend de la fréquence du quartz).
+
+Du coup, j'ai fait un RC15 qui permet de tuner un tout petit peu le temps-bit en ajoutant un offset (-1, 0, +1) au temps-bit pour ajuster le débit.
+
+J'ai juste ajouté un paramètre optionnel à la commande Interface pour les protocoles Séries, voilà comment ça marche:
+
+1) I=F6;m, tu réduis à la valeur minimale le temps-bit dans ma lib SoftRcSerial (ça crée un offset de -1)
+2) I=F6;N ou simplement I=F5, tu utilises le temps-bit Nominal (par défaut) défini dans ma lib SoftRcSerial (ça crée un offset de 0)
+3) I=F6;M, tu augmentes à la valeur Maximale le temps-bit par défaut défini dans ma lib SoftRcSerial (ça crée un offset de +1)
+
+Comme je suis obligé de sauvegarder en EEPROM l'offset du temps-bit, après le chargement de la RC15, la structure sera désalignée et la réponse à la commande C? sera incorrecte.
+Tu auras juste à faire la commande C=F pour faire un Factory Reset de la conf, ça te mettra en PWM, en EKMFA et avec un offset de 0 pour la lib SoftRcSerial.
+
+Puis, tu appliques un offset pour la réception en CRSF: I=F6;m et tu fais un D=1 pour voir si la période T des largeurs d'impulsion se rapproche de 10ms +/2ms et si les symboles RCUL/X-Any sont bien reconnus ainsi que le message RCUL.
+Si ça ne marche toujours pas, tu fais I=F6;M et tu re-testes.
+
+J'espère que ça va régler le problème du CRSF.
