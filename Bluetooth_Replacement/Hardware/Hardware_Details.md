@@ -18,6 +18,7 @@ Just like in version v2.0, you need to replace the Q1 mosfet with an oa3401.
 ## Shield v2.2
 R44 and R46 must not be installed. Replace R44 with a wire or a 0 ohm resistor.  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/Shield_v2.2_update.png)  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/Shield_v2.2_sch_update.png)  
 
 # Wireless HC05 PCB simulator for External JR Bay
 This board is usable with a RC transmitter as a Tx16s who has an external JR bay.  
