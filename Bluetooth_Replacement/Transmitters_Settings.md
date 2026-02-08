@@ -13,9 +13,9 @@ No modification of OpenAVRc firmware is required, but the OpenAVRc firmware must
 2. Power the radio
 3. Enter the Bluetooth menu
 4. Run a Bluetooth scan
-![](../BT_Master-Slave_Connected.png)
+![](BT_Master-Slave_Connected.png)
 5. Select the student radio
-![](../BT_ScanResult.png)
+![](BT_ScanResult.png)
 6. Pairing is complete
 
 ## OpenAVRc Master to OpenAVRc Slave transmitter
