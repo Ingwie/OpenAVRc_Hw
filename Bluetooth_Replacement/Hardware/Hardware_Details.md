@@ -23,7 +23,7 @@ R44 and R46 must not be installed. Replace R44 with a wire or a 0 ohm resistor.
 ## Summary
 | ** Shiled v2.0 ** | ** Shield v2.1 ** | ** Shield v2.2 ** |
 | :---: | :---: | :---: |
-| <img src="Shield_v2.0_update.png" width="150" /> | <img src="Shield_v2.1_update.png" width="150" /> | <img src="Shield_v2.2_update.png" width="150" /> |
+| <img src="BT_v2.0.png" width="150" /> | <img src="BT_v2.1.png" width="150" /> | <img src="BT_v2.2.png" width="150" /> |
 
 
 # Wireless HC05 PCB simulator for External JR Bay
