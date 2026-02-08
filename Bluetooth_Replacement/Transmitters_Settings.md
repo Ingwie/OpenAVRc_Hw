@@ -37,7 +37,7 @@ If the master receive data from the slave, a BT logo appears on the right side o
 ![Ecolage/Calibarge screen](Ecolage_Calibrage.png)  
 By moving the student radio's control sticks, you should see four values ​​move on the bottom side of the screen.  
 If so, center the four main channels of the student radio.  
-Then click **CAL** to reset the slave's sticks centers.  
+Then click **CAL** button to reset the slave's sticks centers.  
 The actual positions of the student radio sticks are now recognized by the master radio.  
 
 
