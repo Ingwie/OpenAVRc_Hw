@@ -12,14 +12,14 @@ In these explanations, I'm using a **TX16S MkII radio running EdgeTX** as an alt
 
 2. With one OpenAVRc radio (master) and a compatible **SBUS** or **CPPM** input/output radio (student)  
   - Power the radios.  
-  - Define Tx16s radio as student.  
+  - Define Tx16s radio as student, select **Sbus or Cppm** into model's External Module options.  
   - Define OpenAVRc radio as master, run a scan and select student radio.  
   - Pairing is complete.  
   
 3. With one OpenAVRc radio (student) and a compatible **SBUS** or **CPPM** input/output radio (master)  
   - Power the radios.  
   - Define OpenAVRc radio as student.  
-  - Define Tx16s radio as master and run a scan by a click on the button.  
+  - Define Tx16s radio as master, run a scan by a click on the button, select **Master/Cppm or Master/Sbus** into trainer model's option.
   - Pairing is complete.  
  
 The scan is required once after firmware installation or after the change of student.  
