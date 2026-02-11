@@ -1,7 +1,7 @@
 # Compilations
 This HC05 simulator for an Mini ESP32C3 Oled can be compiled with the Arduino IDE 2.3.7.  
 
-## How to
+## How to compile and upload
 1. Open your Arduino IDE.  
 2. Install the Espressif json link.  
 ```
@@ -14,3 +14,6 @@ https://espressif.github.io/arduino-esp32/package_esp32_index.json
   - use settings that follow.  
   ![pic](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Software/compilation_settings.png)  
 6. Compile and upload the sketch.  
+
+## Follow instructions
+[How to Use](../HowToUse.md)  
