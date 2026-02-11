@@ -30,3 +30,17 @@ Configure your master radio according to your training habits.
   - Connection is automatic
   - The paired radio name is displayed
   - No manual action required
+  
+## Use serial commands
+It's possible to configure the two esp32 by serial commands.  
+```
+  h              -> help
+  m              -> force ROLE=MASTER (1)
+  s              -> force ROLE=SLAVE  (0)
+  moutput  <x>   -> set/save MASTER output: 0=PPM 1=SBUS 2=HC05 3=PPM2PPM (reboot)
+  sinput   <x>   -> set/save SLAVE   input: 0=PPM 1=SBUS 2=HC05 3=PPM2PPM (reboot)
+  ppmpulse <x>   -> set CPPM pulse mode (0=PPM POS, 1=PPM NEG)
+  scan [ms]      -> MASTER: ESPNOW scan (like AT+INQ) and list responders
+  scan link      -> MASTER: ESPNOW scan and link to SLAVE
+  i              -> info
+```
