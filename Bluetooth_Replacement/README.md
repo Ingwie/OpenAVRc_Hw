@@ -60,7 +60,7 @@ and are intended for manual diagnostics via serial or TCP console.
 [Wifi Protol Details](WifiXmodem.md)  
 [Debug Details](Debug_Details.md)  
 [Developper Commands](Developper_Cmds.md)  
-[How to Use](HowToUse.md)  
+[How to Use](HowToUseTraining.md)  
 
 ---
 

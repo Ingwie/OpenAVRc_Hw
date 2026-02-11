@@ -16,4 +16,4 @@ https://espressif.github.io/arduino-esp32/package_esp32_index.json
 6. Compile and upload the sketch.  
 
 ## Follow instructions
-[How to Use](../HowToUse.md)  
+[How to Use](../HowToUseTraining.md)  
