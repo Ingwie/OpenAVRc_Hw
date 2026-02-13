@@ -18,7 +18,7 @@ No modification of OpenAVRc firmware is required, but the OpenAVRc firmware must
 ![](BT_ScanResult.png)  
 6. Pairing is complete  
 
-## Create a model on OpenAVRc mster ans slave transmitters
+## Create a model on OpenAVRc master and slave transmitters
 In my tests, I set the **master** radio to receive the signal from the **student** radio.  
 
 ### Define a model into OpenAVRc as Slave
