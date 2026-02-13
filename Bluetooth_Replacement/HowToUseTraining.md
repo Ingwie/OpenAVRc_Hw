@@ -21,7 +21,20 @@ In these explanations, I'm using a **TX16S MkII radio running EdgeTX** as an alt
   - Define OpenAVRc radio as student.  
   - Define Tx16s radio as master, run a scan by a click on the button, select **Master/Cppm or Master/Sbus** into trainer model's option.
   - Pairing is complete.  
- 
+  
+4. It is also possible to configure each ESP32 with different commands (see **Use serial commands**).  
+  - For a master:
+```
+m + RETURN
+moutput + 0/1/2/3 + RETURN
+```  
+  - For a slave:
+```
+s + RETURN
+sinput  + 0/1/2/3 + RETURN
+```  
+The generation of a PPM signal can be generated with positive or negative pulses.  
+  
 The scan is required once after firmware installation or after the change of student.  
 Configure your master radio according to your training habits.  
 

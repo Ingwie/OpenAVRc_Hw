@@ -8,12 +8,18 @@ The pin assignment that activates it was not yet defined.
 Therefore, a connection must be created between pin G4 and resistor R40.  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Hardware/Shield_v2.0_update.png)  
 The Q1 MOSFET (BSS84) also needs to be replaced with a much more efficient OA3401.  
+Change R5 connection to P10 pin 1.  
+![](Shield_v2.0-v2.1_sch_update.png)  
+![](v2.0_pcb_mod.png)  
 
 ## Shield v2.1
 During the creation of PCB v2.1, the pin that controlled the HC05 was initially assigned to a pin that was subsequently reassigned to the Bluetooth KEY pin.  
 This connection must be broken to connect resistor R40 to pin G4.  
 ![](Shield_v2.1_update.png)  
 Just like in version v2.0, you need to replace the Q1 mosfet with an oa3401.  
+Change R5 connection to P10 pin 1.  
+![](Shield_v2.0-v2.1_sch_update.png)  
+![](v2.1_pcb_mod.png)  
 
 ## Shield v2.2
 R44 and R46 must not be installed. Replace R44 with a wire or a 0 ohm resistor.  
