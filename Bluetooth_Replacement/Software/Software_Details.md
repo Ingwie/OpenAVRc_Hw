@@ -15,7 +15,7 @@ https://espressif.github.io/arduino-esp32/package_esp32_index.json
   ![pic](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Software/compilation_settings.png)  
 6. Compile and upload the sketch.  
 
-With the 1.8c version and more, It's possible to use an [OTA upload mode]().  
+With the 1.8c version and more, It's possible to use an [OTA upload mode](OTA_Upload.md).  
 
 ## Follow instructions
 [How to Use](../HowToUseTraining.md)  
