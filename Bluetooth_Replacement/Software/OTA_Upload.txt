@@ -1,0 +1,29 @@
+@echo off
+
+set ESP_IP=192.168.xx.xx
+set HOST_IP=192.168.xx.xx
+set OTA_PORT=3232
+set OTA_PASS=oavrc
+
+if "%1"=="" (
+    echo Drag and drop your .ino.bin file onto this script.
+    pause
+    exit /b
+)
+
+set BIN_FILE=%1
+
+echo.
+echo === OTA Upload to %ESP_IP% ===
+echo File: %BIN_FILE%
+echo.
+
+"C:\Users\your_user_name\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.7\tools\espota.exe" ^
+-i %ESP_IP% ^
+-p %OTA_PORT% ^
+--auth=%OTA_PASS% ^
+--host_ip=%HOST_IP% ^
+-f "%BIN_FILE%" ^
+-d
+
+pause

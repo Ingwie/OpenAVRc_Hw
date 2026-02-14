@@ -13,9 +13,8 @@ https://espressif.github.io/arduino-esp32/package_esp32_index.json
   - select the board **esp32/ESP32 C3 Dev Module**.  
   - use settings that follow.  
   ![pic](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Software/compilation_settings.png)  
-6. Compile and upload the sketch.  
-
-With the 1.8c version and more, It's possible to use an [OTA upload mode]().  
+6. Use **Export compiled binaries** and save the .ino.bin found into the \build\esp32.esp32.esp32c3 folder.  
+7. After modifying the OTA_Upload.txt file with your PC's IP address, the IP address of the ESP32 to be updated, and the OTA password (which is "oavrc" by default), rename the OTA_Upload.txt file to .bat and drag and drop the .ino.bin file onto the OTA_Upload.bat file.  
 
 ## Follow instructions
 [How to Use](../HowToUseTraining.md)  
