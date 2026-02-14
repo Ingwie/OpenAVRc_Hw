@@ -18,7 +18,7 @@ echo === OTA Upload to %ESP_IP% ===
 echo File: %BIN_FILE%
 echo.
 
-"C:\Users\your_user_name\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.7\tools\espota.exe" ^
+"espota.exe" ^
 -i %ESP_IP% ^
 -p %OTA_PORT% ^
 --auth=%OTA_PASS% ^
