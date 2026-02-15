@@ -259,7 +259,7 @@ Selon le mode SLAVE actif :
 |-----------------|------|------|-----|
 | **HC05**        | ✔️   | ✔️   | ✔️  |
 | **SBUS**        | ✔️   | —    | —   |
-| **PPM**         | —    | —    | ✔️  |
+| **PPM**         | ✔️   | —    | ✔️  |
 
 ✔️ = implémenté ou prévu  
 — = non pertinent
