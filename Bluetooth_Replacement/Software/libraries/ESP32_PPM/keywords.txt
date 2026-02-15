@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map For ESP32_PPM 
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+begin	KEYWORD1
+width_us	KEYWORD1
+isSynchro  KEYWORD1
+RculIsSynchro	KEYWORD1
+RculSetWidth_us	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+DEFAULT_PPM_PERIOD_US	LITERAL1
+DEFAULT_PPM_HEADER_US	LITERAL1
