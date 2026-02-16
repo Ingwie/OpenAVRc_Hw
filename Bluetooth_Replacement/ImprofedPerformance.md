@@ -3,8 +3,8 @@ Boosting ESP32-C3 SuperMini WiFi: A Simple and Effective Antenna Mod.
 Follow this [topic](https://peterneufeld.wordpress.com/2025/03/04/esp32-c3-supermini-antenna-modification/).  
 
 The ESP32-C3 SuperMini modules are incredibly affordable (around €2) and come equipped with a compact SMD antenna.  
-However, the small size of this antenna significantly limits the WiFi range. To easily overcome this problem,  
-a simple antenna modification can be implemented, which drastically improves performance.  
+However, the small size of this antenna significantly limits the WiFi range.  
+To easily overcome this problem, a simple antenna modification can be implemented, which drastically improves performance.  
 ![gif](esp_c3_animated.gif)  
 
 ## The Antenna Modification
@@ -14,7 +14,7 @@ forming a loop with a diameter of about 8 mm), while the remaining 15 mm section
 
 The circular loop is wound around the rod with a 5 mm drill bit, then the ends of the loop are widened so that they touch the terminals of the SMD antenna.  
 The SMD antenna thus completes the wire loop mechanically, over a quarter of its circumference, but electrically, as a λ/4 element in parallel with a λ/8 wire.  
-![pic](esp-c3_mod.png)  
+![pic](esp32-c3_mod.png)  
 Solder the new antenna directly to both ends of the original SMD antenna on the ESP32 module.  
 Specifically, solder to the 50 Ohm antenna pin (the left end of the original antenna) and to the other “hot”  
 end of the original antenna. This effectively bypasses the original PCB antenna.  
