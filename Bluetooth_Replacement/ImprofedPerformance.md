@@ -24,7 +24,7 @@ The old aerial has been left in place as it becomes electrically ineffective in 
 
 ## Results
 The signal strength curves recorded with the WiFi Logger program consistently demonstrated a clear superiority of the modified module over the original.  
-Under the testing conditions, where both modules were mounted side-by-side on a power bank and moved around various locations near an access point (AP),  
+Under the testing conditions, where both modules were mounted side-by-side on a power bank and moved around various locations near an access point (AP), 
 the modified antenna consistently provided higher signal levels.  
 On average, the improvement in signal strength was at least approximately 6dB.  
 In many cases, particularly at the edges of the WiFi signal range or in environments with more interference, the improvement even exceeded 10dB.  
