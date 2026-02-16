@@ -9,7 +9,7 @@ To easily overcome this problem, a simple antenna modification can be implemente
 
 ## The Antenna Modification
 This modification involves adding a 31 mm length of 1.0 mm silver-plated wire, configured as a quarter-wavelength (λ/4) antenna.
-The bottom section of the wire is bent into a horizontal loop (approximately 16 mm of the wire length,  
+The bottom section of the wire is bent into a horizontal loop (approximately 16 mm of the wire length, 
 forming a loop with a diameter of about 8 mm), while the remaining 15 mm section is angled vertically upwards.  
 
 The circular loop is wound around the rod with a 5 mm drill bit, then the ends of the loop are widened so that they touch the terminals of the SMD antenna.  
