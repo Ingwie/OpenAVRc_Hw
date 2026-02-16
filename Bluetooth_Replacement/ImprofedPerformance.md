@@ -21,3 +21,13 @@ end of the original antenna. This effectively bypasses the original PCB antenna.
 Ensuring two good solder joints at both ends of the PCB antenna is crucial.  
 Pay close attention to the position of the wire that goes up from the loop.  
 The old aerial has been left in place as it becomes electrically ineffective in this configuration.  
+
+## Results
+The signal strength curves recorded with the WiFi Logger program consistently demonstrated a clear superiority of the modified module over the original.  
+Under the testing conditions, where both modules were mounted side-by-side on a power bank and moved around various locations near an access point (AP),  
+the modified antenna consistently provided higher signal levels.  
+On average, the improvement in signal strength was at least approximately 6dB.  
+In many cases, particularly at the edges of the WiFi signal range or in environments with more interference, the improvement even exceeded 10dB.  
+This difference in signal strength had a significant impact on the stability of the connection.  
+The modified module maintained a stable connection while the unmodified module was more prone to disconnections or performance degradation.  
+![pic](Performance_result.png)  
