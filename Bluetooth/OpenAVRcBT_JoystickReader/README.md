@@ -113,7 +113,11 @@ Dans tous les cas, démarrer le module réception en premier.
 
 La caméra en connectée sur les voies 7 et 8.
 
-![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/LE3DP_ButtonsMapping.jpg)
+![ainsi](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth/OpenAVRcBT_JoystickReader/LE3DP_ButtonsMapping.jpg)  
+
+## New ESP32 S3 version
+We work on a new version base on an Super Mini ESP32 S3.  
+
 
 
 
