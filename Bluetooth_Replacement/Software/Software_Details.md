@@ -10,9 +10,11 @@ https://espressif.github.io/arduino-esp32/package_esp32_index.json
 3. Download these [libraries](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Software/libraries.zip).  
 4. Unzip our [software](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Software/).  
 5. Select settings. 
-  - select the board **esp32/ESP32 C3 Dev Module**.  
-  - use settings that follow.  
+  - select the board **esp32/ESP32 C3 Dev Module** or **esp32/ESP32 S3 Dev Module** (for joystick feature only).  
+  - use C3 settings that follow.  
   ![pic](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Software/compilation_C3.png)  
+  - use S3 settings that follow.  
+  ![pic](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Software/compilation_S3.png)  
 6. Compile and upload the sketch.  
 
 With the 1.8c version and more, It's possible to use an [OTA upload mode](OTA_Upload.md).  
