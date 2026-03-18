@@ -51,7 +51,7 @@ and are intended for manual diagnostics via serial or TCP console.
 ---
 
 ## Outline of the documentation
-[Emulation mode hc-05](Emulation_Hc05.md)  
+[How to Use](HowToUseTraining.md)   
 [Architecture Details](Architecture_Details.md)  
 [Software Details](Software/Software_Details.md)  
 [Hardware Details](Hardware/Hardware_Details.md)  
@@ -60,7 +60,7 @@ and are intended for manual diagnostics via serial or TCP console.
 [Wifi Protol Details](WifiXmodem.md)  
 [Debug Details](Debug_Details.md)  
 [Developper Commands](Developper_Cmds.md)  
-[How to Use](HowToUseTraining.md)  
+
 
 ---
 
