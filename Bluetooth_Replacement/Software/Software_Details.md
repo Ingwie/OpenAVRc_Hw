@@ -12,7 +12,7 @@ https://espressif.github.io/arduino-esp32/package_esp32_index.json
 5. Select settings. 
   - select the board **esp32/ESP32 C3 Dev Module**.  
   - use settings that follow.  
-  ![pic](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Software/compilation_settings.png)  
+  ![pic](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Bluetooth_Replacement/Software/compilation_C3.png)  
 6. Compile and upload the sketch.  
 
 With the 1.8c version and more, It's possible to use an [OTA upload mode](OTA_Upload.md).  
