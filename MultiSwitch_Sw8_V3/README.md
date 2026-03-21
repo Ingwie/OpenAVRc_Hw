@@ -9,8 +9,8 @@ It also provides a booster proportional channel to drive a servo or an ESC.
 
 
 ## Ms8 V3 PCB
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3_Top.jpg)  
-![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3_Bot.jpg)  
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3_Top.png)  
+![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3_Bot.png)  
 
 ## Upload Firmware
 - Connect your MS8 V3 to your PC with a USB cable  and lauch the cmd file for upload the firmware.  
