@@ -58,28 +58,43 @@ H?              -> Returns this help
                    Welcome Message "MS8 Vx.y" in the Terminal
 C?              -> Display the full Configuration with status
                    (all the commands listed below)
+C=F             -> Set the Factory default parameters (I=P P=E SR=N Sx=D;N)
 T=CRLF/CR       -> Set the Line Terminator to CRLF or to CR
 T?              -> Return the configured Line Terminator
-I=Interface[Ch] -> Set the RC Interface (P for PWM, C for CPPM, S for SBUS,
-                   Ch is channel (not needed for PWM))
+I=Interf[Ch[;-/+]] -> Set the RC Interface (D for Digital, P for PWM,
+                   C for CPPM, S for SBUS,X for SRXL, U for SUMD, I for IBUS,
+                   F for CRSF), Ch is thechannel NÂ°, optional - or + tunes the
+                   soft serial data rate
 I?              -> Return the configured Interface
-P=MsProto[;N/F] -> Set the Multi-Switch Protocol (MsProto: R for RCUL with N for
-                   Non filtered, F for filtered, F for MS8 Futaba, B for Binary
-                   (for OTX and ETX), P for Push-Button, and E for EKMFA)
+P=MsProto[;Fl][;l] -> Set the Multi-Switch Protocol (MsProto: S for Sequencial
+                   with l=L for Low level and l=H for High level, R for RCUL with
+                   l=Filter level (from 0 to 3), F for MS8 Futaba, B for Binary
+                   (for OTX and ETX), E for EKMFA, P for Push-Button
 P?              -> Return the configured Multi-Switch Protocol
-S0=XXXX         -> If 988 <= XXXX <= 2008, set Prop Servo to the XXXX position in us
-                   If 0 <= XXX <=255, set Prop Value Command
-SR=N/Y          -> Apply reverse (Y) or no reverse (N) for Prop Servo (S0)
+S0=XXXX         -> If 988 <= XXXX <= 2008, set Prop Servo to the XXXX position
+                   in us. If 0 <= XXX <= 255, set Prop Value Command
+SR=N/Y          -> Apply reverse (Y) or no reverse (N) for Prop Output (S0)
+F=FailsafeProp  -> Set the Prop value in case of Failsafe (RC Signal lost)
+F?              -> Return the configured Prop value in case of Failsafe
+M=MsgMapping    -> Set the Mapping in the RCUL Message (needed with P=R;Fl)
+                   For a single MS8 V3, M=PS is recommended. With OpenAVRc
+                   it is possible to use 2 x MS8 V3 on the same channel.
+                   An X-Any instance shall be configured with Prop.x + Sw.16,
+                   M=PIS for the 1st MS8 V3 and M=ISI for the 2nd MS8 V3
+M?              -> Return the configured RCUL Message Mapping
 Sx=D;M          -> Sx is a Digital output in mode M (M=Normal or Pulsed)
                    (x is the id of the ouput from 1 to 8, x = 0 is reserved for
                    the prop Servo)
 Sx=S;M;PosA;PosB;A2BDur[;B2ADur] -> Sx is a Servo output in mode M (M=Normal or
                    Pulsed). PosA us when Cmd=0, PosB us when Cmd=1, Duration
                    between Pos A & B are A2BDur & B2ADur (64000 ms Max)
+Sx=B;M;OnDur[;OffDur] -> Sx is a Blink output in mode M (M=Normal or P=Pulsed)
+                   OnDur and OffDur are On & Off duration in ms (64000 ms Max)
 Sx=0/1          -> Simulate a Cmd=0/1 command for Sx (Nice for test without RC)
 Sx?             -> Return Sx=D;M:C if output x is Digital, or
                    Sx=S;M;PosA;PosB;A2BDur;B2ADur:C if output x is a Servo, or
                    S0=XXX:CCC for Prop Servo (C is the current Command status)
+                   or Sx=B;M;OnDur;OffDur:C if output x is Blink type
 S8=A;N/I        -> Additionaly to Digital and Servo Type, S8 can be configured
                    as pwm Analog output with Normal(N) or Inverted (I) polarity
 S8=xxx[%]       -> When S8 configured as Analog, S8=xxx sets the Cmd Prop Value
@@ -89,7 +104,16 @@ S8?             -> When S8 configured as Analog, the answer to the S8? command
 B=C             -> Start the Button Calibration process
 B?              -> Return the pulse width (in us) associated to each of the
                    8 Buttons: B=xxxx,xxxx,xxxx,xxxx,xxxx,xxxx,xxxx,xxxx
-D=DebugLevel    -> Set the Debug Level
+EN=xx           -> Set the number of stEps if Protocol is Sequence (xx: 1 to 16)
+EN?             -> Return the configured number of stEps of the Sequence
+Exx=Sx+Sy+Sz/OFF-> Set outputs to enable for the stEp number xx (xx: 1 to 16)
+                   OFF means that all the output are disabled for the stEp Exx
+Exx?            -> Return the configured stEp number xx
+EC=+/-/R        -> Set the Current stEp: + to go to next stEp, - to go to the
+                   previous stEp, R to Reset the sequence (all the outputs are
+                   disabled)
+EC?             -> Return the Current of stEp number: xx or R for Reset state
+D=DebugLevel    -> Set the Debug Level: 1 -> Pulse Width, 2 -> Cmd Change
 D?              -> Return the Debug Level
 Q               -> Quit the Terminal Mode and switch to RC Mode.
                    To switch back to Terminal Mode, simply hit Enter
