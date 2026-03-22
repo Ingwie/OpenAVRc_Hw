@@ -37,11 +37,11 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8/D%C3%A9codeur%20MS8_X-Any_3D.jpg)   
 1. MultiSwitch_Sw8 V2
-   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MutltiSwitch_Sw8_V2)
+   * [V1.2](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MutltiSwitch_Sw8_V2)
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V2/MultiSwitch_Sw8_V2.jpg)  
 1. MultiSwitch_Sw8 V3
-   * [V1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MutltiSwitch_Sw8_V3)
+   * [V1.3](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MutltiSwitch_Sw8_V3)
    
    ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/MultiSwitch_Sw8_V3/MultiSwitch_Sw8_V3_Top.png)  
 1. The MS8-Xany card used as an Impulse Sequencer
