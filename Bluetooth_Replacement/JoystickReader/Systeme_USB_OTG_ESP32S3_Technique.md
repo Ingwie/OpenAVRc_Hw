@@ -6,24 +6,24 @@ Ce document décrit **comment** le joystick USB est lu sur ESP32‑S3 en **mode 
 
 ## 1) Contexte matériel (rappel rapide)
 
-- ESP32-S3 utilisé en **USB Host (OTG)**.
-- Joystick USB branché via un adaptateur OTG (USB‑A femelle).
-- Alimentation **VBUS +5V externe** (ex: 5V / 2A) fournie au port USB pour alimenter le joystick.
-- Lignes USB: `VBUS`, `D+`, `D-`, `GND`.
+- ESP32-S3 utilisé en **USB Host (OTG)**.  
+- Joystick USB branché via un adaptateur OTG (USB A femelle).  
+- Alimentation **VBUS +5V externe** (ex: 5V / 2A) fournie au port USB pour alimenter le joystick.  
+- Lignes USB: `VBUS`, `D+`, `D-`, `GND`.  
 
 ---
 
 ## 2) Librairies / composants logiciels utilisés
 
-### 2.1 Arduino‑ESP32 (core Espressif 3.0.7)
-- Fournit l’environnement Arduino, FreeRTOS, et l’accès aux headers ESP‑IDF.
-- Fournit la base **USB Host** via l’ESP‑IDF:
+### 2.1 Arduino ESP32 (core Espressif 3.0.7)
+- Fournit l’environnement Arduino, FreeRTOS, et l’accès aux headers ESP IDF.  
+- Fournit la base **USB Host** via l’ESP IDF:  
   - `usb/usb_host.h`
   - `usb_host_install()`
   - `usb_host_lib_handle_events()`
   - gestion de la pile USB host (énumération, endpoints, etc.)
 
-### 2.2 Bibliothèque **ESP32_USB_Host_HID**
+### 2.2 Bibliothèque ESP32_USB_Host_HID
 Cette bibliothèque fournit le composant **HID Host** manquant dans le core 3.0.7 (ou plus exactement: le header+implémentation HID Host utilisables côté Arduino).
 
 Concrètement, elle fournit:
@@ -73,7 +73,7 @@ usb_host_install(&host_cfg);
 ```
 
 2. **Tâche de gestion des événements USB Host**
-L’ESP‑IDF impose de pomper les événements USB avec:
+L’ESP IDF impose de pomper les événements USB avec:
 ```cpp
 usb_host_lib_handle_events(portMAX_DELAY, &flags);
 ```
@@ -175,8 +175,8 @@ if (now - last_ms >= 20) { ... }
 
 ## 8) Pourquoi FreeRTOS tasks ne “bloquent” pas (si bien utilisées)
 
-- La task USB (`usb_host_lib_handle_events`) est **bloquante** pour ELLE‑MÊME (attente d’événement), pas pour ton programme.
-- `JoystickHidTask()` reste non‑bloquant (il draine une queue en non‑block, fait un peu de traitement, puis rend la main).
+- La task USB (`usb_host_lib_handle_events`) est **bloquante** pour ELLE-MÊME (attente d’événement), pas pour ton programme.
+- `JoystickHidTask()` reste non bloquant (il draine une queue en non‑block, fait un peu de traitement, puis rend la main).
 - Les tâches ne posent problème que si:
   - priorité trop haute + boucle sans attente,
   - sections critiques trop longues,
@@ -187,7 +187,7 @@ if (now - last_ms >= 20) { ... }
 ## 9) Résumé “pipeline”
 
 **Joystick USB**  
-→ (USB OTG Host ESP32‑S3, `usb_host.h`)  
+→ (USB OTG Host ESP32 S3, `usb_host.h`)  
 → (HID Host via lib `ESP32_USB_Host_HID`, `hid_host.h`)  
 → événements CONNECTED / INPUT_REPORT  
 → lecture RAW report  

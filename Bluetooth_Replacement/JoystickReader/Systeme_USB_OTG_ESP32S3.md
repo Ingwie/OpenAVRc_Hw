@@ -30,26 +30,25 @@ Le montage comprend :
   D−           Données USB
   GND          Masse
 
-L'ESP32-S3 pilote les lignes D+ et D−.\
-L'alimentation externe fournit le +5V nécessaire au joystick via VBUS.
+L'ESP32-S3 pilote les lignes D+ et D−.  
+L'alimentation externe fournit le +5V nécessaire au joystick via VBUS.  
+
+![pic](OTG.jpg)  
 
 ------------------------------------------------------------------------
 
 ## Fonctionnement logiciel
 
-1.  Initialisation du **USB Host**
-2.  Installation du driver **HID Host**
-3.  Détection du joystick USB
-4.  Ouverture de l'interface HID
-5.  Réception des rapports (reports)
+1.  Initialisation du **USB Host**  
+2.  Installation du driver **HID Host**  
+3.  Détection du joystick USB 
+4.  Ouverture de l'interface HID  
+5.  Réception des rapports (reports)  
 
-Chaque rapport peut contenir : - Axes (X, Y, Z, Throttle, etc.) -
-Boutons - Hat switch
+Chaque rapport peut contenir : - Axes (X, Y, Z, Throttle, etc.) - Boutons - Hat switch  
 
-Les valeurs sont converties en impulsions **1000--2000 µs (format RC)**.
-
-Les canaux sont ensuite envoyés sous forme de **trame TF via module
-HC05**.
+Les valeurs sont converties en impulsions **1000--2000 µs (format RC)**.  
+Les canaux sont ensuite envoyés sous forme de **trame TF via module HC05**.  
 
 ------------------------------------------------------------------------
 
@@ -67,9 +66,9 @@ HC05**.
 
 ## Résumé global
 
-Joystick USB\
-→ USB OTG (ESP32-S3 en mode Host)\
-→ Décodage HID\
-→ Conversion en canaux RC (1000--2000 µs)\
-→ Génération trame TF\
-→ Transmission via Bluetooth (HC05)
+Joystick USB  
+→ USB OTG (ESP32-S3 en mode Host)  
+→ Décodage HID  
+→ Conversion en canaux RC (1000--2000 µs)  
+→ Génération trame TF  
+→ Transmission via Bluetooth (HC05)  

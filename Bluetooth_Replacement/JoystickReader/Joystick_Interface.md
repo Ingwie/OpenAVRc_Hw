@@ -13,6 +13,9 @@ joyout <x> : tf=HC05_JOYSTICK  p2p=PPM2PPM_JOYSTICK
 2. L'interface simule un signal binaire **p2p** compatible avec toute radio non OpenAVRc.  
    Utiliser la commande **joyout p2p**  
 
+Dtails [ici](Systeme_USB_OTG_ESP32S3.md)  
+Détails Technique [ici](Systeme_USB_OTG_ESP32S3_Technique.md)
+
 # Réaliser le câblage
 
 
