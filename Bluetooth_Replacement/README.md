@@ -57,6 +57,7 @@ and are intended for manual diagnostics via serial or TCP console.
 [Hardware Details](Hardware/Hardware_Details.md)  
 [Transmitters Settings](Transmitters_Settings.md)  
 [Wiring Details](Wiring.md)  
+[Joystick Interface](JoystickReader/Joystick_Interface.md)  
 [Wifi Protol Details](WifiXmodem.md)  
 [Debug Details](Debug_Details.md)  
 [Developper Commands](Developper_Cmds.md)  
