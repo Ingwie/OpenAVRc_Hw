@@ -108,7 +108,6 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
 1. Sound&SmokeModule
    * [V1.1](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Sound&SmokeModule)
-   
       ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Sound%26SmokeModule/v1.1/Sound%26Smoke_Top-v1.1.jpg)  
 	  
 1. Futaba FP-S148/S3003 replacement
