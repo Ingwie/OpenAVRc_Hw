@@ -61,7 +61,7 @@ and are intended for manual diagnostics via serial or TCP console.
 [Wifi Protol Details](WifiXmodem.md)  
 [Debug Details](Debug_Details.md)  
 [Developper Commands](Developper_Cmds.md)  
-
+[EspNow Widget Option](https://github.com/pierrotm777/My-EdgeTx-Widgets/tree/main/EspNow/README.md)  
 
 ---
 
