@@ -1,0 +1,23 @@
+Voilà le firmware MS8 V3.4_RC1 qui permet de commander par le contact N°8 la sortie S8 configurée en sortie Analogique:
+
+1) Piloté en mode Digital avec le 8e bit:
+A8=64       configure la valeur PWM (0-255) quand la commande Digital = 1
+S8=A;N;D;P  configure la sortie S8 en sortie Analogique, pwm Non-inversé, commandé en Digital, et en mode imPulsionnel
+
+2) Si tu veux piloter en Proportionnel la sortie S8 configurée en sortie Analogique, tu fais:
+
+F=128       configure la valeur de Failsafe (0-255) de la valeur Prop du message RCUL/Xany
+S8=A;N;P    configure la sortie S8 en sortie Analogique, pwm Non-inversé, commandé en Proportionnel
+
+La nouvelle commande A8 (Analog 8) permet de définir la valeur de PWM à appliquer quand la commande se S8 vaut 1.
+Cela permet avec RCUL/Xany de piloter S0 avec la valeur du champ Prop du message RCUL/Xany et de commander la sortie Ana S8 à partir du 8e bit du champ SW du message RCUL/Xany. Comme ça, la valeur de Failsafe n'est utilisée que pour la valeur Prop en cas de perte de signal RC et est indépendante de la valeur A8 utilisée pour S8 en Ana.
+
+C'était une assez grosse modif, j'ai pu faire des régressions. J'ai fait pas mal de tests à l'arrache, c'était bon.
+J'ai été obligé de réduire l'aide car j'ai atteint la limité de la mémoire flash avec cette dernière modif!
+Donc, l'aide H? est un peu moins facile à lire.
+
+Toi, tu dois faire un S8=A;N;D;P
+Et tu règles la tension avec A8=0 à 255
+Tu contrôle avec le BP8.(En impulsionnel)
+
+Philippe
