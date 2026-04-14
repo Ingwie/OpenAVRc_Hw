@@ -53,7 +53,9 @@ and are intended for manual diagnostics via serial or TCP console.
 ## Outline of the documentation
 [How to Use](HowToUseTraining.md)   
 [Architecture Details](Architecture_Details.md)  
-[Software Details](Software/Software_Details.md)  
+[Software Compilation Sources](Software/Software_Compilation.md)  
+[Software Upload firmware OTA mode](Software/Software_Upload_OTA.md)  
+[Software Upload firmware Flash Tool](Software/Software_Upload_FlashTool.md)  
 [Hardware Details](Hardware/Hardware_Details.md)  
 [Transmitters Settings](Transmitters_Settings.md)  
 [Wiring Details](Wiring.md)  
