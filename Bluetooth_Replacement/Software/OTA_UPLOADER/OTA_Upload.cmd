@@ -1,17 +1,17 @@
 @echo off
 
-set ESP_IP=192.168.xx.xx
-set HOST_IP=192.168.xx.xx
+set ESP_IP=192.168.0.31
+set HOST_IP=192.168.0.21
 set OTA_PORT=3232
 set OTA_PASS=oavrc
 
-if "%1"=="" (
+if "%~1"=="" (
     echo Drag and drop your .ino.bin file onto this script.
     pause
     exit /b
 )
 
-set BIN_FILE=%1
+set "BIN_FILE=%~1"
 
 echo.
 echo === OTA Upload to %ESP_IP% ===
