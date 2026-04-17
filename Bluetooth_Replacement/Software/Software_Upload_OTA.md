@@ -10,9 +10,11 @@ If your ESP32 has never been programmed with OTA firmware, you will need to load
 2. Open a console terminal, [Tera Term](https://github.com/TeraTermProject/teraterm/releases/download/v5.6.0/teraterm-5.6.0-x64.exe), or [Termite](https://www.compuphase.com/software/termite-3.4.exe) or [CoolTerm](https://coolterm.en.lo4d.com/download/mirror-ls1).  
    - Select the ESP32's COM port and 115200 bauds.  
    - Type **creds** command return you ESP32 IP address.  
+    If the SSID and password have never been entered, type the commands `ssid xxx` and `pass yyy`, where xxx is your Wi-Fi connection name and yyy is your password.  
+	The **creds** command will give you the entered data.  
    
 	```
-	[STA] ssid='kristie33140' passLen=9
+	[STA] ssid='xxx' passLen=9
 	[NET] ESP32 IP : 192.168.0.31
 	```
    - Open a cmd window and type **ipcong** command.  
