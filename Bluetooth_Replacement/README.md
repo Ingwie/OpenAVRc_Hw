@@ -53,10 +53,13 @@ and are intended for manual diagnostics via serial or TCP console.
 ## Outline of the documentation
 [How to Use](HowToUseTraining.md)   
 [Architecture Details](Architecture_Details.md)  
-[Software Compilation Sources](Software/Software_Compilation.md)  
-[Software Upload firmware OTA mode](Software/Software_Upload_OTA.md)  
-[Software Upload firmware Flash Tool](Software/Software_Upload_FlashTool.md)  
-[Hardware Details](Hardware/Hardware_Details.md)  
+
+Software upload solutions:  
+1.[Software Compilation Sources](Software/Software_Compilation.md)  
+2.[Software Upload firmware Flash Tool](Software/Software_Upload_FlashTool.md)  
+3.[Software Upload firmware OTA mode](Software/Software_Upload_OTA.md)  
+
+[OpenAVRc Update Details](Hardware/OpenAVRc_Update_Details.md)  
 [Transmitters Settings](Transmitters_Settings.md)  
 [Wiring Details](Wiring.md)  
 [Joystick Interface](JoystickReader/Joystick_Interface.md)  

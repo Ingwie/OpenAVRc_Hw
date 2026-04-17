@@ -40,8 +40,8 @@ It accept CPPM and SBUS ouput or CPPM and SBUS input .
 ![](ESPNOW_Trainer.png)  
 
 ## PCB
-![](ESPNOW_Trainer_Top.jpg)
-![](ESPNOW_Trainer_Bot.jpg)  
+![](JR_Bay/ESPNOW_Trainer_Top-v1.1.jpg)
+![](JR_Bay/ESPNOW_Trainer_Bot-v1.1.jpg)  
 
 ## How to use
 These commands are intended for diagnostics and configuration.
