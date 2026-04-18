@@ -1,6 +1,6 @@
 @echo off
 
-set ESP_IP=192.168.0.31
+set ESP_IP=192.168.0.46
 set HOST_IP=192.168.0.21
 set OTA_PORT=3232
 set OTA_PASS=oavrc
