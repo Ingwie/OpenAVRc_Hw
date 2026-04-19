@@ -41,8 +41,9 @@ It accept CPPM and SBUS ouput or CPPM and SBUS input .
 
 ## PCB
 | ** Top view ** | ** Bottom view ** |
-| :---: | :---: | :---: |
-| <img src="JR_Bay/ESPNOW_Trainer_Top-v1.1.jpg" width="150" /> | <img src="JR_Bay/ESPNOW_Trainer_Bot-v1.1.jpg" width="150" />|  
+| :---: | :---: |
+| <img src="JR_Bay/ESPNOW_Trainer_Top-v1.1.jpg" width="150" /> | <img src="JR_Bay/ESPNOW_Trainer_Bot-v1.1.jpg" width="150" />|
+
 ### PCB v1.0 change
 Due to a programming change, on version v1.0 of the PCB, the button was moved from pin 10 to pin 9.  
 It is therefore necessary to cut the connection between J3 and pin 10 and make a connection between J3 and pin 9.  
