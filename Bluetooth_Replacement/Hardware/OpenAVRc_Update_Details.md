@@ -40,8 +40,13 @@ It accept CPPM and SBUS ouput or CPPM and SBUS input .
 ![](ESPNOW_Trainer.png)  
 
 ## PCB
-![](JR_Bay/ESPNOW_Trainer_Top-v1.1.jpg)
-![](JR_Bay/ESPNOW_Trainer_Bot-v1.1.jpg)  
+| ** Top view ** | ** Bottom view ** |
+| :---: | :---: | :---: |
+| <img src="JR_Bay/ESPNOW_Trainer_Top-v1.1.jpg" width="150" /> | <img src="JR_Bay/ESPNOW_Trainer_Bot-v1.1.jpg" width="150" />|  
+### PCB v1.0 change
+Due to a programming change, on version v1.0 of the PCB, the button was moved from pin 10 to pin 9.  
+It is therefore necessary to cut the connection between J3 and pin 10 and make a connection between J3 and pin 9.  
+![](JR_Bay/v1.0_mod.png)  
 
 ## How to use
 These commands are intended for diagnostics and configuration.
@@ -54,21 +59,27 @@ They do not interfere with OpenAVRc operation.
   s              -> force ROLE=SLAVE  (0)
   ssid <name>    -> set/save STA ssid
   pass <pass>    -> set/save STA password
-  creds          -> show saved STA creds (ssid + pass length)
+  creds          -> show saved STA creds + ESP32 IP
+  delcreds       -> delete saved STA creds (ssid + pass length)
   moutput  <x>   -> set/save MASTER output: 0=PPM 1=SBUS 2=HC05 3=PPM2PPM (reboot)
   sinput   <x>   -> set/save SLAVE   input: 0=PPM 1=SBUS 2=HC05 3=PPM2PPM (reboot)
   ppmpulse <x>   -> set CPPM pulse mode (0=PPM POS, 1=PPM NEG)
   scan [ms]      -> MASTER: ESPNOW scan (like AT+INQ) and list responders
   scan link      -> MASTER: ESPNOW scan and link to SLAVE
+  dellink        -> delete ESPNOW link
+  delprefs       -> delete all preferences
   i              -> info
   d              -> toggle BT debug (sniff UART BT, decode tf frames, show DATA-RX)
-  dtf            -> toggle BT count tf stream from SLAVE
-  sg             -> toggle Slave  TF generator (simulate student data)
+  dtf            -> toggle BT MASTER count tf stream from SLAVE
+  sg             -> toggle SLAVE  TF generator (simulate student data)
+  mg             -> toggle MASTER TF generator (simulate student data)
   w              -> show FT state
   w ap           -> start FT in AP mode (OpenAVRc-FT / openavrc123)
   w sta          -> start FT in STA mode using saved creds
   w sta <s> <p>  -> start FT in STA mode + save creds
   w off          -> stop FT and return normal
+  ota 1          -> enable OTA update window for 300s (uses saved STA creds, pauses ESPNOW/FT bridge)
+  ota 0          -> disable OTA window (and stop STA if started by ota)
   at?            -> at Commands help
   diag           -> version and more
   diag tf        -> diagnostic tf stream
