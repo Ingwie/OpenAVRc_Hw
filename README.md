@@ -124,6 +124,11 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    * [v1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/PCB%20Shield/Adaptateur_Connecteur_20pts_shield)  
    
 	  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/PCB%20Shield/Adaptateur_Connecteur_20pts_shield/3D_view.png)  
+
+1. BURC/Xany encoder by 4 potentiometers 
+   * [v1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/BurcAnaTx)
+   
+	  ![here]()  
 	  
 ## Users OpenAVRc Transmitter Builds
 * [Bracame Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Bracame/README.md)
