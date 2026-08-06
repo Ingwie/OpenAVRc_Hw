@@ -21,3 +21,6 @@ By simulating movements of varying speeds, the AD5282 generate a digital signal 
 
 It is also possible to use a new potentiometer in parallel with the 8 to 16 switches.  
 A final option is to use a 0–360° angular sensor and a potentiometer to control up to 4 azimuth motors.  
+
+The module's four outputs support radios with potentiometers powered by voltages ranging from +5V up to a maximum of 15V.  
+Each output is polarized; the positive (+) pin must be connected to the input's positive terminal, and the negative (-) pin to the input's negative terminal.  
