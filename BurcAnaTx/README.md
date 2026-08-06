@@ -6,7 +6,7 @@ This module allows to transmit an **RCUL / X-Any** stream via a radio control an
 
 ## Wiring
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14.png)  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14_coder.png)  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14_coder.jpg)  
 Here is the interior of an old radio transmitter.  
 You can see the wiring for the two proportional sticks.  
 This radio also features proportional inputs for additional potentiometers or switches.  
