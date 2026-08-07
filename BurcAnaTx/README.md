@@ -13,7 +13,7 @@ You can see the wiring for the two proportional sticks.
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_1.jpg)  
 
 Here is the interior of a Protronik PTR-6A radio transmitter.  
-You can see the wiring for the two proportional sticks.  
+You can see the wiring for the two proportional sticks and more precisely, the wiring of channels 5 and 6.  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_2.jpg)  ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_3.jpg)  
 
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14_coder.jpg)  
