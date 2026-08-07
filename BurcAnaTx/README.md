@@ -1,5 +1,23 @@
 # BurcAnaTx coder
-This module allows to transmit an **RCUL / X-Any** stream via a radio control analog input by replacing the channel's potentiometer with an I²C digital potentiometer.
+In an RC transmitter, the BurcAnaTx module can connect to up to 4 proportional channels.  
+The proportional channels can be spare ones, or can reuse accessories potentiometers channels or unused stick potentiometers.  
+
+BurcAnaTx injects in each connected proportional channel a digital data stream (RCUL / X-Any protocol) which allows adding to the transmitter the following RC extensions:  
+- 8 native contacts, or 8/16 contact I/O I2C extenders  
+- An Analog poportional value (the accessorie potentiometer can be reused!)  
+- A 360° angular I2C Sensor  
+
+When using 4 proportional channels, the BurcAnaTx can transmit simultanously and independantly up to:  
+- 4 x 16 Contacts states (64 contacts)  
+- 4 x analog values  
+- 4 x 360° angular values  
+
+At receiver side, on each used channel, a decoder shall be connected to retrieve the sent informations:  
+- For 8   Contacts + 1 x Analog value: MS8-Any Mulitswitch decoder  
+- For 16 Contacts + 1 x Analog value: MS16-Any Mulitswitch decoder  
+- For 360° Angle value: Decoder still under development  
+
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/Switch.png)  
 
 ## Schematic
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/PCB/BurcAnaTx_sch.png)  
