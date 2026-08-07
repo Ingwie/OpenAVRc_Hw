@@ -7,8 +7,14 @@ This module allows to transmit an **RCUL / X-Any** stream via a radio control an
 ## Wiring
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14.png)  
 
-Here is the interior of an old radio transmitter.  
+Here is the interior of a Futaba F14 radio transmitter.  
 You can see the wiring for the two proportional sticks.  
+
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_1.jpg)  
+
+Here is the interior of a Protronik PTR-6A radio transmitter.  
+You can see the wiring for the two proportional sticks.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_2.jpg)  ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_3.jpg)  
 
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14_coder.jpg)  
 
