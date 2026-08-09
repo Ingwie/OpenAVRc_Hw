@@ -42,6 +42,13 @@ However, any of the other three channels could also be used, as they are fully p
 The module's four outputs support radios with potentiometers powered by voltages ranging from +5V up to a maximum of 15V.  
 Each output is polarized; the positive (+) pin must be connected to the input's positive terminal, and the negative (-) pin to the input's negative terminal.  
 
+#Calibration
+Every RC transmitter is different.  
+The RculAnaTx module must be synchronized as precisely as possible with the radio system.  
+The module features a calibration mode that allows it to be calibrated.  
+The process involves sending several messages to the receiver and reading back the message returned by the receiver.  
+The module optimizes each sent message based on what the receiver receives.  
+
 ## Compatibles modules usable with BURC
 All these modules behind
 - [Ms8 v3](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V3)  
