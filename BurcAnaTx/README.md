@@ -42,7 +42,7 @@ However, any of the other three channels could also be used, as they are fully p
 The module's four outputs support radios with potentiometers powered by voltages ranging from +5V up to a maximum of 15V.  
 Each output is polarized; the positive (+) pin must be connected to the input's positive terminal, and the negative (-) pin to the input's negative terminal.  
 
-#Calibration
+## Calibration
 Every RC transmitter is different.  
 The RculAnaTx module must be synchronized as precisely as possible with the radio system.  
 The module features a calibration mode that allows it to be calibrated.  
