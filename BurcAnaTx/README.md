@@ -23,28 +23,21 @@ At receiver side, on each used channel, a decoder shall be connected to retrieve
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/PCB/BurcAnaTx_sch.png)  
 
 ## Wiring
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14.png)  
-
 Here is the interior of a Futaba F14 radio transmitter.  
-You can see the wiring for the two proportional sticks.  
-
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_1.jpg)  
-
-Here is the interior of a Protronik PTR-6A radio transmitter.  
-You can see the wiring for the two proportional sticks and more precisely, the wiring of channels 5 and 6.  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_2.jpg)  ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_3.jpg)  
-
+You can see the wiring for the two proportional sticks and the coder board.  
+This radio controller also features proportional inputs for additional potentiometers or switches.
+We will use one of the 7 inputs on the encoder board. It is best to use channels 5 through 7 to keep the stick channels functional.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14.png)  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14_coder.jpg)  
 
-This radio also features proportional inputs for additional potentiometers or switches.  
-We will use one of these extra inputs to connect our RcilI2CPotTx encoder.  
+Another RC transmitter we will use for testing is the Protronik PTR-6A.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_1.jpg)  
 
-Each channel of the BurcAnaTx module acts as an interface between four sets of 8 to 16 switches and the radio's proportional inputs.  
-The two AD5282 chips are dual digital potentiometers.  
-By simulating movements of varying speeds, the AD5282 generate a digital signal that reflects the positions of the various switches.  
-
-It is also possible to use a new potentiometer in parallel with the 8 to 16 switches.  
-A final option is to use a 0–360° angular sensor and a potentiometer to control up to 4 azimuth motors.  
+You can see the wiring for the two proportional sticks and more precisely, the wiring of channels 5 and 6.  
+On this PTR-6A, channels 5 and 6 cannot be used because they are not fully proportional; the radio only recognizes the positions 1000, 1500, and 2000 milliseconds.  
+The only solution is to repurpose one of the four channels corresponding to the sticks. I am going to use channel 3, which corresponds to the right-hand vertical axis.  
+However, any of the other three channels could also be used, as they are fully proportional.  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_2.jpg)  ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_3.jpg)  
 
 The module's four outputs support radios with potentiometers powered by voltages ranging from +5V up to a maximum of 15V.  
 Each output is polarized; the positive (+) pin must be connected to the input's positive terminal, and the negative (-) pin to the input's negative terminal.  
