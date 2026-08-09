@@ -47,7 +47,8 @@ Every RC transmitter is different.
 The RculAnaTx module must be synchronized as precisely as possible with the radio system.  
 The module features a calibration mode that allows for optimizing the quality of messages received by the receiver.  
 The process involves sending several messages to the receiver and reading back the message returned by the receiver.  
-It is still possible to improve the quality of received messages by repeating the message several times. However, this causes the message to take longer to reach the receiver.  
+It is still possible to improve the quality of received messages by repeating the message several times.  
+However, this causes the message to take longer to reach the receiver.  
 
 ## Compatibles modules usable with BURC
 All these modules behind
