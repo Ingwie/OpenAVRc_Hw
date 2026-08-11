@@ -27,25 +27,11 @@ At receiver side, on each used channel, a decoder shall be connected to retrieve
   <tr>
     <td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/F14/Futaba_F14.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/F14/F14_Top.jpg" border="0" name="submit" title="Futaba F14 Navy" alt="Futaba F14 Navy"/></a><br><b>Futaba F14 Navy</b></td>
 	<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/6014/6014.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/6014/6014_Top.png" border="0" name="submit" title="Varioprop 6014" alt="Varioprop 6014"/></a><br><b>Varioprop 6014</b></td>
-	<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A_Top.png" border="0" name="submit" title="PTR-6A_1" alt="PTR-6A_1"/></a><br><b>PTR-6A_1</b></td>
-	<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/y.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/y.jpg" border="0" name="submit" title="Graupner 2-16K Nautic Expert" alt="Graupner 2-16K Nautic Expert"/></a><br><b>2-16K Nautic Expert (Project in progress)</b></td>
+	<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A_Top.png" border="0" name="submit" title="PTR-6A_1" alt="PTR-6A"/></a><br><b>PTR-6A</b></td>
+	<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/xxx.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/xxx.jpg" border="0" name="submit" title="xxx" alt="xxx"/></a><br><b>xxx</b></td>
   </tr>
 </table>
-Here is the interior of a Futaba F14 radio transmitter.  
-You can see the wiring for the two proportional sticks and the coder board.  
-This radio controller also features proportional inputs for additional potentiometers or switches.  
-We will use one of the 7 inputs on the encoder board. It is best to use channels 5 through 7 to keep the stick channels functional.  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14.png)  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/f14_coder.jpg)  
 
-Another RC transmitter we will use for testing is the Protronik PTR-6A.  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_1.jpg)  
-
-You can see the wiring for the two proportional sticks and more precisely, the wiring of channels 5 and 6.  
-On this PTR-6A, channels 5 and 6 cannot be used because they are not fully proportional; the radio only recognizes the positions 1000, 1500, and 2000 milliseconds.  
-The only solution is to repurpose one of the four channels corresponding to the sticks. I am going to use channel 3, which corresponds to the right-hand vertical axis.  
-However, any of the other three channels could also be used, as they are fully proportional.  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_2.jpg)  ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A_3.jpg)  
 
 The module's four outputs support radios with potentiometers powered by voltages ranging from +5V up to a maximum of 15V.  
 Each output is polarized; the positive (+) pin must be connected to the input's positive terminal, and the negative (-) pin to the input's negative terminal.  
