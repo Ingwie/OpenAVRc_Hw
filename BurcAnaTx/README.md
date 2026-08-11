@@ -17,12 +17,20 @@ At receiver side, on each used channel, a decoder shall be connected to retrieve
 - For 16 Contacts + 1 x Analog value: MS16-Any Mulitswitch decoder  
 - For 360° Angle value: Decoder still under development  
 
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/Switch.png)  
+![](/doc/Switch.png)  
 
 ## Schematic
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/PCB/BurcAnaTx_sch.png)  
+![](/PCB/BurcAnaTx_sch.png)  
 
 ## Wiring
+<table cellspacing=0>
+  <tr>
+    <td align=center width=200><a href="/doc/Futaba_F14.md"><img src="/doc/F14_Top.jpg" border="0" name="submit" title="Futaba F14 Navy" alt="Futaba F14 Navy"/></a><br><b>Futaba F14 Navy</b></td>
+	<td align=center width=200><a href="/doc/PTR-6A.md"><img src="/doc/PTR-6A_Top.png" border="0" name="submit" title="PTR-6A_1" alt="PTR-6A_1"/></a><br><b>PTR-6A_1</b></td>
+	<td align=center width=200><a href="/doc/x.md"><img src="/doc/x.jpg" border="0" name="submit" title="Beier USM_RC_2" alt="Beier USM_RC_2"/></a><br><b>Beier USM_RC_2</b></td>
+	<td align=center width=200><a href="/doc/y.md"><img src="h/doc/y.jpg" border="0" name="submit" title="Graupner 2-16K Nautic Expert" alt="Graupner 2-16K Nautic Expert"/></a><br><b>2-16K Nautic Expert (Project in progress)</b></td>
+  </tr>
+</table>
 Here is the interior of a Futaba F14 radio transmitter.  
 You can see the wiring for the two proportional sticks and the coder board.  
 This radio controller also features proportional inputs for additional potentiometers or switches.  
