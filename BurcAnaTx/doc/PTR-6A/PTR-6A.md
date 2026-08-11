@@ -20,5 +20,5 @@ I am going to use channel 3, which corresponds to the right-hand vertical axis.
 However, any of the other three channels could also be used, as they are fully proportional.  
 
 ## Derivation of the CH3 channel
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A_Top.png)  
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/CH3_Mod.jpg)  
 
