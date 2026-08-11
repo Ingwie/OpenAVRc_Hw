@@ -19,12 +19,11 @@ At receiver side, on each used channel, a decoder shall be connected to retrieve
 
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/Switch.png)  
 
-## Schematic
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/PCB/BurcAnaTx_sch.png)  
-
-## Wiring
+## Which transmitter should I use
 I have selected several potential candidates for this project.  
 The key is to choose a transmitter that allows for the addition of at least eight switches. Here are several suitable transmitters.  
+In the case of the Protronik PTR-6A, it is impossible to integrate the switches into the transmitter's front panel.  
+The solution is to add a housing containing the switches and attach and connect it to the transmitter.  
 
 <table cellspacing=0>
   <tr>
@@ -35,7 +34,10 @@ The key is to choose a transmitter that allows for the addition of at least eigh
   </tr>
 </table>
 
+## Schematic
+![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/PCB/BurcAnaTx_sch.png)  
 
+## Wiring
 The module's four outputs support radios with potentiometers powered by voltages ranging from +5V up to a maximum of 15V.  
 Each output is polarized; the positive (+) pin must be connected to the input's positive terminal, and the negative (-) pin to the input's negative terminal.  
 
