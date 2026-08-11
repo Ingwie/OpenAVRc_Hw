@@ -23,6 +23,9 @@ At receiver side, on each used channel, a decoder shall be connected to retrieve
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/PCB/BurcAnaTx_sch.png)  
 
 ## Wiring
+I have selected several potential candidates for this project.  
+The key is to choose a transmitter that allows for the addition of at least eight switches. Here are several suitable transmitters.  
+
 <table cellspacing=0>
   <tr>
     <td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/F14/Futaba_F14.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/F14/F14_Top.jpg" border="0" name="submit" title="Futaba F14 Navy" alt="Futaba F14 Navy"/></a><br><b>Futaba F14 Navy</b></td>
