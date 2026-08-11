@@ -2,7 +2,6 @@
 Another RC transmitter we will use for testing is the Protronik PTR-6A.  
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A_Top.png)  
 
-You can see the wiring for the two proportional sticks and more precisely, the wiring of channels 5 and 6.  
 On this PTR-6A, channels 5 and 6 cannot be used because they are not fully proportional; the radio only recognizes the positions 1000, 1500, and 2000 milliseconds.  
 
 <table border="2">
@@ -22,8 +21,9 @@ However, any of the other three channels could also be used, as they are fully p
 ## Derivation of the CH3 channel
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/CH3_Mod.jpg)  
 
+You can see the wiring for the two proportional sticks, *CH1 to CH4 channels*.  
 I recommend adding a switch to select between the standard CH3 mode and the RculAnaTx mode.  
-The CH3 channel potentiometer has three wires: white (3.3V), black (GND), and red (connected to the potentiometer's wiper/center terminal).  
+The CH3 channel potentiometer has three wires: white **(3.3V)**, black **(GND)**, and **red** (connected to the potentiometer's wiper/center terminal).  
 You need to reroute the red wire. Since the red wire normally connects to the transmitter's analog input, you must unsolder it from the potentiometer and connect it to the center terminal of the switch.  
 One side of the switch will connect to the potentiometer's center terminal, while the other side will connect to the output of the RculAnaTx encoder.  
 
