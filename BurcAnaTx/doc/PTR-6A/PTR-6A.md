@@ -22,6 +22,11 @@ However, any of the other three channels could also be used, as they are fully p
 ## Derivation of the CH3 channel
 ![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/CH3_Mod.jpg)  
 
+I recommend adding a switch to select between the standard CH3 mode and the RculAnaTx mode.  
+The CH3 channel potentiometer has three wires: white (3.3V), black (GND), and red (connected to the potentiometer's wiper/center terminal).  
+You need to reroute the red wire. Since the red wire normally connects to the transmitter's analog input, you must unsolder it from the potentiometer and connect it to the center terminal of the switch.  
+One side of the switch will connect to the potentiometer's center terminal, while the other side will connect to the output of the RculAnaTx encoder.  
+
 The radio's microprocessor operates at 3.3V, whereas the Mini Nano requires 5V.  
 This Arduino features a Vin input that supports up to approximately 12V and generates its own 5V supply.  
 The transmitter is powered by a 2S LiPo battery (7.4V), which will also be used to supply power to the Nano's Vin pin.  
