@@ -27,8 +27,8 @@ At receiver side, on each used channel, a decoder shall be connected to retrieve
   <tr>
     <td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/F14/Futaba_F14.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/F14/F14_Top.jpg" border="0" name="submit" title="Futaba F14 Navy" alt="Futaba F14 Navy"/></a><br><b>Futaba F14 Navy</b></td>
 	<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/6014/6014.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/6014/6014_Top.png" border="0" name="submit" title="Varioprop 6014" alt="Varioprop 6014"/></a><br><b>Varioprop 6014</b></td>
-	<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A_Top.png" border="0" name="submit" title="PTR-6A_1" alt="PTR-6A"/></a><br><b>PTR-6A</b></td>
 	<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/MULTIPLEX/Multiplex.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/MULTIPLEX/Multiplex_Top.jpg" border="0" name="submit" title="Multiplex" alt="Multiplex"/></a><br><b>Multiplex</b></td>
+	<td align=center width=200><a href="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A.md"><img src="https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A_Top.png" border="0" name="submit" title="PTR-6A_1" alt="PTR-6A"/></a><br><b>PTR-6A</b></td>
   </tr>
 </table>
 
