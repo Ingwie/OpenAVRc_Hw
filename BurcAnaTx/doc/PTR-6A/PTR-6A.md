@@ -41,5 +41,10 @@ With synchronization enabled, the number of repetitions can be reduced or even e
 In the case of the PTR-6A, the **CPPM signal is available only when the transmitter is used with a simulator**; in this instance, the **RF transmission is disabled**.  
 Therefore, this option is not available for this transmitter.  
 
+## Callback Synchronization
+To improve the receiver's reception quality for the RCUL message, the encoder repeats the same message multiple times, which increases the time required to receive it.  
+To mitigate this delay, the module can be synchronized with a signal found into the transmitter (depending on the transmitter used); this is known as **CallBack mode**.  
+In the case of the **PTR-6A** transmitter, I found a signal named **GDO0** connected to the CC2500 RF module.  
+This is the signal that will serve for synchronization.  
 
 
