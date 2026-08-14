@@ -49,6 +49,10 @@ The process involves sending several messages to the receiver and reading back t
 It is still possible to improve the quality of received messages by repeating the message several times.  
 However, this causes the message to take longer to reach the receiver.  
 
+## Synchronization
+To improve the receiver's reception quality for the RCUL message, the encoder repeats the same message multiple times, which increases the time required to receive it.  
+To mitigate this delay, the module can be synchronized with either a standard CPPM signal (positive or negative) or another type of signal (depending on the radio used); this is known as **CallBack mode**.  
+
 ## Compatibles modules usable with BURC
 All these modules behind
 - [Ms8 v3](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/MultiSwitch_Sw8_V3)  
