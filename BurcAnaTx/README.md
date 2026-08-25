@@ -56,8 +56,9 @@ To mitigate this delay, the module can be synchronized with either a standard CP
 1. **CPPM Synchronization**  
 > [!WARNING]  
 > **The CPPM signal from some older radios can exceed 5V, the maximum level supported by an Arduino**.  
-> **For ESP32s, the maximum level is even lower, at 3.3V. It is important to use a voltage divider made up of two resistors**.  
-> You can use the Digi-Key page to calculate this [resistor divider](https://www.digikey.fr/en/resources/conversion-calculators/conversion-calculator-voltage-divider?_gl=1*nquchn*_up*MQ..&gclid=Cj0KCQjw6_HSBhCpARIsANvVltZ6PM05v1tbt--6IqpEt2y5AXY3PxShBSuO0Jg-KN0VGJ7S6ODAo6AaAkwBEALw_wcB&gclsrc=aw.ds).  
+> **For ESP32s, the maximum level is even lower, at 3.3V**.  
+> **It is important to use a voltage divider made up of two resistors**.  
+> **You can use the Digi-Key page to calculate this** [resistor divider](https://www.digikey.fr/en/resources/conversion-calculators/conversion-calculator-voltage-divider?_gl=1*nquchn*_up*MQ..&gclid=Cj0KCQjw6_HSBhCpARIsANvVltZ6PM05v1tbt--6IqpEt2y5AXY3PxShBSuO0Jg-KN0VGJ7S6ODAo6AaAkwBEALw_wcB&gclsrc=aw.ds).  
 ```
 EXAMPLE OF POSITIVE AND NEGATIVE CPPM FRAME TRANSPORTING 2 RC CHANNELS
 ======================================================================
