@@ -52,6 +52,9 @@ However, this causes the message to take longer to reach the receiver.
 ## Synchronization
 To improve the receiver's reception quality for the RCUL message, the encoder repeats the same message multiple times, which increases the time required to receive it.  
 To mitigate this delay, the module can be synchronized with either a standard CPPM signal (positive or negative) or another type of signal (depending on the radio used); this is known as **CallBack mode**.  
+**The CPPM signal from some older radios can exceed 5V, the maximum level supported by an Arduino**.  
+**For ESP32s, the maximum level is even lower, at 3.3V. It is important to use a voltage divider made up of two resistors**.  
+You can use the Digi-Key page to calculate this [resistor divider](https://www.digikey.fr/en/resources/conversion-calculators/conversion-calculator-voltage-divider?_gl=1*nquchn*_up*MQ..&gclid=Cj0KCQjw6_HSBhCpARIsANvVltZ6PM05v1tbt--6IqpEt2y5AXY3PxShBSuO0Jg-KN0VGJ7S6ODAo6AaAkwBEALw_wcB&gclsrc=aw.ds).  
 
 ## Compatibles modules usable with BURC
 All these modules behind
