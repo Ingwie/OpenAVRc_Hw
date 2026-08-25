@@ -91,7 +91,7 @@ For the Protronik PTR-6A transmitter, I identified a signal at a test point labe
 This signal controls the transmitter's CC2500 RF module (using the FlyDream V3 format) and is specific to this transmitter.  
 Analysis made it possible to synchronize with this signal in order to transmit RCUL messages at the optimal moment.  
 As each transmitter is different, this mode requires creating a specific CallBack mode.
-Currently, only the (PTR-6A)[doc/PTR-6A/PTR-6A.md] offers this option.  
+Currently, only the [PTR-6A](doc/PTR-6A/PTR-6A.md) offers this option.  
 
 ## Compatibles modules usable with BURC
 All these modules behind
