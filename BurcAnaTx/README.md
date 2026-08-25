@@ -90,7 +90,7 @@ EXAMPLE OF POSITIVE AND NEGATIVE CPPM FRAME TRANSPORTING 2 RC CHANNELS
 ```
 2. **CallBack Synchronization**  
 The "CallBack" synchronization mode allows for synchronization with an arbitrary signal.  
-As each transmitter is different, this mode requires creating a specific CallBack mode.
+As each transmitter is different, this mode requires creating a specific CallBack mode.  
 Currently, only the [PTR-6A](doc/PTR-6A/PTR-6A.md) offers this option.  
 For the Protronik PTR-6A transmitter, I identified a signal at a test point labeled GDO0.  
 This signal controls the transmitter's CC2500 RF module (using the FlyDream V3 format) and is specific to this transmitter.  
