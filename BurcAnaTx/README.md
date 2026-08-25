@@ -52,13 +52,13 @@ However, this causes the message to take longer to reach the receiver.
 ## Synchronization
 To improve the receiver's reception quality for the RCUL message, the encoder repeats the same message multiple times, which increases the time required to receive it.  
 To mitigate this delay, the module can be synchronized with either a standard CPPM signal (positive or negative) or another type of signal (depending on the radio used); this is known as **CallBack mode**.  
-
-1. **CPPM Synchronization**  
+ 
 > [!WARNING]  
-> **The CPPM signal from some older radios can exceed 5V, the maximum level supported by an Arduino**.  
-> **For ESP32s, the maximum level is even lower, at 3.3V**.  
+> **Regardless of the signal injected into the Nano or the ESP32, you must strictly adhere to a maximum level of 5V for Arduinos and 3.3V for ESP32s**.  
 > **It is important to use a voltage divider made up of two resistors**.  
 > **You can use the Digi-Key page to calculate this** [resistor divider](https://www.digikey.fr/en/resources/conversion-calculators/conversion-calculator-voltage-divider?_gl=1*nquchn*_up*MQ..&gclid=Cj0KCQjw6_HSBhCpARIsANvVltZ6PM05v1tbt--6IqpEt2y5AXY3PxShBSuO0Jg-KN0VGJ7S6ODAo6AaAkwBEALw_wcB&gclsrc=aw.ds).  
+
+1. **CPPM Synchronization** 
 ```
 EXAMPLE OF POSITIVE AND NEGATIVE CPPM FRAME TRANSPORTING 2 RC CHANNELS
 ======================================================================
