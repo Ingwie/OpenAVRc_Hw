@@ -34,6 +34,9 @@ Naturally, the connection must be made after the main switch.
 
 ## Power supply
 ![](PTR-6A_Power.jpg)  
+To power the encoder at 5V or 3.3V, you can connect a DC-DC voltage converter to the output of the transmitter's main switch.  
+It connects directly to the 2S LiPo battery (8.4V maximum).  
+A 12V-to-5V or 12V-to-3.3V converter capable of handling approximately 1A should suffice.  
 
 ## Synchronization
 > [!WARNING]  
