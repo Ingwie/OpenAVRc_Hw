@@ -1,6 +1,6 @@
 # Protronik PTR-6A
 Another RC transmitter we will use for testing is the Protronik PTR-6A.  
-![](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/doc/PTR-6A/PTR-6A_Top.png)  
+![](PTR-6A_Top.png)  
 
 On this PTR-6A, channels 5 and 6 cannot be used because they are not fully proportional; the radio only recognizes the positions 1000, 1500, and 2000 milliseconds.  
 
@@ -52,6 +52,13 @@ Without **CPPM synchronization**, the module must be configured for five repetit
 With synchronization enabled, the number of repetitions can be reduced or even eliminated entirely.  
 In the case of the PTR-6A, the **CPPM signal is available only when the transmitter is used with a simulator**; in this instance, the **RF transmission is disabled**.  
 Therefore, this option is not available for this transmitter.  
+> [!WARNING]  
+> Some older transmitters use an NE5044 as an encoder.  
+> It can operate on a supply voltage between 4.5V and 13V.  
+> Consequently, the voltage level of the PPM signal from the NE5044 (pin 11) needs to be adjusted.  
+> Since the output is open-collector, it is often connected to a pull-up resistor that can be tied to a maximum of 13V.  
+> An NPN transistor-based circuit is perfectly suitable for this purpose.  
+![](PPM_limited_level.png)  
 
 2. **Callback Synchronization**  
 To improve the receiver's reception quality for the RCUL message, the encoder repeats the same message multiple times, which increases the time required to receive it.  
