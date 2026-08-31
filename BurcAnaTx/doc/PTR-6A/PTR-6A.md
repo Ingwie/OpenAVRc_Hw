@@ -55,9 +55,11 @@ Therefore, this option is not available for this transmitter.
 > [!WARNING]  
 > Some older transmitters use an NE5044 as an encoder.  
 > It can operate on a supply voltage between 4.5V and 13V.  
-> Consequently, the voltage level of the PPM signal from the NE5044 (pin 11) needs to be adjusted.  
+> Consequently, the voltage level of the CPPM signal from the NE5044 (pin 11) needs to be adjusted.  
 > Since the output is open-collector, it is often connected to a pull-up resistor that can be tied to a maximum of 13V.  
-> An NPN transistor-based circuit is perfectly suitable for this purpose.  
+> An NPN BC547 transistor-based circuit is perfectly suitable for this purpose.  
+> Keep in mind that the **BC547 transistor inverts the CPPM signal**.  
+> This must be taken into account when configuring the encoder.  
 ![](PPM_limited_level.png)  
 
 2. **Callback Synchronization**  
