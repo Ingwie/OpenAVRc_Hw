@@ -130,6 +130,11 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
    
 	  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/PCB/BurcAnaTx_Top.png)  
 	  
+1. Express LRS & OpenAVRc 
+   * [v1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/ExpressLrs)
+   
+	  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/ExpressLrs/HappyModel_combo_kit.jpg)  
+	  
 ## Users OpenAVRc Transmitter Builds
 * [Bracame Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/Bracame/README.md)
 * [JPZ Transmitter](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/User's%20OpenAVRc%20Transmitters/JPZ/README.md)
