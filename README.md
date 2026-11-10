@@ -131,7 +131,7 @@ For source code or documentation : Visit https://github.com/Ingwie/OpenAVRc_Dev
 	  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/BurcAnaTx/PCB/BurcAnaTx_Top.png)  
 	  
 1. Express LRS & OpenAVRc 
-   * [v1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/ExpressLrs)
+   * [v1.0](https://github.com/Ingwie/OpenAVRc_Hw/tree/V3/Long_Range/OpenAVRc_CRSF)
    
 	  ![here](https://github.com/Ingwie/OpenAVRc_Hw/blob/V3/Long_Range/ExpressLrs/HappyModel_combo_kit.jpg)  
 	  
